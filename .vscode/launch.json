@@ -19,14 +19,14 @@
             }
         },
         {
-            "name": "run_task",
+            "name": "run_formula_recognition",
             "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}/scripts/run_task.py",
+            "program": "${workspaceFolder}/scripts/run_formula_recognition.py",
             "console": "integratedTerminal",
             "args": [
                 "--config",
-                "configs/config_mfd3.yaml"
+                "configs/config_formula_recognition.yaml"
             ],
             "env": {
                 "PYTHONPATH": "/Users/bin/anaconda3/envs/mfd_test"
@@ -41,6 +41,20 @@
             "args": [
                 "--config",
                 "configs/config_formula_detection.yaml"
+            ],
+            "env": {
+                "PYTHONPATH": "/Users/bin/anaconda3/envs/mfd_test"
+            }
+        },
+        {
+            "name": "run_layout_detection",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/run_layout_detection.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--config",
+                "configs/config_layout_detection.yaml"
             ],
             "env": {
                 "PYTHONPATH": "/Users/bin/anaconda3/envs/mfd_test"

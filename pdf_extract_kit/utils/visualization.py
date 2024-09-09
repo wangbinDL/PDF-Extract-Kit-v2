@@ -57,7 +57,7 @@ def visualize_bbox(image_path, bboxes, classes, id_to_names, alpha=0.3):
         np.ndarray: Image with visualized layout detection results.
     """
     # image = cv2.imread(image_path)
-   # Check if image_path is a PIL.Image.Image object
+    # Check if image_path is a PIL.Image.Image object
     if isinstance(image_path, Image.Image):
         image = np.array(image_path)
         image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)  # Convert RGB to BGR for OpenCV
