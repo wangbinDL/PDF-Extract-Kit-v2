@@ -43,37 +43,6 @@ class FormulaRecognitionUniMERNet:
         except Exception as e:
             logging.error(f"Error loading model and processor: {e}")
             raise
-
-    # def predict(self, images, result_path):
-    #     results = []
-    #     for image_path in images:
-    #         try:
-    #             raw_image = Image.open(image_path)
-    #         except IOError:
-    #             logging.error(f"Error: Unable to open image at {image_path}")
-    #             continue
-
-    #         # Convert PIL Image to OpenCV format
-    #         open_cv_image = np.array(raw_image)
-    #         if len(open_cv_image.shape) == 3:
-    #             open_cv_image = open_cv_image[:, :, :].copy()
-
-    #         # Process and predict
-    #         try:
-    #             image = self.vis_processor(raw_image).unsqueeze(0).to(self.device)
-    #             output = self.model.generate({"image": image})
-    #             pred = output["pred_str"][0]
-    #             logging.info(f'Prediction for {image_path}:\n{pred}')
-
-    #             # Optionally display the image using cv2
-    #             cv2.imshow('Original Image', open_cv_image)
-    #             cv2.waitKey(0)
-    #             cv2.destroyAllWindows()
-
-    #             results.append(pred)
-    #         except Exception as e:
-    #             logging.error(f"Error processing image {image_path}: {e}")
-    #     return results
     
     def predict(self, images, result_path):
         results = []
