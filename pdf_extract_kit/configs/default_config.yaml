@@ -1,0 +1,13 @@
+tasks:
+  - name: layout_detection
+    model: layoutlmv3
+    model_path: models/layoutlmv3_model.pth
+    eval_data_path: data/layout_eval_data/
+    output_path: results/layout/
+    visualize: true
+  - name: formula_detection
+    model: yolov8
+    model_path: models/yolov8_model.pth
+    eval_data_path: data/formula_eval_data/
+    output_path: results/formula/
+    visualize: true

@@ -1,0 +1,53 @@
+import os
+import os.path as osp
+import sys
+import argparse
+
+from omegaconf import OmegaConf
+
+# 将项目根目录添加到 sys.path 中
+sys.path.append(osp.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+from pdf_extract_kit.registry.registry import TASK_REGISTRY, MODEL_REGISTRY
+
+
+def main(config_path):
+    # 使用 OmegaConf 读取 YAML 配置文件
+    config = OmegaConf.load(config_path)
+
+    # 访问配置项
+    task_name = config.task
+    model_name = config.model
+    model_path = config.model_path
+    eval_data_path = config.eval_data_path
+    output_path = config.output_path
+
+    # 打印配置项（仅用于调试）
+    print(f"Task: {task_name}")
+    print(f"Model: {model_name}")
+    print(f"Model Path: {model_path}")
+    print(f"Data Path: {eval_data_path}")
+    print(f"Output Path: {output_path}")
+
+    # 这里可以根据配置项执行相应的任务和模型
+    task_class = TASK_REGISTRY.get(task_name)
+    model_class = MODEL_REGISTRY.get(model_name)
+
+    if task_class is None:
+        raise ValueError(f"Unknown task: {task_name}")
+    if model_class is None:
+        raise ValueError(f"Unknown model: {model_name}")
+
+    # 初始化任务和模型
+    task = task_class()
+    model = model_class(model_path)
+
+    # 执行任务
+    task.run(model, eval_data_path, output_path)
+
+if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser(description="Run MFD Task")
+    parser.add_argument("--config", type=str, required=True, help="Path to the configuration file")
+    args = parser.parse_args()
+
+    main(args.config)
