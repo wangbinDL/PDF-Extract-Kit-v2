@@ -1,0 +1,634 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Processed 普通对话数据集 &#8212; PDF-Extract-Kit 0.1.0 文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=2693749b"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=a5fa425f"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../../_static/translations.js?v=beaddf03"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'internevo_migration/ftdp_dataset/processed_normal_chat';</script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="prev" title="Processed 数据集 + 其他模型" href="processed_and_others.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="PDF-Extract-Kit 0.1.0 文档 - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="PDF-Extract-Kit 0.1.0 文档 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">开始使用</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../get_started/installation.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../get_started/quickstart.html">快速上手</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">准备</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../preparation/pretrained_model.html">预训练模型权重</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../preparation/prompt_template.html">准备对话模版</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">训练</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../training/open_source_dataset.html">开源指令微调数据集（LLM）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../training/custom_sft_dataset.html">自定义指令微调数据集（LLM）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../training/custom_pretrain_dataset.html">自定义预训练数据集 (LLM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../training/multi_modal_dataset.html">多模态数据集 (VLM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acceleration/train_large_scale_dataset.html">超大规模数据集</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../training/modify_settings.html">修改训练配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../training/visualization.html">可视化训练过程</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DPO</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../dpo/overview.html">DPO 介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dpo/quick_start.html">DPO 快速上手</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../dpo/modify_settings.html">修改 DPO 训练配置</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reward Model</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../reward_model/overview.html">Reward Model 介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reward_model/quick_start.html">Reward Model 快速上手</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reward_model/modify_settings.html">修改 Reward Model 训练配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reward_model/preference_data.html">偏好数据集</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">加速训练</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../acceleration/deepspeed.html">DeepSpeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acceleration/flash_attn.html">Flash Attention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acceleration/varlen_flash_attn.html">Varlen Attention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acceleration/pack_to_max_length.html">数据拼接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acceleration/length_grouped_sampler.html">数据分组</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acceleration/train_extreme_long_sequence.html">序列并行</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acceleration/hyper_parameters.html">调整加速策略</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../acceleration/benchmark.html">速度基准</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">InternEvo 迁移</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../differences.html">主要差异</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tokenized_and_internlm2.html">Tokenized 数据集 + InternLM2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="processed_and_internlm2.html">Processed 数据集 + InternLM2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="processed_and_others.html">Processed 数据集 + 其他模型</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Processed 普通对话数据集</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/opendatalab/PDF-Extract-Kit" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="源码库"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/internevo_migration/ftdp_dataset/processed_normal_chat.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Processed 普通对话数据集</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#config">步骤 1：导出模板 config 文件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">步骤 2：修改模板 config 文件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3">步骤 3：获取数据顺序 （可选）</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">步骤 4：启动训练</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">步骤 5：转模型</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="processed">
+<span id="case3"></span><h1>Processed 普通对话数据集<a class="headerlink" href="#processed" title="Link to this heading">#</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">警告</p>
+<p>非 FTDP（一款闭源数据处理工具） 用户跳过此文档</p>
+</div>
+<p>使用尚未 token 化的 ftdp
+数据进行训练，保持待训练模型的对话模板不变，且不需要进行离线处理的场景。</p>
+<section id="config">
+<h2>步骤 1：导出模板 config 文件<a class="headerlink" href="#config" title="Link to this heading">#</a></h2>
+<p>XTuner 中目前提供了训练 Internlm2 的模板 config，使用命令：</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xtuner<span class="w"> </span>copy-cfg<span class="w"> </span>internlm2_7b_w_untokenized_dataset<span class="w"> </span>.
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>当前目录下会有一个名为 <code class="docutils literal notranslate"><span class="pre">internlm2_7b_w_untokenized_dataset_copy.py</span></code> 的新文件</p>
+</div>
+</section>
+<section id="id1">
+<h2>步骤 2：修改模板 config 文件<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>修改模板 config 文件中的训练数据路径为真实数据路径，路径中的所有以
+<code class="docutils literal notranslate"><span class="pre">.json</span></code> 为后缀的数据将会作为训练数据：</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>...
+
+#######################################################################
+#                          PART 1  Settings                           #
+#######################################################################
+# Model
+pretrained_model_name_or_path = &#39;internlm/internlm2-7b&#39;
+use_varlen_attn = True
+
+# Data
+<span class="gd">- dataset_folder = &#39;/mnt/petrelfs/share_data/caoweihan/v1_sample_with_legal_cate&#39;</span>
+<span class="gi">+ dataset_folder = &#39;/path/to/untokenized/data&#39;</span>
+prompt_template = PROMPT_TEMPLATE.internlm2_chat
+max_length = 32768
+pack_to_max_length = True
+...
+</pre></div>
+</div>
+</section>
+<section id="step-3">
+<span id="id2"></span><h2>步骤 3：获取数据顺序 （可选）<a class="headerlink" href="#step-3" title="Link to this heading">#</a></h2>
+<p>训练数据的提供顺序可能会对模型的最终训练成果产生影响。鉴于不同集群中通过
+<code class="docutils literal notranslate"><span class="pre">os.walk</span></code>
+方法所得到的结果可能存在差异，为了确保训练结果的稳定性和可控性，建议首先确立所有训练数据文件的相对次序，并在后续的训练阶段中，使用这一相对次序来替代
+<code class="docutils literal notranslate"><span class="pre">os.walk</span></code> 方法。</p>
+<p>运行下面的代码可获取数据顺序，并存为 txt 文件：</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>xtuner/tools/get_data_order.py<span class="w"> </span><span class="se">\</span>
+<span class="gp">$    </span>--data-folder<span class="w"> </span>/path/to/tokenized/data<span class="w"> </span><span class="se">\</span>
+<span class="gp">$    </span>--save-folder<span class="w"> </span>/folder/to/save/data/order<span class="w"> </span><span class="se">\</span>
+<span class="gp">$    </span>--file-type<span class="w"> </span><span class="si">${</span><span class="nv">file_type</span><span class="si">}</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p><code class="docutils literal notranslate"><span class="pre">--file-type</span> <span class="pre">${file_type}</span></code> 表示需要统计所有以 <code class="docutils literal notranslate"><span class="pre">${file_type}</span></code>
+为文件名后缀的文件的顺序。</p>
+<p>例如，需要获取 <code class="docutils literal notranslate"><span class="pre">/path/to/tokenized/data</span></code> 路径下所有以 <code class="docutils literal notranslate"><span class="pre">.bin</span></code>
+结尾的文件的顺序，并保存在当前路径下，那么上述命令需要改为：</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>xtuner/tools/get_data_order.py<span class="w"> </span><span class="se">\</span>
+<span class="gp">$    </span>--data-folder<span class="w"> </span>/path/to/tokenized/data<span class="w"> </span><span class="se">\</span>
+<span class="gp">$    </span>--save-folder<span class="w"> </span>.<span class="w"> </span><span class="se">\</span>
+<span class="gp">$    </span>--file-type<span class="w"> </span>.bin
+</pre></div>
+</div>
+</div>
+<p>获得数据顺序文件后，还需要在 config 中设置数据顺序文件路径：</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>...
+#######################################################################
+#                      PART 3  Dataset &amp; Dataloader                   #
+#######################################################################
+train_dataset = dict(
+<span class="w"> </span>   type=build_packed_dataset,
+<span class="w"> </span>   dataset_cfg=dict(
+<span class="w"> </span>       type=load_intern_repo_tokenized_dataset,
+<span class="gd">-       data_order_path=None,</span>
+<span class="gi">+       data_order_path=&#39;/folder/to/save/data/order/&#39;+&#39;data_order.txt&#39;,</span>
+<span class="w"> </span>       folder=dataset_folder,
+<span class="w"> </span>       min_length=0,
+<span class="w"> </span>       file_type=&#39;.bin&#39;
+<span class="w"> </span>   ),
+<span class="w"> </span>   packed_length=max_length,
+<span class="w"> </span>   seed=1024)
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>步骤 4：启动训练<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>在 slurm 集群调度系统中可以通过以下命令启动训练：</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>srun<span class="w"> </span><span class="si">${</span><span class="nv">SRUN_ARGS</span><span class="si">}</span><span class="w"> </span>xtuner<span class="w"> </span>train<span class="w"> </span>internlm2_7b_w_untokenized_dataset_copy.py<span class="w"> </span>--launcher<span class="w"> </span>slurm<span class="w"> </span>--deepspeed<span class="w"> </span>deepspeed_zero1
+</pre></div>
+</div>
+<p>若出现 OOM 现象，可尝试使用 zero2 或 zero3。以下命令可以使用 zero 3
+显存优化策略进行训练：</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>srun<span class="w"> </span><span class="si">${</span><span class="nv">SRUN_ARGS</span><span class="si">}</span><span class="w"> </span>xtuner<span class="w"> </span>train<span class="w"> </span>internlm2_7b_w_tokenized_dataset_copy.py<span class="w"> </span>--launcher<span class="w"> </span>slurm<span class="w"> </span>--deepspeed<span class="w"> </span>deepspeed_zero3
+</pre></div>
+</div>
+<p>在阿里云 DLC 中可通过以下命令启动训练：</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>export NCCL_IB_TC=136
+export NCCL_IB_SL=5
+export NCCL_IB_GID_INDEX=3
+export NCCL_SOCKET_IFNAME=bond0
+export NCCL_DEBUG=INFO
+export NCCL_IB_HCA=mlx5
+export NCCL_IB_TIMEOUT=22
+export NCCL_IB_QPS_PER_CONNECTION=8
+export NCCL_NET_PLUGIN=none
+
+export NCCL_BUFFSIZE=2097152
+export PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:512
+<span class="gd">- export EXP_NAME=debug</span>
+<span class="gi">+ export EXP_NAME=your_exp_name</span>
+export PYTHONPATH=&#39;.&#39;:$PYTHONPATH
+source ~/.bashrc
+<span class="gi">+ cd /path/to/xtuner</span>
+<span class="gi">+ conda activate conda_env_name</span>
+
+export NPROC_PER_NODE=${KUBERNETES_CONTAINER_RESOURCE_GPU}
+export PORT=${MASTER_PORT}
+export NNODES=${WORLD_SIZE}
+export NODE_RANK=${RANK}
+export ADDR=${MASTER_ADDR}
+
+echo ${KUBERNETES_CONTAINER_RESOURCE_GPU}
+echo ${WORLD_SIZE}
+echo ${MASTER_PORT}
+echo ${MASTER_ADDR}
+echo ${RANK}
+xtuner train internlm2_7b_w_untokenized_dataset_copy.py \
+<span class="w"> </span>   --deepspeed deepspeed_zero1 \
+<span class="w"> </span>   --work-dir work_dirs/${EXP_NAME}
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>步骤 5：转模型<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>deepspeed 转 hf：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">xtuner</span><span class="o">/</span><span class="n">tools</span><span class="o">/</span><span class="n">model_converters</span><span class="o">/</span><span class="n">pth_to_hf</span><span class="o">.</span><span class="n">py</span> <span class="n">internlm2_7b_w_untokenized_dataset_copy</span><span class="o">.</span><span class="n">py</span> <span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">path</span> <span class="o">/</span><span class="n">hf</span><span class="o">/</span><span class="n">dst</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">path</span>
+</pre></div>
+</div>
+<p>hf 转 Turbomind：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lmdeploy</span> <span class="n">convert</span> <span class="n">internlm2</span><span class="o">-</span><span class="n">chat</span><span class="o">-</span><span class="mi">7</span><span class="n">b</span> <span class="o">/</span><span class="n">hf</span><span class="o">/</span><span class="n">dst</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">path</span> <span class="o">--</span><span class="n">dst</span><span class="o">-</span><span class="n">path</span> <span class="o">/</span><span class="n">turbomind</span><span class="o">/</span><span class="n">dst</span><span class="o">/</span><span class="n">model</span><span class="o">/</span><span class="n">path</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="processed_and_others.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">Processed 数据集 + 其他模型</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#config">步骤 1：导出模板 config 文件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">步骤 2：修改模板 config 文件</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3">步骤 3：获取数据顺序 （可选）</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">步骤 4：启动训练</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">步骤 5：转模型</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： PDF-Extract-Kit Contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, PDF-Extract-Kit Contributors.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

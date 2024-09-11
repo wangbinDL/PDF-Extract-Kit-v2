@@ -1,0 +1,781 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>光学字符识别(OCR)算法 &#8212; PDF-Extract-Kit 0.1.0 文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=2693749b"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=a5fa425f"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'algorithm/ocr';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="表格识别算法" href="table_recognition.html" />
+    <link rel="prev" title="公式识别算法" href="formula_recognition.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="PDF-Extract-Kit 0.1.0 文档 - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="PDF-Extract-Kit 0.1.0 文档 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">快速上手</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../get_started/installation.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/pretrained_model.html">模型权重下载</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/quickstart.html">快速开始</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">基础算法模块</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="layout_detection.html">布局检测算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formula_detection.html">公式检测算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formula_recognition.html">公式识别算法</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">光学字符识别(OCR)算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="table_recognition.html">表格识别算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reading_order.html">阅读顺序算法</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">支持的模型列表</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../models/supported.html">已支持的模型</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">模型性能评测</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/layout_detection.html">训练过程中评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_detection.html">=====================
+公式检测算法评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_recognition.html">=====================
+公式识别算法评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/ocr.html">端到端评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/table_recognition.html">=====================
+表格识别算法评测</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PDF项目</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/overview.html">Reward Model 介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/quick_start.html">Reward Model 快速上手</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/modify_settings.html">修改 Reward Model 训练配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/preference_data.html">偏好数据集</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/opendatalab/PDF-Extract-Kit" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="源码库"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/algorithm/ocr.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>光学字符识别(OCR)算法</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">数据准备</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llava">LLaVA 开源数据集准备</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">数据文件结构</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">预训练数据下载</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">指令微调数据下载</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">自定义数据集准备</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">训练</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">预训练</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">指令跟随微调</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">模型转换</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">模型合并（可选）</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">对话</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">评测</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faq">FAQ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llm">如何更换 LLM？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valueerror-bos-token-id-has-to-be-defined-when-no-input-ids-are-provided">ValueError: <code class="docutils literal notranslate"><span class="pre">bos_token_id</span></code> has to be defined when no <code class="docutils literal notranslate"><span class="pre">input_ids</span></code> are provided.</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="ocr">
+<h1>光学字符识别(OCR)算法<a class="headerlink" href="#ocr" title="Link to this heading">#</a></h1>
+<p>XTuner 支持 LLaVA 图文模型的微调，本文将以
+<a class="reference external" href="https://huggingface.co/xtuner/llava-internlm2-7b">xtuner/llava-internlm2-7b</a>
+为例，讲解如何利用 XTuner 快速上手多模态数据集训练，及后续的对话、评测。</p>
+<section id="id1">
+<h2>数据准备<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>XTuner 支持 LLaVA 格式数据集的多模态图文预训练、微调。本节将从「LLaVA
+开源数据集准备」和「自定义数据集准备」两部分展开介绍。</p>
+<section id="llava">
+<h3>LLaVA 开源数据集准备<a class="headerlink" href="#llava" title="Link to this heading">#</a></h3>
+<section id="id2">
+<h4>数据文件结构<a class="headerlink" href="#id2" title="Link to this heading">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>./data/llava_data
+├── LLaVA-Pretrain
+│   ├── blip_laion_cc_sbu_558k.json
+│   ├── blip_laion_cc_sbu_558k_meta.json
+│   └── images
+├── LLaVA-Instruct-150K
+│   └── llava_v1_5_mix665k.json
+└── llava_images
+    ├── coco
+    │   └── train2017
+    ├── gqa
+    │   └── images
+    ├── ocr_vqa
+    │   └── images
+    ├── textvqa
+    │   └── train_images
+    └── vg
+        ├── VG_100K
+        └── VG_100K_2
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h4>预训练数据下载<a class="headerlink" href="#id3" title="Link to this heading">#</a></h4>
+<p>LLaVA-Pretrain</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make sure you have git-lfs installed (https://git-lfs.com)</span>
+git<span class="w"> </span>lfs<span class="w"> </span>install
+git<span class="w"> </span>clone<span class="w"> </span>https://huggingface.co/datasets/liuhaotian/LLaVA-Pretrain<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h4>指令微调数据下载<a class="headerlink" href="#id4" title="Link to this heading">#</a></h4>
+<p><strong>LLaVA-Instruct-150K</strong> （文本）</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make sure you have git-lfs installed (https://git-lfs.com)</span>
+git<span class="w"> </span>lfs<span class="w"> </span>install
+git<span class="w"> </span>clone<span class="w"> </span>https://huggingface.co/datasets/liuhaotian/LLaVA-Instruct-150K<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+<p><strong>COCO</strong> （图像）: <a class="reference external" href="http://images.cocodataset.org/zips/train2017.zip">train2017</a></p>
+<p><strong>GQA</strong> （图像）: <a class="reference external" href="https://downloads.cs.stanford.edu/nlp/data/gqa/images.zip">images</a></p>
+<p><strong>TextVQA</strong> （图像）: <a class="reference external" href="https://dl.fbaipublicfiles.com/textvqa/images/train_val_images.zip">train_val_images</a></p>
+<p><strong>VisualGenome</strong> （图像）: <a class="reference external" href="https://cs.stanford.edu/people/rak248/VG_100K_2/images.zip">part1</a>, <a class="reference external" href="https://cs.stanford.edu/people/rak248/VG_100K_2/images2.zip">part2</a></p>
+<p><strong>OCR-VQA</strong> （图像）: <a class="reference external" href="https://drive.google.com/drive/folders/1_GYPY5UkUy7HIcR0zq3ZCFgeZN7BAfm_?usp=sharing">download script</a></p>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>⚠️ OCR-VQA 所下载的图片命名需要利用如下脚本进行处理，以确保所有图片后缀为
+<code class="docutils literal notranslate"><span class="pre">.jpg</span></code>！</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">ocr_vqa_path</span><span class="o">=</span><span class="s2">&quot;&lt;your-directory-path&gt;&quot;</span>
+
+find<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$target_dir</span><span class="s2">&quot;</span><span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="nb">read</span><span class="w"> </span>file<span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">      </span><span class="nv">extension</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="p">##*.</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="o">[</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$extension</span><span class="s2">&quot;</span><span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="s2">&quot;jpg&quot;</span><span class="w"> </span><span class="o">]</span>
+<span class="w">      </span><span class="k">then</span>
+<span class="w">         </span>cp<span class="w"> </span>--<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">file</span><span class="p">%.*</span><span class="si">}</span><span class="s2">.jpg&quot;</span>
+<span class="w">      </span><span class="k">fi</span>
+<span class="k">done</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h3>自定义数据集准备<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>如果用户期望使用自定义数据集进行图文训练，可以参照 LLaVA
+开源数据集格式进行准备，具体格式如下：</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;image&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx/xxx&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;conversations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;human&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&lt;image&gt;\nHello! What&#39;s this?&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gpt&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This is a dog!&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;human&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Is it cute?&quot;</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;from&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;gpt&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Yes.&quot;</span>
+<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="err">...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>目前针对自定义数据有一些约束：</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">image</span></code> 字段表示图片路径，且仅能有一张图片</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">conversations</span></code> 字段第 0 条的 <code class="docutils literal notranslate"><span class="pre">value</span></code> 需要包括 <code class="docutils literal notranslate"><span class="pre">&lt;image&gt;</span></code>
+，以确保图片被正确嵌入。</p></li>
+</ol>
+</div>
+</section>
+</section>
+<section id="id6">
+<h2>训练<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>多模态图文训练一般分为两步：预训练（pretrain）、指令跟随微调（finetune）。<code class="docutils literal notranslate"><span class="pre">xtuner/llava-internlm2-7b</span></code>
+对应的配置文件：<a class="reference external" href="https://github.com/InternLM/xtuner/blob/main/xtuner/configs/llava/internlm2_chat_7b_clip_vit_large_p14_336/pretrain/llava_internlm2_chat_7b_clip_vit_large_p14_336_e1_gpu8_pretrain.py">预训练</a>
+/
+<a class="reference external" href="https://github.com/InternLM/xtuner/blob/main/xtuner/configs/llava/internlm2_chat_7b_clip_vit_large_p14_336/finetune/llava_internlm2_chat_7b_qlora_clip_vit_large_p14_336_lora_e1_gpu8_finetune.py">指令跟随微调</a>，用户可以对其中的模型路径、数据路径进行自定义修改。</p>
+<section id="id7">
+<h3>预训练<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nv">NPROC_PER_NODE</span><span class="o">=</span><span class="m">8</span><span class="w"> </span>xtuner<span class="w"> </span>train<span class="w"> </span>llava_internlm2_chat_7b_clip_vit_large_p14_336_e1_gpu8_pretrain<span class="w"> </span>--deepspeed<span class="w"> </span>deepspeed_zero2
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>训得模型将默认保存在 <code class="docutils literal notranslate"><span class="pre">./work_dirs/</span></code>，用户可以通过命令
+<code class="docutils literal notranslate"><span class="pre">xtuner</span> <span class="pre">train</span> <span class="pre">--work-dir</span> <span class="pre">${SAVE_PATH}</span></code> 指定保存路径。</p>
+</div>
+</section>
+<section id="id8">
+<h3>指令跟随微调<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<p>指令跟随微调时，需要载入预训练阶段所得到的 <code class="docutils literal notranslate"><span class="pre">.pth</span></code>
+模型，以提供良好的初始化，这一通过在配置文件中的 <code class="docutils literal notranslate"><span class="pre">pretrained_pth</span></code>
+指定，用户可以自行修改。</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span><span class="nv">NPROC_PER_NODE</span><span class="o">=</span><span class="m">8</span><span class="w"> </span>xtuner<span class="w"> </span>train<span class="w"> </span>llava_internlm2_chat_7b_qlora_clip_vit_large_p14_336_lora_e1_gpu8_finetune<span class="w"> </span>--deepspeed<span class="w"> </span>deepspeed_zero2
+</pre></div>
+</div>
+</section>
+<section id="id9">
+<h3>模型转换<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>模型训练后会自动保存成 PTH 模型（例如
+<code class="docutils literal notranslate"><span class="pre">iter_5198.pth</span></code>），我们需要利用 <code class="docutils literal notranslate"><span class="pre">xtuner</span> <span class="pre">convert</span> <span class="pre">pth_to_hf</span></code>
+将其转换为 HuggingFace 模型，以便于后续使用。具体命令为：</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xtuner<span class="w"> </span>convert<span class="w"> </span>pth_to_hf<span class="w"> </span><span class="nv">$FINETUNE_CFG</span><span class="w"> </span><span class="nv">$PTH_PATH</span><span class="w"> </span><span class="nv">$SAVE_PATH</span>
+<span class="gp">$ </span><span class="c1"># 例如：xtuner convert pth_to_hf llava_internlm2_chat_7b_qlora_clip_vit_large_p14_336_lora_e1_gpu8_finetune ./iter_5198.pth ./iter_5198_hf</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>此时，我们将获得所需要的模型。如果使用默认的微调范式，文件结构应与
+<a class="reference external" href="https://huggingface.co/xtuner/llava-internlm2-7b/tree/main">这里</a>
+一致。</p>
+</div>
+</section>
+<section id="id10">
+<h3>模型合并（可选）<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>如果您使用了 LoRA / QLoRA 微调，则模型转换后将得到 adapter
+参数，而并不包含原 LLM
+参数。如果您期望获得合并后的模型权重，那么可以利用
+<code class="docutils literal notranslate"><span class="pre">xtuner</span> <span class="pre">convert</span> <span class="pre">merge</span></code> ：</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xtuner<span class="w"> </span>convert<span class="w"> </span>merge<span class="w"> </span><span class="nv">$LLM</span><span class="w"> </span><span class="nv">$LLM_ADAPTER</span><span class="w"> </span><span class="nv">$SAVE_PATH</span>
+<span class="gp">$ </span>xtuner<span class="w"> </span>convert<span class="w"> </span>merge<span class="w"> </span><span class="nv">$CLIP</span><span class="w"> </span><span class="nv">$CLIP_ADAPTER</span><span class="w"> </span><span class="nv">$SAVE_PATH</span><span class="w"> </span>--is-clip
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id11">
+<h2>对话<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<p>用户可以利用 <code class="docutils literal notranslate"><span class="pre">xtuner</span> <span class="pre">chat</span></code>
+实现与微调后的多模态图文模型对话。假设模型转换阶段获得的模型路径为
+<code class="docutils literal notranslate"><span class="pre">./iter_5198_hf</span></code>，则我们可以利用下列命令实现对话：</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xtuner<span class="w"> </span>chat<span class="w"> </span>internlm/internlm2-chat-7b<span class="w"> </span><span class="se">\</span>
+<span class="gp">$   </span>--visual-encoder<span class="w"> </span>openai/clip-vit-large-patch14-336<span class="w"> </span><span class="se">\</span>
+<span class="gp">$   </span>--llava<span class="w"> </span>./iter_5198_hf<span class="w"> </span><span class="se">\</span>
+<span class="gp">$   </span>--prompt-template<span class="w"> </span>internlm2_chat<span class="w"> </span><span class="se">\</span>
+<span class="gp">$   </span>--image<span class="w"> </span><span class="nv">$IMAGE_PATH</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p><code class="docutils literal notranslate"><span class="pre">xtuner</span> <span class="pre">chat</span></code> 的第一个参数为 LLM 路径或 HuggingFace Hub
+ID。如果训练阶段 LLM 使用的是 LoRA / QLoRA 微调，则此参数请传入基础
+LLM，如
+<code class="docutils literal notranslate"><span class="pre">internlm/internlm2-chat-7b</span></code>；如果使用的是全参数微调，则此参数请传入转换（<code class="docutils literal notranslate"><span class="pre">xtuner</span> <span class="pre">convert</span> <span class="pre">pth_to_hf</span></code>）所得到的模型权重，如
+<code class="docutils literal notranslate"><span class="pre">./iter_5198_hf</span></code>。</p>
+</div>
+</section>
+<section id="id12">
+<h2>评测<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
+<p>XTuner 的 LLaVA 模型可以利用
+<a class="reference external" href="https://github.com/open-compass/VLMEvalKit">VLMEvalKit</a>
+进行评测，请参考
+<a class="reference external" href="https://github.com/open-compass/VLMEvalKit/blob/main/Quickstart.md">这里</a>
+快速上手。</p>
+<p>同时，为了方便使用，XTuner 内也集成了 MMBench
+评测，您可以通过下列命令下载 MMBench 评测数据集：</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>wget<span class="w"> </span>https://opencompass.openxlab.space/utils/VLMEval/MMBench_DEV_EN.tsv
+<span class="gp">$ </span>wget<span class="w"> </span>https://opencompass.openxlab.space/utils/VLMEval/MMBench_TEST_EN.tsv
+<span class="gp">$ </span>wget<span class="w"> </span>https://opencompass.openxlab.space/utils/VLMEval/MMBench_DEV_CN.tsv
+<span class="gp">$ </span>wget<span class="w"> </span>https://opencompass.openxlab.space/utils/VLMEval/MMBench_TEST_CN.tsv
+<span class="gp">$ </span>wget<span class="w"> </span>https://opencompass.openxlab.space/utils/VLMEval/CCBench.tsv
+</pre></div>
+</div>
+<p>之后，您可以利用下列命令实现评测：</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>xtuner<span class="w"> </span>mmbench<span class="w"> </span>internlm/internlm2-chat-7b<span class="w"> </span><span class="se">\</span>
+<span class="gp">$  </span>--visual-encoder<span class="w"> </span>openai/clip-vit-large-patch14-336<span class="w"> </span><span class="se">\</span>
+<span class="gp">$  </span>--llava<span class="w"> </span>./iter_5198_hf<span class="w"> </span><span class="se">\</span>
+<span class="gp">$  </span>--prompt-template<span class="w"> </span>internlm2_chat<span class="w"> </span><span class="se">\</span>
+<span class="gp">$  </span>--data-path<span class="w"> </span><span class="nv">$DATA_PATH</span><span class="w"> </span><span class="se">\</span>
+<span class="gp">$  </span>--work-dir<span class="w"> </span><span class="nv">$RESULT_PATH</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p><code class="docutils literal notranslate"><span class="pre">xtuner</span> <span class="pre">mmbench</span></code> 的第一个参数为 LLM 路径或 HuggingFace Hub
+ID。如果训练阶段 LLM 使用的是 LoRA / QLoRA 微调，则此参数请传入基础
+LLM，如
+<code class="docutils literal notranslate"><span class="pre">internlm/internlm2-chat-7b</span></code>；如果使用的是全参数微调，则此参数请传入转换（<code class="docutils literal notranslate"><span class="pre">xtuner</span> <span class="pre">convert</span> <span class="pre">pth_to_hf</span></code>）所得到的模型权重，如
+<code class="docutils literal notranslate"><span class="pre">./iter_5198_hf</span></code>。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p><code class="docutils literal notranslate"><span class="pre">$DATA_PATH</span></code> 指上一步骤所下载的某一个 tsv 文件，如
+<code class="docutils literal notranslate"><span class="pre">MMBench_DEV_EN.tsv</span></code>。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>评测完成后，若为开发集则会直接打印出结果；若为测试集，则需将
+<code class="docutils literal notranslate"><span class="pre">mmbench_result.xlsx</span></code> 提交至 <a class="reference external" href="https://mmbench.opencompass.org.cn/home">MMBench
+官方</a> 完成评测取得精度结果。</p>
+</div>
+</section>
+<section id="faq">
+<h2>FAQ<a class="headerlink" href="#faq" title="Link to this heading">#</a></h2>
+<section id="llm">
+<h3>如何更换 LLM？<a class="headerlink" href="#llm" title="Link to this heading">#</a></h3>
+<p>修改 LLM 的方式与训练单模态的大语言模型类似。</p>
+<ol class="arabic simple">
+<li><p>修改配置文件中的 <code class="docutils literal notranslate"><span class="pre">llm_name_or_path</span></code> 参数至您期望使用的 LLM，例如
+<code class="docutils literal notranslate"><span class="pre">internlm/internlm2-chat-20b</span></code>等。</p></li>
+<li><p>修改配置文件中的 <code class="docutils literal notranslate"><span class="pre">prompt_template</span></code> 参数，与您所选择的 LLM
+保持对齐，具体选择可参考
+<a class="reference internal" href="../preparation/prompt_template.html#prompt-template"><span class="std std-ref">对话模版文档</span></a> 。</p></li>
+</ol>
+</section>
+<section id="valueerror-bos-token-id-has-to-be-defined-when-no-input-ids-are-provided">
+<h3>ValueError: <code class="docutils literal notranslate"><span class="pre">bos_token_id</span></code> has to be defined when no <code class="docutils literal notranslate"><span class="pre">input_ids</span></code> are provided.<a class="headerlink" href="#valueerror-bos-token-id-has-to-be-defined-when-no-input-ids-are-provided" title="Link to this heading">#</a></h3>
+<p>这是由于老版本 <code class="docutils literal notranslate"><span class="pre">transformers</span></code> 的 LLM <code class="docutils literal notranslate"><span class="pre">generate</span></code> 接口在接受
+<code class="docutils literal notranslate"><span class="pre">inputs_embeds</span></code> 输入时，必须传入有效的 <code class="docutils literal notranslate"><span class="pre">bos_token_id</span></code>。
+(<a class="reference external" href="https://github.com/huggingface/transformers/pull/29772">#29772</a>)</p>
+<p>更新 <code class="docutils literal notranslate"><span class="pre">transformers</span></code> 即可解决</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>transformers
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="formula_recognition.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">公式识别算法</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="table_recognition.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">表格识别算法</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">数据准备</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llava">LLaVA 开源数据集准备</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">数据文件结构</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">预训练数据下载</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">指令微调数据下载</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">自定义数据集准备</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">训练</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">预训练</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">指令跟随微调</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">模型转换</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">模型合并（可选）</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">对话</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">评测</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#faq">FAQ</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llm">如何更换 LLM？</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valueerror-bos-token-id-has-to-be-defined-when-no-input-ids-are-provided">ValueError: <code class="docutils literal notranslate"><span class="pre">bos_token_id</span></code> has to be defined when no <code class="docutils literal notranslate"><span class="pre">input_ids</span></code> are provided.</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： PDF-Extract-Kit Contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, OpenDataLab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

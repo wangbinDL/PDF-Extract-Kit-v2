@@ -1,0 +1,792 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Multi-turn Dialogue Data Pipeline &#8212; PDF-Extract-Kit 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=a1637f0b"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=a5fa425f"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guides/multi_turn_conversation';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="PDF-Extract-Kit 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="PDF-Extract-Kit 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Get Started</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../get_started/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/installation.html">Installation</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../get_started/quickstart.html">Quickstart</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Preparation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../preparation/pretrained_model.html">Pretrained Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../preparation/prompt_template.html">Prompt Template</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Training</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../training/modify_settings.html">Modify Settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training/custom_sft_dataset.html">Custom SFT Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training/custom_pretrain_dataset.html">Custom Pretrain Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training/custom_agent_dataset.html">Custom Agent Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training/multi_modal_dataset.html">Multi-modal Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training/open_source_dataset.html">Open Source Datasets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../training/visualization.html">Visualization</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">DPO</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../dpo/overview.html">Introduction to DPO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dpo/quick_start.html">Quick Start with DPO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dpo/modify_settings.html">Modify DPO Training Configuration</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reward Model</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/overview.html">Introduction to Reward Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/quick_start.html">Quick Start Guide for Reward Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/modify_settings.html">Modify Reward Model Training Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/preference_data.html">Preference Dataset</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Acceleration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../acceleration/deepspeed.html">DeepSpeed</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acceleration/pack_to_max_length.html">Pack to Max Length</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acceleration/flash_attn.html">Flash Attention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acceleration/varlen_flash_attn.html">Varlen Flash Attention</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acceleration/hyper_parameters.html">HyperParameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acceleration/length_grouped_sampler.html">Length Grouped Sampler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acceleration/train_large_scale_dataset.html">Train Large-scale Dataset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acceleration/train_extreme_long_sequence.html">Train Extreme Long Sequence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../acceleration/benchmark.html">Benchmark</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Chat</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../chat/llm.html">Chat with LLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chat/agent.html">Chat with Agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chat/vlm.html">Chat with VLM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../chat/lmdeploy.html">Accelerate chat by LMDeploy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Evaluation</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/hook.html">Evaluation during training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/mmlu.html">MMLU (LLM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/mmbench.html">MMBench (VLM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/opencompass.html">Evaluate with OpenCompass</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Models</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../models/supported.html">Supported Models</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">InternEvo Migration</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../internevo_migration/internevo_migration.html">InternEVO Migration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internevo_migration/ftdp_dataset/ftdp.html">ftdp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internevo_migration/ftdp_dataset/Case1.html">Case 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internevo_migration/ftdp_dataset/Case2.html">Case 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internevo_migration/ftdp_dataset/Case3.html">Case 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../internevo_migration/ftdp_dataset/Case4.html">Case 4</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/opendatalab/PDF-Extract-Kit" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/user_guides/multi_turn_conversation.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Multi-turn Dialogue Data Pipeline</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-dataset-in-huggingface-hub">Using Dataset in HuggingFace Hub</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-map-original-dataset-to-standard-format">Step 1, Map Original Dataset to Standard Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-list-candidate-model-names">Step 2, List Candidate Model Names</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-export-the-config-file">Step 3, Export the Config File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-modify-config-files">Step 4, Modify Config Files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-check-custom-dataset-optional">Step 5, Check custom Dataset (Optional)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-custom-datasets">Using Custom Datasets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-dataset-preparation">Step 1, Dataset Preparation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Step 2, List Candidate Model Names</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Step 3, Export the Config File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-modify-config-file">Step 4, Modify Config File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Step 5, Check custom Dataset (Optional)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="multi-turn-dialogue-data-pipeline">
+<h1>Multi-turn Dialogue Data Pipeline<a class="headerlink" href="#multi-turn-dialogue-data-pipeline" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="#using-dataset-in-huggingface-hub"><span class="xref myst">Using Dataset in HuggingFace Hub</span></a></p></li>
+<li><p><a class="reference internal" href="#using-custom-datasets"><span class="xref myst">Using Custom Datasets</span></a></p></li>
+</ul>
+<p>The purpose of multi-turn dialogue command fine-tuning is to enhance the model’s ability for multi-turn dialogues.</p>
+<p>XTuner supports the use of HuggingFace Hub datasets or custom datasets for SFT (Supervised FineTune). The main difference between them is that when using the HuggingFace Hub dataset, the original data needs to be mapped to the <a class="reference internal" href="dataset_format.html#multi-turn-dialogue-dataset-format"><span class="std std-ref">multi-turn dialogue data format</span></a> defined by XTuner. For custom datasets, it is recommended that users construct the dataset according to the <a class="reference internal" href="dataset_format.html#multi-turn-dialogue-dataset-format"><span class="std std-ref">multi-turn dialogue data format</span></a>.</p>
+<section id="using-dataset-in-huggingface-hub">
+<h2>Using Dataset in HuggingFace Hub<a class="headerlink" href="#using-dataset-in-huggingface-hub" title="Link to this heading">#</a></h2>
+<section id="step-1-map-original-dataset-to-standard-format">
+<h3>Step 1, Map Original Dataset to Standard Format<a class="headerlink" href="#step-1-map-original-dataset-to-standard-format" title="Link to this heading">#</a></h3>
+<p>Since the formats of different datasets vary, the original data needs to be transformed into the <a class="reference internal" href="dataset_format.html#multi-turn-dialogue-dataset-format"><span class="std std-ref">multi-turn dialogue data format</span></a> defined by XTuner. XTuner supports the use of a map function to achieve format mapping. The following example uses the <a class="reference external" href="https://huggingface.co/datasets/OpenAssistant/oasst1">oasst1 dataset</a> to illustrate how to implement data mapping.</p>
+<p>The oasst1 dataset format is as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datasets</span> <span class="kn">import</span> <span class="n">load_dataset</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">&#39;timdettmers/openassistant-guanaco&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">]</span>
+<span class="go">Dataset({</span>
+<span class="go">    features: [&#39;text&#39;],</span>
+<span class="go">    num_rows: 9846</span>
+<span class="go">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
+<span class="go">&#39;### Human: xxx ### Assistant: xxx ###Human: xxx ###Assistant: xxx&#39;</span>
+</pre></div>
+</div>
+<p>It’s clear that the oasst1 dataset can not only be used as an incremental pre-training dataset for the model to learn some basic language knowledge, but also, after some processing, serve as a multi-turn dialogue dataset to cultivate the model’s multi-turn conversation capabilities. The <a class="reference internal" href="dataset_format.html#multi-turn-dialogue-dataset-format"><span class="std std-ref">multi-turn dialogue data format</span></a> introduces that in the fine-tuning process of multi-turn dialogue instructions, the data format should be:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">&quot;conversation&quot;</span><span class="p">:[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">},</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;conversation&quot;</span><span class="p">:[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+<p>Therefore, the original data can be mapped to a standard format using the following map function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Suppose the function is stored in ./map_fn.py</span>
+<span class="n">SYSTEM_OASST1</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>  <span class="c1"># oasst1 does not set the system text</span>
+<span class="k">def</span> <span class="nf">custom_map_fn</span><span class="p">(</span><span class="n">example</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Example before preprocessing:</span>
+<span class="sd">        example[&#39;text&#39;] = &#39;### Human: Can you explain xxx&#39;</span>
+<span class="sd">                          &#39;### Assistant: Sure! xxx&#39;</span>
+<span class="sd">                          &#39;### Human: I didn&#39;t understand how xxx&#39;</span>
+<span class="sd">                          &#39;### Assistant: It has to do with a process xxx.&#39;</span>
+
+<span class="sd">    Example after preprocessing:</span>
+<span class="sd">        example[&#39;conversation&#39;] = [</span>
+<span class="sd">            {</span>
+<span class="sd">                &#39;input&#39;: &#39;Can you explain xxx&#39;,</span>
+<span class="sd">                &#39;output&#39;: &#39;Sure! xxx&#39;</span>
+<span class="sd">            },</span>
+<span class="sd">            {</span>
+<span class="sd">                &#39;input&#39;: &#39;I didn&#39;t understand how xxx&#39;,</span>
+<span class="sd">                &#39;output&#39;: &#39;It has to do with a process xxx.&#39;</span>
+<span class="sd">            }</span>
+<span class="sd">        ]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">example</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;###&#39;</span><span class="p">):</span>
+        <span class="n">sentence</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">sentence</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Human:&#39;</span><span class="p">:</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sentence</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+        <span class="k">elif</span> <span class="n">sentence</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Assistant:&#39;</span><span class="p">:</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sentence</span><span class="p">[</span><span class="mi">10</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="c1"># The last round of conversation solely consists of input</span>
+        <span class="c1"># without any output.</span>
+        <span class="c1"># Discard the input part of the last round, as this part is ignored in</span>
+        <span class="c1"># the loss calculation.</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">conversation</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">system</span> <span class="o">=</span> <span class="n">SYSTEM_OASST1</span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">single_turn_conversation</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;system&#39;</span><span class="p">:</span> <span class="n">system</span><span class="p">,</span>
+            <span class="s1">&#39;input&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+            <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]}</span>
+        <span class="n">conversation</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">single_turn_conversation</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;conversation&#39;</span><span class="p">:</span> <span class="n">conversation</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="step-2-list-candidate-model-names">
+<h3>Step 2, List Candidate Model Names<a class="headerlink" href="#step-2-list-candidate-model-names" title="Link to this heading">#</a></h3>
+<p>XTuner provides several ready-to-use configuration files. Users can view them using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xtuner<span class="w"> </span>list-cfg<span class="w"> </span>-p<span class="w"> </span>internlm
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">-p</span></code> is used for fuzzy search. If you want to train other models, you can replace <code class="docutils literal notranslate"><span class="pre">internlm</span></code> with other model names supported by XTuner.</p>
+</section>
+<section id="step-3-export-the-config-file">
+<h3>Step 3, Export the Config File<a class="headerlink" href="#step-3-export-the-config-file" title="Link to this heading">#</a></h3>
+<p>If the provided configuration file does not meet your needs, please export the offered configuration file and make appropriate changes:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xtuner<span class="w"> </span>copy-cfg<span class="w"> </span><span class="si">${</span><span class="nv">CONFIG_NAME</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">SAVE_DIR</span><span class="si">}</span>
+</pre></div>
+</div>
+<p>For example, use the following command to export the config named <code class="docutils literal notranslate"><span class="pre">internlm_7b_qlora_oasst1_e3</span></code> to the current directory:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xtuner<span class="w"> </span>copy-cfg<span class="w"> </span>internlm_7b_qlora_oasst1_e3<span class="w"> </span>.
+</pre></div>
+</div>
+</section>
+<section id="step-4-modify-config-files">
+<h3>Step 4, Modify Config Files<a class="headerlink" href="#step-4-modify-config-files" title="Link to this heading">#</a></h3>
+<p>The config file copied in Step 3 needs to be modified as follows:</p>
+<ol class="arabic simple">
+<li><p>Import the map function <code class="docutils literal notranslate"><span class="pre">custom_map_fn</span></code> implemented in Step 1.</p></li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">dataset_map_fn</span></code> in <code class="docutils literal notranslate"><span class="pre">train_dataset</span></code> with <code class="docutils literal notranslate"><span class="pre">custom_map_fn</span></code>.</p></li>
+<li><p>Adjust the path of the original dataset. You can refer to the <a class="reference external" href="https://huggingface.co/docs/datasets/loading">user documentation</a> for operations related to <code class="docutils literal notranslate"><span class="pre">load_dataset</span></code>.</p></li>
+</ol>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>from xtuner.dataset import process_hf_dataset
+from datasets import load_dataset
+<span class="gd">- from xtuner.dataset.map_fns import oasst1_map_fn, template_map_fn_factory</span>
+<span class="gi">+ from xtuner.dataset.map_fns import template_map_fn_factory</span>
+<span class="gi">+ from mmengine.config import read_base</span>
+<span class="gi">+ with read_base():</span>
+<span class="gi">+     from .map_fn import custom_map_fn</span>
+...
+#######################################################################
+#                          PART 1  Settings                           #
+#######################################################################
+<span class="gd">- data_path = &#39;timdettmers/openassistant-guanaco&#39;</span>
+<span class="gi">+ data_path = &#39;path/to/your/data&#39;</span>
+...
+#######################################################################
+#                      STEP 3  Dataset &amp; Dataloader                   #
+#######################################################################
+train_dataset = dict(
+<span class="w"> </span>   type=process_hf_dataset,
+<span class="w"> </span>   dataset=dict(type=load_dataset, path=data_path),
+<span class="w"> </span>   tokenizer=tokenizer,
+<span class="w"> </span>   max_length=max_length,
+<span class="gd">-   dataset_map_fn=oasst1_map_fn,</span>
+<span class="gi">+   dataset_map_fn=custom_map_fn,</span>
+<span class="w"> </span>   template_map_fn=dict(
+<span class="w"> </span>       type=template_map_fn_factory, template=prompt_template),
+<span class="w"> </span>   remove_unused_columns=True,
+<span class="w"> </span>   shuffle_before_pack=True,
+<span class="w"> </span>   pack_to_max_length=pack_to_max_length)
+...
+</pre></div>
+</div>
+</section>
+<section id="step-5-check-custom-dataset-optional">
+<h3>Step 5, Check custom Dataset (Optional)<a class="headerlink" href="#step-5-check-custom-dataset-optional" title="Link to this heading">#</a></h3>
+<p>After modifying the config file, you can execute the ‘xtuner/tools/check_custom_dataset.py’ script to verify the correct construction of the dataset.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xtuner<span class="w"> </span>check-custom-dataset<span class="w"> </span><span class="nv">$CONFIG</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">$CONFIG</span></code> represents the file path of the modified configuration file in Step 4.</p>
+</section>
+</section>
+<section id="using-custom-datasets">
+<h2>Using Custom Datasets<a class="headerlink" href="#using-custom-datasets" title="Link to this heading">#</a></h2>
+<p>When using a custom multi-turn dialogue dataset for command fine-tuning, we recommend constructing the dataset in the <a class="reference internal" href="dataset_format.html#multi-turn-dialogue-dataset-format"><span class="std std-ref">multi-turn dialogue data format</span></a> as defined by XTuner. If the custom dataset format is oasst1 or other formats, you can refer to the section on <a class="reference internal" href="#using-dataset-in-huggingface-hub"><span class="xref myst">Using Datasets in HuggingFace Hub</span></a>.</p>
+<section id="step-1-dataset-preparation">
+<h3>Step 1, Dataset Preparation<a class="headerlink" href="#step-1-dataset-preparation" title="Link to this heading">#</a></h3>
+<p>Prepare your custom data according to the <a class="reference internal" href="dataset_format.html#multi-turn-dialogue-dataset-format"><span class="std std-ref">multi-turn dialogue data format</span></a> defined by XTuner:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">&quot;conversation&quot;</span><span class="p">:[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">},</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;conversation&quot;</span><span class="p">:[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3>Step 2, List Candidate Model Names<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xtuner<span class="w"> </span>list-cfg<span class="w"> </span>-p<span class="w"> </span>internlm
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">-p</span></code> is for fuzzy search. If you want to train other models, you can replace <code class="docutils literal notranslate"><span class="pre">internlm</span></code> with other model names supported by XTuner.</p>
+</section>
+<section id="id2">
+<h3>Step 3, Export the Config File<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xtuner<span class="w"> </span>copy-cfg<span class="w"> </span>internlm_7b_qlora_oasst1_e3<span class="w"> </span>.
+</pre></div>
+</div>
+</section>
+<section id="step-4-modify-config-file">
+<h3>Step 4, Modify Config File<a class="headerlink" href="#step-4-modify-config-file" title="Link to this heading">#</a></h3>
+<p>The config file copied in Step 3 needs to be modified as follows:</p>
+<ol class="arabic simple">
+<li><p>Adjust the path of the original dataset</p></li>
+<li><p>Since the dataset format is already in the standard format, set <code class="docutils literal notranslate"><span class="pre">dataset_map_fn</span></code> in <code class="docutils literal notranslate"><span class="pre">train_dataset</span></code> to <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+</ol>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>from xtuner.dataset import process_hf_dataset
+from datasets import load_dataset
+<span class="gd">- from xtuner.dataset.map_fns import oasst1_map_fn, template_map_fn_factory</span>
+<span class="gi">+ from xtuner.dataset.map_fns import template_map_fn_factory</span>
+...
+#######################################################################
+#                          PART 1  Settings                           #
+#######################################################################
+<span class="gd">- data_path = &#39;timdettmers/openassistant-guanaco&#39;</span>
+<span class="gi">+ data_path = &#39;path/to/your/json/data&#39;</span>
+...
+#######################################################################
+#                      STEP 3  Dataset &amp; Dataloader                   #
+#######################################################################
+train_dataset = dict(
+<span class="w"> </span>   type=process_hf_dataset,
+<span class="gd">-   dataset=dict(type=load_dataset, path=data_path),</span>
+<span class="gi">+   dataset=dict(</span>
+<span class="gi">+       type=load_dataset, path=&#39;json&#39;, data_files=dict(train=data_path)),</span>
+<span class="w"> </span>   tokenizer=tokenizer,
+<span class="w"> </span>   max_length=max_length,
+<span class="gd">-   dataset_map_fn=oasst1_map_fn,</span>
+<span class="gi">+   dataset_map_fn=None,</span>
+<span class="w"> </span>   template_map_fn=dict(
+<span class="w"> </span>       type=template_map_fn_factory, template=prompt_template),
+<span class="w"> </span>   remove_unused_columns=True,
+<span class="w"> </span>   shuffle_before_pack=True,
+<span class="w"> </span>   pack_to_max_length=pack_to_max_length)
+...
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>Step 5, Check custom Dataset (Optional)<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>After modifying the config file, you can execute the ‘xtuner/tools/check_custom_dataset.py’ script to verify the correct construction of the dataset.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xtuner<span class="w"> </span>check-custom-dataset<span class="w"> </span><span class="nv">$CONFIG</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">$CONFIG</span></code> represents the file path of the modified configuration file in Step 4.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-dataset-in-huggingface-hub">Using Dataset in HuggingFace Hub</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-map-original-dataset-to-standard-format">Step 1, Map Original Dataset to Standard Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-list-candidate-model-names">Step 2, List Candidate Model Names</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-export-the-config-file">Step 3, Export the Config File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-modify-config-files">Step 4, Modify Config Files</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-check-custom-dataset-optional">Step 5, Check custom Dataset (Optional)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-custom-datasets">Using Custom Datasets</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-dataset-preparation">Step 1, Dataset Preparation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Step 2, List Candidate Model Names</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Step 3, Export the Config File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-modify-config-file">Step 4, Modify Config File</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Step 5, Check custom Dataset (Optional)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PDF-Extract-Kit Contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, PDF-Extract-Kit Contributors.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

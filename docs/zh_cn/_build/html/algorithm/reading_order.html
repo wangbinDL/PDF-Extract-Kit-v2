@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>阅读顺序算法 &#8212; PDF-Extract-Kit 0.1.0 文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=2693749b"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=a5fa425f"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'algorithm/reading_order';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="已支持的模型" href="../models/supported.html" />
+    <link rel="prev" title="表格识别算法" href="table_recognition.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="PDF-Extract-Kit 0.1.0 文档 - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="PDF-Extract-Kit 0.1.0 文档 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">快速上手</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../get_started/installation.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/pretrained_model.html">模型权重下载</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/quickstart.html">快速开始</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">基础算法模块</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="layout_detection.html">布局检测算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formula_detection.html">公式检测算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="formula_recognition.html">公式识别算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ocr.html">光学字符识别(OCR)算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="table_recognition.html">表格识别算法</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">阅读顺序算法</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">支持的模型列表</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../models/supported.html">已支持的模型</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">模型性能评测</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/layout_detection.html">训练过程中评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_detection.html">MMBench (VLM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_recognition.html">MMLU (LLM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/ocr.html">端到端评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/table_recognition.html">使用 OpenCompass 评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/end2end.html">端到端评测</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PDF项目</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/overview.html">Reward Model 介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/quick_start.html">Reward Model 快速上手</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/modify_settings.html">修改 Reward Model 训练配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/preference_data.html">偏好数据集</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/opendatalab/PDF-Extract-Kit" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="源码库"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/algorithm/reading_order.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>阅读顺序算法</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorboard">TensorBoard</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wandb">WandB</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="id1">
+<h1>阅读顺序算法<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>XTuner 支持通过 <a class="reference external" href="https://github.com/open-mmlab/mmengine">MMEngine</a>
+使用 <a class="reference external" href="https://www.tensorflow.org/tensorboard?hl=zh-cn">TensorBoard</a>
+和 <a class="reference external" href="https://docs.wandb.ai/">Weights &amp; Biases (WandB)</a>
+实验管理工具，只需在 config 中添加一行代码，就可以跟踪和可视化损失、显存占用等指标。</p>
+<section id="tensorboard">
+<h2>TensorBoard<a class="headerlink" href="#tensorboard" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>设置 config 中的 <code class="docutils literal notranslate"><span class="pre">visualizer</span></code> 字段，并将 <code class="docutils literal notranslate"><span class="pre">vis_backends</span></code> 设置为 <a class="reference external" href="https://github.com/open-mmlab/mmengine/blob/2c4516c62294964065d058d98799402f50afdef6/mmengine/visualization/vis_backend.py#L514">TensorboardVisBackend</a>：</p></li>
+</ol>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span># set visualizer
+<span class="gd">- visualizer = None</span>
+<span class="gi">+ from mmengine.visualization import Visualizer, TensorboardVisBackend</span>
+<span class="gi">+ visualizer = dict(type=Visualizer, vis_backends=[dict(type=TensorboardVisBackend)])</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>启动实验后，tensorboard 产生的相关文件会存在 <code class="docutils literal notranslate"><span class="pre">vis_data</span></code> 中，通过 tensorboard 命令可以启动进行实时可视化：</p></li>
+</ol>
+<p><img alt="image1" src="https://github.com/InternLM/xtuner/assets/67539920/abacb28f-5afd-46d0-91b2-acdd20887969" /></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>tensorboard --logdir=$PATH_TO_VIS_DATA
+</pre></div>
+</div>
+</section>
+<section id="wandb">
+<h2>WandB<a class="headerlink" href="#wandb" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>使用 WandB 前需安装依赖库 <code class="docutils literal notranslate"><span class="pre">wandb</span></code> 并登录至 wandb。</p></li>
+</ol>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>pip<span class="w"> </span>install<span class="w"> </span>wandb
+<span class="gp">$ </span>wandb<span class="w"> </span>login
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>设置 config 中的 <code class="docutils literal notranslate"><span class="pre">visualizer</span></code> 字段，并将 <code class="docutils literal notranslate"><span class="pre">vis_backends</span></code> 设置为 <a class="reference external" href="https://github.com/open-mmlab/mmengine/blob/2c4516c62294964065d058d98799402f50afdef6/mmengine/visualization/vis_backend.py#L330">WandbVisBackend</a>：</p></li>
+</ol>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span># set visualizer
+<span class="gi">+ from mmengine.visualization import Visualizer, WandbVisBackend</span>
+<span class="gd">- visualizer = None</span>
+<span class="gi">+ visualizer = dict(type=Visualizer, vis_backends=[dict(type=WandbVisBackend)])</span>
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>可以点击 <a class="reference external" href="https://github.com/open-mmlab/mmengine/blob/2c4516c62294964065d058d98799402f50afdef6/mmengine/visualization/vis_backend.py#L330">WandbVisBackend
+API</a>
+查看 <code class="docutils literal notranslate"><span class="pre">WandbVisBackend</span></code> 可配置的参数。例如
+<code class="docutils literal notranslate"><span class="pre">init_kwargs</span></code>，该参数会传给
+<a class="reference external" href="https://docs.wandb.ai/ref/python/init">wandb.init</a> 方法。</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span># set visualizer
+<span class="gd">- visualizer = None</span>
+<span class="gi">+ from mmengine.visualization import Visualizer, WandbVisBackend</span>
+<span class="gi">+ visualizer = dict(</span>
+<span class="gi">+   type=Visualizer,</span>
+<span class="gi">+   vis_backends=[</span>
+<span class="gi">+       dict(type=WandbVisBackend, init_kwargs=dict(project=&#39;toy-example&#39;))])</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>启动实验后，可在 wandb 网页端 <code class="docutils literal notranslate"><span class="pre">https://wandb.ai</span></code> 上查看可视化结果：</p></li>
+</ol>
+<p><img alt="image2" src="https://github.com/InternLM/xtuner/assets/41630003/fc16387a-3c83-4015-9235-8ec811077953" /></p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="table_recognition.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">表格识别算法</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../models/supported.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">已支持的模型</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensorboard">TensorBoard</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#wandb">WandB</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： PDF-Extract-Kit Contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, OpenDataLab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

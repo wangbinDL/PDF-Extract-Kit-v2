@@ -1,0 +1,556 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>在训练大语言模型时使用变长注意力 (Variable Length Attention) &#8212; PDF-Extract-Kit 0.1.0 文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=2693749b"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=a5fa425f"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guides/varlen_attention';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="PDF-Extract-Kit 0.1.0 文档 - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="PDF-Extract-Kit 0.1.0 文档 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">快速上手</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../get_started/installation.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/pretrained_model.html">模型权重下载</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/quickstart.html">快速开始</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">基础算法模块</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/layout_detection.html">布局检测算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/formula_detection.html">公式检测算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/formula_recognition.html">公式识别算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/ocr.html">光学字符识别(OCR)算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/table_recognition.html">表格识别算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/reading_order.html">阅读顺序算法</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">支持的模型列表</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../models/supported.html">已支持的模型</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">模型性能评测</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/layout_detection.html">训练过程中评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_detection.html">MMBench (VLM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_recognition.html">MMLU (LLM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/ocr.html">端到端评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/table_recognition.html">使用 OpenCompass 评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/end2end.html">端到端评测</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PDF项目</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/overview.html">Reward Model 介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/quick_start.html">Reward Model 快速上手</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/modify_settings.html">修改 Reward Model 训练配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/preference_data.html">偏好数据集</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/opendatalab/PDF-Extract-Kit" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="源码库"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/user_guides/varlen_attention.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>在训练大语言模型时使用变长注意力 (Variable Length Attention)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">使用教程</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-flash-attn">Step 1, 安装 flash_attn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2">Step 2, 列出候选模型名字</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-config">Step 3, 复制 config 文件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-config">Step 4, 修改 config 文件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5">Step 5, 开始训练</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6">Step 6, 模型转换</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">变长注意力训练策略原理</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="variable-length-attention">
+<h1>在训练大语言模型时使用变长注意力 (Variable Length Attention)<a class="headerlink" href="#variable-length-attention" title="Link to this heading">#</a></h1>
+<section id="id1">
+<h2>使用教程<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="step-1-flash-attn">
+<h3>Step 1, 安装 flash_attn<a class="headerlink" href="#step-1-flash-attn" title="Link to this heading">#</a></h3>
+<p>XTuner 中实现的变长注意力需要依赖 Flash Attention 2，可通过以下命令安装：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">MAX_JOBS</span><span class="o">=</span><span class="m">4</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>flash-attn<span class="w"> </span>--no-build-isolation
+</pre></div>
+</div>
+</section>
+<section id="step-2">
+<h3>Step 2, 列出候选模型名字<a class="headerlink" href="#step-2" title="Link to this heading">#</a></h3>
+<p>XTuner 提供多个开箱即用的配置文件，用户可以通过下列命令查看：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xtuner<span class="w"> </span>list-cfg<span class="w"> </span>-p<span class="w"> </span>internlm
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">-p</span></code> 为模糊查找，若想训练其他模型，可以修改 <code class="docutils literal notranslate"><span class="pre">internlm</span></code> 为 XTuner 支持的其他模型名称。</p>
+</section>
+<section id="step-3-config">
+<h3>Step 3, 复制 config 文件<a class="headerlink" href="#step-3-config" title="Link to this heading">#</a></h3>
+<p>导出需要使用的 config ：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xtuner<span class="w"> </span>copy-cfg<span class="w"> </span><span class="si">${</span><span class="nv">CONFIG_NAME</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">SAVE_DIR</span><span class="si">}</span>
+</pre></div>
+</div>
+<p>例如通过下列命令将名为 <code class="docutils literal notranslate"><span class="pre">internlm_7b_full_oasst1_e3</span></code> 的 config 导出至当前目录下：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xtuner<span class="w"> </span>copy-cfg<span class="w"> </span>internlm_7b_full_oasst1_e3<span class="w"> </span>.
+</pre></div>
+</div>
+</section>
+<section id="step-4-config">
+<h3>Step 4, 修改 config 文件<a class="headerlink" href="#step-4-config" title="Link to this heading">#</a></h3>
+<p>将 Step 3 复制得到的 config 文件中的 <code class="docutils literal notranslate"><span class="pre">use_varlen_attn</span></code> 属性由 False 改为 True 即可激活变长注意力训练机制：</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>...
+#######################################################################
+#                          PART 1  Settings                           #
+#######################################################################
+# Model
+pretrained_model_name_or_path = &#39;internlm/internlm-7b&#39;
+<span class="gd">- use_varlen_attn = False</span>
+<span class="gi">+ use_varlen_attn = True</span>
+...
+</pre></div>
+</div>
+<p><strong>需要注意，当设置 <code class="docutils literal notranslate"><span class="pre">use_varlen_attn</span> <span class="pre">=</span> <span class="pre">True</span></code> 后，请确保 <code class="docutils literal notranslate"><span class="pre">batch_size</span></code> 被设置为 1，且 <code class="docutils literal notranslate"><span class="pre">pack_to_max_length</span></code> 被设置为 True。</strong></p>
+</section>
+<section id="step-5">
+<h3>Step 5, 开始训练<a class="headerlink" href="#step-5" title="Link to this heading">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>xtuner train ${CONFIG_NAME_OR_PATH}
+</pre></div>
+</div>
+<p>例如，我们可以基于 Step 4 中修改得到的 <code class="docutils literal notranslate"><span class="pre">internlm_7b_full_oasst1_e3_copy.py</span></code> 进行训练：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># On a single GPU</span>
+xtuner<span class="w"> </span>train<span class="w"> </span>internlm_7b_full_oasst1_e3_copy.py<span class="w"> </span>--deepspeed<span class="w"> </span>deepspeed_zero1
+<span class="c1"># On multiple GPUs</span>
+<span class="o">(</span>DIST<span class="o">)</span><span class="w"> </span><span class="nv">NPROC_PER_NODE</span><span class="o">=</span><span class="si">${</span><span class="nv">GPU_NUM</span><span class="si">}</span><span class="w"> </span>xtuner<span class="w"> </span>train<span class="w"> </span>internlm_7b_full_oasst1_e3_copy.py<span class="w"> </span>--deepspeed<span class="w"> </span>deepspeed_zero1
+<span class="o">(</span>SLURM<span class="o">)</span><span class="w"> </span>srun<span class="w"> </span><span class="si">${</span><span class="nv">SRUN_ARGS</span><span class="si">}</span><span class="w"> </span>xtuner<span class="w"> </span>train<span class="w"> </span>internlm_7b_full_oasst1_e3_copy.py<span class="w"> </span>--launcher<span class="w"> </span>slurm<span class="w"> </span>--deepspeed<span class="w"> </span>deepspeed_zero1
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">--deepspeed</span></code> 表示使用 <a class="reference external" href="https://github.com/microsoft/DeepSpeed">DeepSpeed</a> 🚀 来优化训练过程。若未安装 DeepSpeed ，可通过 <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">deepspeed&gt;=0.12.3</span></code> 进行安装。XTuner 内置了多种策略，包括 ZeRO-1、ZeRO-2、ZeRO-3 等。如果用户期望关闭此功能，请直接移除此参数。</p></li>
+</ul>
+</section>
+<section id="step-6">
+<h3>Step 6, 模型转换<a class="headerlink" href="#step-6" title="Link to this heading">#</a></h3>
+<p>将保存的 PTH 模型（如果使用的DeepSpeed，则将会是一个文件夹）转换为 HuggingFace 模型：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>xtuner convert pth_to_hf ${CONFIG_NAME_OR_PATH} ${PTH} ${SAVE_PATH}
+</pre></div>
+</div>
+<p>对应上面的例子，模型转换脚本为：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>xtuner convert pth_to_hf internlm_7b_full_oasst1_e3_copy.py ${PTH} ${SAVE_PATH}
+</pre></div>
+</div>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">${PTH}</span></code> 为训练权重保存的路径，若未指定，默认保存在 <code class="docutils literal notranslate"><span class="pre">./work_dirs/internlm_7b_full_oasst1_e3_copy</span></code> 路径下。</p>
+</section>
+</section>
+<section id="id2">
+<h2>变长注意力训练策略原理<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<div align="center">
+  <img src="https://github.com/InternLM/InternLM/assets/41630003/7e0c6a02-a970-4bd3-a10b-8341720bf654" width="600"/>
+  <br /><br />
+</div>
+<p>假设一条由若干条<em>短数据</em>拼接成的数据长度为 4096 。若不使用变长注意力机制，在计算 attention 阶段，每个 token 会关注全部 4096 个 tokens ，如上图左侧所示。当使用变长注意力机制时，计算 attention 阶段每个 token 仅会关注他所在的那条<em>短数据</em>中所有的 tokens，如上图右侧所示。</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">使用教程</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-flash-attn">Step 1, 安装 flash_attn</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2">Step 2, 列出候选模型名字</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-config">Step 3, 复制 config 文件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-config">Step 4, 修改 config 文件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5">Step 5, 开始训练</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6">Step 6, 模型转换</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">变长注意力训练策略原理</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： PDF-Extract-Kit Contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, OpenDataLab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

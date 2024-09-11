@@ -1,0 +1,650 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>序列并行：训练极长序列大模型的系统优化 &#8212; PDF-Extract-Kit 0.1.0 文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=2693749b"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=a5fa425f"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guides/sequence_parallel';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="PDF-Extract-Kit 0.1.0 文档 - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="PDF-Extract-Kit 0.1.0 文档 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">快速上手</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../get_started/installation.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/pretrained_model.html">模型权重下载</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/quickstart.html">快速开始</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">基础算法模块</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/layout_detection.html">布局检测算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/formula_detection.html">公式检测算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/formula_recognition.html">公式识别算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/ocr.html">光学字符识别(OCR)算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/table_recognition.html">表格识别算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/reading_order.html">阅读顺序算法</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">支持的模型列表</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../models/supported.html">已支持的模型</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">模型性能评测</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/layout_detection.html">训练过程中评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_detection.html">MMBench (VLM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_recognition.html">MMLU (LLM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/ocr.html">端到端评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/table_recognition.html">使用 OpenCompass 评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/end2end.html">端到端评测</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PDF项目</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/overview.html">Reward Model 介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/quick_start.html">Reward Model 快速上手</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/modify_settings.html">修改 Reward Model 训练配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/preference_data.html">偏好数据集</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/opendatalab/PDF-Extract-Kit" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="源码库"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/user_guides/sequence_parallel.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>序列并行：训练极长序列大模型的系统优化</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">简介</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xtuner">使用 XTuner 进行序列并行训练</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-config">Step 1 修改 config 文件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2">Step 2 开始训练</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api">序列并行 API 抽象</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">序列并行分布式环境初始化</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-sampler">Data Sampler 适配序列并行</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pad">数据 Pad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">数据切分</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention">Attention 适配序列并行</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reduce-loss">Reduce Loss 以正确打印训练损失</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div align="center">
+<section id="id1">
+<h1>序列并行：训练极长序列大模型的系统优化<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+</div>
+<p>XTuner 中的序列并行设计思路参考了 DeepSpeed 的工作 <a class="reference external" href="https://arxiv.org/abs/2309.14509">DeepSpeed Ulysses</a>，并加以优化，以达到直接基于 transformers 算法库或 Huggingface Hub 上的开源模型训练 1M 以上超长序列的目标。</p>
+<section id="id2">
+<h2>简介<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>从生成性AI到科研模型，长序列训练正在变得非常重要。</p>
+<p>在生成性AI领域，会话式AI、长文档摘要、代码库理解和例如 Sora 这种视频生成任务都需要在空间和时间层面对长上下文进行推理。</p>
+<p>对于科学AI来说，长序列同样至关重要，它为更好地理解结构生物学、医疗保健、气候和天气预测以及大分子模拟打开了大门。</p>
+<p>然而，尽管序列长度的重要性不断增长，XTuner 现有的显存优化策略（如 zero 系列），却不足以解决大模型、长序列训练问题。</p>
+<p>同时，受限于通信效率，现有的许多序列并行方法也不够高效。</p>
+<p>另外，现有的序列并行方法普遍存在较多的代码侵入式修改，易用性和维护性都要大打折扣。同时也不满足 XTuner 基于 transformers 算法库或 Huggingface Hub 上的开源模型直接进行训练的要求。</p>
+<div align="center">
+  <img src="https://github.com/InternLM/xtuner/assets/41630003/0b791458-40bd-4dc6-aaf5-ff891fcc112a" width="1000"/>
+  <br /><br />
+</div>
+<p>为了解决上述长序列训练带来的问题，XTuner 采用了一种简单、易用且高效的序列并行算法。由于 Transformer 结构较为规整，除 attention 计算外，其他计算过程中 token 之间不会互相影响（即每个 token 的计算是独立的），这一条件为序列并行提供了有利条件。上图展示了序列并行的核心设计。设由 P 个 GPUs 共同计算一个长度为 N 的长序列，在 Attention 计算的第一阶段，长度为 N / P 的子序列会通过线性层投影为 Query、Key、Value。接下来， QKV Tensor 会在参与序列并行计算的多个 GPUs 之间通过高度优化的 all-to-all 通信算子汇聚，得到序列长度为 N ，但更少注意力头的子序列。注意力计算后，通过另一个 all-to-all 通信算子将其转换为长度为 N / P 的子序列，进行后续计算。</p>
+<p>总体而言，XTuner 的序列并行算法具有以下关键特性：</p>
+<ul class="simple">
+<li><p>支持全量训练<strong>超过百万个token</strong>的序列</p></li>
+<li><p>支持百 B 级模型训练：XTuner 的序列并行不仅支持长序列训练，还可结合 zero3 显存优化策略训练大尺寸模型</p></li>
+<li><p>完全通用的序列并行 <strong>API 抽象</strong></p></li>
+</ul>
+</section>
+<section id="xtuner">
+<h2>使用 XTuner 进行序列并行训练<a class="headerlink" href="#xtuner" title="Link to this heading">#</a></h2>
+<section id="step-1-config">
+<h3>Step 1 修改 config 文件<a class="headerlink" href="#step-1-config" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>在 config 中修改 <code class="docutils literal notranslate"><span class="pre">sequence_parallel_size</span></code> 字段即可调整 $sequence\_parallel\_world\_size$ 。</p></li>
+<li><p>同时若想保证与不使用序列并行的训练效果类似，需要同步增大梯度累积的数值为原来的 $sequence\_parallel\_world\_size$ 倍，因为在使用序列并行训练时， $data\_parallel\_world\_size$ 降为了原来的 $\frac{1}{sequence\_parallel\_world\_size}$。</p></li>
+<li><p>替换 DefaultSampler 为支持序列并行的 SequenceParallelSampler。</p></li>
+</ol>
+<p><strong>注：需要保证所使用的 GPU 总数可以被 <code class="docutils literal notranslate"><span class="pre">sequence_parallel_size</span></code> 整除。</strong></p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gi">+ from xtuner.parallel.sequence import SequenceParallelSampler</span>
+
+<span class="gd">- sequence_parallel_size = 1</span>
+<span class="gi">+ sequence_parallel_size = 4  # take `sequence_parallel_size = 4`` as an example</span>
+
+<span class="gd">- accumulative_counts = 1</span>
+<span class="gi">+ accumulative_counts = 4  # accumulative_counts = accumulative_counts * sequence_parallel_size</span>
+
+#######################################################################
+#                      PART 3  Dataset &amp; Dataloader                   #
+#######################################################################
+train_dataloader = dict(
+<span class="gd">-   sampler=dict(type=DefaultSampler, shuffle=True),</span>
+<span class="gi">+   sampler=dict(type=SequenceParallelSampler, seed=1024, shuffle=True),</span>
+<span class="w"> </span>   ...)
+</pre></div>
+</div>
+<p>另外，若需要进一步拓展模型的长文本处理能力，需要进一步修改 config 中的 <code class="docutils literal notranslate"><span class="pre">max_position_embeddings</span></code> 字段。例如需要将模型的上下文长度拓展为 64K 时，可进行如下修改：</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span><span class="gi">+ max_position_embeddings = 65536</span>
+
+#######################################################################
+#                      PART 2  Model &amp; Tokenizer                      #
+#######################################################################
+model = dict(
+<span class="w"> </span>   type=SupervisedFinetune,
+<span class="gi">+   max_position_embeddings = max_position_embeddings,</span>
+<span class="w"> </span>   ...)
+</pre></div>
+</div>
+</section>
+<section id="step-2">
+<h3>Step 2 开始训练<a class="headerlink" href="#step-2" title="Link to this heading">#</a></h3>
+<p>需要使用 DeepSpeed 进行训练：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>DIST<span class="o">)</span><span class="w"> </span><span class="nv">NPROC_PER_NODE</span><span class="o">=</span><span class="si">${</span><span class="nv">GPU_NUM</span><span class="si">}</span><span class="w"> </span>xtuner<span class="w"> </span>train<span class="w"> </span><span class="si">${</span><span class="nv">CONFIG_PATH</span><span class="si">}</span><span class="w"> </span>--deepspeed<span class="w"> </span>deepspeed_zero2
+<span class="o">(</span>SLURM<span class="o">)</span><span class="w"> </span>srun<span class="w"> </span><span class="si">${</span><span class="nv">SRUN_ARGS</span><span class="si">}</span><span class="w"> </span>xtuner<span class="w"> </span>train<span class="w"> </span><span class="si">${</span><span class="nv">CONFIG_PATH</span><span class="si">}</span><span class="w"> </span>--launcher<span class="w"> </span>slurm<span class="w"> </span>--deepspeed<span class="w"> </span>deepspeed_zero2
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>${CONFIG_PATH} 为 Step 1 中修改得到的 config 文件路径</p></li>
+<li><p>可根据实际情况选择使用不同的 zero 策略</p></li>
+</ul>
+</section>
+</section>
+<section id="api">
+<h2>序列并行 API 抽象<a class="headerlink" href="#api" title="Link to this heading">#</a></h2>
+<p>为了提升算法的可迁移性，XTuner 中抽象出了序列并行所必须的五个 API 接口：</p>
+<ul class="simple">
+<li><p>序列并行分布式环境初始化 (init_sequence_parallel)</p></li>
+<li><p>适配序列并行的 Data Sampler (SequenceParallelSampler)</p></li>
+<li><p>数据 Pad (pad_for_sequence_parallel)</p></li>
+<li><p>数据切分 (split_for_sequence_parallel)</p></li>
+<li><p>适配序列并行的 Attention (dispatch_modules)</p></li>
+<li><p>reduce loss 以正确打印训练损失 (reduce_sequence_parallel_loss)</p></li>
+</ul>
+<section id="id3">
+<h3>序列并行分布式环境初始化<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>由于序列并行算法会将长序列切分为 $sequence\_parallel\_world\_size$ 块，并将每个子序列分发给对应的 GPU 独立进行计算。因此需要在训练开始前初始化序列并行分布式环境，以指定哪几块 GPU 共同负责一个长序列输入的计算。</p>
+<p>一个 $sequence\_parallel\_world\_size = 4$ 的示例如下：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># We have to initialize the distributed training environment first.</span>
+<span class="c1"># Here is an example when training on slurm scheduler</span>
+<span class="c1"># from xtuner.parallel.sequence import init_dist</span>
+<span class="c1"># init_dist(&#39;slurm&#39;, &#39;nccl&#39;, init_backend=&#39;deepspeed&#39;)</span>
+<span class="kn">from</span> <span class="nn">xtuner.parallel.sequence</span> <span class="kn">import</span> <span class="n">init_sequence_parallel</span>
+<span class="n">sequence_parallel_world_size</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">init_sequence_parallel</span><span class="p">(</span><span class="n">sequence_parallel_world_size</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上述过程在 xtuner/engine/_strategy/deepspeed.py 中实现。</p>
+</section>
+<section id="data-sampler">
+<h3>Data Sampler 适配序列并行<a class="headerlink" href="#data-sampler" title="Link to this heading">#</a></h3>
+<p>在使用序列并行后，Dataloader 的采样策略需要进一步调整。例如当 $sequence\_parallel\_world\_size = 4$ 时，4 块 GPU 从 Dataloader 拿到的数据需要是完全一样的。</p>
+<p>在构建 Dataloader 时搭配 XTuner 中提供的 SequenceParallelSampler 使用即可：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xtuner.parallel.sequence</span> <span class="kn">import</span> <span class="n">SequenceParallelSampler</span>
+<span class="n">dataloader</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span>
+    <span class="n">train_dataset</span><span class="p">,</span> <span class="n">sampler</span><span class="o">=</span><span class="n">SequenceParallelSampler</span><span class="p">(</span><span class="n">train_dataset</span><span class="p">),</span>
+    <span class="o">**</span><span class="n">other_dataloader_params</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="pad">
+<h3>数据 Pad<a class="headerlink" href="#pad" title="Link to this heading">#</a></h3>
+<p>由于每条训练数据的长度可能不尽相同，我们需要将数据进行 Pad 以使得序列长度可以被 $sequence\_parallel\_world\_size$ 整除，这样一条长数据才能被均等地分发给不同的 GPU 上。</p>
+<p>训练过程中需要被 Pad 的 Tensor 往往有 input_ids, labels, position_ids, attention_mask 四个，pad 的过程可以通过以下方式实现：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xtuner.parallel.sequence</span> <span class="kn">import</span> <span class="n">pad_for_sequence_parallel</span>
+
+<span class="n">input_ids</span> <span class="o">=</span> <span class="n">pad_for_sequence_parallel</span><span class="p">(</span><span class="n">input_ids</span><span class="p">,</span> <span class="n">padding_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">pad_for_sequence_parallel</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">padding_value</span><span class="o">=-</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">position_ids</span> <span class="o">=</span> <span class="n">pad_for_sequence_parallel</span><span class="p">(</span><span class="n">position_ids</span><span class="p">,</span> <span class="n">padding_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">attention_mask</span> <span class="o">=</span> <span class="n">pad_for_sequence_parallel</span><span class="p">(</span><span class="n">attention_mask</span><span class="p">,</span> <span class="n">padding_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>以上过程在 <code class="docutils literal notranslate"><span class="pre">xtuner/dataset/collate_fns/default_collate_fn.py</span></code> 中实现。</p>
+</section>
+<section id="id4">
+<h3>数据切分<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>在传入给 Transformer 模型前，我们需要对长序列均等切分：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xtuner.parallel.sequence</span> <span class="kn">import</span> <span class="n">split_for_sequence_parallel</span>
+<span class="c1"># attention mask should not be split</span>
+<span class="c1"># `dim` is 1 as the shape of tensor is (bs, seq_len, ...)</span>
+<span class="n">input_ids</span> <span class="o">=</span> <span class="n">split_for_sequence_parallel</span><span class="p">(</span><span class="n">input_ids</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">split_for_sequence_parallel</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">position_ids</span> <span class="o">=</span> <span class="n">split_for_sequence_parallel</span><span class="p">(</span><span class="n">position_ids</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>以上过程在 <code class="docutils literal notranslate"><span class="pre">xtuner/model/sft.py</span></code> 中实现。</p>
+</section>
+<section id="attention">
+<h3>Attention 适配序列并行<a class="headerlink" href="#attention" title="Link to this heading">#</a></h3>
+<p>在 Attention 的计算过程中，序列中的不同 token 是不能独立运算的，但不同的 attention head 之间的计算却是独立的。因此，如<a class="reference internal" href="#%E7%AE%80%E4%BB%8B"><span class="xref myst">第一节</span></a>所述，需要在计算 Attention 前后（即 qkv_proj 后和 o_proj 前）分别插入一个 <em>all-to-all</em> 操作。</p>
+<p>XTuner 提供了 dispatch_modules 接口以支持修改模型 Attention 的计算方式：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xtuner.model.modules</span> <span class="kn">import</span> <span class="n">dispatch_modules</span>
+<span class="n">model</span><span class="p">:</span> <span class="n">AutoModelForCausalLM</span>
+<span class="n">dispatch_modules</span><span class="p">(</span><span class="n">model</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>上述过程在 xtuner/model/sft.py 中实现。</p>
+</section>
+<section id="reduce-loss">
+<h3>Reduce Loss 以正确打印训练损失<a class="headerlink" href="#reduce-loss" title="Link to this heading">#</a></h3>
+<p>这个 API 对于保证训练的正确性不是必须的，但对于观测模型训练状态，打印训练 loss 是非常有用的。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">xtuner.parallel.sequence</span> <span class="kn">import</span> <span class="n">reduce_sequence_parallel_loss</span>
+<span class="n">outputs</span> <span class="o">=</span> <span class="n">llm</span><span class="p">(</span><span class="n">input_ids</span><span class="o">=</span><span class="n">input_ids</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">num_tokens_per_rank</span> <span class="o">=</span> <span class="p">(</span><span class="n">labels</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">100</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="c1"># Suppose sequence parallel world size equals to 4,</span>
+<span class="c1"># losses on rank0, rank1, rank2, rank3 are different.</span>
+<span class="n">loss</span> <span class="o">=</span> <span class="n">reduce_sequence_parallel_loss</span><span class="p">(</span><span class="n">outputs</span><span class="o">.</span><span class="n">loss</span><span class="p">,</span> <span class="n">num_tokens_per_rank</span><span class="p">)</span>
+<span class="c1"># After loss reduction, losses on rank0, rank1, rank2, rank3 are the same.</span>
+</pre></div>
+</div>
+<p>上述过程在 xtuner/model/sft.py 中实现。</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">简介</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xtuner">使用 XTuner 进行序列并行训练</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-config">Step 1 修改 config 文件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2">Step 2 开始训练</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#api">序列并行 API 抽象</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">序列并行分布式环境初始化</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-sampler">Data Sampler 适配序列并行</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pad">数据 Pad</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">数据切分</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attention">Attention 适配序列并行</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reduce-loss">Reduce Loss 以正确打印训练损失</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： PDF-Extract-Kit Contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, OpenDataLab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

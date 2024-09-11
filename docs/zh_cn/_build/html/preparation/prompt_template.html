@@ -1,0 +1,816 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>准备对话模版 &#8212; PDF-Extract-Kit 0.1.0 文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=2693749b"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=a5fa425f"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'preparation/prompt_template';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="PDF-Extract-Kit 0.1.0 文档 - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="PDF-Extract-Kit 0.1.0 文档 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">快速上手</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../get_started/installation.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/pretrained_model.html">模型权重下载</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/quickstart.html">快速开始</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">基础算法模块</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/layout_detection.html">布局检测算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/formula_detection.html">公式检测算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/formula_recognition.html">公式识别算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/ocr.html">光学字符识别(OCR)算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/table_recognition.html">表格识别算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/reading_order.html">阅读顺序算法</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">支持的模型列表</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../models/supported.html">已支持的模型</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">模型性能评测</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/layout_detection.html">训练过程中评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_detection.html">MMBench (VLM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_recognition.html">MMLU (LLM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/ocr.html">端到端评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/table_recognition.html">使用 OpenCompass 评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/end2end.html">端到端评测</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PDF项目</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/overview.html">Reward Model 介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/quick_start.html">Reward Model 快速上手</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/modify_settings.html">修改 Reward Model 训练配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/preference_data.html">偏好数据集</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/opendatalab/PDF-Extract-Kit" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="源码库"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/preparation/prompt_template.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>准备对话模版</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">何处需要对话模版？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xtuner">XTuner 内置对话模版速览</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">字段约定</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">模版化结果</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">如何选择对话模版？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">如何自定义对话模版？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xtuner-configs">附：XTuner 内置 configs 所选择的对话模版</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="prompt-template">
+<span id="id1"></span><h1>准备对话模版<a class="headerlink" href="#prompt-template" title="Link to this heading">#</a></h1>
+<p>大模型的微调、对话均需要选择一个合适的对话模版（prompt template）。
+XTuner 设计了一套对话模版封装逻辑，并提供了一系列社区广泛使用的对话模版。</p>
+<p>本文将从“何处需要对话模版？”、“XTuner 内置对话模版速览”、“如何选择对话模版？”、“如何自定义对话模版？”四部分展开介绍。</p>
+<section id="id2">
+<h2>何处需要对话模版？<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<dl class="field-list simple">
+<dt class="field-odd"><code class="docutils literal notranslate"><span class="pre">xtuner</span> <span class="pre">train</span></code><span class="colon">:</span></dt>
+<dd class="field-odd"><p>需要使用对话模版将训练数据“模版化”，在训练 <code class="docutils literal notranslate"><span class="pre">config</span></code> 中配置 <code class="docutils literal notranslate"><span class="pre">prompt_template</span></code> 参数来选择对话模版</p>
+</dd>
+<dt class="field-even"><code class="docutils literal notranslate"><span class="pre">xtuner</span> <span class="pre">chat</span></code><span class="colon">:</span></dt>
+<dd class="field-even"><p>需要使用对话模版将对话文本“模版化”，通过 <code class="docutils literal notranslate"><span class="pre">xtuner</span> <span class="pre">chat</span></code> 命令的 <code class="docutils literal notranslate"><span class="pre">--prompt-template</span></code> 参数选择对话模版</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>各种推理引擎也都会用到对话模板，每个框架定义对话模板的方式都不尽相同，但最终“模板化”后的数据都是相同的</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>请确保在训练、对话和自定义应用场景中，始终保持对话模板的一致，否则可能会出现不符合预期的结果。</p>
+</div>
+</section>
+<section id="xtuner">
+<h2>XTuner 内置对话模版速览<a class="headerlink" href="#xtuner" title="Link to this heading">#</a></h2>
+<p>XTuner 对现有大多数大语言模型的对话模版进行了实现，并集成在
+<code class="docutils literal notranslate"><span class="pre">xtuner.utils.PROMPT_TEMPLATE</span></code> 内，用户可以直接使用。</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>XTuner 内置的对话模板清单可见文末附录</p>
+</div>
+<section id="id3">
+<h3>字段约定<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>以 <code class="docutils literal notranslate"><span class="pre">internlm2_chat</span></code> 模版为例，其代码结构如下。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">internlm2_chat</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+    <span class="n">SYSTEM</span><span class="o">=</span><span class="s1">&#39;&lt;|im_start|&gt;system</span><span class="se">\n</span><span class="si">{system}</span><span class="s1">&lt;|im_end|&gt;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">INSTRUCTION</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;&lt;|im_start|&gt;user</span><span class="se">\n</span><span class="si">{input}</span><span class="s1">&lt;|im_end|&gt;</span><span class="se">\n</span><span class="s1">&#39;</span>
+                 <span class="s1">&#39;&lt;|im_start|&gt;assistant</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">),</span>
+    <span class="n">SUFFIX</span><span class="o">=</span><span class="s1">&#39;&lt;|im_end|&gt;&#39;</span><span class="p">,</span>
+    <span class="n">SUFFIX_AS_EOS</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">SEP</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">STOP_WORDS</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;&lt;|im_end|&gt;&#39;</span><span class="p">]),</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SYSTEM</span></code>：表示问答时“系统”字段的模版，其中 <code class="docutils literal notranslate"><span class="pre">{system}</span></code>
+指代“系统”文本。值得注意的是，该字段在多轮对话中只会出现一次，即在第一轮。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">INSTRUCTION</span></code>：表示问答时“指令”字段的模版，其中 <code class="docutils literal notranslate"><span class="pre">{input}</span></code>
+指代用户指令文本。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SUFFIX</span></code>：表示“指令”字段的后缀，将会追加在每一轮问答的“回答”后面。通常，这也是一个特殊的结束符号。默认是空串<code class="docutils literal notranslate"><span class="pre">''</span></code>。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SUFFIX_AS_EOS</span></code>：表示上述后缀是否作为结束符号。如果为
+<code class="docutils literal notranslate"><span class="pre">True</span></code>，则会取代 <code class="docutils literal notranslate"><span class="pre">tokenizer</span></code> 的 <code class="docutils literal notranslate"><span class="pre">eos_token</span></code>，否则，仍会使用
+<code class="docutils literal notranslate"><span class="pre">tokenizer</span></code> 的 <code class="docutils literal notranslate"><span class="pre">eos_token</span></code> 表示结束符号。默认是 <code class="docutils literal notranslate"><span class="pre">False</span></code>。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SEP</span></code>：用于间隔多轮对话，将会追加在 <code class="docutils literal notranslate"><span class="pre">INSTRUCTION</span></code> 和 <code class="docutils literal notranslate"><span class="pre">SUFFIX</span></code>
+后面。默认是空串<code class="docutils literal notranslate"><span class="pre">''</span></code>。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STOP_WORDS</span></code>：用于指明结束词，该信息将被用在文本生成阶段。值得注意的是，<code class="docutils literal notranslate"><span class="pre">tokenizer</span></code>
+的 <code class="docutils literal notranslate"><span class="pre">eos_token</span></code> 会被自动添加到 <code class="docutils literal notranslate"><span class="pre">STOP_WORDS</span></code>，而无需手动配置。</p></li>
+</ul>
+</section>
+<section id="id4">
+<h3>模版化结果<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>以 <code class="docutils literal notranslate"><span class="pre">internlm2_chat</span></code> 模版为例，其对应的单轮、多轮模版化结果如下。</p>
+<p><strong>单轮</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;|im_start|&gt;system
+你是一个无害的 AI 助手&lt;|im_end|&gt;
+&lt;|im_start|&gt;user
+你是谁？&lt;|im_end|&gt;
+&lt;|im_start|&gt;assistant
+我是书生浦语。&lt;|im_end|&gt;
+</pre></div>
+</div>
+<p><strong>多轮</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;|im_start|&gt;system
+你是一个无害的 AI 助手&lt;|im_end|&gt;
+&lt;|im_start|&gt;user
+你是谁？&lt;|im_end|&gt;
+&lt;|im_start|&gt;assistant
+我是书生浦语。&lt;|im_end|&gt;
+&lt;|im_start|&gt;user
+你的英文名字是什么？&lt;|im_end|&gt;
+&lt;|im_start|&gt;assistant
+InternLM&lt;|im_end|&gt;
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id5">
+<h2>如何选择对话模版？<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>选择准确的对话模版是训练、应用模型的关键。关于如何选择对话模版，我们建议：</p>
+<dl class="field-list">
+<dt class="field-odd">微调 chat 模型<span class="colon">:</span></dt>
+<dd class="field-odd"><p>使用模型所对应的对话模版，如 <code class="docutils literal notranslate"><span class="pre">internlm2-chat</span></code> 使用
+<code class="docutils literal notranslate"><span class="pre">internlm2_chat</span></code>、<code class="docutils literal notranslate"><span class="pre">Qwen-Chat</span></code> 使用 <code class="docutils literal notranslate"><span class="pre">qwen_chat</span></code>。</p>
+</dd>
+<dt class="field-even">全量微调 base 模型<span class="colon">:</span></dt>
+<dd class="field-even"><p>任选对话模版，优先使用 chat 版模型所对应的对话模版 。</p>
+</dd>
+<dt class="field-odd">LoRA 微调 base 模型<span class="colon">:</span></dt>
+<dd class="field-odd"><div class="line-block">
+<div class="line">使用默认对话模版 <code class="docutils literal notranslate"><span class="pre">default</span></code>。这是由于 LoRA /
+QLoRA 微调默认会关闭 <code class="docutils literal notranslate"><span class="pre">embed_tokens</span></code> 和 <code class="docutils literal notranslate"><span class="pre">lm_head</span></code>
+的训练，此时如果引入未学习过的特殊 token（如对话模版中的
+<code class="docutils literal notranslate"><span class="pre">&lt;|im_start|&gt;</span></code>），则会影响模型的训练。</div>
+</div>
+</dd>
+</dl>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>通过修改 <code class="docutils literal notranslate"><span class="pre">LoraConfig</span></code> 可以引入 <code class="docutils literal notranslate"><span class="pre">embed_tokens</span></code> 和
+<code class="docutils literal notranslate"><span class="pre">lm_head</span></code> 的训练（会增大显存需求），进而支持任选对话模版</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>lora=dict(
+<span class="w"> </span>   type=LoraConfig,
+<span class="w"> </span>   r=64,
+<span class="w"> </span>   lora_alpha=16,
+<span class="w"> </span>   lora_dropout=0.1,
+<span class="w"> </span>   bias=&#39;none&#39;,
+<span class="gi">+   modules_to_save=[&#39;embed_tokens&#39;, &#39;lm_head&#39;]  # 请确保与模型中所使用的参数名一致</span>
+<span class="w"> </span>   task_type=&#39;CAUSAL_LM&#39;)
+</pre></div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">小技巧</p>
+<p>大多数的 base 模型所使用的 tokenizer 中不包含 chat
+模型对话模板中所使用的特殊 token 编码（例如 <a class="reference external" href="https://huggingface.co/internlm/internlm2-chat-1_8b/blob/ecccbb5c87079ad84e5788baa55dd6e21a9c614d/tokenizer_config.json#L29-L85">internlm2
+chat</a>
+和 <a class="reference external" href="https://huggingface.co/internlm/internlm2-1_8b/blob/main/tokenizer_config.json">internlm2
+base</a>）。因此，如果要微调
+base 模型并配合使用 chat 版对话模版，需确保在 Config
+中及后续全流程使用 chat 版模型的 tokenizer。Config 中修改 tokenizer
+的方式为：</p>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>tokenizer = dict(
+<span class="w"> </span>   type=AutoTokenizer.from_pretrained,
+<span class="gd">-   pretrained_model_name_or_path=pretrained_model_name_or_path,</span>
+<span class="gi">+   pretrained_model_name_or_path=&#39;PATH_TO_CHAT_LLM_TOKENIZER&#39;,</span>
+<span class="w"> </span>   trust_remote_code=True,
+<span class="w"> </span>   padding_side=&#39;right&#39;)
+</pre></div>
+</div>
+</div>
+</section>
+<section id="id6">
+<h2>如何自定义对话模版？<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>如果 XTuner
+所内置的对话模版不能满足实际需求，用户可以实现自定义的对话模版。</p>
+<p>具体来说，可以在
+<a class="reference external" href="https://github.com/InternLM/xtuner/blob/main/xtuner/utils/templates.py">template.py</a>
+的 <code class="docutils literal notranslate"><span class="pre">PROMPT_TEMPLATE</span></code> 中新增一个对话模版，并参考 “XTuner
+内置对话模版速览” 章节对每个字段的描述进行自定义修改。</p>
+</section>
+<section id="xtuner-configs">
+<h2>附：XTuner 内置 configs 所选择的对话模版<a class="headerlink" href="#xtuner-configs" title="Link to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p>*: 官方对话模版中存在特殊 token（比如 <code class="docutils literal notranslate"><span class="pre">&lt;|im_start|&gt;</span></code>、<code class="docutils literal notranslate"><span class="pre">&lt;|im_end|&gt;</span></code>），这类特殊 token
+在预训练阶段并未得到训练。故，使用 <code class="docutils literal notranslate"><span class="pre">default</span></code> 模版。</p>
+</div>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>模型</p></th>
+<th class="head"><p>对话模版</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>baichuan-inc/Baichuan-7B</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-odd"><td><p>baichuan-inc/Baichuan-13B-Base</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-even"><td><p>baichuan-inc/Baichuan-13B-Chat</p></td>
+<td><p>baichuan_chat</p></td>
+</tr>
+<tr class="row-odd"><td><p>baichuan-inc/Baichuan2-7B-Base</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-even"><td><p>baichuan-inc/Baichuan2-7B-Chat</p></td>
+<td><p>baichuan2_chat</p></td>
+</tr>
+<tr class="row-odd"><td><p>baichuan-inc/Baichuan2-13B-Base</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-even"><td><p>baichuan-inc/Baichuan2-13B-Chat</p></td>
+<td><p>baichuan2_chat</p></td>
+</tr>
+<tr class="row-odd"><td><p>THUDM/chatglm2-6b</p></td>
+<td><p>chatglm2</p></td>
+</tr>
+<tr class="row-even"><td><p>THUDM/chatglm3-6b</p></td>
+<td><p>chatglm3</p></td>
+</tr>
+<tr class="row-odd"><td><p>THUDM/chatglm3-6b-base</p></td>
+<td><p>chatglm3</p></td>
+</tr>
+<tr class="row-even"><td><p>deepseek-ai/deepseek-coder-6.7b-base</p></td>
+<td><p>deepseek_coder</p></td>
+</tr>
+<tr class="row-odd"><td><p>deepseek-ai/deepseek-coder-6.7b-instruct</p></td>
+<td><p>deepseek_coder</p></td>
+</tr>
+<tr class="row-even"><td><p>internlm/internlm-7b</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-odd"><td><p>internlm/internlm-20b</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-even"><td><p>internlm/internlm-chat-7b</p></td>
+<td><p>internlm_chat</p></td>
+</tr>
+<tr class="row-odd"><td><p>internlm/internlm-chat-20b</p></td>
+<td><p>internlm_chat</p></td>
+</tr>
+<tr class="row-even"><td><p>huggyllama/llama-7b</p></td>
+<td><p>default</p></td>
+</tr>
+<tr class="row-odd"><td><p>meta-llama/Llama-2-7b-hf</p></td>
+<td><p>llama2_chat</p></td>
+</tr>
+<tr class="row-even"><td><p>meta-llama/Llama-2-7b-chat-hf</p></td>
+<td><p>llama2_chat</p></td>
+</tr>
+<tr class="row-odd"><td><p>meta-llama/Llama-2-70b-hf</p></td>
+<td><p>llama2_chat</p></td>
+</tr>
+<tr class="row-even"><td><p>lmsys/vicuna-7b-v1.5</p></td>
+<td><p>vicuna</p></td>
+</tr>
+<tr class="row-odd"><td><p>lmsys/vicuna-13b-v1.5</p></td>
+<td><p>vicuna</p></td>
+</tr>
+<tr class="row-even"><td><p>mistralai/Mistral-7B-v0.1</p></td>
+<td><p>mistral</p></td>
+</tr>
+<tr class="row-odd"><td><p>mistralai/Mixtral-8x7B-v0.1</p></td>
+<td><p>mixtral</p></td>
+</tr>
+<tr class="row-even"><td><p>mistralai/Mixtral-8x7B-Instruct-v0.1</p></td>
+<td><p>mixtral</p></td>
+</tr>
+<tr class="row-odd"><td><p>Qwen/Qwen-1_8B</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-even"><td><p>Qwen/Qwen-1_8B-Chat</p></td>
+<td><p>qwen_chat</p></td>
+</tr>
+<tr class="row-odd"><td><p>Qwen/Qwen-7B</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-even"><td><p>Qwen/Qwen-7B-Chat</p></td>
+<td><p>qwen_chat</p></td>
+</tr>
+<tr class="row-odd"><td><p>Qwen/Qwen-72B</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-even"><td><p>Qwen/Qwen-72B-Chat</p></td>
+<td><p>qwen_chat</p></td>
+</tr>
+<tr class="row-odd"><td><p>bigcode/starcoder</p></td>
+<td><p>default</p></td>
+</tr>
+<tr class="row-even"><td><p>01-ai/Yi-6B</p></td>
+<td><p>default</p></td>
+</tr>
+<tr class="row-odd"><td><p>01-ai/Yi-34B</p></td>
+<td><p>default</p></td>
+</tr>
+<tr class="row-even"><td><p>HuggingFaceH4/zephyr-7b-beta</p></td>
+<td><p>zephyr</p></td>
+</tr>
+<tr class="row-odd"><td><p>deepseek-ai/deepseek-moe-16b-base</p></td>
+<td><p>deepseek_moe</p></td>
+</tr>
+<tr class="row-even"><td><p>deepseek-ai/deepseek-moe-16b-chat</p></td>
+<td><p>deepseek_moe</p></td>
+</tr>
+<tr class="row-odd"><td><p>internlm/internlm2-1_8b</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-even"><td><p>internlm/internlm2-7b</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-odd"><td><p>internlm/internlm2-20b</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-even"><td><p>internlm/internlm2-chat-1_8b</p></td>
+<td><p>internlm2_chat</p></td>
+</tr>
+<tr class="row-odd"><td><p>internlm/internlm2-chat-7b</p></td>
+<td><p>internlm2_chat</p></td>
+</tr>
+<tr class="row-even"><td><p>internlm/internlm2-chat-20b</p></td>
+<td><p>internlm2_chat</p></td>
+</tr>
+<tr class="row-odd"><td><p>Qwen/Qwen1.5-0.5B</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-even"><td><p>Qwen/Qwen1.5-0.5B-Chat</p></td>
+<td><p>qwen_chat</p></td>
+</tr>
+<tr class="row-odd"><td><p>Qwen/Qwen1.5-1.8B</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-even"><td><p>Qwen/Qwen1.5-1.8B-Chat</p></td>
+<td><p>qwen_chat</p></td>
+</tr>
+<tr class="row-odd"><td><p>Qwen/Qwen1.5-4B</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-even"><td><p>Qwen/Qwen1.5-4B-Chat</p></td>
+<td><p>qwen_chat</p></td>
+</tr>
+<tr class="row-odd"><td><p>Qwen/Qwen1.5-7B</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-even"><td><p>Qwen/Qwen1.5-7B-Chat</p></td>
+<td><p>qwen_chat</p></td>
+</tr>
+<tr class="row-odd"><td><p>Qwen/Qwen1.5-14B</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-even"><td><p>Qwen/Qwen1.5-14B-Chat</p></td>
+<td><p>qwen_chat</p></td>
+</tr>
+<tr class="row-odd"><td><p>Qwen/Qwen1.5-72B</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-even"><td><p>Qwen/Qwen1.5-72B-Chat</p></td>
+<td><p>qwen_chat</p></td>
+</tr>
+<tr class="row-odd"><td><p>google/gemma-2b</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-even"><td><p>google/gemma-2b-it</p></td>
+<td><p>gemma</p></td>
+</tr>
+<tr class="row-odd"><td><p>google/gemma-7b</p></td>
+<td><p>default*</p></td>
+</tr>
+<tr class="row-even"><td><p>google/gemma-7b-it</p></td>
+<td><p>gemma</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">何处需要对话模版？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xtuner">XTuner 内置对话模版速览</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">字段约定</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">模版化结果</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">如何选择对话模版？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">如何自定义对话模版？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#xtuner-configs">附：XTuner 内置 configs 所选择的对话模版</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： PDF-Extract-Kit Contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, OpenDataLab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

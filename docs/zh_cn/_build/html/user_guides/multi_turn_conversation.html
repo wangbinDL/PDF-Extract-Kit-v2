@@ -1,0 +1,752 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>多轮对话 data pipeline &#8212; PDF-Extract-Kit 0.1.0 文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=2693749b"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=a5fa425f"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user_guides/multi_turn_conversation';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="PDF-Extract-Kit 0.1.0 文档 - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="PDF-Extract-Kit 0.1.0 文档 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">快速上手</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../get_started/installation.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/pretrained_model.html">模型权重下载</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/quickstart.html">快速开始</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">基础算法模块</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/layout_detection.html">布局检测算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/formula_detection.html">公式检测算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/formula_recognition.html">公式识别算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/ocr.html">光学字符识别(OCR)算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/table_recognition.html">表格识别算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/reading_order.html">阅读顺序算法</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">支持的模型列表</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../models/supported.html">已支持的模型</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">模型性能评测</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/layout_detection.html">训练过程中评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_detection.html">MMBench (VLM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_recognition.html">MMLU (LLM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/ocr.html">端到端评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/table_recognition.html">使用 OpenCompass 评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/end2end.html">端到端评测</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PDF项目</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/overview.html">Reward Model 介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/quick_start.html">Reward Model 快速上手</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/modify_settings.html">修改 Reward Model 训练配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reward_model/preference_data.html">偏好数据集</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/opendatalab/PDF-Extract-Kit" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="源码库"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/user_guides/multi_turn_conversation.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>多轮对话 data pipeline</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huggingface-hub">使用 HuggingFace Hub 数据集</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1">Step 1, 映射原始数据集为标准格式</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2">Step 2, 列出候选模型名字</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-config">Step 3, 复制 config 文件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-config">Step 4, 修改 config 文件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5">Step 5, 检查数据集（可选）</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">使用自定义数据集</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Step 1, 数据集准备</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Step 2, 列出候选模型名字</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Step 3, 复制 config 文件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Step 4, 修改 config 文件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Step 5, 检查数据集（可选）</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="data-pipeline">
+<h1>多轮对话 data pipeline<a class="headerlink" href="#data-pipeline" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="#%E4%BD%BF%E7%94%A8-huggingface-hub-%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="xref myst">使用 HuggingFace Hub 数据集</span></a></p></li>
+<li><p><a class="reference internal" href="#%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="xref myst">使用自定义数据集</span></a></p></li>
+</ul>
+<p>多轮对话指令微调旨在提升模型的多轮对话能力，在数据处理阶段需要将原始数据转换为XTuner支持的数据集格式。</p>
+<p>XTuner 支持使用 HuggingFace Hub 数据集或自定义数据集进行 SFT（Supervised FineTune）。二者的主要区别在于，使用 HuggingFace Hub 数据集时需要将原始数据映射为 XTuner 定义的<a class="reference internal" href="dataset_format.html#多轮对话数据集格式"><span class="std std-ref">多轮对话数据格式</span></a>，而对于自定义数据集则推荐用户按照<a class="reference internal" href="dataset_format.html#多轮对话数据集格式"><span class="std std-ref">多轮对话数据格式</span></a>构造数据集。</p>
+<section id="huggingface-hub">
+<h2>使用 HuggingFace Hub 数据集<a class="headerlink" href="#huggingface-hub" title="Link to this heading">#</a></h2>
+<section id="step-1">
+<h3>Step 1, 映射原始数据集为标准格式<a class="headerlink" href="#step-1" title="Link to this heading">#</a></h3>
+<p>由于不同数据集的格式各有不同，因此需要将原始数据映射为 XTuner 定义的<a class="reference internal" href="dataset_format.html#多轮对话数据集格式"><span class="std std-ref">多轮对话数据格式</span></a>。XTuner 支持通过 map function 来实现格式的映射。下面以 <a class="reference external" href="https://huggingface.co/datasets/OpenAssistant/oasst1">oasst1</a> 数据集为例介绍如何实现数据映射。</p>
+<p>oasst1 数据集格式如下所示：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datasets</span> <span class="kn">import</span> <span class="n">load_dataset</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s1">&#39;timdettmers/openassistant-guanaco&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">]</span>
+<span class="go">Dataset({</span>
+<span class="go">    features: [&#39;text&#39;],</span>
+<span class="go">    num_rows: 9846</span>
+<span class="go">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
+<span class="go">&#39;### Human: xxx ### Assistant: xxx ###Human: xxx ###Assistant: xxx&#39;</span>
+</pre></div>
+</div>
+<p>由此可见，oasst1 数据集既可以当做增量预训练数据集让模型学会一些基本的语言知识，又可以在经过一些处理后作为多轮对话数据集培养模型的多轮对话能力。<a class="reference internal" href="dataset_format.html#多轮对话数据集格式"><span class="std std-ref">多轮对话数据格式</span></a>中介绍了多轮对话指令微调过程中，数据格式应该为：</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">&quot;conversation&quot;</span><span class="p">:[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">},</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;conversation&quot;</span><span class="p">:[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+<p>因此，可以通过下面的 map function 将原始数据映射为标准格式：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># 假设将该函数存放在./map_fn.py文件中</span>
+<span class="n">SYSTEM_OASST1</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>  <span class="c1"># oasst1 并未使用 system 字段</span>
+<span class="k">def</span> <span class="nf">custom_map_fn</span><span class="p">(</span><span class="n">example</span><span class="p">):</span>
+<span class="w">    </span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Example before preprocessing:</span>
+<span class="sd">        example[&#39;text&#39;] = &#39;### Human: Can you explain xxx&#39;</span>
+<span class="sd">                          &#39;### Assistant: Sure! xxx&#39;</span>
+<span class="sd">                          &#39;### Human: I didn&#39;t understand how xxx&#39;</span>
+<span class="sd">                          &#39;### Assistant: It has to do with a process xxx.&#39;</span>
+
+<span class="sd">    Example after preprocessing:</span>
+<span class="sd">        example[&#39;conversation&#39;] = [</span>
+<span class="sd">            {</span>
+<span class="sd">                &#39;input&#39;: &#39;Can you explain xxx&#39;,</span>
+<span class="sd">                &#39;output&#39;: &#39;Sure! xxx&#39;</span>
+<span class="sd">            },</span>
+<span class="sd">            {</span>
+<span class="sd">                &#39;input&#39;: &#39;I didn&#39;t understand how xxx&#39;,</span>
+<span class="sd">                &#39;output&#39;: &#39;It has to do with a process xxx.&#39;</span>
+<span class="sd">            }</span>
+<span class="sd">        ]</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">sentence</span> <span class="ow">in</span> <span class="n">example</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;###&#39;</span><span class="p">):</span>
+        <span class="n">sentence</span> <span class="o">=</span> <span class="n">sentence</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">sentence</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Human:&#39;</span><span class="p">:</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sentence</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+        <span class="k">elif</span> <span class="n">sentence</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Assistant:&#39;</span><span class="p">:</span>
+            <span class="n">data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sentence</span><span class="p">[</span><span class="mi">10</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">%</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="c1"># The last round of conversation solely consists of input</span>
+        <span class="c1"># without any output.</span>
+        <span class="c1"># Discard the input part of the last round, as this part is ignored in</span>
+        <span class="c1"># the loss calculation.</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+    <span class="n">conversation</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="mi">2</span><span class="p">):</span>
+        <span class="n">system</span> <span class="o">=</span> <span class="n">SYSTEM_OASST1</span> <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;&#39;</span>
+        <span class="n">single_turn_conversation</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;system&#39;</span><span class="p">:</span> <span class="n">system</span><span class="p">,</span>
+            <span class="s1">&#39;input&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+            <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]}</span>
+        <span class="n">conversation</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">single_turn_conversation</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;conversation&#39;</span><span class="p">:</span> <span class="n">conversation</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="step-2">
+<h3>Step 2, 列出候选模型名字<a class="headerlink" href="#step-2" title="Link to this heading">#</a></h3>
+<p>XTuner 提供多个开箱即用的配置文件，用户可以通过下列命令查看：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xtuner<span class="w"> </span>list-cfg<span class="w"> </span>-p<span class="w"> </span>internlm
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">-p</span></code> 为模糊查找，若想训练其他模型，可以修改 <code class="docutils literal notranslate"><span class="pre">internlm</span></code> 为 XTuner 支持的其他模型名称。</p>
+</section>
+<section id="step-3-config">
+<h3>Step 3, 复制 config 文件<a class="headerlink" href="#step-3-config" title="Link to this heading">#</a></h3>
+<p>如果所提供的配置文件不能满足使用需求，请导出所提供的配置文件并进行相应更改：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xtuner<span class="w"> </span>copy-cfg<span class="w"> </span><span class="si">${</span><span class="nv">CONFIG_NAME</span><span class="si">}</span><span class="w"> </span><span class="si">${</span><span class="nv">SAVE_DIR</span><span class="si">}</span>
+</pre></div>
+</div>
+<p>例如通过下列命令将名为 <code class="docutils literal notranslate"><span class="pre">internlm_7b_qlora_oasst1_e3</span></code> 的 config 导出至当前目录下：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xtuner<span class="w"> </span>copy-cfg<span class="w"> </span>internlm_7b_qlora_oasst1_e3<span class="w"> </span>.
+</pre></div>
+</div>
+</section>
+<section id="step-4-config">
+<h3>Step 4, 修改 config 文件<a class="headerlink" href="#step-4-config" title="Link to this heading">#</a></h3>
+<p>对 Step 3 复制得到的 config 文件需要进行如下修改：</p>
+<ol class="arabic simple">
+<li><p>导入 Step 1 中实现的映射函数 <code class="docutils literal notranslate"><span class="pre">custom_map_fn</span></code></p></li>
+<li><p>用 <code class="docutils literal notranslate"><span class="pre">custom_map_fn</span></code> 替换 <code class="docutils literal notranslate"><span class="pre">train_dataset</span></code> 中的 <code class="docutils literal notranslate"><span class="pre">dataset_map_fn</span></code></p></li>
+<li><p>调整原始数据集的路径，关于 <code class="docutils literal notranslate"><span class="pre">load_dataset</span></code> 的相关操作可以参考<a class="reference external" href="https://huggingface.co/docs/datasets/loading">用户文档</a></p></li>
+</ol>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>from xtuner.dataset import process_hf_dataset
+from datasets import load_dataset
+<span class="gd">- from xtuner.dataset.map_fns import oasst1_map_fn, template_map_fn_factory</span>
+<span class="gi">+ from xtuner.dataset.map_fns import template_map_fn_factory</span>
+<span class="gi">+ from mmengine.config import read_base</span>
+<span class="gi">+ with read_base():</span>
+<span class="gi">+     from .map_fn import custom_map_fn</span>
+...
+#######################################################################
+#                          PART 1  Settings                           #
+#######################################################################
+<span class="gd">- data_path = &#39;timdettmers/openassistant-guanaco&#39;</span>
+<span class="gi">+ data_path = &#39;path/to/your/data&#39;</span>
+...
+#######################################################################
+#                      STEP 3  Dataset &amp; Dataloader                   #
+#######################################################################
+train_dataset = dict(
+<span class="w"> </span>   type=process_hf_dataset,
+<span class="w"> </span>   dataset=dict(type=load_dataset, path=data_path),
+<span class="w"> </span>   tokenizer=tokenizer,
+<span class="w"> </span>   max_length=max_length,
+<span class="gd">-   dataset_map_fn=oasst1_map_fn,</span>
+<span class="gi">+   dataset_map_fn=custom_map_fn,</span>
+<span class="w"> </span>   template_map_fn=dict(
+<span class="w"> </span>       type=template_map_fn_factory, template=prompt_template),
+<span class="w"> </span>   remove_unused_columns=True,
+<span class="w"> </span>   shuffle_before_pack=True,
+<span class="w"> </span>   pack_to_max_length=pack_to_max_length)
+...
+</pre></div>
+</div>
+</section>
+<section id="step-5">
+<h3>Step 5, 检查数据集（可选）<a class="headerlink" href="#step-5" title="Link to this heading">#</a></h3>
+<p>在修改配置文件后，可以运行<code class="docutils literal notranslate"><span class="pre">xtuner/tools/check_custom_dataset.py</span></code>脚本验证数据集是否正确构建。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xtuner<span class="w"> </span>check-custom-dataset<span class="w"> </span><span class="nv">$CONFIG</span>
+</pre></div>
+</div>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">$CONFIG</span></code> 是 Step 4 修改过的 config 的文件路径。</p>
+</section>
+</section>
+<section id="id1">
+<h2>使用自定义数据集<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>在使用自定义多轮对话数据集进行指令微调时，我们推荐将数据集构造为 XTuner 定义的<a class="reference internal" href="dataset_format.html#多轮对话数据集格式"><span class="std std-ref">多轮对话数据格式</span></a>。若自定义数据集格式为 <code class="docutils literal notranslate"><span class="pre">oasst1</span></code> 等其他格式，可参考<a class="reference internal" href="#%E4%BD%BF%E7%94%A8-huggingface-hub-%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="xref myst">使用 HuggingFace Hub 数据集</span></a>一节。</p>
+<section id="id2">
+<h3>Step 1, 数据集准备<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>按照 XTuner 定义的<a class="reference internal" href="dataset_format.html#多轮对话数据集格式"><span class="std std-ref">多轮对话数据格式</span></a>准备自定义数据：</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span>
+<span class="w">    </span><span class="nt">&quot;conversation&quot;</span><span class="p">:[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">},</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;conversation&quot;</span><span class="p">:[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;system&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;xxx&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}]</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>Step 2, 列出候选模型名字<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xtuner<span class="w"> </span>list-cfg<span class="w"> </span>-p<span class="w"> </span>internlm
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">-p</span></code> 为模糊查找，若想训练其他模型，可以修改 <code class="docutils literal notranslate"><span class="pre">internlm</span></code> 为 XTuner 支持的其他模型名称。</p>
+</section>
+<section id="id4">
+<h3>Step 3, 复制 config 文件<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xtuner<span class="w"> </span>copy-cfg<span class="w"> </span>internlm_7b_qlora_oasst1_e3<span class="w"> </span>.
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>Step 4, 修改 config 文件<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>对 Step 3 复制得到的 config 文件需要进行如下修改：</p>
+<ol class="arabic simple">
+<li><p>调整原始数据集的路径</p></li>
+<li><p>由于数据集格式已经是标准格式了，需要将 <code class="docutils literal notranslate"><span class="pre">train_dataset</span></code> 中的 <code class="docutils literal notranslate"><span class="pre">dataset_map_fn</span></code> 置为 <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+</ol>
+<div class="highlight-diff notranslate"><div class="highlight"><pre><span></span>from xtuner.dataset import process_hf_dataset
+from datasets import load_dataset
+<span class="gd">- from xtuner.dataset.map_fns import oasst1_map_fn, template_map_fn_factory</span>
+<span class="gi">+ from xtuner.dataset.map_fns import template_map_fn_factory</span>
+...
+#######################################################################
+#                          PART 1  Settings                           #
+#######################################################################
+<span class="gd">- data_path = &#39;timdettmers/openassistant-guanaco&#39;</span>
+<span class="gi">+ data_path = &#39;path/to/your/json/data&#39;</span>
+...
+#######################################################################
+#                      STEP 3  Dataset &amp; Dataloader                   #
+#######################################################################
+train_dataset = dict(
+<span class="w"> </span>   type=process_hf_dataset,
+<span class="gd">-   dataset=dict(type=load_dataset, path=data_path),</span>
+<span class="gi">+   dataset=dict(</span>
+<span class="gi">+       type=load_dataset, path=&#39;json&#39;, data_files=dict(train=data_path)),</span>
+<span class="w"> </span>   tokenizer=tokenizer,
+<span class="w"> </span>   max_length=max_length,
+<span class="gd">-   dataset_map_fn=oasst1_map_fn,</span>
+<span class="gi">+   dataset_map_fn=None,</span>
+<span class="w"> </span>   template_map_fn=dict(
+<span class="w"> </span>       type=template_map_fn_factory, template=prompt_template),
+<span class="w"> </span>   remove_unused_columns=True,
+<span class="w"> </span>   shuffle_before_pack=True,
+<span class="w"> </span>   pack_to_max_length=pack_to_max_length)
+...
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h3>Step 5, 检查数据集（可选）<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>在修改配置文件后，可以运行<code class="docutils literal notranslate"><span class="pre">xtuner/tools/check_custom_dataset.py</span></code>脚本验证数据集是否正确构建。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xtuner<span class="w"> </span>check-custom-dataset<span class="w"> </span><span class="nv">$CONFIG</span>
+</pre></div>
+</div>
+<p>其中 <code class="docutils literal notranslate"><span class="pre">$CONFIG</span></code> 是 Step 4 修改过的 config 的文件路径。</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huggingface-hub">使用 HuggingFace Hub 数据集</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1">Step 1, 映射原始数据集为标准格式</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2">Step 2, 列出候选模型名字</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-config">Step 3, 复制 config 文件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-config">Step 4, 修改 config 文件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5">Step 5, 检查数据集（可选）</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">使用自定义数据集</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Step 1, 数据集准备</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Step 2, 列出候选模型名字</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Step 3, 复制 config 文件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">Step 4, 修改 config 文件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Step 5, 检查数据集（可选）</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： PDF-Extract-Kit Contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, OpenDataLab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

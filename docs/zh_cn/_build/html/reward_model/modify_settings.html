@@ -1,0 +1,565 @@
+
+<!DOCTYPE html>
+
+
+<html lang="zh-CN" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>修改 Reward Model 训练配置 &#8212; PDF-Extract-Kit 0.1.0 文档</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=2693749b"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=a5fa425f"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="../_static/translations.js?v=beaddf03"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reward_model/modify_settings';</script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="偏好数据集" href="preference_data.html" />
+    <link rel="prev" title="Reward Model 快速上手" href="quick_start.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="zh-CN"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="PDF-Extract-Kit 0.1.0 文档 - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="PDF-Extract-Kit 0.1.0 文档 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">搜索</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">快速上手</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../get_started/installation.html">安装</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/pretrained_model.html">模型权重下载</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get_started/quickstart.html">快速开始</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">基础算法模块</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/layout_detection.html">布局检测算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/formula_detection.html">公式检测算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/formula_recognition.html">公式识别算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/ocr.html">光学字符识别(OCR)算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/table_recognition.html">表格识别算法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithm/reading_order.html">阅读顺序算法</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">支持的模型列表</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../models/supported.html">已支持的模型</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">模型性能评测</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/layout_detection.html">训练过程中评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_detection.html">MMBench (VLM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_recognition.html">MMLU (LLM)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/ocr.html">端到端评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/table_recognition.html">使用 OpenCompass 评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/end2end.html">端到端评测</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">PDF项目</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Reward Model 介绍</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">Reward Model 快速上手</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">修改 Reward Model 训练配置</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preference_data.html">偏好数据集</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/opendatalab/PDF-Extract-Kit" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="源码库"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/reward_model/modify_settings.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="搜索" aria-label="搜索" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>修改 Reward Model 训练配置</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">损失函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">修改模型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">训练数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">加速训练</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="reward-model">
+<h1>修改 Reward Model 训练配置<a class="headerlink" href="#reward-model" title="Link to this heading">#</a></h1>
+<p>本章节仅介绍与 Reward Model 训练相关的配置参数，更多 XTuner 配置文件的细节，请参考<a class="reference external" href="https://xtuner.readthedocs.io/zh-cn/latest/training/modify_settings.html">修改训练配置</a></p>
+<section id="id1">
+<h2>损失函数<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>XTuner 使用了 <a class="reference external" href="https://en.wikipedia.org/wiki/Bradley%E2%80%93Terry_model">Bradley–Terry 模型</a> 作为 Reward Model 的偏好建模方式，你可以指定 <code class="docutils literal notranslate"><span class="pre">loss_type=&quot;ranking&quot;</span></code> 来使用 ranking loss。XTuner 中也实现了 InternLM2 中提出的 focal 损失函数，它通过调整难易样本的权重来避免过拟合，可以设置 <code class="docutils literal notranslate"><span class="pre">loss_type=&quot;focal&quot;</span></code> 来使用该损失函数。对于该损失函数的详细说明，请参考 <a class="reference external" href="https://arxiv.org/abs/2403.17297">InternLM2 技术报告</a>。</p>
+<p>另外，为了使 reward model 输出的 score 数值保持稳定，我们还在 loss 中额外增加了一个约束项，你可以指定 <code class="docutils literal notranslate"><span class="pre">penalty_type='log_barrier'</span></code> 或是 <code class="docutils literal notranslate"><span class="pre">penalty_type='L2'</span></code> 以启用对数约束或是L2约束。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#######################################################################</span>
+<span class="c1">#                          PART 1  Settings                           #</span>
+<span class="c1">#######################################################################</span>
+<span class="c1"># Model</span>
+<span class="n">loss_type</span> <span class="o">=</span> <span class="s1">&#39;focal&#39;</span>  <span class="c1"># &#39;ranking&#39; or &#39;focal&#39;</span>
+<span class="n">penalty_type</span> <span class="o">=</span> <span class="s1">&#39;log_barrier&#39;</span>  <span class="c1"># &#39;log_barrier&#39; or &#39;L2&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>修改模型<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>用户可以修改 <code class="docutils literal notranslate"><span class="pre">pretrained_model_name_or_path</span></code> 对预训练模型进行修改。</p>
+<p>需要注意的是，由于 XTuner 通过对数据的末尾添加 <code class="docutils literal notranslate"><span class="pre">&lt;|reward|&gt;</span></code> 特殊 token 的方式计算 reward 得分，因此当切换模型的词表发生变化时，该特殊 token 的 id 也需要进行相应的修改，我们通常会使用词表末尾未使用的 token 作为 reward token。</p>
+<p>例如，在 InternLM2 中我们使用 <code class="docutils literal notranslate"><span class="pre">[UNUSED_TOKEN_130]</span></code> 作为 reward token:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#######################################################################</span>
+<span class="c1">#                          PART 1  Settings                           #</span>
+<span class="c1">#######################################################################</span>
+<span class="c1"># Model</span>
+<span class="n">pretrained_model_name_or_path</span> <span class="o">=</span> <span class="s1">&#39;internlm/internlm2-chat-1_8b-sft&#39;</span>
+<span class="n">reward_token_id</span> <span class="o">=</span> <span class="mi">92527</span>  <span class="c1"># use [UNUSED_TOKEN_130] as reward token</span>
+</pre></div>
+</div>
+<p>如果用户将模型切换为llama3,我们则可以使用 <code class="docutils literal notranslate"><span class="pre">&lt;|reserved_special_token_0|&gt;</span></code> 作为 reward token:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#######################################################################</span>
+<span class="c1">#                          PART 1  Settings                           #</span>
+<span class="c1">#######################################################################</span>
+<span class="c1"># Model</span>
+<span class="n">pretrained_model_name_or_path</span> <span class="o">=</span> <span class="s1">&#39;meta-llama/Meta-Llama-3-8B-Instruct&#39;</span>
+<span class="n">reward_token_id</span> <span class="o">=</span> <span class="mi">128002</span>  <span class="c1"># use &lt;|reserved_special_token_0|&gt; as reward token</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>训练数据<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>在 Reward Model 训练中，你可以通过 <code class="docutils literal notranslate"><span class="pre">max_length</span></code> 来指定单个样本序列的最大 token 数，XTuner 会自动对数据进行截断或是填充。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Data</span>
+<span class="n">max_length</span> <span class="o">=</span> <span class="mi">2048</span>
+</pre></div>
+</div>
+<p>在配置文件中，我们通过 <code class="docutils literal notranslate"><span class="pre">train_dataset</span></code> 字段来指定训练数据集，你可以通过 <code class="docutils literal notranslate"><span class="pre">dataset</span></code> 字段指定数据集的加载方式，通过 <code class="docutils literal notranslate"><span class="pre">dataset_map_fn</span></code> 字段指定数据集的映射函数。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#######################################################################</span>
+<span class="c1">#                      PART 3  Dataset &amp; Dataloader                   #</span>
+<span class="c1">#######################################################################</span>
+<span class="n">sampler</span> <span class="o">=</span> <span class="n">SequenceParallelSampler</span> \
+    <span class="k">if</span> <span class="n">sequence_parallel_size</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">DefaultSampler</span>
+
+<span class="n">train_dataset</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="nb">type</span><span class="o">=</span><span class="n">build_preference_dataset</span><span class="p">,</span>
+    <span class="n">dataset</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">load_dataset</span><span class="p">,</span>
+        <span class="n">path</span><span class="o">=</span><span class="s1">&#39;argilla/ultrafeedback-binarized-preferences-cleaned&#39;</span><span class="p">),</span>
+    <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">,</span>
+    <span class="n">max_length</span><span class="o">=</span><span class="n">max_length</span><span class="p">,</span>
+    <span class="n">dataset_map_fn</span><span class="o">=</span><span class="n">orpo_dpo_mix_40k_map_fn</span><span class="p">,</span>
+    <span class="n">is_dpo</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">is_reward</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">reward_token_id</span><span class="o">=</span><span class="n">reward_token_id</span><span class="p">,</span>
+    <span class="n">num_proc</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span>
+    <span class="n">use_varlen_attn</span><span class="o">=</span><span class="n">use_varlen_attn</span><span class="p">,</span>
+    <span class="n">max_packed_length</span><span class="o">=</span><span class="n">max_packed_length</span><span class="p">,</span>
+    <span class="n">shuffle_before_pack</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">train_dataloader</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
+    <span class="n">num_workers</span><span class="o">=</span><span class="n">dataloader_num_workers</span><span class="p">,</span>
+    <span class="n">dataset</span><span class="o">=</span><span class="n">train_dataset</span><span class="p">,</span>
+    <span class="n">sampler</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">sampler</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+    <span class="n">collate_fn</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="nb">type</span><span class="o">=</span><span class="n">preference_collate_fn</span><span class="p">,</span> <span class="n">use_varlen_attn</span><span class="o">=</span><span class="n">use_varlen_attn</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>上述配置中，我们使用了 <code class="docutils literal notranslate"><span class="pre">load_dataset</span></code> 来加载 huggingface 上的 <code class="docutils literal notranslate"><span class="pre">argilla/ultrafeedback-binarized-preferences-cleaned</span></code> 数据集，使用 <code class="docutils literal notranslate"><span class="pre">orpo_dpo_mix_40k_map_fn</span></code> 作为数据集映射函数（这是因为 <code class="docutils literal notranslate"><span class="pre">orpo_dpo_mix_40k</span></code> 与 <code class="docutils literal notranslate"><span class="pre">ultrafeedback-binarized-preferences-cleaned</span></code> 的格式相同，因此这里共用了同一个映射函数）。</p>
+<p>关于如何处理数据集以及如何编写数据集映射函数，请参考<a class="reference internal" href="preference_data.html"><span class="std std-doc">偏好数据集章节</span></a>。</p>
+</section>
+<section id="id4">
+<h2>加速训练<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>在使用偏好数据训练时，我们推荐您开启<a class="reference external" href="https://xtuner.readthedocs.io/zh-cn/latest/acceleration/varlen_flash_attn.html">变长注意力机制</a>， 以避免单个偏好内的 chosen 和 rejected 的样本长度差异造成的显存浪费。你可以通过 <code class="docutils literal notranslate"><span class="pre">use_varlen_attn=True</span></code> 来开启变长注意力机制。</p>
+<p>XTuner 中还支持了大量的训练加速方法，关于它们的使用方法，请参考<a class="reference external" href="https://xtuner.readthedocs.io/zh-cn/latest/acceleration/hyper_parameters.html">加速策略章节</a>。</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="quick_start.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">上一页</p>
+        <p class="prev-next-title">Reward Model 快速上手</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="preference_data.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">下一页</p>
+        <p class="prev-next-title">偏好数据集</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">损失函数</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">修改模型</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">训练数据</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">加速训练</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： PDF-Extract-Kit Contributors
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024, OpenDataLab.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
