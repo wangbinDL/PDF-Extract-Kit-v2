@@ -2,5 +2,4 @@
 文档翻译项目
 =================
 
-XXXX
-XXXX
+Comming soon!

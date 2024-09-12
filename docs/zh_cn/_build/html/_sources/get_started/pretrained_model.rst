@@ -38,7 +38,7 @@ HuggingFace
    .. code:: console
 
       $ # 默认为 `~/.cache/huggingface/`
-      $ export HF_HOME=XXXX
+      $ export HF_HOME=Comming soon!
 
 .. tip::
    
@@ -81,7 +81,7 @@ ModelScope
    .. code:: console
 
       $ # 默认为 ~/.cache/modelscope/hub/
-      $ export MODELSCOPE_CACHE=XXXX
+      $ export MODELSCOPE_CACHE=Comming soon!
 
 
 
