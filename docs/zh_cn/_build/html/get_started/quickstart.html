@@ -167,6 +167,8 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">基础算法模块</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../algorithm/layout_detection.html">布局检测算法</a></li>
+
+
 <li class="toctree-l1"><a class="reference internal" href="../algorithm/formula_detection.html">公式检测算法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithm/formula_recognition.html">公式识别算法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../algorithm/ocr.html">光学字符识别(OCR)算法</a></li>
@@ -180,8 +182,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">模型性能评测</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../evaluation/layout_detection.html">布局检测算法评测</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_detection.html">=====================
-公式检测算法评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_detection.html">公式检测算法评测</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_recognition.html">公式识别算法评测</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../evaluation/ocr.html">OCR算法评测</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../evaluation/table_recognition.html">表格识别算法评测</a></li>
@@ -356,7 +357,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">布局检测示例</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">公式检测示例</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">公式检测示例</a></li>
 </ul>
             </nav>
         </div>
@@ -376,14 +377,22 @@ document.write(`
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>scripts/layout_detection.py<span class="w"> </span>--config<span class="w"> </span>configs/layout_detection.yaml
 </pre></div>
 </div>
-<p>执行完之后，我们可以在outpus/layout_detection/目录下查看检测结果。</p>
+<p>执行完之后，我们可以在`outpus/layout_detection`目录下查看检测结果。</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p><a href="#id3"><span class="problematic" id="id4">``</span></a>layout_detection.yaml``设置输入、输出及模型配置，布局检测更详细教程见<a class="reference internal" href="../algorithm/layout_detection.html#algorithm-layout-detection"><span class="std std-ref">布局检测算法</span></a> 。</p>
+</div>
 </section>
-<section id="id3">
-<h2>公式检测示例<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="id5">
+<h2>公式检测示例<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>python<span class="w"> </span>scripts/formula_detection.py<span class="w"> </span>--config<span class="w"> </span>configs/formula_detection.yaml
 </pre></div>
 </div>
-<p>执行完之后，我们可以在outpus/formula_detection/目录下查看检测结果。</p>
+<p>执行完之后，我们可以在`outpus/formula_detection`目录下查看检测结果。</p>
+<div class="admonition note">
+<p class="admonition-title">备注</p>
+<p><a href="#id6"><span class="problematic" id="id7">``</span></a>formula_detection.yaml``设置输入、输出及模型配置，公式检测更详细教程见 <a class="reference internal" href="../algorithm/formula_detection.html#algorithm-formula-detection"><span class="std std-ref">公式检测算法</span></a> 。</p>
+</div>
 </section>
 </section>
 
@@ -433,7 +442,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">布局检测示例</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">公式检测示例</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">公式检测示例</a></li>
 </ul>
   </nav></div>
 

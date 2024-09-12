@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 欢迎来到 PDF-Extract-Kit 的中文文档
-==================================
+==============================================
 
 .. figure:: ./_static/image/logo.png
   :align: center
@@ -50,11 +50,11 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: 新模块贡献
+   :caption: 新任务拓展
 
-   dpo/overview.md
-   dpo/quick_start.md
-   dpo/modify_settings.md
+   task_extend/code.rst
+   task_extend/doc.rst
+   task_extend/evaluation.rst
 
 .. toctree::
    :maxdepth: 2
@@ -73,14 +73,12 @@
    evaluation/ocr.rst
    evaluation/table_recognition.rst
    evaluation/reading_order.rst
-   evaluation/preference_data.rst
-   evaluation/end2end.rst
+   evaluation/pdf_extract.rst
 
 .. toctree::
    :maxdepth: 2
    :caption: PDF项目
 
-   reward_model/overview.md
-   reward_model/quick_start.md
-   reward_model/modify_settings.md
-   reward_model/preference_data.md
+   project/pdf_extract.md
+   project/doc_translate.md
+   project/speed_up.md

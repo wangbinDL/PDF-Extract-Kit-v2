@@ -3,121 +3,82 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to XTuner's documentation!
-==================================
+欢迎来到 PDF-Extract-Kit 的中文文档
+==============================================
 
 .. figure:: ./_static/image/logo.png
   :align: center
-  :alt: xtuner
+  :alt: pdf-extract-kit
   :class: no-scaled-link
 
 .. raw:: html
 
    <p style="text-align:center">
-   <strong>All-IN-ONE toolbox for LLM
+   <strong>高质量文档内容提取工具箱
    </strong>
    </p>
 
    <p style="text-align:center">
    <script async defer src="https://buttons.github.io/buttons.js"></script>
-   <a class="github-button" href="https://github.com/InternLM/xtuner" data-show-count="true" data-size="large" aria-label="Star">Star</a>
-   <a class="github-button" href="https://github.com/InternLM/xtuner/subscription" data-icon="octicon-eye" data-size="large" aria-label="Watch">Watch</a>
-   <a class="github-button" href="https://github.com/InternLM/xtuner/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork">Fork</a>
+   <a class="github-button" href="https://github.com/opendatalab/PDF-Extract-Kit" data-show-count="true" data-size="large" aria-label="Star">Star</a>
+   <a class="github-button" href="https://github.com/opendatalab/PDF-Extract-Kit/subscription" data-icon="octicon-eye" data-size="large" aria-label="Watch">Watch</a>
+   <a class="github-button" href="https://github.com/opendatalab/PDF-Extract-Kit/fork" data-icon="octicon-repo-forked" data-size="large" aria-label="Fork">Fork</a>
    </p>
 
 
 
-Documentation
+文档
 -------------
 .. toctree::
    :maxdepth: 2
-   :caption: Get Started
+   :caption: 快速上手
 
-   get_started/overview.md
-   get_started/installation.md
-   get_started/quickstart.md
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Preparation
-
-   preparation/pretrained_model.rst
-   preparation/prompt_template.rst
+   get_started/installation.rst
+   get_started/pretrained_model.rst
+   get_started/quickstart.rst
 
 .. toctree::
    :maxdepth: 2
-   :caption: Training
+   :caption: 基础算法模块
 
-   training/modify_settings.rst
-   training/custom_sft_dataset.rst
-   training/custom_pretrain_dataset.rst
-   training/custom_agent_dataset.rst
-   training/multi_modal_dataset.rst
-   training/open_source_dataset.rst
-   training/visualization.rst
-
-.. toctree::
-   :maxdepth: 2
-   :caption: DPO
-
-   dpo/overview.md
-   dpo/quick_start.md
-   dpo/modify_settings.md
+   algorithm/layout_detection.rst
+   algorithm/formula_detection.rst
+   algorithm/formula_recognition.rst
+   algorithm/ocr.rst
+   algorithm/table_recognition.rst
+   algorithm/reading_order.rst
 
 .. toctree::
    :maxdepth: 2
-   :caption: Reward Model
+   :caption: 新任务拓展
 
-   reward_model/overview.md
-   reward_model/quick_start.md
-   reward_model/modify_settings.md
-   reward_model/preference_data.md
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Acceleration
-
-   acceleration/deepspeed.rst
-   acceleration/pack_to_max_length.rst
-   acceleration/flash_attn.rst
-   acceleration/varlen_flash_attn.rst
-   acceleration/hyper_parameters.rst
-   acceleration/length_grouped_sampler.rst
-   acceleration/train_large_scale_dataset.rst
-   acceleration/train_extreme_long_sequence.rst
-   acceleration/benchmark.rst
+   task_extend/code.rst
+   task_extend/doc.rst
+   task_extend/evaluation.rst
 
 .. toctree::
    :maxdepth: 2
-   :caption: Chat
-
-   chat/llm.md
-   chat/agent.md
-   chat/vlm.md
-   chat/lmdeploy.md
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Evaluation
-
-   evaluation/hook.md
-   evaluation/mmlu.md
-   evaluation/mmbench.md
-   evaluation/opencompass.md
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Models
+   :caption: 支持的模型列表
 
    models/supported.md
 
+
 .. toctree::
    :maxdepth: 2
-   :caption: InternEvo Migration
+   :caption: 模型性能评测
 
-   internevo_migration/internevo_migration.rst
-   internevo_migration/ftdp_dataset/ftdp.rst
-   internevo_migration/ftdp_dataset/Case1.rst
-   internevo_migration/ftdp_dataset/Case2.rst
-   internevo_migration/ftdp_dataset/Case3.rst
-   internevo_migration/ftdp_dataset/Case4.rst
+   evaluation/layout_detection.rst
+   evaluation/formula_detection.rst
+   evaluation/formula_recognition.rst
+   evaluation/ocr.rst
+   evaluation/table_recognition.rst
+   evaluation/reading_order.rst
+   evaluation/pdf_extract.rst
+
+.. toctree::
+   :maxdepth: 2
+   :caption: PDF项目
+
+   project/pdf_extract.md
+   project/doc_translate.md
+   project/speed_up.md

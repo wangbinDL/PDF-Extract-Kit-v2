@@ -2,24 +2,28 @@
 
 ## vX.X.X (YYYY.MM.DD)
 
-### Highlights
+### 亮点
 
-### New Features & Improvements
+### 新功能和改进
 
-### Bug Fixes
+### Bug 修复
 
-### Contributors
+### 贡献者
 
 -->
 
-# Changelog
+# 变更日志
 
-## v0.1.0 (2023.08.30)
 
-XTuner is released! 🔥🔥🔥
+## v0.2.0 (2024.09.30)
 
-### Highlights
+PDF-Extract-Kit 代码重构，模块化设计更加简洁易用! 🔥🔥🔥
 
-- XTuner supports LLM fine-tuning on consumer-grade GPUs. The minimum GPU memory required for 7B LLM fine-tuning is only **8GB**.
-- XTuner supports various LLMs, datasets, algorithms and training pipelines.
-- Several fine-tuned adapters are released simultaneously, including various gameplays such as the colorist LLM, plugins-based LLM, and many more. For further details, please visit [XTuner on HuggingFace](https://huggingface.co/xtuner)!
+## v0.1.0 (2024.07.01)
+
+PDF-Extract-Kit 正式发布！🔥🔥🔥
+
+### 亮点
+
+- PDF-Extract-Kit提供高质量布局检测模型 DocLayout-YOLO
+- PDF-Extract-Kit提供高质量公式检测模型 YOLOv8

@@ -41,6 +41,7 @@ HuggingFace
       $ export HF_HOME=XXXX
 
 .. tip::
+   
    如果觉得下载较慢（例如无法达到最大带宽等情况），可以尝试设置\ ``export HF_HUB_ENABLE_HF_TRANSFER=1`` 以获得更高的下载速度。
 
 ModelScope

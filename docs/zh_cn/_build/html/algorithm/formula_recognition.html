@@ -173,18 +173,25 @@
 <li class="toctree-l1"><a class="reference internal" href="table_recognition.html">表格识别算法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="reading_order.html">阅读顺序算法</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">新任务拓展</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../task_extend/code.html">代码实现</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task_extend/doc.html">文档补充</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task_extend/evaluation.html">模型评测</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">支持的模型列表</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../models/supported.html">已支持的模型</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">模型性能评测</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../evaluation/layout_detection.html">训练过程中评测</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_detection.html">MMBench (VLM)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_recognition.html">MMLU (LLM)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../evaluation/ocr.html">端到端评测</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../evaluation/table_recognition.html">使用 OpenCompass 评测</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../evaluation/end2end.html">端到端评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/layout_detection.html">布局检测算法评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_detection.html">公式检测算法评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/formula_recognition.html">公式识别算法评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/ocr.html">OCR算法评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/table_recognition.html">表格识别算法评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/reading_order.html">阅读顺序算法评测</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../evaluation/pdf_extract.html">PDF内容提取评测【端到端】</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">PDF项目</span></p>
 <ul class="nav bd-sidenav">
@@ -355,43 +362,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">配置文件速览</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">常见训练配置修改</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">模型</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#llm">使用其他 LLM 模型？</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modelscope">使用 ModelScope 模型？</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">微调类型</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qlora">QLoRA 微调</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lora">LoRA 微调</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">全参数微调</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">数据集</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">优化器</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">使用其他优化器？</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">修改优化器参数配置？</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">迭代次数</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">调整迭代次数？</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checkpoint">保存 Checkpoint 间隔</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">调整保存间隔？</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">调整最大保存 checkpoint 个数？</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">训练间对话评测</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">调整对话评测间隔？</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#system">调整对话评测的 system 字段？</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">调整对话评测的测试指令？</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu">GPU 数</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deepspeed">DeepSpeed</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">其他</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">简介</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">模型使用</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">模型配置</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">多样化输入支持</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">可视化结果查看</a></li>
 </ul>
 </li>
 </ul>
@@ -405,453 +380,48 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="id1">
-<h1>公式识别算法<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>XTuner 的训练由 MMEngine
-的训练器提供支持，用户可以通过修改配置文件（config）中的特定参数，来修改对应的训练配置。以
-<a class="reference external" href="https://github.com/InternLM/xtuner/blob/main/xtuner/configs/internlm/internlm2_chat_7b/internlm2_chat_7b_qlora_oasst1_e3.py">internlm2_chat_7b_qlora_oasst1_e3</a>
-为例，本节将首先速览配置文件中各个参数的含义，之后讲解常见配置的修改方式。</p>
+  <section id="algorithm-formula-recognition">
+<span id="id1"></span><h1>公式识别算法<a class="headerlink" href="#algorithm-formula-recognition" title="Link to this heading">#</a></h1>
 <section id="id2">
-<h2>配置文件速览<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
-<p>XTuner 使用 MMEngine 的「纯 Python 风格的配置文件」，直接利用 <code class="docutils literal notranslate"><span class="pre">import</span></code>
-机制使用一些类或函数。</p>
-<div class="admonition tip">
-<p class="admonition-title">小技巧</p>
-<p>如果您期望深入了解 MMEngine 「纯 Python
-风格的配置文件」的特性、优势，请参考
-<a class="reference external" href="https://mmengine.readthedocs.io/zh-cn/latest/advanced_tutorials/config.html#python-beta">这里</a>。</p>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Copyright (c) OpenMMLab. All rights reserved.</span>
-<span class="kn">import</span> <span class="nn">torch</span>
-<span class="kn">from</span> <span class="nn">datasets</span> <span class="kn">import</span> <span class="n">load_dataset</span>
-<span class="kn">from</span> <span class="nn">mmengine.dataset</span> <span class="kn">import</span> <span class="n">DefaultSampler</span>
-<span class="kn">from</span> <span class="nn">mmengine.hooks</span> <span class="kn">import</span> <span class="p">(</span><span class="n">CheckpointHook</span><span class="p">,</span> <span class="n">DistSamplerSeedHook</span><span class="p">,</span> <span class="n">IterTimerHook</span><span class="p">,</span>
-                            <span class="n">LoggerHook</span><span class="p">,</span> <span class="n">ParamSchedulerHook</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">mmengine.optim</span> <span class="kn">import</span> <span class="n">AmpOptimWrapper</span><span class="p">,</span> <span class="n">CosineAnnealingLR</span><span class="p">,</span> <span class="n">LinearLR</span>
-<span class="kn">from</span> <span class="nn">peft</span> <span class="kn">import</span> <span class="n">LoraConfig</span>
-<span class="kn">from</span> <span class="nn">torch.optim</span> <span class="kn">import</span> <span class="n">AdamW</span>
-<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="p">(</span><span class="n">AutoModelForCausalLM</span><span class="p">,</span> <span class="n">AutoTokenizer</span><span class="p">,</span>
-                          <span class="n">BitsAndBytesConfig</span><span class="p">)</span>
-
-<span class="kn">from</span> <span class="nn">xtuner.dataset</span> <span class="kn">import</span> <span class="n">process_hf_dataset</span>
-<span class="kn">from</span> <span class="nn">xtuner.dataset.collate_fns</span> <span class="kn">import</span> <span class="n">default_collate_fn</span>
-<span class="kn">from</span> <span class="nn">xtuner.dataset.map_fns</span> <span class="kn">import</span> <span class="n">oasst1_map_fn</span><span class="p">,</span> <span class="n">template_map_fn_factory</span>
-<span class="kn">from</span> <span class="nn">xtuner.engine.hooks</span> <span class="kn">import</span> <span class="p">(</span><span class="n">DatasetInfoHook</span><span class="p">,</span> <span class="n">EvaluateChatHook</span><span class="p">,</span>
-                                 <span class="n">VarlenAttnArgsToMessageHubHook</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">xtuner.engine.runner</span> <span class="kn">import</span> <span class="n">TrainLoop</span>
-<span class="kn">from</span> <span class="nn">xtuner.model</span> <span class="kn">import</span> <span class="n">SupervisedFinetune</span>
-<span class="kn">from</span> <span class="nn">xtuner.utils</span> <span class="kn">import</span> <span class="n">PROMPT_TEMPLATE</span>
-
-<span class="c1">#######################################################################</span>
-<span class="c1">#                          PART 1  Settings                           #</span>
-<span class="c1">#######################################################################</span>
-<span class="c1"># Model</span>
-<span class="n">pretrained_model_name_or_path</span> <span class="o">=</span> <span class="s1">&#39;internlm/internlm2-chat-7b&#39;</span>  <span class="c1"># 设置 LLM 路径或 HuggingFace Hub ID</span>
-<span class="n">use_varlen_attn</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># 是否使用 varlen_attention</span>
-
-<span class="c1"># Data</span>
-<span class="n">data_path</span> <span class="o">=</span> <span class="s1">&#39;timdettmers/openassistant-guanaco&#39;</span>  <span class="c1"># 设置 dataset 路径或 HuggingFace Hub ID，以用于 datasets.load_dataset</span>
-<span class="n">prompt_template</span> <span class="o">=</span> <span class="n">PROMPT_TEMPLATE</span><span class="o">.</span><span class="n">internlm2_chat</span>  <span class="c1"># 设置对话模版</span>
-<span class="n">max_length</span> <span class="o">=</span> <span class="mi">2048</span>  <span class="c1"># 设置训练数据截断长度</span>
-<span class="n">pack_to_max_length</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># 是否将多条样本打包为一条最长长度的样本</span>
-
-<span class="c1"># Scheduler &amp; Optimizer</span>
-<span class="n">batch_size</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># per_device  # 每个设备的样本个数</span>
-<span class="n">accumulative_counts</span> <span class="o">=</span> <span class="mi">16</span>  <span class="c1"># 梯度累计数</span>
-<span class="n">dataloader_num_workers</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># dataloader worker 数</span>
-<span class="n">max_epochs</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1"># 训练迭代代数</span>
-<span class="n">optim_type</span> <span class="o">=</span> <span class="n">AdamW</span>  <span class="c1"># 优化器</span>
-<span class="n">lr</span> <span class="o">=</span> <span class="mf">2e-4</span>  <span class="c1"># 学习率</span>
-<span class="n">betas</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.9</span><span class="p">,</span> <span class="mf">0.999</span><span class="p">)</span>  <span class="c1"># AdamW 优化器 betas</span>
-<span class="n">weight_decay</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># AdamW 优化器权重衰减</span>
-<span class="n">max_norm</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># grad clip  # 梯度裁剪</span>
-<span class="n">warmup_ratio</span> <span class="o">=</span> <span class="mf">0.03</span>  <span class="c1"># warmup 比率</span>
-
-<span class="c1"># Save</span>
-<span class="n">save_steps</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># checkpoint 保存间隔（iter 数）</span>
-<span class="n">save_total_limit</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># 最大保存 checkpoint 个数，-1 表示无限制</span>
-
-<span class="c1"># Evaluate the generation performance during the training</span>
-<span class="n">evaluation_freq</span> <span class="o">=</span> <span class="mi">500</span>  <span class="c1"># 验证对话效果的执行间隔（iter 数）</span>
-<span class="n">SYSTEM</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>  <span class="c1"># 验证对话效果的 system 字段</span>
-<span class="n">evaluation_inputs</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># 验证对话效果时的测试问题</span>
-    <span class="s1">&#39;请给我介绍五个上海的景点&#39;</span><span class="p">,</span> <span class="s1">&#39;Please tell me five scenic spots in Shanghai&#39;</span>
-<span class="p">]</span>
-
-<span class="c1">#######################################################################</span>
-<span class="c1">#                      PART 2  Model &amp; Tokenizer                      #</span>
-<span class="c1">#######################################################################</span>
-<span class="n">tokenizer</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>  <span class="c1"># 构建 tokenizer</span>
-    <span class="nb">type</span><span class="o">=</span><span class="n">AutoTokenizer</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">,</span>
-    <span class="n">pretrained_model_name_or_path</span><span class="o">=</span><span class="n">pretrained_model_name_or_path</span><span class="p">,</span>
-    <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">padding_side</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
-
-<span class="n">model</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>  <span class="c1"># 构建 model</span>
-    <span class="nb">type</span><span class="o">=</span><span class="n">SupervisedFinetune</span><span class="p">,</span>
-    <span class="n">use_varlen_attn</span><span class="o">=</span><span class="n">use_varlen_attn</span><span class="p">,</span>
-    <span class="n">llm</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>  <span class="c1"># 构建 LLM</span>
-        <span class="nb">type</span><span class="o">=</span><span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">,</span>
-        <span class="n">pretrained_model_name_or_path</span><span class="o">=</span><span class="n">pretrained_model_name_or_path</span><span class="p">,</span>
-        <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">,</span>
-        <span class="n">quantization_config</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>  <span class="c1"># 量化配置（保留则为 4 比特，删除则为正常浮点）</span>
-            <span class="nb">type</span><span class="o">=</span><span class="n">BitsAndBytesConfig</span><span class="p">,</span>
-            <span class="n">load_in_4bit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">load_in_8bit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-            <span class="n">llm_int8_threshold</span><span class="o">=</span><span class="mf">6.0</span><span class="p">,</span>
-            <span class="n">llm_int8_has_fp16_weight</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-            <span class="n">bnb_4bit_compute_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">,</span>
-            <span class="n">bnb_4bit_use_double_quant</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">bnb_4bit_quant_type</span><span class="o">=</span><span class="s1">&#39;nf4&#39;</span><span class="p">)),</span>
-    <span class="n">lora</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>  <span class="c1"># LoRA 配置（保留则使用 LoRA 微调，删除则使用全量微调）</span>
-        <span class="nb">type</span><span class="o">=</span><span class="n">LoraConfig</span><span class="p">,</span>
-        <span class="n">r</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
-        <span class="n">lora_alpha</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
-        <span class="n">lora_dropout</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
-        <span class="n">bias</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
-        <span class="n">task_type</span><span class="o">=</span><span class="s1">&#39;CAUSAL_LM&#39;</span><span class="p">))</span>
-
-<span class="c1">#######################################################################</span>
-<span class="c1">#                      PART 3  Dataset &amp; Dataloader                   #</span>
-<span class="c1">#######################################################################</span>
-<span class="n">train_dataset</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>  <span class="c1"># 构建训练数据集</span>
-    <span class="nb">type</span><span class="o">=</span><span class="n">process_hf_dataset</span><span class="p">,</span>
-    <span class="n">dataset</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">load_dataset</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">data_path</span><span class="p">),</span>  <span class="c1"># 调用 datasets.load_dataset 接口</span>
-    <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">,</span>
-    <span class="n">max_length</span><span class="o">=</span><span class="n">max_length</span><span class="p">,</span>
-    <span class="n">dataset_map_fn</span><span class="o">=</span><span class="n">oasst1_map_fn</span><span class="p">,</span>  <span class="c1"># 选择匹配的数据集 map_fn</span>
-    <span class="n">template_map_fn</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="nb">type</span><span class="o">=</span><span class="n">template_map_fn_factory</span><span class="p">,</span> <span class="n">template</span><span class="o">=</span><span class="n">prompt_template</span><span class="p">),</span>
-    <span class="n">remove_unused_columns</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">shuffle_before_pack</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">pack_to_max_length</span><span class="o">=</span><span class="n">pack_to_max_length</span><span class="p">,</span>
-    <span class="n">use_varlen_attn</span><span class="o">=</span><span class="n">use_varlen_attn</span><span class="p">)</span>
-
-<span class="n">train_dataloader</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>  <span class="c1"># 构建训练数据集的 DataLoader</span>
-    <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span>
-    <span class="n">num_workers</span><span class="o">=</span><span class="n">dataloader_num_workers</span><span class="p">,</span>
-    <span class="n">dataset</span><span class="o">=</span><span class="n">train_dataset</span><span class="p">,</span>
-    <span class="n">sampler</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">DefaultSampler</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-    <span class="n">collate_fn</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">default_collate_fn</span><span class="p">,</span> <span class="n">use_varlen_attn</span><span class="o">=</span><span class="n">use_varlen_attn</span><span class="p">))</span>
-
-<span class="c1">#######################################################################</span>
-<span class="c1">#                    PART 4  Scheduler &amp; Optimizer                    #</span>
-<span class="c1">#######################################################################</span>
-<span class="c1"># optimizer</span>
-<span class="n">optim_wrapper</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>  <span class="c1"># 构建优化器</span>
-    <span class="nb">type</span><span class="o">=</span><span class="n">AmpOptimWrapper</span><span class="p">,</span>
-    <span class="n">optimizer</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="nb">type</span><span class="o">=</span><span class="n">optim_type</span><span class="p">,</span> <span class="n">lr</span><span class="o">=</span><span class="n">lr</span><span class="p">,</span> <span class="n">betas</span><span class="o">=</span><span class="n">betas</span><span class="p">,</span> <span class="n">weight_decay</span><span class="o">=</span><span class="n">weight_decay</span><span class="p">),</span>
-    <span class="n">clip_grad</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">max_norm</span><span class="o">=</span><span class="n">max_norm</span><span class="p">,</span> <span class="n">error_if_nonfinite</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
-    <span class="n">accumulative_counts</span><span class="o">=</span><span class="n">accumulative_counts</span><span class="p">,</span>
-    <span class="n">loss_scale</span><span class="o">=</span><span class="s1">&#39;dynamic&#39;</span><span class="p">,</span>
-    <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float16&#39;</span><span class="p">)</span>
-
-<span class="c1"># learning policy</span>
-<span class="c1"># More information: https://github.com/open-mmlab/mmengine/blob/main/docs/en/tutorials/param_scheduler.md  # noqa: E501</span>
-<span class="n">param_scheduler</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># 设置学习率 scheduler</span>
-    <span class="nb">dict</span><span class="p">(</span>
-        <span class="nb">type</span><span class="o">=</span><span class="n">LinearLR</span><span class="p">,</span>  <span class="c1"># warmup 阶段</span>
-        <span class="n">start_factor</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span>
-        <span class="n">by_epoch</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">begin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">end</span><span class="o">=</span><span class="n">warmup_ratio</span> <span class="o">*</span> <span class="n">max_epochs</span><span class="p">,</span>
-        <span class="n">convert_to_iter_based</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
-    <span class="nb">dict</span><span class="p">(</span>
-        <span class="nb">type</span><span class="o">=</span><span class="n">CosineAnnealingLR</span><span class="p">,</span>  <span class="c1"># Cosine 学习率衰减阶段</span>
-        <span class="n">eta_min</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
-        <span class="n">by_epoch</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">begin</span><span class="o">=</span><span class="n">warmup_ratio</span> <span class="o">*</span> <span class="n">max_epochs</span><span class="p">,</span>
-        <span class="n">end</span><span class="o">=</span><span class="n">max_epochs</span><span class="p">,</span>
-        <span class="n">convert_to_iter_based</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="p">]</span>
-
-<span class="c1"># train, val, test setting</span>
-<span class="n">train_cfg</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">TrainLoop</span><span class="p">,</span> <span class="n">max_epochs</span><span class="o">=</span><span class="n">max_epochs</span><span class="p">)</span>  <span class="c1"># 设置训练迭代代数</span>
-
-<span class="c1">#######################################################################</span>
-<span class="c1">#                           PART 5  Runtime                           #</span>
-<span class="c1">#######################################################################</span>
-<span class="c1"># Log the dialogue periodically during the training process, optional</span>
-<span class="n">custom_hooks</span> <span class="o">=</span> <span class="p">[</span>  <span class="c1"># 定义 Hooks</span>
-    <span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">DatasetInfoHook</span><span class="p">,</span> <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">),</span>  <span class="c1"># 在训练前打印可视化打印数据样本</span>
-    <span class="nb">dict</span><span class="p">(</span>
-        <span class="nb">type</span><span class="o">=</span><span class="n">EvaluateChatHook</span><span class="p">,</span>  <span class="c1"># 在训练时测试对话效果</span>
-        <span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenizer</span><span class="p">,</span>
-        <span class="n">every_n_iters</span><span class="o">=</span><span class="n">evaluation_freq</span><span class="p">,</span>
-        <span class="n">evaluation_inputs</span><span class="o">=</span><span class="n">evaluation_inputs</span><span class="p">,</span>
-        <span class="n">system</span><span class="o">=</span><span class="n">SYSTEM</span><span class="p">,</span>
-        <span class="n">prompt_template</span><span class="o">=</span><span class="n">prompt_template</span><span class="p">)</span>
-<span class="p">]</span>
-
-<span class="k">if</span> <span class="n">use_varlen_attn</span><span class="p">:</span>
-    <span class="n">custom_hooks</span> <span class="o">+=</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">VarlenAttnArgsToMessageHubHook</span><span class="p">)]</span>  <span class="c1"># vallen_attention 依赖的 Hook</span>
-
-<span class="c1"># 以下均为默认配置，如需调整请参考 MMEngine 文档及代码</span>
-
-<span class="c1"># configure default hooks</span>
-<span class="n">default_hooks</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-    <span class="c1"># record the time of every iteration.</span>
-    <span class="n">timer</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">IterTimerHook</span><span class="p">),</span>
-    <span class="c1"># print log every 10 iterations.</span>
-    <span class="n">logger</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">LoggerHook</span><span class="p">,</span> <span class="n">log_metric_by_epoch</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
-    <span class="c1"># enable the parameter scheduler.</span>
-    <span class="n">param_scheduler</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">ParamSchedulerHook</span><span class="p">),</span>
-    <span class="c1"># save checkpoint per `save_steps`.</span>
-    <span class="n">checkpoint</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-        <span class="nb">type</span><span class="o">=</span><span class="n">CheckpointHook</span><span class="p">,</span>
-        <span class="n">by_epoch</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="n">interval</span><span class="o">=</span><span class="n">save_steps</span><span class="p">,</span>
-        <span class="n">max_keep_ckpts</span><span class="o">=</span><span class="n">save_total_limit</span><span class="p">),</span>
-    <span class="c1"># set sampler seed in distributed evrionment.</span>
-    <span class="n">sampler_seed</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">DistSamplerSeedHook</span><span class="p">),</span>
-<span class="p">)</span>
-
-<span class="c1"># configure environment</span>
-<span class="n">env_cfg</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-    <span class="c1"># whether to enable cudnn benchmark</span>
-    <span class="n">cudnn_benchmark</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="c1"># set multi process parameters</span>
-    <span class="n">mp_cfg</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">mp_start_method</span><span class="o">=</span><span class="s1">&#39;fork&#39;</span><span class="p">,</span> <span class="n">opencv_num_threads</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
-    <span class="c1"># set distributed parameters</span>
-    <span class="n">dist_cfg</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">backend</span><span class="o">=</span><span class="s1">&#39;nccl&#39;</span><span class="p">),</span>
-<span class="p">)</span>
-
-<span class="c1"># set visualizer</span>
-<span class="n">visualizer</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="c1"># set log level</span>
-<span class="n">log_level</span> <span class="o">=</span> <span class="s1">&#39;INFO&#39;</span>
-
-<span class="c1"># load from which checkpoint</span>
-<span class="n">load_from</span> <span class="o">=</span> <span class="kc">None</span>
-
-<span class="c1"># whether to resume training from the loaded checkpoint</span>
-<span class="n">resume</span> <span class="o">=</span> <span class="kc">False</span>
-
-<span class="c1"># Defaults to use random seed and disable `deterministic`</span>
-<span class="n">randomness</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">deterministic</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-
-<span class="c1"># set log processor</span>
-<span class="n">log_processor</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">by_epoch</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
+<h2>简介<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>公式检测是指给定输入公式图像，识别公式图像内容并转为 <code class="docutils literal notranslate"><span class="pre">LaTeX</span></code> 格式。</p>
 </section>
 <section id="id3">
-<h2>常见训练配置修改<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2>模型使用<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>在配置好环境的情况下，直接执行 <code class="docutils literal notranslate"><span class="pre">scripts/formula_recognition.py</span></code> 即可运行布局检测算法脚本。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scripts/formula_recognition.py<span class="w"> </span>--config<span class="w"> </span>configs/formula_recognition.yaml
+</pre></div>
+</div>
 <section id="id4">
-<h3>模型<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
-<section id="llm">
-<h4>使用其他 LLM 模型？<a class="headerlink" href="#llm" title="Link to this heading">#</a></h4>
-<ol class="arabic simple">
-<li><p>修改 <code class="docutils literal notranslate"><span class="pre">pretrained_model_name_or_path</span></code>，其将应用至 <code class="docutils literal notranslate"><span class="pre">model.llm</span></code> 和 <code class="docutils literal notranslate"><span class="pre">tokenizer</span></code> 的初始化中。</p></li>
-<li><p>修改 <code class="docutils literal notranslate"><span class="pre">prompt_template</span></code> 以适配所选择的 LLM。</p></li>
-</ol>
-</section>
-<section id="modelscope">
-<h4>使用 ModelScope 模型？<a class="headerlink" href="#modelscope" title="Link to this heading">#</a></h4>
-<ol class="arabic simple">
-<li><p>参考 <a class="reference external" href="../preparation/pretrained_model.md">文档</a> 将其下载至本地</p></li>
-<li><p>修改<code class="docutils literal notranslate"><span class="pre">pretrained_model_name_or_path</span></code>。</p></li>
-</ol>
-</section>
+<h3>模型配置<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">inputs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">assets/demo/formula_recognition</span>
+<span class="nt">outputs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">outputs/formula_recognition</span>
+<span class="nt">tasks</span><span class="p">:</span>
+<span class="w">   </span><span class="nt">formula_recognition</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">formula_recognition_unimernet</span>
+<span class="w">      </span><span class="nt">model_config</span><span class="p">:</span>
+<span class="w">         </span><span class="nt">cfg_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pdf_extract_kit/configs/unimernet.yaml</span>
+<span class="w">         </span><span class="nt">model_path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">models/MFR/unimernet_tiny</span>
+<span class="w">         </span><span class="nt">visualize</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">False</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>inputs/outputs: 分别定义输入文件路径和LaTeX预测结果目录</p></li>
+<li><p>tasks: 定义任务类型，当前只包含一个公式识别任务</p></li>
+<li><p>model: 定义具体模型类型: 当前仅提供 <a class="reference external" href="https://github.com/opendatalab/UniMERNet">UniMERNet</a> 公式识别模型</p></li>
+<li><p>model_config: 定义模型配置</p></li>
+<li><p>cfg_path: UniMERNet配置文件路径</p></li>
+<li><p>model_path: 模型权重路径</p></li>
+<li><p>visualize: 是否对模型结果进行可视化，可视化结果会保存在outputs目录下。</p></li>
+</ul>
 </section>
 <section id="id5">
-<h3>微调类型<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
-<div class="admonition tip">
-<p class="admonition-title">小技巧</p>
-<p>XTuner 内置的配置文件以 QLoRA 微调为主，但并不意味着 XTuner 仅支持 QLoRA
-微调。用户可以通过修改配置文件中的 <code class="docutils literal notranslate"><span class="pre">model</span></code> 来决定微调类型。</p>
-</div>
-<section id="qlora">
-<h4>QLoRA 微调<a class="headerlink" href="#qlora" title="Link to this heading">#</a></h4>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-      <span class="o">......</span>
-      <span class="n">llm</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-         <span class="nb">type</span><span class="o">=</span><span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">,</span>
-         <span class="n">pretrained_model_name_or_path</span><span class="o">=</span><span class="n">pretrained_model_name_or_path</span><span class="p">,</span>
-         <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-         <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">,</span>
-         <span class="n">quantization_config</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-            <span class="nb">type</span><span class="o">=</span><span class="n">BitsAndBytesConfig</span><span class="p">,</span>
-            <span class="n">load_in_4bit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">load_in_8bit</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-            <span class="n">llm_int8_threshold</span><span class="o">=</span><span class="mf">6.0</span><span class="p">,</span>
-            <span class="n">llm_int8_has_fp16_weight</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-            <span class="n">bnb_4bit_compute_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">,</span>
-            <span class="n">bnb_4bit_use_double_quant</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-            <span class="n">bnb_4bit_quant_type</span><span class="o">=</span><span class="s1">&#39;nf4&#39;</span><span class="p">)),</span>
-      <span class="n">lora</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-         <span class="nb">type</span><span class="o">=</span><span class="n">LoraConfig</span><span class="p">,</span>
-         <span class="n">r</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
-         <span class="n">lora_alpha</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
-         <span class="n">lora_dropout</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
-         <span class="n">bias</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
-         <span class="n">task_type</span><span class="o">=</span><span class="s1">&#39;CAUSAL_LM&#39;</span><span class="p">),</span>
-      <span class="o">......</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="lora">
-<h4>LoRA 微调<a class="headerlink" href="#lora" title="Link to this heading">#</a></h4>
-<div class="admonition tip">
-<p class="admonition-title">小技巧</p>
-<p>在 QLoRA 设置的基础上，将 <cite>quantization_config</cite> 设置为 None，就切换成了 LoRA 微调</p>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-      <span class="o">......</span>
-      <span class="n">llm</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-         <span class="nb">type</span><span class="o">=</span><span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">,</span>
-         <span class="n">pretrained_model_name_or_path</span><span class="o">=</span><span class="n">pretrained_model_name_or_path</span><span class="p">,</span>
-         <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-         <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">,</span>
-         <span class="n">quantization_config</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
-      <span class="n">lora</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-         <span class="nb">type</span><span class="o">=</span><span class="n">LoraConfig</span><span class="p">,</span>
-         <span class="n">r</span><span class="o">=</span><span class="mi">64</span><span class="p">,</span>
-         <span class="n">lora_alpha</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
-         <span class="n">lora_dropout</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
-         <span class="n">bias</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
-         <span class="n">task_type</span><span class="o">=</span><span class="s1">&#39;CAUSAL_LM&#39;</span><span class="p">),</span>
-      <span class="o">......</span><span class="p">)</span>
-</pre></div>
-</div>
+<h3>多样化输入支持<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>PDF-Extract-Kit中的公式检测脚本支持 <code class="docutils literal notranslate"><span class="pre">单个公式图像</span></code>、 <code class="docutils literal notranslate"><span class="pre">文档图像及对应公式区域</span></code></p>
 </section>
 <section id="id6">
-<h4>全参数微调<a class="headerlink" href="#id6" title="Link to this heading">#</a></h4>
-<div class="admonition tip">
-<p class="admonition-title">小技巧</p>
-<p>将 <cite>lora</cite> 和 <cite>quantization_config</cite> 都设置为 None，就切换到了全参数训练模式</p>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-      <span class="o">......</span>
-      <span class="n">llm</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
-         <span class="nb">type</span><span class="o">=</span><span class="n">AutoModelForCausalLM</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">,</span>
-         <span class="n">pretrained_model_name_or_path</span><span class="o">=</span><span class="n">pretrained_model_name_or_path</span><span class="p">,</span>
-         <span class="n">trust_remote_code</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-         <span class="n">torch_dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float16</span><span class="p">,</span>
-         <span class="n">quantization_config</span><span class="o">=</span><span class="kc">None</span><span class="p">),</span>
-      <span class="n">lora</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-      <span class="o">......</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="id7">
-<h3>数据集<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
-<p>请参考 <cite>训练</cite> 章节文档。</p>
-</section>
-<section id="id8">
-<h3>优化器<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
-<section id="id9">
-<h4>使用其他优化器？<a class="headerlink" href="#id9" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>方法 1：修改 <code class="docutils literal notranslate"><span class="pre">optim_type</span></code>（例如 <code class="docutils literal notranslate"><span class="pre">optim_type=torch.optim.SGD</span></code>），其将应用至 <code class="docutils literal notranslate"><span class="pre">optim_wrapper.optimzer</span></code>。</p></li>
-<li><p>方法 2：忽略 <code class="docutils literal notranslate"><span class="pre">optim_type</span></code>，直接修改 <code class="docutils literal notranslate"><span class="pre">optim_wrapper.optimzer</span></code>。</p></li>
-</ul>
-</section>
-<section id="id10">
-<h4>修改优化器参数配置？<a class="headerlink" href="#id10" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>方法 1：修改 <code class="docutils literal notranslate"><span class="pre">lr</span></code>、<code class="docutils literal notranslate"><span class="pre">weight_decay</span></code> 等参数，其将应用至 <code class="docutils literal notranslate"><span class="pre">optim_wrapper.optimzer</span></code>。</p></li>
-<li><p>方法 2：直接修改 <code class="docutils literal notranslate"><span class="pre">optim_wrapper.optimzer</span></code>。</p></li>
-</ul>
-</section>
-</section>
-<section id="id11">
-<h3>迭代次数<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
-<section id="id12">
-<h4>调整迭代次数？<a class="headerlink" href="#id12" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>修改 <code class="docutils literal notranslate"><span class="pre">max_epochs</span></code> 参数。</p></li>
-</ul>
-</section>
-</section>
-<section id="checkpoint">
-<h3>保存 Checkpoint 间隔<a class="headerlink" href="#checkpoint" title="Link to this heading">#</a></h3>
-<section id="id13">
-<h4>调整保存间隔？<a class="headerlink" href="#id13" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>修改 <code class="docutils literal notranslate"><span class="pre">save_steps</span></code> 参数。</p></li>
-</ul>
-</section>
-<section id="id14">
-<h4>调整最大保存 checkpoint 个数？<a class="headerlink" href="#id14" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>修改 <code class="docutils literal notranslate"><span class="pre">save_total_limit</span></code> 参数。</p></li>
-</ul>
-</section>
-</section>
-<section id="id15">
-<h3>训练间对话评测<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
-<section id="id16">
-<h4>调整对话评测间隔？<a class="headerlink" href="#id16" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>修改 <code class="docutils literal notranslate"><span class="pre">evaluation_freq</span></code> 参数。</p></li>
-</ul>
-</section>
-<section id="system">
-<h4>调整对话评测的 system 字段？<a class="headerlink" href="#system" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>修改 <code class="docutils literal notranslate"><span class="pre">SYSTEM</span></code> 参数。</p></li>
-</ul>
-</section>
-<section id="id17">
-<h4>调整对话评测的测试指令？<a class="headerlink" href="#id17" title="Link to this heading">#</a></h4>
-<ul class="simple">
-<li><p>修改 <code class="docutils literal notranslate"><span class="pre">evaluation_inputs</span></code> 参数。</p></li>
-</ul>
-</section>
-</section>
-<section id="gpu">
-<h3>GPU 数<a class="headerlink" href="#gpu" title="Link to this heading">#</a></h3>
-<p>XTuner
-的多卡训练由启动命令决定，而非配置文件。用户可以参考下列命令启动多卡训练：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 单卡</span>
-xtuner<span class="w"> </span>train<span class="w"> </span><span class="si">${</span><span class="nv">CONFIG</span><span class="si">}</span>
-<span class="c1"># 多卡</span>
-<span class="o">(</span>DIST<span class="o">)</span><span class="w"> </span><span class="nv">NPROC_PER_NODE</span><span class="o">=</span><span class="si">${</span><span class="nv">GPU_NUM</span><span class="si">}</span><span class="w"> </span>xtuner<span class="w"> </span>train<span class="w"> </span><span class="si">${</span><span class="nv">CONFIG</span><span class="si">}</span>
-<span class="o">(</span>SLURM<span class="o">)</span><span class="w"> </span>srun<span class="w"> </span><span class="si">${</span><span class="nv">SRUN_ARGS</span><span class="si">}</span><span class="w"> </span>xtuner<span class="w"> </span>train<span class="w"> </span><span class="si">${</span><span class="nv">CONFIG</span><span class="si">}</span><span class="w"> </span>--launcher<span class="w"> </span>slurm
-</pre></div>
-</div>
-</section>
-<section id="deepspeed">
-<h3>DeepSpeed<a class="headerlink" href="#deepspeed" title="Link to this heading">#</a></h3>
-<p>XTuner 的 DeepSpeed
-优化由启动命令决定，而非配置文件。用户可以参考下列命令启用 DeepSpeed
-优化：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xtuner<span class="w"> </span>train<span class="w"> </span><span class="si">${</span><span class="nv">CONFIG</span><span class="si">}</span><span class="w"> </span>--deepspeed<span class="w"> </span><span class="si">${</span><span class="nv">DS_CONFIG</span><span class="si">}</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">备注</p>
-<p>XTuner 内置了多个 DeepSpeed 配置文件（即命令中的
-<code class="docutils literal notranslate"><span class="pre">${DS_CONFIG}</span></code>），用户可以直接使用，具体文件见
-<a class="reference external" href="https://github.com/InternLM/xtuner/tree/main/xtuner/configs/deepspeed">这里</a>：</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>xtuner<span class="w"> </span>train<span class="w"> </span><span class="si">${</span><span class="nv">CONFIG</span><span class="si">}</span><span class="w"> </span>--deepspeed<span class="w"> </span><span class="o">[</span>deepspeed_zero1,deepspeed_zero2,deepspeed_zero2_offload,deepspeed_zero3,deepspeed_zero3_offload<span class="o">]</span>
-</pre></div>
-</div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">备注</p>
-<p>部分参数会在 DeepSpeed Config 和 XTuner Config 中重复定义（例如 batch
-size等）。此时相关配置会以 XTuner Config 为准：</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">gradient_accumulation_steps</span></code> 会被 XTuner Config 中的
-<code class="docutils literal notranslate"><span class="pre">accumulative_counts</span></code> 设置覆盖。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">train_micro_batch_size_per_gpu</span></code> 会被 XTuner Config 中的
-<code class="docutils literal notranslate"><span class="pre">train_dataloader.batch_size</span></code> 设置覆盖。</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">gradient_clipping</span></code> 会被 XTuner Config 中的
-<code class="docutils literal notranslate"><span class="pre">optim_wrapper.clip_grad.max_norm</span></code> 设置覆盖。</p></li>
-<li><p>XTuner 会根据所使用的 GPU 架构自动选择 <code class="docutils literal notranslate"><span class="pre">fp16</span></code> 或 <code class="docutils literal notranslate"><span class="pre">bf16</span></code> 训练。</p></li>
-</ul>
-</div>
-</section>
-<section id="id18">
-<h3>其他<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
-<p>如有遗漏或特定需求，欢迎提出
-<a class="reference external" href="https://github.com/InternLM/xtuner/issues">issue</a> 讨论。</p>
+<h3>可视化结果查看<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>当config文件中visualize设置为True时， <code class="docutils literal notranslate"><span class="pre">LaTeX</span></code> 预测结果会保存在outputs目录下。</p>
 </section>
 </section>
 </section>
@@ -901,43 +471,11 @@ size等）。此时相关配置会以 XTuner Config 为准：</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">配置文件速览</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">常见训练配置修改</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">模型</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#llm">使用其他 LLM 模型？</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#modelscope">使用 ModelScope 模型？</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">微调类型</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#qlora">QLoRA 微调</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lora">LoRA 微调</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">全参数微调</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">数据集</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">优化器</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">使用其他优化器？</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">修改优化器参数配置？</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">迭代次数</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">调整迭代次数？</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#checkpoint">保存 Checkpoint 间隔</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">调整保存间隔？</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">调整最大保存 checkpoint 个数？</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">训练间对话评测</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">调整对话评测间隔？</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#system">调整对话评测的 system 字段？</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">调整对话评测的测试指令？</a></li>
-</ul>
-</li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gpu">GPU 数</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#deepspeed">DeepSpeed</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">其他</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">简介</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">模型使用</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">模型配置</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">多样化输入支持</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">可视化结果查看</a></li>
 </ul>
 </li>
 </ul>

@@ -32,7 +32,8 @@ def main(config_path):
     # for pdf detection
     # detection_results = model_formula_detection.predict_pdfs(input_data, result_path)
 
-    print(detection_results)
+    # print(detection_results)
+    print(f'The predicted results can be found at {result_path}')
 
 
 if __name__ == "__main__":

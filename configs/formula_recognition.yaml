@@ -6,4 +6,4 @@ tasks:
     model_config:
       cfg_path: pdf_extract_kit/configs/unimernet.yaml
       model_path: models/MFR/unimernet_tiny
-      visualize: True
+      visualize: False

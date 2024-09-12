@@ -30,6 +30,7 @@ def main(config_path):
     recognition_results = model_formula_recognition.predict(input_data, result_path)
 
 
+    print('Recognition results are as follows:')
     for id, math in enumerate(recognition_results):
         print(str(id+1)+': ', math)
 

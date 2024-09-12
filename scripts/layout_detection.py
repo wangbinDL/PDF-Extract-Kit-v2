@@ -27,12 +27,13 @@ def main(config_path):
     model_layout_detection = task_instances[TASK_NAME]
 
     # for image detection
-    # detection_results = model_layout_detection.predict_images(input_data, result_path)
+    detection_results = model_layout_detection.predict_images(input_data, result_path)
 
     # for pdf detection
-    detection_results = model_layout_detection.predict_pdfs(input_data, result_path)
+    # detection_results = model_layout_detection.predict_pdfs(input_data, result_path)
 
-    print(detection_results)
+    # print(detection_results)
+    print(f'The predicted results can be found at {result_path}')
 
 
 if __name__ == "__main__":
