@@ -9,7 +9,7 @@
 
 [English](./README.md) | 简体中文
 
-[[Models (🤗Hugging Face)]](https://huggingface.co/wanderkid/PDF-Extract-Kit) | [[Models(<img src="./assets/images/modelscope_logo.png" width="20px">ModelScope)]](https://www.modelscope.cn/models/OpenDataLab/PDF-Extract-Kit) 
+[[Models (🤗Hugging Face)]](https://huggingface.co/opendatalab/PDF-Extract-Kit) | [[Models(<img src="./assets/images/modelscope_logo.png" width="20px">ModelScope)]](https://www.modelscope.cn/models/OpenDataLab/PDF-Extract-Kit) 
  
 
 🔥🔥🔥 [MinerU：基于PDF-Extract-Kit的高效文档内容提取工具](https://github.com/opendatalab/MinerU)
@@ -211,7 +211,7 @@ PDF内容提取框架如下图所示
 
 ### 公式识别
 
-![BLEU](https://github.com/opendatalab/VIGC/assets/69186975/ec8eb3e2-4ccc-4152-b18c-e86b442e2dcc)
+![BLEU](./assets/readme/unimernet_result.jpg)
 
 公式识别我们使用的是[UniMERNet](https://github.com/opendatalab/UniMERNet)的权重，没有进一步的SFT训练，其精度验证结果可以在其GitHub页面获取。
 
