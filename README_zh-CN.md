@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="assets/images/pdf-extract-kit_logo.png" width="220px" style="vertical-align:middle;">
+  <img src="assets/readme/pdf-extract-kit_logo.png" width="220px" style="vertical-align:middle;">
 </p>
 
 
@@ -9,7 +9,7 @@
 
 [English](./README.md) | 简体中文
 
-[[Models (🤗Hugging Face)]](https://huggingface.co/wanderkid/PDF-Extract-Kit) | [[Models(<img src="./assets/images/modelscope_logo.png" width="20px">ModelScope)]](https://www.modelscope.cn/models/OpenDataLab/PDF-Extract-Kit) 
+[[Models (🤗Hugging Face)]](https://huggingface.co/opendatalab/PDF-Extract-Kit) | [[Models(<img src="./assets/readme/modelscope_logo.png" width="20px">ModelScope)]](https://www.modelscope.cn/models/OpenDataLab/PDF-Extract-Kit) 
  
 
 🔥🔥🔥 [MinerU：基于PDF-Extract-Kit的高效文档内容提取工具](https://github.com/opendatalab/MinerU)
@@ -34,7 +34,7 @@ PDF文档中包含大量知识信息，然而提取高质量的PDF内容并非�
 
 PDF内容提取框架如下图所示
 
-![](assets/demo/pipeline_v2.png)
+![](assets/readme/pipeline.png)
 
 
 ## 新闻和更新
@@ -101,13 +101,14 @@ PDF内容提取框架如下图所示
 结合多样性PDF文档标注，我们训练了鲁棒的`布局检测`和`公式检测`模型。在论文、教材、研报、财报等多样性的PDF文档上，我们的pipeline都能得到准确的提取结果，对于扫描模糊、水印等情况也有较高鲁棒性。
 
 
-![](assets/demo/example.png)
+![](assets/readme/example.png)
 
 ## 评测指标
 
 现有开源模型多基于Arxiv论文类型数据进行训练，面对多样性的PDF文档，提取质量远不能达到实用需求。相比之下，我们的模型经过多样化数据训练，可以适应各种类型文档提取。
 
-评测代码及详细信息请看[这里](./assets/validation/README-zh_CN.md)。
+[TODO]
+评测代码及详细信息请看[这里](xxx)。
 
 <span id="layout-anchor"></span>
 ### 布局检测
@@ -211,12 +212,12 @@ PDF内容提取框架如下图所示
 
 ### 公式识别
 
-![BLEU](https://github.com/opendatalab/VIGC/assets/69186975/ec8eb3e2-4ccc-4152-b18c-e86b442e2dcc)
+![BLEU](./assets/readme/unimernet_result.jpg)
 
 公式识别我们使用的是[UniMERNet](https://github.com/opendatalab/UniMERNet)的权重，没有进一步的SFT训练，其精度验证结果可以在其GitHub页面获取。
 
 ### 表格识别
-![StructEqTable](assets/demo/table_expamle.png)
+![StructEqTable](assets/readme/table_expamle.png)
 
 表格识别我们使用的是[StructEqTable](https://github.com/UniModal4Reasoning/StructEqTable-Deploy)的权重，用于将表格转换为LaTeX。相比于PP-StructureV2的表格识别，StructEqTable的识别能力更强，针对复杂表格也能够有不错的效果，但目前可能主要适用于学术论文中的数据，速度也有较大的提升空间，我们仍在不断迭代优化中。在一周内我们会将表格识别的功能同步更新到[MinerU](https://github.com/opendatalab/MinerU)中。
 
