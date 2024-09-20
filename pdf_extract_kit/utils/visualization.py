@@ -42,7 +42,7 @@ def colormap(N=256, normalized=False):
 
     return cmap
 
-def visualize_bbox(image_path, bboxes, classes, id_to_names, alpha=0.3):
+def visualize_bbox(image_path, bboxes, classes, scores, id_to_names, alpha=0.3):
     """
     Visualize layout detection results on an image.
 
@@ -74,14 +74,16 @@ def visualize_bbox(image_path, bboxes, classes, id_to_names, alpha=0.3):
         class_id = int(classes[i])
         class_name = id_to_names[class_id]
         
+        text = class_name + f":{scores[i]:.3f}"
+        
         color = tuple(int(c) for c in cmap[class_id])
         cv2.rectangle(overlay, (x_min, y_min), (x_max, y_max), color, -1)
         cv2.rectangle(image, (x_min, y_min), (x_max, y_max), color, 2)
         
         # Add the class name with a background rectangle
-        (text_width, text_height), baseline = cv2.getTextSize(class_name, cv2.FONT_HERSHEY_SIMPLEX, 0.9, 2)
+        (text_width, text_height), baseline = cv2.getTextSize(text, cv2.FONT_HERSHEY_SIMPLEX, 0.9, 2)
         cv2.rectangle(image, (x_min, y_min - text_height - baseline), (x_min + text_width, y_min), color, -1)
-        cv2.putText(image, class_name, (x_min, y_min - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (255, 255, 255), 2)
+        cv2.putText(image, text, (x_min, y_min - 5), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (255, 255, 255), 2)
     
     # Blend the overlay with the original image
     cv2.addWeighted(overlay, alpha, image, 1 - alpha, 0, image)
