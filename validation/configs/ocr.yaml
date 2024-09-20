@@ -1,0 +1,13 @@
+tasks:
+  - recogition_eval
+
+recogition_eval: # Text
+  metrics:
+    - Edit_dist
+    - BLEU
+  dataset:
+    dataset_name: recogition_text_dataset
+    ground_truth:
+      data_path: /mnt/petrelfs/ouyanglinke/PDF-Extract-Kit-v2/pdf_validation/test_data/ocr/ocr_test_gt.json
+    prediction:
+      data_path: /mnt/petrelfs/ouyanglinke/PDF-Extract-Kit-v2/pdf_validation/test_data/ocr/pred
