@@ -75,3 +75,22 @@ class ImageDataset(Dataset):
         image = self.transform(image)
 
         return image, image_id
+    
+    
+class MathDataset(Dataset):
+    def __init__(self, image_paths, transform=None):
+        self.image_paths = image_paths
+        self.transform = transform
+
+    def __len__(self):
+        return len(self.image_paths)
+
+    def __getitem__(self, idx):
+        # if not pil image, then convert to pil image
+        if isinstance(self.image_paths[idx], str):
+            raw_image = Image.open(self.image_paths[idx])
+        else:
+            raw_image = self.image_paths[idx]
+        if self.transform:
+            image = self.transform(raw_image)
+        return image
