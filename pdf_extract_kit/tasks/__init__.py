@@ -13,7 +13,7 @@ __all__ = [
     "FormulaRecognitionTask",
     "LayoutDetectionTask",
     "OCRTask",
-    "TableParsingTask"
+    "TableParsingTask",
 ]
 
 def load_task(name, cfg=None):

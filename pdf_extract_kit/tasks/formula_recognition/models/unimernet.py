@@ -25,6 +25,7 @@ class FormulaRecognitionUniMERNet:
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.model_dir = config['model_path']
         self.cfg_path = config.get('cfg_path', "pdf_extract_kit/configs/unimernet.yaml")
+        self.batch_size = config.get('batch_size', 1)
 
         # Load the UniMERNet model
         self.model, self.vis_processor = self.load_model_and_processor()
