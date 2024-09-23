@@ -56,7 +56,9 @@ class FormulaDetectionYOLO:
                     os.makedirs(result_path)
                 boxes = result.__dict__['boxes'].xyxy
                 classes = result.__dict__['boxes'].cls
-                vis_result = visualize_bbox(image, boxes, classes, self.id_to_names)
+                scores = result.__dict__['boxes'].conf
+                
+                vis_result = visualize_bbox(image, boxes, classes, scores, self.id_to_names)
 
                 # Determine the base name of the image
                 if image_ids:
@@ -70,47 +72,3 @@ class FormulaDetectionYOLO:
                 cv2.imwrite(os.path.join(result_path, result_name), vis_result)
             results.append(result)
         return results
-
-    # def predict(self, images, result_path, image_ids=None):
-    #     """
-    #     Predict formulas in images.
-
-    #     Args:
-    #         images (list): List of images to be predicted.
-    #         result_path (str): Path to save the prediction results.
-    #         image_ids (list, optional): List of image IDs corresponding to the images.
-
-    #     Returns:
-    #         list: List of prediction results.
-    #     """
-    #     dataset = ImageDataset(images, image_ids, img_size=self.img_size)
-    #     dataloader = DataLoader(dataset, batch_size=self.batch_size, shuffle=False)
-
-    #     results = []
-    #     for batch in dataloader:
-    #         batch_images, batch_image_ids = batch
-    #         batch_results = self.model.predict(batch_images, imgsz=self.img_size, conf=self.conf_thres, iou=self.iou_thres, verbose=False, device=self.device)
-    #         for idx, result in enumerate(batch_results):
-    #             if self.visualize:
-    #                 if not os.path.exists(result_path):
-    #                     os.makedirs(result_path)
-    #                 boxes = result.__dict__['boxes'].xyxy
-    #                 classes = result.__dict__['boxes'].cls
-    #                 # Convert the tensor back to a PIL image for visualization
-    #                 pil_image = transforms.ToPILImage()(batch_images[idx].cpu())
-    #                 vis_result = visualize_bbox(pil_image, boxes, classes, self.id_to_names)
-                    
-    #                 # Determine the base name of the image
-    #                 if image_ids:
-    #                     base_name = batch_image_ids[idx]
-    #                 else:
-    #                     image_path = batch_image_ids[idx]
-    #                     base_name = os.path.splitext(os.path.basename(image_path))[0]
-                
-    #                 result_name = f"{base_name}_MFD.png"
-                    
-    #                 # Save the visualized result                
-    #                 cv2.imwrite(os.path.join(result_path, result_name), vis_result)
-
-    #             results.append(result)
-    #     return results
