@@ -1,11 +1,14 @@
 import os
 import re
 import gc
+import sys
 import time
 import torch
 from PIL import Image, ImageDraw
 from torchvision import transforms
 from torch.utils.data import DataLoader
+
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..'))
 from pdf_extract_kit.utils.data_preprocess import load_pdf
 from pdf_extract_kit.tasks.ocr.task import OCRTask
 from pdf_extract_kit.dataset.dataset import MathDataset
@@ -50,8 +53,8 @@ def crop_img(input_res, input_pil_img, padding_x=0, padding_y=0):
     return_list = [padding_x, padding_y, crop_xmin, crop_ymin, crop_xmax, crop_ymax, crop_new_width, crop_new_height]
     return return_image, return_list
 
-@TASK_REGISTRY.register("pdf_extract")
-class PDFExtract(OCRTask):
+@TASK_REGISTRY.register("pdf2markdown")
+class PDF2MARKDOWN(OCRTask):
     def __init__(self, layout_model, mfd_model, mfr_model, ocr_model):
         self.layout_model = layout_model
         self.mfd_model = mfd_model

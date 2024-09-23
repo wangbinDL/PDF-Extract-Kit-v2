@@ -2,14 +2,14 @@ import os
 import sys
 import os.path as osp
 import argparse
+from pdf2markdown import PDF2MARKDOWN
 
-sys.path.append(osp.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+sys.path.append(osp.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..'))
 from pdf_extract_kit.utils.config_loader import load_config, initialize_tasks_and_models
 from pdf_extract_kit.registry.registry import TASK_REGISTRY
-import pdf_extract_kit.tasks  # 确保所有任务模块被导入
 
 
-TASK_NAME = 'pdf_extract'
+TASK_NAME = 'pdf2markdown'
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Run a task with a given configuration file.")

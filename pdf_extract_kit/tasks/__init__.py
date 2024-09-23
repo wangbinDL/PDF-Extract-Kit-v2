@@ -1,5 +1,4 @@
 from pdf_extract_kit.tasks.base_task import BaseTask
-from pdf_extract_kit.tasks.pdf_extract import PDFExtract
 from pdf_extract_kit.tasks.formula_detection.task import FormulaDetectionTask
 from pdf_extract_kit.tasks.formula_recognition.task import FormulaRecognitionTask
 from pdf_extract_kit.tasks.layout_detection.task import LayoutDetectionTask
@@ -15,7 +14,6 @@ __all__ = [
     "LayoutDetectionTask",
     "OCRTask",
     "TableParsingTask",
-    "PDFExtract"
 ]
 
 def load_task(name, cfg=None):

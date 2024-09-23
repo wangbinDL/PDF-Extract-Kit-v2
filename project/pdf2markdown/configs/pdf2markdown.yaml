@@ -1,5 +1,5 @@
 inputs: assets/demo/formula_detection
-outputs: outputs/pdf_extract
+outputs: outputs/pdf2markdown
 visualize: True
 merge2markdown: True
 tasks:
