@@ -1,7 +1,7 @@
 inputs: assets/demo/formula_detection
 outputs: outputs/pdf_extract
 visualize: True
-mergemarkdown: False
+merge2markdown: True
 tasks:
   layout_detection:
     model: layout_detection_yolo

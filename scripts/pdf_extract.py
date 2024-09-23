@@ -24,6 +24,7 @@ def main(config_path):
     input_data = config.get('inputs', None)
     result_path = config.get('outputs', 'outputs/pdf_extract')
     visualize = config.get('visualize', False)
+    merge2markdown = config.get('merge2markdown', False)
 
     layout_model = task_instances['layout_detection'].model if 'layout_detection' in task_instances else None
     mfd_model = task_instances['formula_detection'].model if 'formula_detection' in task_instances else None
@@ -31,7 +32,7 @@ def main(config_path):
     ocr_model = task_instances['ocr'].model if 'ocr' in task_instances else None
     
     pdf_extract_task = TASK_REGISTRY.get(TASK_NAME)(layout_model, mfd_model, mfr_model, ocr_model)
-    extract_results = pdf_extract_task.process(input_data, save_dir=result_path, visualize=visualize)
+    extract_results = pdf_extract_task.process(input_data, save_dir=result_path, visualize=visualize, merge2markdown=merge2markdown)
 
     print(f'Task done, results can be found at {result_path}')
 

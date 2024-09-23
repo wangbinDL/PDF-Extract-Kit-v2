@@ -10,6 +10,11 @@ from pdf_extract_kit.utils.data_preprocess import load_pdf
 from pdf_extract_kit.tasks.ocr.task import OCRTask
 from pdf_extract_kit.dataset.dataset import MathDataset
 from pdf_extract_kit.registry.registry import TASK_REGISTRY
+from pdf_extract_kit.utils.merge_blocks_and_spans import (
+    fill_spans_in_blocks,
+    fix_block_spans,
+    merge_para_with_text
+)
 
 
 def latex_rm_whitespace(s: str):
@@ -250,9 +255,72 @@ class PDFExtract(OCRTask):
             ocr_cost = round(time.time() - ocr_start, 2)
             print(f"ocr cost: {ocr_cost}")
         return pdf_extract_res
+    
+    def order_blocks(self, blocks):
+        def calculate_oder(poly):
+            xmin, ymin, _, _, xmax, ymax, _, _ = poly
+            return ymin*3000 + xmin
+        return sorted(blocks, key=lambda item: calculate_oder(item['poly']))
+                 
+    def convert2md(self, extract_res):
+        blocks = []
+        spans = []
+
+        for item in extract_res['layout_dets']:
+            if item['category_type'] in ['inline', 'text', 'isolated']:
+                text_key = 'text' if item['category_type'] == 'text' else 'latex'
+                xmin, ymin, _, _, xmax, ymax, _, _ = item['poly']
+                spans.append(
+                    {
+                        "type": item['category_type'],
+                        "bbox": [xmin, ymin, xmax, ymax],
+                        "content": item[text_key]
+                    }
+                )
+                if item['category_type'] == "isolated":
+                    item['category_type'] = "isolate_formula"
+                    blocks.append(item)
+            else:
+                blocks.append(item)
                 
+        blocks_types = ["title", "plain text", "figure_caption", "table_caption", "table_footnote", "isolate_formula", "formula_caption"]
+
+        need_fix_bbox = []
+        final_block = []
+        for block in blocks:
+            block_type = block["category_type"]
+            if block_type in blocks_types:
+                need_fix_bbox.append(block)
+            else:
+                final_block.append(block)
+                
+        block_with_spans, spans = fill_spans_in_blocks(need_fix_bbox, spans, 0.6)
+        
+        fix_blocks = fix_block_spans(block_with_spans)
+        for para_block in fix_blocks:
+            result = merge_para_with_text(para_block)
+            if para_block['type'] == "isolate_formula":
+                para_block['saved_info']['latex'] = result
+            else:
+                para_block['saved_info']['text'] = result
+            final_block.append(para_block['saved_info'])
             
-    def process(self, input_path, save_dir=None, visualize=False):
+        final_block = self.order_blocks(final_block)
+        md_text = ""
+        for block in final_block:
+            if block['category_type'] == "title":
+                md_text += "\n# "+block['text'] +"\n"
+            elif block['category_type'] in ["isolate_formula"]:
+                md_text += "\n"+block['latex']+"\n"
+            elif block['category_type'] in ["plain text", "figure_caption", "table_caption"]:
+                md_text += " "+block['text']+" "
+            elif block['category_type'] in ["figure", "table"]:
+                continue
+            else:
+                continue
+        return md_text
+        
+    def process(self, input_path, save_dir=None, visualize=False, merge2markdown=False):
         file_list = self.prepare_input_files(input_path)
         res_list = []
         for fpath in file_list:
@@ -266,6 +334,15 @@ class PDFExtract(OCRTask):
             if save_dir:
                 os.makedirs(save_dir, exist_ok=True)
                 self.save_json_result(pdf_extract_res, os.path.join(save_dir, f"{basename}.json"))
+                
+                if merge2markdown:
+                    md_content = []
+                    for extract_res in pdf_extract_res:
+                        md_text = self.convert2md(extract_res)
+                        md_content.append(md_text)
+                    with open(os.path.join(save_dir, f"{basename}.md"), "w") as f:
+                        f.write("\n\n".join(md_content))
+                        
                 if visualize:
                     for image, page_res in zip(images, pdf_extract_res):
                         self.visualize_image(image, page_res['layout_dets'], cate2color=self.color_palette)
