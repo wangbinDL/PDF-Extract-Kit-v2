@@ -1,6 +1,3 @@
-tasks:
-  - end2end_eval
-
 end2end_eval:
   metrics:
     text_block:

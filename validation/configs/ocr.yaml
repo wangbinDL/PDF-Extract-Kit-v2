@@ -1,6 +1,3 @@
-tasks:
-  - recogition_eval
-
 recogition_eval: # Text
   metrics:
     - Edit_dist

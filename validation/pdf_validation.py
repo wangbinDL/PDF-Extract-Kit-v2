@@ -37,7 +37,7 @@ if __name__ == '__main__':
 
     # print(cfg['tasks'])
 
-    for task in cfg['tasks']:
+    for task in cfg.keys():
         if not cfg.get(task):
             print('No config for task {task}')
         dataset = cfg[task]['dataset']['dataset_name']
