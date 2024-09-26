@@ -103,32 +103,6 @@ class RecognitionFormulaDataset():
     def __getitem__(self, idx):
         return self.samples[idx]
 
-@DATASET_REGISTRY.register("recogition_end2end_formula_dataset")
-class RecognitionEnd2EndFormulaDataset(RecognitionFormulaDataset):
-    def __init__(self, samples):
-        self.samples = []
-        img_id = 0
-        for sample in samples:
-            gt = self.normalize_text(sample['gt'])
-            pred = self.normalize_text(sample['pred'])
-            self.samples.append({
-                'gt': gt,
-                'pred': pred,
-                'img_id': img_id
-            })
-            img_id += 1
-
-@DATASET_REGISTRY.register("recogition_end2end_base_dataset")
-class RecognitionEnd2EndBaseDataset():
-    def __init__(self, samples):
-        img_id = 0
-        for sample in samples:
-            sample['img_id'] = img_id
-            img_id += 1
-        self.samples = samples
-    def __getitem__(self, idx):
-        return self.samples[idx]
-
 @DATASET_REGISTRY.register("recogition_table_dataset")
 class RecognitionTableDataset():
     def __init__(self, cfg_task):
@@ -217,25 +191,3 @@ class RecognitionTableDataset():
             # table_flow_no_space.append(table_res_no_space)
 
         return table_res, table_res_no_space
-
-
-@DATASET_REGISTRY.register("recogition_end2end_table_dataset")
-class RecognitionEnd2EndTableDataset(RecognitionTableDataset):
-    def __init__(self, samples):
-        self.samples = self.normalize_data(samples)
-
-    def normalize_data(self, samples):
-        norm_samples = []
-        img_id = 0
-        for sample in samples:
-            p = sample['pred']
-            r = sample['gt']
-            _, p = self.process_table(p)
-            _, r = self.process_table(r)
-            norm_samples.append({
-                'gt': self.strcut_clean(self.clean_table(r)),
-                'pred': self.strcut_clean(p),
-                'img_id': img_id
-            })
-            img_id += 1
-        return norm_samples

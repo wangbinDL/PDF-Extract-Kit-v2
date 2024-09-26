@@ -4,9 +4,9 @@ detection_eval:   # layout
   dataset: 
     dataset_name: detection_dataset
     ground_truth:
-      data_path: /mnt/petrelfs/ouyanglinke/PDF-Extract-Kit-v2/pdf_validation/test_data/layout_det/gt.json
+      data_path: ./check_data/layout_det/gt.json
     prediction:
-      data_path: /mnt/petrelfs/ouyanglinke/PDF-Extract-Kit-v2/pdf_validation/test_data/layout_det/pred.json
+      data_path: ./check_data/layout_det/pred.json
   categories:
     eval_cat:
       - title              # Title

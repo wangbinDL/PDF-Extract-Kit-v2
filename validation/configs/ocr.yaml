@@ -5,6 +5,6 @@ recogition_eval: # Text
   dataset:
     dataset_name: recogition_text_dataset
     ground_truth:
-      data_path: /mnt/petrelfs/ouyanglinke/PDF-Extract-Kit-v2/pdf_validation/test_data/ocr/ocr_test_gt.json
+      data_path: ./check_data/ocr/ocr_test_gt.json
     prediction:
-      data_path: /mnt/petrelfs/ouyanglinke/PDF-Extract-Kit-v2/pdf_validation/test_data/ocr/pred
+      data_path: ./check_data/ocr/pred

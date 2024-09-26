@@ -12,8 +12,6 @@ import dataset
 import task
 import metrics
 
-print(DATASET_REGISTRY.list_items())
-
 def process_args(args):
     parser = argparse.ArgumentParser(description='Render latex formulas for comparison.')
     parser.add_argument('--config', '-c', type=str, default='')

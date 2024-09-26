@@ -9,9 +9,9 @@ class DetectionDataset():
     def __init__(self, cfg_task):
         gt_path = cfg_task['dataset']['ground_truth']['data_path']
         pred_path = cfg_task['dataset']['prediction']['data_path']
-        label_classes = cfg_task['categories']
-        gt_cat_mapping = cfg_task['dataset']['ground_truth']['cat_mapping']
-        pred_cat_mapping = cfg_task['dataset']['prediction']['cat_mapping']
+        label_classes = cfg_task['categories']['eval_cat']
+        gt_cat_mapping = cfg_task['categories']['gt_cat_mapping']
+        pred_cat_mapping = cfg_task['categories']['pred_cat_mapping']
         labels = []
         det_res = []
         pred_dict = {}

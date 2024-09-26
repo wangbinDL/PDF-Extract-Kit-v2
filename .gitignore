@@ -19,3 +19,5 @@ test*
 models/*
 doc/zh_cn/_build/*
 doc/en/_build/*
+
+result

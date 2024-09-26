@@ -1,6 +1,6 @@
-from .recog_dataset import RecognitionFormulaDataset
-from .end2end_dataset import End2EndDataset
-from .detection_dataset import DetectionDataset
+from .recog_dataset import *
+from .end2end_dataset import *
+from .detection_dataset import *
 from registry.registry import DATASET_REGISTRY
 
 __all__ = [

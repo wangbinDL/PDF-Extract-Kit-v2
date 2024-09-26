@@ -55,7 +55,7 @@ def normalized_formula(text):
     return text
 
 
-def match_gt2pred(gt_lines, pred_lines, line_type):
+def match_gt2pred(gt_lines, pred_lines, line_type, img_name):
     if line_type == 'formula':
         norm_gt_lines = [normalized_formula(str(line)) for line in gt_lines]
         norm_pred_lines = [normalized_formula(str(line)) for line in pred_lines]
@@ -75,7 +75,7 @@ def match_gt2pred(gt_lines, pred_lines, line_type):
 
         if gt_idx in row_ind:
             row_i = list(row_ind).index(gt_idx)
-            pred_idx = col_ind[row_i]
+            pred_idx = int(col_ind[row_i])
             pred_line = norm_pred_lines[pred_idx]
             edit = cost_matrix[gt_idx][pred_idx]
             # print('edit_dist', edit)
@@ -87,30 +87,23 @@ def match_gt2pred(gt_lines, pred_lines, line_type):
             pred_line = ""
             edit = 1
             
+        # print(type(gt_idx))
+        # print(type(pred_idx))
         match_list.append({
             'gt_idx': gt_idx,
             'gt': gt_line,
             'pred_idx': pred_idx,
             'pred': pred_line,
-            'edit': edit
+            'edit': edit,
+            'img_id': img_name
         })
         # print('-'*10)
     
     return match_list
 
-def formula_format(formula_matches, img_name):
-    formated_list = []
-    for i, item in enumerate(formula_matches):
-        formated_list.append({
-            "gt": item["gt"],
-            "pred": item["pred"],
-            "img_id": img_name + '_' + str(i)
-        })
-    return formated_list
 
-
-def match_gt2pred_textblock(gt_lines, pred_lines):
-    text_inline_match_s = match_gt2pred(gt_lines, pred_lines, 'text')
+def match_gt2pred_textblock(gt_lines, pred_lines, img_name):
+    text_inline_match_s = match_gt2pred(gt_lines, pred_lines, 'text', img_name)
     plain_text_match = []
     inline_formula_match = []
     for item in text_inline_match_s:
@@ -127,11 +120,12 @@ def match_gt2pred_textblock(gt_lines, pred_lines):
                 'gt': plaintext_gt,
                 'pred_idx': item['pred_idx'],
                 'pred': plaintext_pred,
-                'edit': edit
+                'edit': edit,
+                'img_id': img_name
             })
 
         if inline_gt_list:
-            inline_formula_match_s = match_gt2pred(inline_gt_list, inline_pred_list, 'formula')
+            inline_formula_match_s = match_gt2pred(inline_gt_list, inline_pred_list, 'formula', img_name)
             inline_formula_match.extend(inline_formula_match_s)
 
     

@@ -71,6 +71,33 @@ class call_Edit_dist():
 
         return {'Edit_dist': Edit_dist}
     
+@METRIC_REGISTRY.register("Move_dist")
+class call_Move_dist():
+    def __int__(self, dataset):
+        self.dataset = dataset
+    def evaluate(self):
+        gt_len = 0
+        move_dist_list = []
+        for sample in self.samples:
+            pred = sample['pred']
+            gt = sample['gt']
+            assert len(gt) == len(pred), 'Not right length'
+            step = 0
+            for i, gt_c in enumerate(gt):
+                if gt_c != pred[i]:
+                    step += abs(i - pred.index(gt_c))
+                    pred.pop(pred.index(gt_c))
+                    pred.insert(i, gt_c)
+            move_dist_list.append(step)
+            gt_len += len(gt)
+        
+        if gt_len != 0:
+            Move_dist = sum(move_dist_list) / gt_len
+        else:
+            Move_dist = 0
+
+        return {'Move_dist': Move_dist}
+    
 @METRIC_REGISTRY.register("CDM")
 class call_CDM():
     def __int__(self, dataset):

@@ -8,7 +8,7 @@ from registry.registry import METRIC_REGISTRY
 @EVAL_TASK_REGISTRY.register("end2end_eval")
 class End2EndEval():
     def __init__(self, dataset, metrics_list):
-        for element in dataset.samples.keys():
+        for element in metrics_list.keys():
             result = {}
             for metric in metrics_list[element]:
                 metric_val = METRIC_REGISTRY.get(metric)
@@ -16,7 +16,7 @@ class End2EndEval():
                 if result_s:
                     result.update(result_s)
             if result:
-                print(element)
+                print(f'【{element}】')
                 self.show_result(result)
 
     def show_result(self, results):

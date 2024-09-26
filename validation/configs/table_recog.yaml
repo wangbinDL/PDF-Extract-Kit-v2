@@ -5,6 +5,6 @@ recogition_eval:  # Table
   dataset:
     dataset_name: recogition_table_dataset
     ground_truth:
-      data_path: /mnt/petrelfs/ouyanglinke/PDF-Extract-Kit-v2/pdf_validation/test_data/table_recog/table_gt.json
+      data_path: ./check_data/table_recog/table_gt.json
     prediction:
-      data_path: /mnt/petrelfs/ouyanglinke/PDF-Extract-Kit-v2/pdf_validation/test_data/table_recog/table_pred.json
+      data_path: ./check_data/table_recog/table_pred.json
