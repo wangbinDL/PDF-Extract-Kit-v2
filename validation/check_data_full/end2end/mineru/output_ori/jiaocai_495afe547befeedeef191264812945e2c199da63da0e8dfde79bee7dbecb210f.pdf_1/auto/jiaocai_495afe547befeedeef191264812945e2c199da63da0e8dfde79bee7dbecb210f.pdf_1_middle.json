@@ -1,0 +1,2674 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "type": "text",
+                    "bbox": [
+                        63,
+                        64,
+                        113,
+                        72
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                64.5,
+                                63.44930648803711,
+                                112.90357208251953,
+                                71.65442657470703
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.5,
+                                        63.44930648803711,
+                                        73.26116180419922,
+                                        71.65442657470703
+                                    ],
+                                    "content": "By ",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        73.25981140136719,
+                                        63.44930648803711,
+                                        112.90357208251953,
+                                        71.65442657470703
+                                    ],
+                                    "content": "Austin Knuppe",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        63,
+                        91,
+                        352,
+                        133
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                64.5,
+                                87.46778869628906,
+                                77.68919372558594,
+                                108.91850280761719
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.5,
+                                        87.46778869628906,
+                                        74.32488250732422,
+                                        108.91850280761719
+                                    ],
+                                    "content": "T",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        74.33999633789062,
+                                        89.07002258300781,
+                                        77.68919372558594,
+                                        97.31401824951172
+                                    ],
+                                    "content": "  ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                74.33999633789062,
+                                101.70387268066406,
+                                336.2146301269531,
+                                110.66835021972656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74.33999633789062,
+                                        101.70387268066406,
+                                        336.2146301269531,
+                                        110.66835021972656
+                                    ],
+                                    "content": "he first question on everyone’s mind last night was why President Obama’s first speech to a joint ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.49990844726562,
+                                109.14356994628906,
+                                351.8633728027344,
+                                118.10804748535156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        109.14356994628906,
+                                        351.8633728027344,
+                                        118.10804748535156
+                                    ],
+                                    "content": "session of Congress was not called a “State of the Union” Address (SOTU).  This question also piqued my ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.49990844726562,
+                                116.58326721191406,
+                                353.7061462402344,
+                                125.54774475097656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        116.58326721191406,
+                                        353.7061462402344,
+                                        125.54774475097656
+                                    ],
+                                    "content": "interest as I tuned into the proceedings on PBS.  After a minute or two on Google, I came up with a simple, ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.49990844726562,
+                                123.96315002441406,
+                                120.6502456665039,
+                                132.92762756347656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        123.96315002441406,
+                                        120.6502456665039,
+                                        132.92762756347656
+                                    ],
+                                    "content": "yet nuanced answer. ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        63,
+                        139,
+                        353.75,
+                        185
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                64.49990844726562,
+                                138.84254455566406,
+                                349.2583312988281,
+                                147.80702209472656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        138.84254455566406,
+                                        349.2583312988281,
+                                        147.80702209472656
+                                    ],
+                                    "content": "The U.S. Constitution says that the president “shall from time to time give to the Congress information of ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.49992370605469,
+                                146.22242736816406,
+                                354.64605712890625,
+                                155.18690490722656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49992370605469,
+                                        146.22242736816406,
+                                        354.64605712890625,
+                                        155.18690490722656
+                                    ],
+                                    "content": "the state of the Union, and recommend to their consideration such measures as he shall judge necessary and ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.49992370605469,
+                                153.66212463378906,
+                                354.6523742675781,
+                                162.62660217285156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49992370605469,
+                                        153.66212463378906,
+                                        354.6523742675781,
+                                        162.62660217285156
+                                    ],
+                                    "content": "expedient.”  There is nothing in the text about the address being a yearly tradition.  Thomas Jefferson broke ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.49990844726562,
+                                161.04200744628906,
+                                348.7586364746094,
+                                170.00648498535156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        161.04200744628906,
+                                        348.7586364746094,
+                                        170.00648498535156
+                                    ],
+                                    "content": "the tradition set by George Washington and John Adams when he delivered his messages to the Congress ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.49990844726562,
+                                168.48170471191406,
+                                354.3908386230469,
+                                177.44618225097656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        168.48170471191406,
+                                        354.3908386230469,
+                                        177.44618225097656
+                                    ],
+                                    "content": "in writing.  The custom of giving a State of the Union speech was revived by Woodrow Wilson, but did not ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.49990844726562,
+                                175.92140197753906,
+                                228.27090454101562,
+                                184.88587951660156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        175.92140197753906,
+                                        228.27090454101562,
+                                        184.88587951660156
+                                    ],
+                                    "content": "catch on permanently until Harry Truman’s address in 1947. ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        354.25,
+                        103,
+                        455,
+                        169
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                353,
+                                103,
+                                455,
+                                169
+                            ],
+                            "type": "image_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        353,
+                                        103,
+                                        455,
+                                        169
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                353,
+                                                103,
+                                                455,
+                                                169
+                                            ],
+                                            "score": 0.99998539686203,
+                                            "type": "image",
+                                            "image_path": "c2e46c6896712fb505bfb470c3cf14a5d583b559473d79ef39ce464838a962e4.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        63,
+                        191,
+                        457,
+                        244
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                64.49990844726562,
+                                190.74098205566406,
+                                440.3460693359375,
+                                199.70545959472656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        190.74098205566406,
+                                        440.3460693359375,
+                                        199.70545959472656
+                                    ],
+                                    "content": "Tradition dictates that the president’s first SOTU takes place one year after serving in office. Thus President Obama’s speech was officially ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.4998779296875,
+                                198.12086486816406,
+                                445.92901611328125,
+                                207.08534240722656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.4998779296875,
+                                        198.12086486816406,
+                                        445.92901611328125,
+                                        207.08534240722656
+                                    ],
+                                    "content": "designated a joint address to Congress.  Presidents Carter, Reagan, and Clinton all followed this format and used their first speech to lay out a ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.4998779296875,
+                                205.56056213378906,
+                                455.07080078125,
+                                214.52503967285156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.4998779296875,
+                                        205.56056213378906,
+                                        455.07080078125,
+                                        214.52503967285156
+                                    ],
+                                    "content": "policy agenda for the remainder of their first term in office.  This tradition has been broken on occasion as a symbolic gesture.  In 1953 President ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.4998779296875,
+                                213.00025939941406,
+                                457.6131591796875,
+                                221.96473693847656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.4998779296875,
+                                        213.00025939941406,
+                                        457.6131591796875,
+                                        221.96473693847656
+                                    ],
+                                    "content": "Eisenhower gave a SOTU address after a month in office to show the American public that after twenty years of Democrats in the White House, a ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.49990844726562,
+                                220.38014221191406,
+                                446.4686279296875,
+                                229.34461975097656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        220.38014221191406,
+                                        446.4686279296875,
+                                        229.34461975097656
+                                    ],
+                                    "content": "“new sheriff was in town.”  President Kennedy followed Eisenhower’s cue and ten days after his inauguration addressed the nation during the ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.49990844726562,
+                                227.81983947753906,
+                                451.85675048828125,
+                                236.78431701660156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        227.81983947753906,
+                                        451.85675048828125,
+                                        236.78431701660156
+                                    ],
+                                    "content": "State of the Union.  Interestingly enough, Kennedy gave a second SOTU speech in May of that same year in the aftermath of the disastrous Bay ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.499267578125,
+                                235.19972229003906,
+                                111.0661849975586,
+                                244.16419982910156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.499267578125,
+                                        235.19972229003906,
+                                        111.0661849975586,
+                                        244.16419982910156
+                                    ],
+                                    "content": "of Pigs invasion. ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        63,
+                        251,
+                        454,
+                        289
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                64.499267578125,
+                                250.07911682128906,
+                                443.16650390625,
+                                259.0435791015625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.499267578125,
+                                        250.07911682128906,
+                                        443.16650390625,
+                                        259.0435791015625
+                                    ],
+                                    "content": "While President Barack Obama did not begin his speech with “the state of the union is strong,” he began with an equally symbolic statement ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.499267578125,
+                                257.4590148925781,
+                                440.16473388671875,
+                                266.4234924316406
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.499267578125,
+                                        257.4590148925781,
+                                        440.16473388671875,
+                                        266.4234924316406
+                                    ],
+                                    "content": "when he announced, “Tonight I want every American to know this: We will rebuild, we will recover, and the United States of America will ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.49923706054688,
+                                264.8987121582031,
+                                442.39837646484375,
+                                273.8631896972656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49923706054688,
+                                        264.8987121582031,
+                                        442.39837646484375,
+                                        273.8631896972656
+                                    ],
+                                    "content": "emerge stronger than before.”  The floor of Congress immediately erupted into applause and many Americans at home were assured that the ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.49923706054688,
+                                272.3384094238281,
+                                448.3233642578125,
+                                281.3028869628906
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49923706054688,
+                                        272.3384094238281,
+                                        284.7391357421875,
+                                        281.3028869628906
+                                    ],
+                                    "content": "president has clear convictions. A CBS News poll revealed that before the speech,",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        285,
+                                        273,
+                                        299,
+                                        280
+                                    ],
+                                    "score": 0.85,
+                                    "content": "62\\%",
+                                    "type": "inline_equation"
+                                },
+                                {
+                                    "bbox": [
+                                        298.7422790527344,
+                                        272.3384094238281,
+                                        448.3233642578125,
+                                        281.3028869628906
+                                    ],
+                                    "content": " of Americans approved of the president’s plans for the ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.49990844726562,
+                                279.71832275390625,
+                                453.02410888671875,
+                                288.68280029296875
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        279.71832275390625,
+                                        162.92361450195312,
+                                        288.68280029296875
+                                    ],
+                                    "content": "economy.  After last night’s address,",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        163,
+                                        280,
+                                        177,
+                                        288
+                                    ],
+                                    "score": 0.84,
+                                    "content": "73\\%",
+                                    "type": "inline_equation"
+                                },
+                                {
+                                    "bbox": [
+                                        176.92132568359375,
+                                        279.71832275390625,
+                                        453.02410888671875,
+                                        288.68280029296875
+                                    ],
+                                    "content": " are confident in the administration’s economic agenda, despite a lack of concrete details in the speech.",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        63,
+                        295,
+                        456,
+                        347
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                64.49990844726562,
+                                294.5379333496094,
+                                454.07098388671875,
+                                303.5024108886719
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        294.5379333496094,
+                                        454.07098388671875,
+                                        303.5024108886719
+                                    ],
+                                    "content": "Contrary to some commentators' expectations, the president also struck chords that were pleasing to conservatives' ears.  He announced that now ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.49990844726562,
+                                301.9776306152344,
+                                454.1456298828125,
+                                310.9421081542969
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        301.9776306152344,
+                                        454.1456298828125,
+                                        310.9421081542969
+                                    ],
+                                    "content": "was the time to usher in a new era of individual responsibility, from personal spending and investing habits, to educating our children.  He spoke ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.50057983398438,
+                                309.4173278808594,
+                                444.421875,
+                                318.3818054199219
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50057983398438,
+                                        309.4173278808594,
+                                        173.53125,
+                                        318.3818054199219
+                                    ],
+                                    "content": "of a tax cut for families who make under",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        174,
+                                        310,
+                                        201,
+                                        317
+                                    ],
+                                    "score": 0.56,
+                                    "content": "\\mathbb{S}250{,}000",
+                                    "type": "inline_equation"
+                                },
+                                {
+                                    "bbox": [
+                                        200.335205078125,
+                                        309.4173278808594,
+                                        444.421875,
+                                        318.3818054199219
+                                    ],
+                                    "content": " a year as well.  In an interview with Katie Curic, Senator John McCain said that President ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.50128173828125,
+                                316.7972412109375,
+                                456.66552734375,
+                                325.76171875
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50128173828125,
+                                        316.7972412109375,
+                                        456.66552734375,
+                                        325.76171875
+                                    ],
+                                    "content": "Obama, “gave an effective speech that was a balance between the size and enormity of the challenges we face, but also an expression of hope and ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.50128173828125,
+                                324.2369384765625,
+                                434.59588623046875,
+                                333.201416015625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50128173828125,
+                                        324.2369384765625,
+                                        434.59588623046875,
+                                        333.201416015625
+                                    ],
+                                    "content": "confidence that America will get through this.”  McCain was disappointed, however, that the president did not specifically address Social ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.501953125,
+                                331.6168518066406,
+                                443.5267333984375,
+                                340.5813293457031
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.501953125,
+                                        331.6168518066406,
+                                        443.5267333984375,
+                                        340.5813293457031
+                                    ],
+                                    "content": "Security reform.  Skeptics of the speech concur that Obama will not be able to cut taxes while also raising government spending programs to ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.50265502929688,
+                                339.0565490722656,
+                                122.36457061767578,
+                                348.0210266113281
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50265502929688,
+                                        339.0565490722656,
+                                        122.36457061767578,
+                                        348.0210266113281
+                                    ],
+                                    "content": "revive the economy.  ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        63,
+                        354,
+                        454,
+                        400
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                64.50265502929688,
+                                353.87615966796875,
+                                437.046630859375,
+                                362.84063720703125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50265502929688,
+                                        353.87615966796875,
+                                        437.046630859375,
+                                        362.84063720703125
+                                    ],
+                                    "content": "The president sought to bring a bipartisan tone to his speech. He spoke of political responsibility, arguing that, “Everyone in this chamber, ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.50332641601562,
+                                361.31585693359375,
+                                438.47332763671875,
+                                370.28033447265625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50332641601562,
+                                        361.31585693359375,
+                                        438.47332763671875,
+                                        370.28033447265625
+                                    ],
+                                    "content": "Democrats and Republicans, will have to sacrifice some worthy priorities for which there are no dollars…[a]nd that includes me.”  He also ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.50332641601562,
+                                368.75555419921875,
+                                453.74853515625,
+                                377.72003173828125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50332641601562,
+                                        368.75555419921875,
+                                        453.74853515625,
+                                        377.72003173828125
+                                    ],
+                                    "content": "wanted to ensure the American public that spending would not benefit the financial and political institutions that got America into this economic ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.50335693359375,
+                                376.1354675292969,
+                                452.23992919921875,
+                                385.0999450683594
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50335693359375,
+                                        376.1354675292969,
+                                        452.23992919921875,
+                                        385.0999450683594
+                                    ],
+                                    "content": "mess in the first place.  “We have lived through an era where too often, short-term gains were prized over long-term prosperity, where we failed ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.5040283203125,
+                                383.5751647949219,
+                                453.0040283203125,
+                                392.5396423339844
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.5040283203125,
+                                        383.5751647949219,
+                                        453.0040283203125,
+                                        392.5396423339844
+                                    ],
+                                    "content": "to look beyond the next payment, the next quarter or the next election,” he said.  In light of the president’s bipartisanship, he did take one stab at ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.5040283203125,
+                                390.955078125,
+                                429.738037109375,
+                                399.9195556640625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.5040283203125,
+                                        390.955078125,
+                                        429.738037109375,
+                                        399.9195556640625
+                                    ],
+                                    "content": "the Bush administration when he referred to the “deficit we inherited.”  After the quip, half of the House floor erupted in loud applause. ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        63,
+                        406,
+                        453,
+                        452
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                64.50332641601562,
+                                405.83447265625,
+                                448.0244140625,
+                                414.7989501953125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50332641601562,
+                                        405.83447265625,
+                                        448.0244140625,
+                                        414.7989501953125
+                                    ],
+                                    "content": "At the conclusion of the evening, Louisiana Governor Bobby Jindal gave the Republican’s response to the speech.  Jindal, who many politicos ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.50332641601562,
+                                413.2143859863281,
+                                442.38897705078125,
+                                422.1788635253906
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50332641601562,
+                                        413.2143859863281,
+                                        442.38897705078125,
+                                        422.1788635253906
+                                    ],
+                                    "content": "consider to be the political wunderkind of the GOP, may be a serious contender for the presidency in 2012.  In his speech, the Governor was ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.50332641601562,
+                                420.6540832519531,
+                                454.1416015625,
+                                429.6185607910156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50332641601562,
+                                        420.6540832519531,
+                                        454.1416015625,
+                                        429.6185607910156
+                                    ],
+                                    "content": "supportive of the president’s historic achievements, but also disappointed in the stimulus bill that was signed into law earlier that day.  “The way ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.5032958984375,
+                                428.03399658203125,
+                                448.1937255859375,
+                                436.99847412109375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.5032958984375,
+                                        428.03399658203125,
+                                        448.1937255859375,
+                                        436.99847412109375
+                                    ],
+                                    "content": "to lead is not to raise taxes and put more money and power in hands of Washington politicians,” Governor Jindal said.  “Who among us would ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.50326538085938,
+                                435.47369384765625,
+                                443.04815673828125,
+                                444.43817138671875
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50326538085938,
+                                        435.47369384765625,
+                                        426.3039855957031,
+                                        444.43817138671875
+                                    ],
+                                    "content": "ask our children for a loan, so we could spend money we do not have, on things we do not need?” Jindal was specifically critical of the",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        427,
+                                        436,
+                                        442,
+                                        443
+                                    ],
+                                    "score": 0.57,
+                                    "content": "\\S140",
+                                    "type": "inline_equation"
+                                },
+                                {
+                                    "bbox": [
+                                        441.3681640625,
+                                        435.47369384765625,
+                                        443.04815673828125,
+                                        444.43817138671875
+                                    ],
+                                    "content": " ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.50326538085938,
+                                442.91339111328125,
+                                208.80307006835938,
+                                451.87786865234375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50326538085938,
+                                        442.91339111328125,
+                                        208.80307006835938,
+                                        451.87786865234375
+                                    ],
+                                    "content": "million in the bill reserved for “volcano monitoring.” ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        63,
+                        459,
+                        456,
+                        481
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                64.50326538085938,
+                                457.7330017089844,
+                                457.431640625,
+                                466.6974792480469
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50326538085938,
+                                        457.7330017089844,
+                                        457.431640625,
+                                        466.6974792480469
+                                    ],
+                                    "content": "When all is said and done, both the public and the Congress were generally accepting of President Obama’s remarks. The Dow Jones, however, is ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.50326538085938,
+                                465.1129150390625,
+                                453.090576171875,
+                                474.077392578125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50326538085938,
+                                        465.1129150390625,
+                                        453.090576171875,
+                                        474.077392578125
+                                    ],
+                                    "content": "responding in quite a different way. At the time of writing, the Dow is down 173 points and falling. Time will only tell how the “invisible hand” ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.50259399414062,
+                                472.5526123046875,
+                                162.06903076171875,
+                                481.5283203125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50259399414062,
+                                        472.5526123046875,
+                                        162.06903076171875,
+                                        481.5283203125
+                                    ],
+                                    "content": "responds to the president’s policies. ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "layout_bboxes": [
+                {
+                    "layout_bbox": [
+                        0,
+                        64,
+                        522.0,
+                        72
+                    ],
+                    "layout_label": "H",
+                    "sub_layout": []
+                },
+                {
+                    "layout_bbox": [
+                        63,
+                        91,
+                        353.75,
+                        185
+                    ],
+                    "layout_label": "V",
+                    "sub_layout": []
+                },
+                {
+                    "layout_bbox": [
+                        354.25,
+                        91,
+                        455,
+                        185
+                    ],
+                    "layout_label": "V",
+                    "sub_layout": []
+                },
+                {
+                    "layout_bbox": [
+                        0,
+                        191,
+                        522.0,
+                        481
+                    ],
+                    "layout_label": "H",
+                    "sub_layout": []
+                }
+            ],
+            "page_idx": 0,
+            "page_size": [
+                522.0,
+                756.0
+            ],
+            "_layout_tree": [
+                {
+                    "layout_bbox": [
+                        0,
+                        64,
+                        522.0,
+                        72
+                    ],
+                    "layout_label": "H",
+                    "sub_layout": []
+                },
+                {
+                    "layout_bbox": [
+                        0,
+                        91,
+                        522.0,
+                        185
+                    ],
+                    "layout_label": "V",
+                    "sub_layout": [
+                        {
+                            "layout_bbox": [
+                                63,
+                                91,
+                                353.75,
+                                185
+                            ],
+                            "layout_label": "H",
+                            "sub_layout": [
+                                {
+                                    "layout_bbox": [
+                                        63,
+                                        91,
+                                        353.75,
+                                        185
+                                    ],
+                                    "layout_label": "V",
+                                    "sub_layout": []
+                                }
+                            ]
+                        },
+                        {
+                            "layout_bbox": [
+                                354.25,
+                                91,
+                                455,
+                                185
+                            ],
+                            "layout_label": "V",
+                            "sub_layout": []
+                        }
+                    ]
+                },
+                {
+                    "layout_bbox": [
+                        0,
+                        191,
+                        522.0,
+                        481
+                    ],
+                    "layout_label": "H",
+                    "sub_layout": []
+                }
+            ],
+            "images": [
+                {
+                    "type": "image",
+                    "bbox": [
+                        354.25,
+                        103,
+                        455,
+                        169
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                353,
+                                103,
+                                455,
+                                169
+                            ],
+                            "type": "image_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        353,
+                                        103,
+                                        455,
+                                        169
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                353,
+                                                103,
+                                                455,
+                                                169
+                                            ],
+                                            "score": 0.99998539686203,
+                                            "type": "image",
+                                            "image_path": "c2e46c6896712fb505bfb470c3cf14a5d583b559473d79ef39ce464838a962e4.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "tables": [],
+            "interline_equations": [],
+            "discarded_blocks": [
+                {
+                    "type": "discarded",
+                    "bbox": [
+                        63,
+                        36,
+                        202,
+                        54
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                64.5,
+                                34.641334533691406,
+                                202.26182556152344,
+                                47.18943405151367
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.5,
+                                        34.641334533691406,
+                                        202.26182556152344,
+                                        47.18943405151367
+                                    ],
+                                    "content": "Obama's First Address to Congress",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64.5,
+                                44.75385284423828,
+                                134.8524932861328,
+                                55.479209899902344
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.5,
+                                        44.75385284423828,
+                                        134.8524932861328,
+                                        55.479209899902344
+                                    ],
+                                    "content": "Brighter Days Ahead ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "need_drop": false,
+            "drop_reason": [],
+            "para_blocks": [
+                {
+                    "type": "text",
+                    "bbox": [
+                        63,
+                        64,
+                        113,
+                        72
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                64.5,
+                                63.44930648803711,
+                                112.90357208251953,
+                                71.65442657470703
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.5,
+                                        63.44930648803711,
+                                        73.26116180419922,
+                                        71.65442657470703
+                                    ],
+                                    "content": "By ",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        73.25981140136719,
+                                        63.44930648803711,
+                                        112.90357208251953,
+                                        71.65442657470703
+                                    ],
+                                    "content": "Austin Knuppe",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                87.46778869628906,
+                                77.68919372558594,
+                                108.91850280761719
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.5,
+                                        87.46778869628906,
+                                        74.32488250732422,
+                                        108.91850280761719
+                                    ],
+                                    "content": "T",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        74.33999633789062,
+                                        89.07002258300781,
+                                        77.68919372558594,
+                                        97.31401824951172
+                                    ],
+                                    "content": "  ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                74.33999633789062,
+                                101.70387268066406,
+                                336.2146301269531,
+                                110.66835021972656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        74.33999633789062,
+                                        101.70387268066406,
+                                        336.2146301269531,
+                                        110.66835021972656
+                                    ],
+                                    "content": "he first question on everyone’s mind last night was why President Obama’s first speech to a joint ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                109.14356994628906,
+                                353,
+                                118.10804748535156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        109.14356994628906,
+                                        351.8633728027344,
+                                        118.10804748535156
+                                    ],
+                                    "content": "session of Congress was not called a “State of the Union” Address (SOTU).  This question also piqued my ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                116.58326721191406,
+                                353,
+                                125.54774475097656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        116.58326721191406,
+                                        353.7061462402344,
+                                        125.54774475097656
+                                    ],
+                                    "content": "interest as I tuned into the proceedings on PBS.  After a minute or two on Google, I came up with a simple, ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                123.96315002441406,
+                                120.6502456665039,
+                                132.92762756347656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        123.96315002441406,
+                                        120.6502456665039,
+                                        132.92762756347656
+                                    ],
+                                    "content": "yet nuanced answer. ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        64.5,
+                        63.44930648803711,
+                        112.90357208251953,
+                        71.65442657470703
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        63,
+                        91,
+                        352,
+                        133
+                    ],
+                    "lines": [],
+                    "bbox_fs": [
+                        64,
+                        87.46778869628906,
+                        353,
+                        132.92762756347656
+                    ],
+                    "lines_deleted": true
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        63,
+                        139,
+                        353.75,
+                        185
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                64,
+                                138.84254455566406,
+                                353,
+                                147.80702209472656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        138.84254455566406,
+                                        349.2583312988281,
+                                        147.80702209472656
+                                    ],
+                                    "content": "The U.S. Constitution says that the president “shall from time to time give to the Congress information of ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                146.22242736816406,
+                                353,
+                                155.18690490722656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49992370605469,
+                                        146.22242736816406,
+                                        354.64605712890625,
+                                        155.18690490722656
+                                    ],
+                                    "content": "the state of the Union, and recommend to their consideration such measures as he shall judge necessary and ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                153.66212463378906,
+                                353,
+                                162.62660217285156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49992370605469,
+                                        153.66212463378906,
+                                        354.6523742675781,
+                                        162.62660217285156
+                                    ],
+                                    "content": "expedient.”  There is nothing in the text about the address being a yearly tradition.  Thomas Jefferson broke ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                161.04200744628906,
+                                353,
+                                170.00648498535156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        161.04200744628906,
+                                        348.7586364746094,
+                                        170.00648498535156
+                                    ],
+                                    "content": "the tradition set by George Washington and John Adams when he delivered his messages to the Congress ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                168.48170471191406,
+                                353,
+                                177.44618225097656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        168.48170471191406,
+                                        354.3908386230469,
+                                        177.44618225097656
+                                    ],
+                                    "content": "in writing.  The custom of giving a State of the Union speech was revived by Woodrow Wilson, but did not ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                175.92140197753906,
+                                228.27090454101562,
+                                184.88587951660156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        175.92140197753906,
+                                        228.27090454101562,
+                                        184.88587951660156
+                                    ],
+                                    "content": "catch on permanently until Harry Truman’s address in 1947. ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        64,
+                        138.84254455566406,
+                        353,
+                        184.88587951660156
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        63,
+                        191,
+                        457,
+                        244
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                64,
+                                190.74098205566406,
+                                448,
+                                199.70545959472656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        190.74098205566406,
+                                        440.3460693359375,
+                                        199.70545959472656
+                                    ],
+                                    "content": "Tradition dictates that the president’s first SOTU takes place one year after serving in office. Thus President Obama’s speech was officially ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                198.12086486816406,
+                                448,
+                                207.08534240722656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.4998779296875,
+                                        198.12086486816406,
+                                        445.92901611328125,
+                                        207.08534240722656
+                                    ],
+                                    "content": "designated a joint address to Congress.  Presidents Carter, Reagan, and Clinton all followed this format and used their first speech to lay out a ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                205.56056213378906,
+                                457,
+                                214.52503967285156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.4998779296875,
+                                        205.56056213378906,
+                                        455.07080078125,
+                                        214.52503967285156
+                                    ],
+                                    "content": "policy agenda for the remainder of their first term in office.  This tradition has been broken on occasion as a symbolic gesture.  In 1953 President ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                213.00025939941406,
+                                457,
+                                221.96473693847656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.4998779296875,
+                                        213.00025939941406,
+                                        457.6131591796875,
+                                        221.96473693847656
+                                    ],
+                                    "content": "Eisenhower gave a SOTU address after a month in office to show the American public that after twenty years of Democrats in the White House, a ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                220.38014221191406,
+                                448,
+                                229.34461975097656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        220.38014221191406,
+                                        446.4686279296875,
+                                        229.34461975097656
+                                    ],
+                                    "content": "“new sheriff was in town.”  President Kennedy followed Eisenhower’s cue and ten days after his inauguration addressed the nation during the ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                227.81983947753906,
+                                457,
+                                236.78431701660156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        227.81983947753906,
+                                        451.85675048828125,
+                                        236.78431701660156
+                                    ],
+                                    "content": "State of the Union.  Interestingly enough, Kennedy gave a second SOTU speech in May of that same year in the aftermath of the disastrous Bay ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                235.19972229003906,
+                                111.0661849975586,
+                                244.16419982910156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.499267578125,
+                                        235.19972229003906,
+                                        111.0661849975586,
+                                        244.16419982910156
+                                    ],
+                                    "content": "of Pigs invasion. ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        64,
+                        190.74098205566406,
+                        457,
+                        244.16419982910156
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        63,
+                        251,
+                        454,
+                        289
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                64,
+                                250.07911682128906,
+                                448,
+                                259.0435791015625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.499267578125,
+                                        250.07911682128906,
+                                        443.16650390625,
+                                        259.0435791015625
+                                    ],
+                                    "content": "While President Barack Obama did not begin his speech with “the state of the union is strong,” he began with an equally symbolic statement ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                257.4590148925781,
+                                448,
+                                266.4234924316406
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.499267578125,
+                                        257.4590148925781,
+                                        440.16473388671875,
+                                        266.4234924316406
+                                    ],
+                                    "content": "when he announced, “Tonight I want every American to know this: We will rebuild, we will recover, and the United States of America will ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                264.8987121582031,
+                                448,
+                                273.8631896972656
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49923706054688,
+                                        264.8987121582031,
+                                        442.39837646484375,
+                                        273.8631896972656
+                                    ],
+                                    "content": "emerge stronger than before.”  The floor of Congress immediately erupted into applause and many Americans at home were assured that the ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                272.3384094238281,
+                                448,
+                                281.3028869628906
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49923706054688,
+                                        272.3384094238281,
+                                        284.7391357421875,
+                                        281.3028869628906
+                                    ],
+                                    "content": "president has clear convictions. A CBS News poll revealed that before the speech,",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        285,
+                                        273,
+                                        299,
+                                        280
+                                    ],
+                                    "score": 0.85,
+                                    "content": "62\\%",
+                                    "type": "inline_equation"
+                                },
+                                {
+                                    "bbox": [
+                                        298.7422790527344,
+                                        272.3384094238281,
+                                        448.3233642578125,
+                                        281.3028869628906
+                                    ],
+                                    "content": " of Americans approved of the president’s plans for the ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                279.71832275390625,
+                                457,
+                                288.68280029296875
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        279.71832275390625,
+                                        162.92361450195312,
+                                        288.68280029296875
+                                    ],
+                                    "content": "economy.  After last night’s address,",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        163,
+                                        280,
+                                        177,
+                                        288
+                                    ],
+                                    "score": 0.84,
+                                    "content": "73\\%",
+                                    "type": "inline_equation"
+                                },
+                                {
+                                    "bbox": [
+                                        176.92132568359375,
+                                        279.71832275390625,
+                                        453.02410888671875,
+                                        288.68280029296875
+                                    ],
+                                    "content": " are confident in the administration’s economic agenda, despite a lack of concrete details in the speech.",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        64,
+                        250.07911682128906,
+                        457,
+                        288.68280029296875
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        63,
+                        295,
+                        456,
+                        347
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                64,
+                                294.5379333496094,
+                                457,
+                                303.5024108886719
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        294.5379333496094,
+                                        454.07098388671875,
+                                        303.5024108886719
+                                    ],
+                                    "content": "Contrary to some commentators' expectations, the president also struck chords that were pleasing to conservatives' ears.  He announced that now ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                301.9776306152344,
+                                457,
+                                310.9421081542969
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.49990844726562,
+                                        301.9776306152344,
+                                        454.1456298828125,
+                                        310.9421081542969
+                                    ],
+                                    "content": "was the time to usher in a new era of individual responsibility, from personal spending and investing habits, to educating our children.  He spoke ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                309.4173278808594,
+                                448,
+                                318.3818054199219
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50057983398438,
+                                        309.4173278808594,
+                                        173.53125,
+                                        318.3818054199219
+                                    ],
+                                    "content": "of a tax cut for families who make under",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        174,
+                                        310,
+                                        201,
+                                        317
+                                    ],
+                                    "score": 0.56,
+                                    "content": "\\mathbb{S}250{,}000",
+                                    "type": "inline_equation"
+                                },
+                                {
+                                    "bbox": [
+                                        200.335205078125,
+                                        309.4173278808594,
+                                        444.421875,
+                                        318.3818054199219
+                                    ],
+                                    "content": " a year as well.  In an interview with Katie Curic, Senator John McCain said that President ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                316.7972412109375,
+                                457,
+                                325.76171875
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50128173828125,
+                                        316.7972412109375,
+                                        456.66552734375,
+                                        325.76171875
+                                    ],
+                                    "content": "Obama, “gave an effective speech that was a balance between the size and enormity of the challenges we face, but also an expression of hope and ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                324.2369384765625,
+                                448,
+                                333.201416015625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50128173828125,
+                                        324.2369384765625,
+                                        434.59588623046875,
+                                        333.201416015625
+                                    ],
+                                    "content": "confidence that America will get through this.”  McCain was disappointed, however, that the president did not specifically address Social ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                331.6168518066406,
+                                448,
+                                340.5813293457031
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.501953125,
+                                        331.6168518066406,
+                                        443.5267333984375,
+                                        340.5813293457031
+                                    ],
+                                    "content": "Security reform.  Skeptics of the speech concur that Obama will not be able to cut taxes while also raising government spending programs to ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                339.0565490722656,
+                                122.36457061767578,
+                                348.0210266113281
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50265502929688,
+                                        339.0565490722656,
+                                        122.36457061767578,
+                                        348.0210266113281
+                                    ],
+                                    "content": "revive the economy.  ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        64,
+                        294.5379333496094,
+                        457,
+                        348.0210266113281
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        63,
+                        354,
+                        454,
+                        400
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                64,
+                                353.87615966796875,
+                                448,
+                                362.84063720703125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50265502929688,
+                                        353.87615966796875,
+                                        437.046630859375,
+                                        362.84063720703125
+                                    ],
+                                    "content": "The president sought to bring a bipartisan tone to his speech. He spoke of political responsibility, arguing that, “Everyone in this chamber, ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                361.31585693359375,
+                                448,
+                                370.28033447265625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50332641601562,
+                                        361.31585693359375,
+                                        438.47332763671875,
+                                        370.28033447265625
+                                    ],
+                                    "content": "Democrats and Republicans, will have to sacrifice some worthy priorities for which there are no dollars…[a]nd that includes me.”  He also ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                368.75555419921875,
+                                457,
+                                377.72003173828125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50332641601562,
+                                        368.75555419921875,
+                                        453.74853515625,
+                                        377.72003173828125
+                                    ],
+                                    "content": "wanted to ensure the American public that spending would not benefit the financial and political institutions that got America into this economic ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                376.1354675292969,
+                                457,
+                                385.0999450683594
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50335693359375,
+                                        376.1354675292969,
+                                        452.23992919921875,
+                                        385.0999450683594
+                                    ],
+                                    "content": "mess in the first place.  “We have lived through an era where too often, short-term gains were prized over long-term prosperity, where we failed ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                383.5751647949219,
+                                457,
+                                392.5396423339844
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.5040283203125,
+                                        383.5751647949219,
+                                        453.0040283203125,
+                                        392.5396423339844
+                                    ],
+                                    "content": "to look beyond the next payment, the next quarter or the next election,” he said.  In light of the president’s bipartisanship, he did take one stab at ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                390.955078125,
+                                429.738037109375,
+                                399.9195556640625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.5040283203125,
+                                        390.955078125,
+                                        429.738037109375,
+                                        399.9195556640625
+                                    ],
+                                    "content": "the Bush administration when he referred to the “deficit we inherited.”  After the quip, half of the House floor erupted in loud applause. ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        64,
+                        353.87615966796875,
+                        457,
+                        399.9195556640625
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        63,
+                        406,
+                        453,
+                        452
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                64,
+                                405.83447265625,
+                                448,
+                                414.7989501953125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50332641601562,
+                                        405.83447265625,
+                                        448.0244140625,
+                                        414.7989501953125
+                                    ],
+                                    "content": "At the conclusion of the evening, Louisiana Governor Bobby Jindal gave the Republican’s response to the speech.  Jindal, who many politicos ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                413.2143859863281,
+                                448,
+                                422.1788635253906
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50332641601562,
+                                        413.2143859863281,
+                                        442.38897705078125,
+                                        422.1788635253906
+                                    ],
+                                    "content": "consider to be the political wunderkind of the GOP, may be a serious contender for the presidency in 2012.  In his speech, the Governor was ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                420.6540832519531,
+                                457,
+                                429.6185607910156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50332641601562,
+                                        420.6540832519531,
+                                        454.1416015625,
+                                        429.6185607910156
+                                    ],
+                                    "content": "supportive of the president’s historic achievements, but also disappointed in the stimulus bill that was signed into law earlier that day.  “The way ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                428.03399658203125,
+                                448,
+                                436.99847412109375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.5032958984375,
+                                        428.03399658203125,
+                                        448.1937255859375,
+                                        436.99847412109375
+                                    ],
+                                    "content": "to lead is not to raise taxes and put more money and power in hands of Washington politicians,” Governor Jindal said.  “Who among us would ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                435.47369384765625,
+                                448,
+                                444.43817138671875
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50326538085938,
+                                        435.47369384765625,
+                                        426.3039855957031,
+                                        444.43817138671875
+                                    ],
+                                    "content": "ask our children for a loan, so we could spend money we do not have, on things we do not need?” Jindal was specifically critical of the",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        427,
+                                        436,
+                                        442,
+                                        443
+                                    ],
+                                    "score": 0.57,
+                                    "content": "\\S140",
+                                    "type": "inline_equation"
+                                },
+                                {
+                                    "bbox": [
+                                        441.3681640625,
+                                        435.47369384765625,
+                                        443.04815673828125,
+                                        444.43817138671875
+                                    ],
+                                    "content": " ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                442.91339111328125,
+                                208.80307006835938,
+                                451.87786865234375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50326538085938,
+                                        442.91339111328125,
+                                        208.80307006835938,
+                                        451.87786865234375
+                                    ],
+                                    "content": "million in the bill reserved for “volcano monitoring.” ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        64,
+                        405.83447265625,
+                        457,
+                        451.87786865234375
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        63,
+                        459,
+                        456,
+                        481
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                64,
+                                457.7330017089844,
+                                457,
+                                466.6974792480469
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50326538085938,
+                                        457.7330017089844,
+                                        457.431640625,
+                                        466.6974792480469
+                                    ],
+                                    "content": "When all is said and done, both the public and the Congress were generally accepting of President Obama’s remarks. The Dow Jones, however, is ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                465.1129150390625,
+                                457,
+                                474.077392578125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50326538085938,
+                                        465.1129150390625,
+                                        453.090576171875,
+                                        474.077392578125
+                                    ],
+                                    "content": "responding in quite a different way. At the time of writing, the Dow is down 173 points and falling. Time will only tell how the “invisible hand” ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                64,
+                                472.5526123046875,
+                                162.06903076171875,
+                                481.5283203125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        64.50259399414062,
+                                        472.5526123046875,
+                                        162.06903076171875,
+                                        481.5283203125
+                                    ],
+                                    "content": "responds to the president’s policies. ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        64,
+                        457.7330017089844,
+                        457,
+                        481.5283203125
+                    ]
+                }
+            ]
+        }
+    ],
+    "_parse_type": "txt",
+    "_version_name": "0.7.1"
+}

@@ -1,0 +1,1377 @@
+# QUANTUM COHOMOLOGY AND CREPANT RESOLUTIONS: A CONJECTURE  
+
+TOM COATES AND YONGBIN RUAN  
+
+Abstract.  We give an expository account of a conjecture, developed by Coates– Corti–Iritani–Tseng and Ruan, which relates the quantum cohomology of a Gorenstein orbifold    $\mathcal{X}$   to the quantum cohomology of a crepant resolution    $Y$  of    $\mathcal{X}$  . We explore some consequences of this conjecture, showing that it im- plies versions of both the Cohomological Crepant Resolution Conjecture and of the Crepant Resolution Conjectures of Ruan and Bryan–Graber. We also give a ‘quantized’ version of the conjecture, which determines higher-genus Gromov–Witten invariants of    $\mathcal{X}$   from those of    $Y$   .  
+
+# 1.  Introduction  
+
+An orbifold is a space which is locally modelled on quotients of    $\mathbb{R}^{n}$    by ﬁnite groups. Orbifolds are a natural class of spaces to study. Manifolds and smooth algebraic varieties are orbifolds but spaces of geometric interest, and particularly those obtained by quotient constructions, are often orbifolds rather than varieties or manifolds. Furthermore many geometric operations, including those transforma- tions involved in spacetime topology change [4], treat orbifolds and smooth varieties on an equal footing. In this paper we study the quantum cohomology of orbifolds.  
+
+The quantum cohomology of a K¨ ahler orbifold    $\mathcal{X}$   is a family of algebras whose structure constants encode certain  Gromov–Witten invariants  of    $\mathcal{X}$  . These Gromov– Witten invariants are interesting from at least three points of view:  symplectic topology , as they give invariants of    $\mathcal{X}$   as a symplectic orbifold;  algebraic geometry , as they give a ‘virtual count’ of the number of curves in    $\mathcal{X}$   which are constrained to pass through various cycles; and  physics , as they give rigorous meaning to instanton counting in a model of string theory with spacetime    $\mathcal{X}\times\mathbb{R}^{4}$  . In what follows we outline a conjecture which describes how the quantum cohomology of a Gorenstein orbifold    $\mathcal{X}$   is related to that of a crepant resolution  $Y$   of    $\mathcal{X}$  , and explore some of its consequences. The conjecture is of interest also from at least three points of view: Gromov–Witten invariants of orbifolds are  diﬃcult to compute , and the conjecture provides tools for doing this; crepant resolutions are simple examples of  birational transformations , and an understanding of how quantum cohomology changes under birational transformations would be both interesting and useful; and the conjecture provides a version of the  McKay Correspondence  which reﬂects a well-known phys- ical principle — that string theory on an orbifold and on a crepant resolution of that orbifold should be equivalent.  
+
+The conjecture, which is described in more detail in  § 4 below, was developed by Coates–Corti–Iritani–Tseng [13] and Ruan [33]. Following Givental, we encode all genus-zero Gromov–Witten invariants of    $\mathcal{X}$   in the germ    $\mathcal{L}_{\mathcal{X}}$   of a Lagrangian subman- ifold in a symplectic vector space    $\mathcal{H}_{\mathcal{X}}$  . This submanifold-germ    $\mathcal{L}_{\mathcal{X}}$   has very special geometric properties (theorem 3.2 below) which make it easy to determine the quan- tum cohomology of    $\mathcal{X}$   from    $\mathcal{L}_{\mathcal{X}}$   ( § 6 below). A similar submanifold-germ    $\mathcal{L}_{Y}\subset\mathcal{H}_{Y}$  encodes all genus-zero Gromov–Witten invariants of the crepant resolution    $Y$  . As  $\mathcal{L}_{\mathcal{X}}$   and  $\mathcal{L}_{Y}$   are germs of submanifolds, it makes sense to analytically continue them. We conjecture that there is a line symp tic isomo  $\mathbb{U}:\mathcal{H}_{\mathcal{X}}\rightarrow\mathcal{H}_{Y}$   such that after analytic continuation of  L  $\mathcal{L}_{\mathcal{X}}$   and  L  $\mathcal{L}_{Y}$   we have  $\mathbb{U}(\mathcal{L}_{\mathcal{X}})=\mathcal{L}_{Y}$  L  L  . This g es, in X X particular, a conjectural rela onship between the quantum cohomology of  X  and the quantum cohomology of  Y  .  
+
+The idea that the quantum co omology of    $\mathcal{X}$   should be in some sense equivalent to the quantum cohomology of  Y  has been around for a while now, and is due to Ruan. He originally conjectured  at the small quantum cohomology of    $\mathcal{X}$   and the small quantum cohomology of  Y  — two families of algebras which depend on so-called quantum parameters — become isomorphic after specializing some of the quantum parameters to particular values. This specialization may ﬁrst require analytic continuation in the quantum parameters. Ruan’s conjecture is discussed further and revised in  § 8 and    $\S11$   below. Bryan and G ber [7] recently proposed a reﬁnement of Ruan’s conjecture, applicable whenever  X  satisﬁes a Hard Lefschetz condition on orbifold cohomology [13]. They suggest that in this case the big quantum cohomology algebras of    $\mathcal{X}$   and    $Y$   coincide after analytic continuation and specialization of quantum parameters, via a linear isomorphism that also matches certain pairings on the algebras.  
+
+As we explain in  §§ 8–9 below, under appropriate conditions on    $\mathcal{X}$   our conjecture implies something very like the earlier conjectures of Ruan and Bryan–Graber. Our conjecture applies, however, in much greater generality. This ﬁts with a general picture developed by Givental: that the subm nifold-germ    $\mathcal{L}_{\mathcal{X}}$   often transforms in a simple way under geometric operations on  X , even when those operations have a complicated eﬀect on quantum cohomology. Our conjecture also ﬁts well with Givental’s approach to mirror symmetry. This was the essential point in the proof [13] of the conjecture for    $\mathcal{X}=\mathbb{P}(1,1,2)$   and    $\mathcal{X}=\mathbb{P}(1,1,1,3)$  . Forthcoming work by Coates, Corti, Iritani, and Tseng will extend this line of argument, using mirror symmetry to prove our conjecture for crepant resolutions of toric orbifolds    $\mathcal{X}$   such that    $c_{1}(\mathcal{X})\geq0$  .  
+
+An outline of the paper is as follows. We give introductions to the cohomology and quantum cohomology of orbifolds in    $\S2$  , and to Givental’s framework in  § 3. We state the conjecture in  § 4. After giving some preparatory lemmas ( § 5), we explain in  § 6 how to extract quantum cohomology from the submanifold    $\mathcal{L}_{\mathcal{X}}$  . This allows us to draw conclusions about quantum cohomology from our conjecture. We do this in the next three sections, proving something like the Cohomological Crepant Resolution Conjecture in    $\S7$  , something like Ruan’s conjecture in  § 8, and something like the Bryan–Graber conjecture in  § 9. We close by discussing a higher-genus version of the conjecture ( 10) and the role of ﬂat gerbes ( 11).  
+
+We should emphasize that most of what follows is a new presentation of ideas and methods which are already in the literature; in particular we draw the reader’s attention to [5, 13, 22, 32]. But we feel that these ideas are important enough to deserve a clear and accessible expository account. The main purpose of this article is to give such an account: we are, of course, entirely responsible for any mistakes or obscurities that it contains.  
+
+Acknowledgements.  Both authors are very grateful to Hiroshi Iritani: most of the results in this paper we either learned from him or developed in conversations with him. We would have preferred that he join us as author of this note, but must respect his wishes in this regard. T.C. thanks Jim Bryan, Alessio Corti, Alexander Givental, and Hsian-Hua Tseng for useful discussions; and the Royal Society and the Clay Mathematics Institute for ﬁnancial support. Y.R. thanks Paul Aspinwall for useful discussions. This work was partially supported by the National Science Foundation under grants DMS-0401275 and DMS-0072282.  
+
+# 2.  Orbifold Cohomology and Quantum Cohomology  
+
+In this section we describe and ﬁx notation for orbifold cohomology, Gromov– Witten invariants, and quantum cohomology. The non-expert reader should be able to follow the rest of the paper after reading the summary of these topics below; detailed accounts of the theory can be found in the work of Chen–Ruan [9,10] and Abramovich–Graber–Vistoli [2,3]. We work in the algebraic category, so from now on ‘orbifold’ means ‘smooth Deligne–Mumford stack over    $\mathbb{C}$  ’ and ‘manifold’ means ‘smooth variety’.  
+
+Let    $\mathcal{Z}$   be an orbifold. The  Chen–Ruan  bifo  cohomology    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{Z};\mathbb{C})$  Z ) is the cohomology of the so-called inertia stack of  Z . If  Z  is a manifold then    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{Z};\mathbb{C})$  Z is canonically isomorphic to the ordinary cohomology    $H^{\bullet}(\mathcal{Z};\mathbb{C})$   and so a Che – Ruan cohomology class can be represented, via Poincar´ e duality, as a cycle in  Z . In general a Chen–Ruan class can be represented as a linear combination of pairs  $(A,[g_{A}])$   where    $A\subset\mathcal{Z}$   is a connect  cycle and   $\left[g_{A}\right]$   is a conjugacy class in the isotropy group of the generic point of  A . Chen–Ruan cohomology contains ordinary cohomology as a subspace, represented by those decorated cycles   $(A,[g_{A}])$   where  is the identity element; if    $\mathcal{Z}$   is a manifold then this subspace is the whole of  $g_{A}$   $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{Z};\mathbb{C})$  Z ). The complementary subspace in    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{Z};\mathbb{C})$  Z ) spanned by those decorated cycles   $(A,[g_{A}])$   such that    $g_{A}$   is not the identity is called the  twisted sector . Chen– Ruan cohomology carries a non-degenerate pairing, the  orbifold Poincar´ e pairing , which functions exactly as the usual Poincar´ e pairing except that classes represented by   $(A,[g_{A}])$   and   $(B,[g_{B}])$   pair to zero unless   $[g_{A}]=[g_{B}^{-1}]$  ].  
+
+In what follow  we will consider maps    $f:{\mathcal{C}}\to{\mathcal{Z}}$   from orbifold curves to    $\mathcal{Z}$  . The s urce curve  C  here may be nodal, and carries a number of marked points. We allow  C  to have isotropy at the marked points and nodes, but nowhere else, and insist that the map    $f$   is  representable : that it induces injections on all isotropy groups. (In particular, therefore, if    $\mathcal{Z}$   is a manifold then we consider only maps  $f:\mathcal{C}\to\mathcal{Z}$   from curves with trivial orbifold structure.) We take the  degree  of the map    $f:{\mathcal{C}}\to{\mathcal{Z}}$   to be the degree of the corresponding map between coarse moduli spaces [25]. This means the following. Let    $C$   and    $Z$   be the coarse moduli spaces of  $\mathcal{C}$   and    $\mathcal{Z}$   respectively, and let  ${\bar{f}}:C\to Z$   →  be the map induced by    $f$  . Consider the free part  
+
+$$
+H_{2}(Z;\mathbb{Z})_{\mathrm{free}}=H_{2}(Z;\mathbb{Z})/H_{2}(Z;\mathbb{Z})_{\mathrm{tors}}
+$$  
+
+of    $H_{2}(Z;\mathbb{Z})$  ; here    $H_{2}(Z;\mathbb{Z})_{\mathrm{tors}}$   is the torsion subgroup of    $H_{2}(Z;\mathbb{Z})$  . The degree    $d$  of    $f:{\mathcal{C}}\to{\mathcal{Z}}$  ,    $d\in H_{2}(Z;\mathbb{Z})_{\mathrm{free}}$  ,   deﬁned to be the equivalence class of  $\bar{f}_{\star}[C]$  ] where  $[C]$   is the fundamental class of  C .  
+
+We use correlator notation for the  Gromov–Witten invariants  of the orbifold    $\mathcal{Z}$  , writing  
+
+$$
+\left<\delta_{1}\psi^{a_{1}},.\,.\,,\delta_{n}\psi^{a_{n}}\right>_{g,n,d}^{\mathcal{Z}}=\left<\tau_{a_{1}}(\delta_{1}),.\,.\,.\,,\tau_{a_{n}}(\delta_{n})\right>_{g,d}
+$$  
+
+where    $\delta_{1},\dots,\delta_{n}$   are Chen–Ruan cohomology classes on    $\mathcal{Z}$  ;    are no  $a_{1},\dotsc,a_{n}$  negative integers; and the right-hand side is deﬁned as on page 41 of [3]. If  Z is a manifold;    $a_{1}\,=\,\cdot\cdot\,=\,a_{n}\,=\,0$  ; and a very restrictive set of transv rsality as- umptions hold then (1) gives the number of smooth    $n$  -pointed curves in  Z  of degree d  and genus    $g$   which are incident at the  i th marked point,   $1\leq i\leq n$  , to a chosen generic cycle Poincar´ e-dual to    $\delta_{i}$   (see [19]). In general, one should interpret (1) as the ‘vir ual number’ of possibly-nodal -pointed orbifold curves in    $\mathcal{Z}$   of genus    and  $n$   $g$  degree  d  which are incident to chosen cycles as above. If any of the    $a_{i}$   are non-zero then we count only curves which in addition satisfy certain constraints on their complex structure. If    $\mathcal{Z}$   is an orbifold but not a manifold then, as discussed above, the curves we count are themselves allowed to be orbifolds; the orbifold structure at the    $i$  th marked point of the curve is determined by the conjugacy class   $[g_{i}]$   in a representative   $\left(A_{i},[g_{i}]\right)$   of    $\delta_{i}$  . We write   $\operatorname{Eff}(\mathcal{Z})$   for the set of possible deg es    $d$   in (1), or in other w ds for the set of degrees of eﬀective orbifold curves in .  
+
+Hencefor  $\mathcal{X}$  e a Gorenstein orbifold with projective coarse moduli space  $X$  , and let  π  $\pi:Y\rightarrow X$   →  be a crepant resolution. Assume that the isotropy group of the generic point of  X  is trivial. The cohomology and homology groups    $H^{\bullet}(\mathcal{X};\mathbb{Q})$  ,  $H_{\bullet}(\mathcal{X};\mathbb{Q})$   are canonically isomorphic to    $H^{\bullet}(X;\mathbb{Q})$   and    $H_{\bullet}(X;\mathbb{Q})$   respectively. The maps  
+
+$$
+\pi^{\star}:H^{\bullet}(\mathcal{X};\mathbb{Q})\to H^{\bullet}(Y;\mathbb{Q}),\qquad\qquad\pi_{\star}:H_{\bullet}(Y;\mathbb{Q})\to H_{\bullet}(\mathcal{X};\mathbb{Q}),
+$$  
+
+are respectively injective [6] and surjective, and there is a ‘wrong-way’ map  
+
+$$
+\pi_{!}:H^{\bullet}(Y;\mathbb{Q})\to H^{\bullet}(\mathcal{X};\mathbb{Q})
+$$  
+
+deﬁned using Poincar´ e duality. We refer to elements of  $\ker\pi_{!}$   as  exceptional classes . For an orbifold    $\mathcal{Z}$  , we say that a basis for    $H_{2}(Z;\mathbb{Z})_{\mathrm{free}}$   is  positive  if the degree of any map    $f:{\mathcal{C}}\to{\mathcal{Z}}$   from an orbifold curve is a non-negative linear combination of basis elements. Let us ﬁx bases for homology, cohomology, and orbifold cohomology as follows. Let    $\beta_{1},\dots,\beta_{r}$   be a positive basis for    $H_{2}(Y;\mathbb{Z})_{\mathrm{free}}$   such that  
+
+$$
+\begin{array}{r l}&{\pi_{\star}\beta_{1},\ldots,\pi_{\star}\beta_{s}\mathrm{~is~a~positive~basis~for~}H_{2}(X;\mathbb{Z})_{\mathrm{free}}}\\ &{\beta_{s+1},\ldots,\beta_{r}\mathrm{~is~a~basis~for~ker}\,\pi_{\star}\subset H_{2}(Y;\mathbb{Z})_{\mathrm{free}}.}\end{array}
+$$  
+
+Choose homogeneous bases    $\varphi_{0},\ldots,\varphi_{N}$   for    $H^{\bullet}(Y;\mathbb{Q})$   and    $\phi_{0},\ldots,\phi_{N}$   for    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\mathbb{Q})$  X such that  
+
+$$
+\begin{array}{r l}&{\varphi_{0}=\mathbf{1}_{Y},\,\mathrm{the~identity~element~in}\,H^{\bullet}(Y;\mathbb{Q});}\\ &{\varphi_{1},\ldots,\varphi_{r}\mathrm{~is~the~basis~for~}H^{2}(Y;\mathbb{Q})\mathrm{~dual~to~}\beta_{1},\ldots,\beta_{r};}\\ &{\phi_{0}=\mathbf{1}_{\mathcal{X}},\,\mathrm{the~identity~element~in~}H^{0}(\mathcal{X};\mathbb{Q});}\\ &{\phi_{1},\ldots,\phi_{s}\mathrm{~is~the~basis~for~}H^{2}(\mathcal{X};\mathbb{Q})\mathrm{~dual~to~}\pi_{\star}\beta_{1},\ldots,\pi_{\star}\beta_{s};}\\ &{\phi_{1},\ldots,\phi_{r}\mathrm{~is~a~basis~for~}H_{\mathrm{CR}}^{2}(\mathcal{X};\mathbb{Q}).}\end{array}
+$$  
+
+Note that    $\varphi_{i}=\pi^{\star}(\phi_{i})$  ,   $1\leq i\leq s$  . Let    $\varphi^{0},\ldots,\varphi^{N}$    be the basis for    $H^{\bullet}(Y;\mathbb{C})$   which is dual to    $\varphi_{0},\ldots,\varphi_{N}$   under the Poincar´ e pairing   $(\cdot,\cdot)_{Y}$  , and let    $\phi^{0},\cdot\cdot\cdot,\phi^{N}$    be the basis for    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\mathbb{C})$  X ) which is dual to    $\phi_{0},\ldots,\phi_{N}$    under the orbifold Poincar´ e pairing  $(\cdot,\cdot)_{\mathcal{X}}$   . We will use Einstein’s summation convention for Greek indices, summing repeated Greek (but not Roman) indices over the range   $0,1,\ldots,N$  . For    $d\in\operatorname{Eff}(Y)$  , let  
+
+$$
+Q^{d}=Q_{1}^{d_{1}}Q_{2}^{d_{2}}\cdot\cdot\cdot Q_{r}^{d_{r}}\mathrm{~~~~~~~~~~where}\qquad\quad d=d_{1}\beta_{1}+\cdot\cdot\cdot+d_{r}\beta_{r},
+$$  
+
+and for    $d\in\operatorname{Eff}(\mathcal{X})$  , let  
+
+$$
+U^{d}=U_{1}^{d_{1}}U_{2}^{d_{2}}\cdot\cdot\cdot U_{s}^{d_{s}}\qquad\quad\mathrm{where}\qquad\quad d=d_{1}\pi_{\star}\beta_{1}+\cdot\cdot\cdot+d_{s}\pi_{\star}\beta_{s}.
+$$  
+
+The monomial    $Q^{d}$    is an element of the  Novikov ring for    $Y$   ,   $\Lambda_{Y}=\mathbb{C}[\![Q_{1},.\,.\,.\,,Q_{r}]\!]$  ]; the monomial    $U^{d}$    is an element f the  Novikov ring for    $\mathcal{X}$  ,   $\Lambda_{\mathcal{X}}=\mathbb{C}[\![U_{1},.\,.\,.\,,U_{s}]\!]$  ].  
+
+The  big quantum product  for  X  is a family    $\star$    of algebra structures on    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\Lambda_{\mathcal{X}})$  X  ), τ X parameteri d by    $\tau\in H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\Lambda_{\mathcal{X}})$  X  ), which is deﬁned in terms of Gromov–Witten in- X variants of  X . Let    $\tau=\tau_{\alpha}\phi_{\alpha}$  , and consider the  genus-zero Gromov–Witten potential for  $\mathcal{X}$  ,  
+
+$$
+\begin{array}{r l}&{F_{\mathcal{X}}=\displaystyle\sum_{d\in\mathrm{Eff}(\mathcal{X})}\displaystyle\sum_{n\geq0}\left\langle\tau,\tau,\ldots,\tau\right\rangle_{0,n,d}^{\mathcal{X}}\frac{U^{d}}{n!}}\\ &{\quad=\displaystyle\sum_{d\in\mathrm{Eff}(\mathcal{X}):}\displaystyle\sum_{n\geq0}\left\langle\phi_{\epsilon_{1}},\ldots,\phi_{\epsilon_{n}}\right\rangle_{0,n,d}^{\mathcal{X}}\frac{U_{1}^{d_{1}}\cdot\cdot\cdot U_{s}^{d_{s}}\tau_{\epsilon_{1}}\cdot\cdot\cdot\tau_{\epsilon_{n}}}{n!}.}\end{array}
+$$  
+
+(Recall that we always sum over repeated Greek indices, such as the    $\epsilon_{i}$   here.) The Gromov–Witten potential    $F_{\mathcal{X}}$   is a formal power series in the variables    $\tau_{0},\dots,\tau_{N}$  and    $U_{1},\dots,U_{s}$  ; it is a generating function for genus-zero Gromov–Witten invariants of    $\mathcal{X}$  . The potential    $F_{\mathcal{X}}$   determines the big quantum product    $\star$    on    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\Lambda_{\mathcal{X}})$  X X ) via  
+
+$$
+\phi_{\alpha}\star\phi_{\beta}=\frac{\partial^{3}F_{\mathcal X}}{\partial\tau_{\alpha}\partial\tau_{\beta}\partial\tau_{\gamma}}\phi^{\gamma}.
+$$  
+
+We can regard the RHS of (3) as a formal power series in    $\tau_{0},\dots,\tau_{N}$   with coeﬃcients in    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\Lambda_{\mathcal{X}})$  X X  ), and thus    $\star$  τ   gives a family, depending formally on    $\tau$  , of algebra structures on    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\Lambda_{\mathcal{X}})$  X ). Similarly, setting    $t\,=\,t_{\alpha}\varphi_{\alpha}$  , the  genus-zero Gromov– X Witten potential  for  Y  ,  
+
+$$
+\begin{array}{l}{{F_{Y}=\displaystyle\sum_{d\in\mathrm{Eff}(Y)}\sum_{n\geq0}\left\langle t,t,\ldots,t\right\rangle_{0,n,d}^{Y}\frac{Q^{d}}{n!}}}\\ {{\quad=\displaystyle\sum_{d\in\mathrm{Eff}(Y):\quad n\geq0}\left\langle\varphi_{\epsilon_{1}},\ldots,\varphi_{\epsilon_{n}}\right\rangle_{0,n,d}^{Y}\frac{Q_{1}^{d_{1}}\cdot\cdot\cdot Q_{r}^{d_{r}}t_{\epsilon_{1}}\cdot\cdot\cdot t_{\epsilon_{n}}}{n!}}}\end{array}
+$$  
+
+is a formal power series in the variables  $t_{0},\dots,t_{N}$   and    $Q_{1},\ldots,Q_{r}$  . It determines the big quantum product for    $Y$  , which is a family     of algebra structures on    $H^{\bullet}(Y;\Lambda_{Y})$   $\mathbf{\chi}_{t}^{\star}$  depending formally on    $t\in H^{\bullet}(Y;\Lambda_{Y})$  , via  
+
+$$
+\varphi_{\alpha}\star\varphi_{\beta}=\frac{\partial^{3}F_{Y}}{\partial t_{\alpha}\partial t_{\beta}\partial t_{\gamma}}\varphi^{\gamma}.
+$$  
+
+The  small quantum products  are algebra structures on    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\Lambda_{\mathcal{X}})$  X ) and  $H^{\bullet}(Y;\Lambda_{Y})$  X obtained from the big quantum products (3) and (5) by setting    $\tau=0,\,t=0$  :  
+
+$$
+\begin{array}{r l}&{\phi_{\alpha}\bullet\phi_{\beta}=\displaystyle\sum_{d\in\mathrm{Eff}(\mathcal X)}\left\langle\phi_{\alpha},\phi_{\beta},\phi^{\gamma}\right\rangle_{0,3,d}^{\mathcal X}U^{d}\phi_{\gamma}\quad\mathrm{~for~}\mathcal X}\\ &{\varphi_{\alpha}\bullet\varphi_{\beta}=\displaystyle\sum_{d\in\mathrm{Eff}(Y)}\left\langle\varphi_{\alpha},\varphi_{\beta},\varphi^{\gamma}\right\rangle_{0,3,d}^{Y}Q^{d}\,\varphi_{\gamma}\quad\mathrm{for~}Y.}\end{array}
+$$  
+
+The variables    $U_{1},\dots,U_{s}$   and    $Q_{1},\ldots,Q_{r}$   hidden here are the ‘quantum parameters’ described in the introduction. Setting    $Q_{1}=\cdot\cdot\cdot=Q_{r}=0$   in (6) recovers the usual cup product on    $H^{\bullet}(Y;\mathbb{C})$  ; setting    $U_{1}=\cdot\cdot\cdot=U_{s}=0$   gives the  Chen–Ruan product on    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\mathbb{C})$  X ), which we denote by    $\bigcup_{\mathrm{CR}}$  . Unless otherwise indicated, all products of Chen–Ruan cohomology classes are taken using    $\bigcup_{\mathrm{CR}}$  .  
+
+It follows from the Divisor Equation (see  e.g.  [7]) that    $\phi_{\alpha}\star\phi_{\beta}$   depends on the variables    $\tau_{1},.\,.\,.\,,\tau_{s},U_{1},.\,.\,.\,,U_{s}$   only through the combinations    $U_{i}\mathrm{e}^{t_{i}}$  ,   $1\,\leq\,i\,\leq\,s$  , and that    depends on the variables    $t_{1},\dots,t_{r},Q_{1},\dots,Q_{r}$   only through the  $\varphi_{\alpha\_t}\star\varphi_{\beta}$  combinations    $Q_{i}\mathrm{e}^{t_{i}}$  ,   $1\leq i\leq r$  . Set  
+
+$$
+\begin{array}{r}{\tau_{\mathrm{two}}=\tau_{1}\phi_{1}+\cdot\cdot\cdot+\tau_{s}\phi_{s},\quad\tau_{\mathrm{rest}}=\tau_{0}\phi_{0}+\tau_{s+1}\phi_{s+1}+\cdot\cdot\cdot+\tau_{N}\phi_{N},}\\ {t_{\mathrm{two}}=t_{1}\varphi_{1}+\cdot\cdot\cdot+t_{r}\varphi_{r},\quad t_{\mathrm{rest}}=t_{0}\varphi_{0}+t_{r+1}\varphi_{r+1}+\cdot\cdot\cdot+t_{N}\varphi_{N},}\end{array}
+$$  
+
+so that    $\tau=\tau_{\mathrm{two}}+\tau_{\mathrm{rest}}$   and    $t=t_{\mathrm{twe}}+t_{\mathrm{rest}}$  . Then  
+
+$$
+\begin{array}{r l}&{\phi_{\alpha}\star\phi_{\beta}=\displaystyle\sum_{\underset{d=d_{1}\pi_{\star}\beta_{1}+\dots+d_{s}\pi_{\star}\beta_{s}}{d\in\mathrm{Eff}(\mathcal{X}):}}\displaystyle\sum_{n\geq0}\langle\phi_{\alpha},\phi_{\beta},\tau_{\mathrm{rest}},\dots,\tau_{\mathrm{rest}},\phi^{\gamma}\rangle_{0,n+3,d}^{\mathcal{X}}}\\ &{\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\times\displaystyle\frac{U_{1}^{d_{1}}\cdot\dots U_{s}^{d_{s}}\mathrm{e}^{d_{1}\tau_{1}}\cdot\cdot\cdot\mathrm{e}^{d_{s}\tau_{s}}}{n!}\,\phi_{\gamma}}\end{array}
+$$  
+
+and  
+
+$$
+\begin{array}{r l}&{\varphi_{\alpha}\star_{t}^{\varphi}\varphi_{\beta}=\displaystyle\sum_{d\in\mathrm{Eff}(Y):\atop{d=d_{1}\beta_{1}+\cdots+d_{r}\beta_{r}}}\sum_{n\geq0}\langle\varphi_{\alpha},\varphi_{\beta},t_{\mathrm{rest}},\ldots,t_{\mathrm{rest}},\varphi^{\gamma}\rangle_{0,n+3,d}^{Y}}\\ &{\qquad\qquad\qquad\qquad\qquad\qquad\qquad\qquad\times\displaystyle\frac{Q_{1}^{d_{1}}\cdot\cdot\cdot Q_{r}^{d_{r}}\mathrm{e}^{d_{1}t_{1}}\cdot\cdot\cdot\mathrm{e}^{d_{r}t_{r}}}{n!}\,\varphi_{\gamma}.}\end{array}
+$$  
+
+Thus in the limit  
+
+$$
+\begin{array}{r l}&{\mathrm{Re}\,\tau_{i}\rightarrow-\infty,\quad1\leq i\leq s,}\\ &{\qquad\tau_{i}\rightarrow0,\qquad i=0\mathrm{~and~}s<i\leq N,}\end{array}
+$$  
+
+the big quantum product    $\star$   $\tau$    on    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\Lambda_{\mathcal{X}})$  X X ) becomes the Chen–Ruan product, and in the limit  
+
+$$
+\begin{array}{r l}{\operatorname{Re}t_{i}\to-\infty,}&{{}1\leq i\leq r,}\\ {t_{i}\to0,}&{{}i=0{\mathrm{~and~}}r<i\leq N,}\end{array}
+$$  
+
+the big quantum product     on    $H^{\bullet}(Y;\Lambda_{Y})$   becomes the usual cup product. We refer  $\mathbf{\chi}_{t}^{\star}$  to the points  
+
+$$
+\tau_{i}=\left\{\!\!\begin{array}{l l}{-\infty}&{1\leq i\leq s}\\ {0}&{\mathrm{otherwise}}\end{array}\right.\qquad\mathrm{~and~}\qquad\quad t_{i}=\left\{\!\!\begin{array}{l l}{-\infty}&{1\leq i\leq r}\\ {0}&{\mathrm{otherwise}}\end{array}\right.
+$$  
+
+as the  large-radius limit points  for    $\mathcal{X}$   and    $Y$   respectively.  
+
+An Analyticity Assumption and Its Consequences.  The goal of this paper is to describe a relationship between the big quantum products on    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\Lambda_{\mathcal{X}})$  X ) and X  $H^{\bullet}(Y;\Lambda_{Y})$  . The ﬁrst obstacle to overcome is that the ground rings   $\Lambda_{\mathcal{X}}$   and   $\Lambda_{Y}$   are in general not isomorphic:   $\Lambda_{Y}$   contains more quantum parameters (  $Q_{i}:1\leq i\leq r$  ) than   $\Lambda_{\mathcal{X}}$   does (  $U_{i}~:~1~\leq~i~\leq~s$  ). We now describe an analyticity assumption on the big quantum product     for    $Y$   which allows us to regard     as a family of  $\mathbf{\chi}_{t}^{\star}$   $\mathbf{\chi}_{t}^{\star}$  algebra structures on    $H^{\bullet}(Y;\Lambda_{\mathcal{X}})$  : it allows us to set    $Q_{i}=U_{i}$  ,   $1\leq i\leq s$  , and to specialize the extra quantum parameters    $Q_{s+1},.\cdot\cdot,Q_{r}$   to 1. Roughly speaking, we assume henceforth that the genus-zero Gromov–Witten potential    $F_{Y}$  , which is a formal power series in the variables    $t_{0},\dots,t_{N}$   and    $Q_{1},\ldots,Q_{r}$  , is  convergent in the ‘exceptional variables’    $Q_{s+1},.\cdot\cdot,Q_{r}$  .  
+
+Deﬁnition.  Let    $F\,\in\,\mathbb{C}[\![x_{0},x_{1},x_{2},.\,.\,.]\!]$  ] be a formal power series in the variables .  Given distinct variables    we can write    $F$   uniquely in the  $x_{0},x_{1},x_{2},\ldots.$   $x_{i_{1}},.\,.\,.\,,x_{i_{n}}$  form  
+
+$$
+F=\sum_{J\subset\mathbb{N}\backslash\{i_{1},\ldots,i_{n}\}}\sum_{a:J\rightarrow\mathbb{N}\backslash\{0\}}\mathfrak{f}_{J,a}\prod_{j\in J}x_{j}^{a(j)}
+$$  
+
+where each    ${\mathfrak{f}}_{J,a}$   is a formal power series in the variables    $x_{i_{1}},\allowbreak\cdot\cdot\cdot,x_{i_{n}}$  . Let    $D$   be a domain in    $\mathbb{C}^{n}$    which contains the origin. We say that    $F$   depends analytically on  in the domain    $D$   if each    ${\mathfrak{f}}_{J,a}$   is the Taylor expansion at the origin of  $x_{i_{1}},\allowbreak\cdot\cdot\cdot,x_{i_{n}}$   $f_{J,a}(x_{i_{1}},.\,.\,.\,,x_{i_{n}})$   for some analytic function    $f_{J,a}:D\rightarrow\mathbb{C}$  .  
+
+The genus-zero Gromov–Witten potential    $F_{Y}$   is a formal power series in the variables    $t_{0},\dots,t_{N}$   and    $Q_{1},\ldots,Q_{r}$  . Henceforth, we impose:  
+
+Convergence Assumption 2.1.  There are strictly positive real numbers    $R_{i}$  ,    $s<$   $i\leq r$  , such that    $F_{Y}$   depends analytically on    $Q_{s+1},.\cdot\cdot,Q_{r}$   in the domain  
+
+$$
+|Q_{i}|<R_{i},\qquad\qquad\qquad\qquad s<i\leq r.
+$$  
+
+This assumption holds, for instance, whenever    $Y$   is a compact semi-positive toric manifold. As we will see, even though the radii of convergence    $R_{i}$   need not all be greater than   $1$  , this assumption will allow us to set    $Q_{s+1}=\cdot\cdot\cdot=Q_{r}=1$  . It follows from (9) that under Convergence Assumption 2.1,    $F_{Y}$   in fact depends analytically on    $t_{1},t_{2},.\,.\,.\,,t_{r}$   and    $Q_{s+1},.\cdot\cdot,Q_{r}$   in the domain  
+
+$$
+\begin{array}{l l}{|t_{i}|<\infty}&{1\leq i\leq s}\\ {|Q_{i}\mathrm{e}^{t_{i}}|<R_{i}}&{s<i\leq r.}\end{array}
+$$  
+
+Thus we can write    $F_{Y}$   as  
+
+$$
+\sum_{\substack{J\subset\{0,r+1,r+2,\ldots,N\}\,\ a:J\rightarrow\mathbb{N}\,\{0\}}}g_{J,a;K,b}\Bigl(t_{1},\ldots,t_{r};Q_{s+1},\ldots,Q_{r}\Bigr)\prod_{j\in J}t_{j}^{a(j)}\prod_{k\in K}Q_{k}^{b(k)},
+$$  
+
+where    $g_{J,a;K,b}$   are analytic functions deﬁned in the domain (10), and then set  
+
+$$
+Q_{i}={\left\{\begin{array}{l l}{U_{i}}&{1\leq i\leq s}\\ {1}&{s<i\leq r}\end{array}\right.}
+$$  
+
+obtaining a well-deﬁned power series  
+
+$$
+F_{Y}^{\circledcirc}=\sum_{\substack{J\subset\{0,r+1,r+2,\ldots,N\}\,\alpha:J\rightarrow\mathbb{N}\backslash\{0\}}}\sum_{\substack{b\,,K\subset\{1,2,\ldots,s\}}}g_{J,a;K,b}\Big(t_{1},\ldots,t_{r};1,\ldots,1\Big)\prod_{j\in J}t_{j}^{a(j)}\prod_{k\in K}U_{k}^{b(k)}
+$$  
+
+in the variables    $t_{0},t_{r+1},t_{r+2},.\,.\,.\,,t_{N}$   and    $U_{1},\dots,U_{s}$  , with coeﬃcients which are analytic functions of    $t_{1},\dots,t_{r}$   deﬁned in the region  
+
+$$
+\begin{array}{r l}{|t_{i}|<\infty}&{{}1\leq i\leq s}\\ {|\mathrm{e}^{t_{i}}|<R_{i}}&{{}s<i\leq r.}\end{array}
+$$  
+
+We can also make the substitution (11) in the big quantum product (5), obtain- ing a well-deﬁned family of products    $\circledast$    on    $H^{\bullet}(Y;\Lambda_{\mathcal{X}})$   which depends formally on  $t$  the variables    $t_{0},t_{r+1},t_{r+2},.\,.\,.\,,t_{N}$   and analytically on the variables    $t_{1},\dots,t_{r}$   in the domain (12). The product    $\stackrel{(*)}{t}$    satisﬁes  
+
+$$
+\varphi_{\alpha}\underset{t}{\ast}\varphi_{\beta}=\frac{\partial^{3}F_{Y}^{\ast}}{\partial t_{\alpha}\partial t_{\beta}\partial t_{\gamma}}\varphi^{\gamma}
+$$  
+
+and  
+
+$$
+\begin{array}{r l}{\varphi_{\alpha}\underset{t}{\oplus}\varphi_{\beta}=}&{\displaystyle\sum_{d\in\mathrm{Eff}(Y):\quad n\geq0}\left\langle\varphi_{\alpha},\varphi_{\beta},t_{\mathrm{rest}},\ldots,t_{\mathrm{rest}},\varphi^{\gamma}\right\rangle_{0,n+3,d}^{Y}}\\ &{\quad\quad\quad\quad d=d_{1}\beta_{1}+\cdots+d_{r}\beta_{r}}\end{array}
+$$  
+
+where    $t_{\mathrm{rest}}$   is deﬁned in (7).  
+
+We do not impose any convergence assumption on the Gromov–Witten potential  $F_{\mathcal{X}}$   , which is a formal power series in    $\tau_{0},\dots,\tau_{N}$   and    $U_{1},\dots,U_{s}$  , but nonetheless it depends analytically on the variables    in the domain    $\mathbb{C}^{s}$  . This is clear  $\tau_{1},\dots,\tau_{s}$  from equation (8).  
+
+The key objects in conjecture 4.1 are certain Lagrangian submanifold-germs    $\mathcal{L}_{\mathcal{X}}$  and    $\mathcal{L}_{Y}$  . In this section we deﬁne    $\mathcal{L}_{\mathcal{X}}$   and    $\mathcal{L}_{Y}$   and describe some of their properties.  
+
+Symplectic Vector Space.  Throughout this section, let    $\mathcal{Z}$   denote either    $\mathcal{X}$   or Y  . We work over the ground ring   $\Lambda=\Lambda_{\mathcal{X}}$   . Let  
+
+$$
+\begin{array}{r l}&{\quad\mathcal{H}_{\mathcal{Z}}=H_{\mathrm{CR}}^{\bullet}(\mathcal{Z};\Lambda)\otimes\mathbb{C}(\!(z^{-1})\!),}\\ &{\Omega_{\mathcal{Z}}(f,g)=\operatorname{Res}_{z=0}\left(f(-z),g(z)\right)_{\mathcal{Z}}d z.}\end{array}
+$$  
+
+We think of    $\mathcal{H}_{\mathcal{Z}}$   as a sort of ‘symplectic vecto space’, but deﬁned over the ring   $\Lambda$  rath r than o er a ﬁeld.    $\mathcal{H}_{\mathcal{Z}}$   is a free graded Λ-module, where   $\deg z=2$  , and   $\Omega_{\mathcal{Z}}$  is a Λ-linear, Λ-valued supersymplectic form on    $\mathcal{H}_{\mathcal{Z}}$  :  
+
+$$
+\begin{array}{r}{\Omega_{\mathcal{Z}}\big(\theta_{1}z^{k},\theta_{2}z^{l}\big)=(-1)^{a_{1}a_{2}+1}\Omega_{\mathcal{Z}}\big(\theta_{2}z^{l},\theta_{1}z^{k}\big)\qquad\quad\mathrm{for~}\theta_{i}\in H_{\mathrm{CR}}^{a_{i}}(\mathcal{Z};\mathbb{C}).}\end{array}
+$$  
+
+There is a decomposition    $\mathcal{H}_{\mathcal{Z}}=\mathcal{H}_{\mathcal{Z}}^{+}\oplus\mathcal{H}_{\mathcal{Z}}^{-}$  ⊕H , where the subspaces  
+
+$$
+\mathcal{H}_{\mathcal{Z}}^{+}=H_{\mathrm{{CR}}}^{\bullet}(\mathcal{Z};\Lambda)\otimes\mathbb{C}[z]\qquad\mathrm{~and~}\qquad\mathcal{H}_{\mathcal{Z}}^{-}=z^{-1}H_{\mathrm{{CR}}}^{\bullet}(\mathcal{Z};\Lambda)\otimes\mathbb{C}[\![z^{-1}]\!]
+$$  
+
+are Lagrangian. We can write a general point in  $\mathcal{H}_{\mathcal{Z}}$   as  
+
+$$
+\sum_{k=0}^{\infty}\sum_{a=0}^{N}q_{k,a}\Phi_{a}z^{k}+\sum_{l=0}^{\infty}\sum_{b=0}^{N}p_{l,b}\Phi^{b}(-z)^{-1-l}
+$$  
+
+where   $\Phi_{a}=\phi_{a}$   and   $\Phi^{a}=\phi^{a}$    if    $\mathcal{Z}=\mathcal{X}$  , and   $\Phi_{a}=\varphi_{a}$   and   $\Phi^{a}=\varphi^{a}$    if    $\mathcal{Z}=Y$  ; this deﬁnes Λ-valued Darboux co-ordinates    $\{q_{k,a},p_{l,b}\}$   on    $\mathcal{H}_{\mathcal{Z}}$  , with    dual to   .  $q_{k,a}$   $p_{k,a}$  Set    $\begin{array}{r}{q_{k}=\sum_{a}q_{k,a}\Phi_{a}}\end{array}$  , so that    $\mathbf{q}(z)=q_{0}+q_{1}z+q_{2}z^{2}+\cdot\cdot\cdot$   is a general point in    $\mathcal{H}_{\mathcal{Z}}^{+}$  . Z  
+
+The Genus-Zero Descendant Potentials.  We consider now the  genus-zero de- scendant potentials    $\mathcal{F}_{\mathcal{X}}^{0}$    and    $\mathcal{F}_{Y}^{0}$  , which are generating functions for all genus-zero X Gromov–Witten invariants of  X  and    $Y$  . Set    $\tau_{a}=\tau_{a,\alpha}\phi_{\alpha}$  ,    $a=0,1,2,.\,.$  .  Then  
+
+$$
+\begin{array}{r l}&{\mathcal{F}_{\mathcal{X}}^{0}=\displaystyle\sum_{d\in\mathrm{Eff}(\mathcal{X})}\sum_{n\geq0}\displaystyle\sum_{a_{1},\ldots,a_{n}\geq0}\langle\tau_{a_{1}}\psi^{a_{1}},\tau_{a_{2}}\psi^{a_{2}},\ldots,\tau_{a_{n}}\psi^{a_{n}}\rangle_{0,n,d}^{\mathcal{X}}\frac{U^{d}}{n!}}\\ &{\quad=\displaystyle\sum_{d\in\mathrm{Eff}(\mathcal{X})}\sum_{n\geq0}\displaystyle\sum_{a_{1},\ldots,a_{n}\geq0}\langle\phi_{\epsilon_{1}}\psi^{a_{1}},\ldots,\phi_{\epsilon_{n}}\psi^{a_{n}}\rangle_{0,n,d}^{\mathcal{X}}\frac{U_{1}^{d_{1}}\cdot\cdot\cdot U_{s}^{d_{s}}\tau_{a_{1},\epsilon_{1}}\cdot\cdot\cdot\tau_{a_{n},\epsilon_{n}}}{n!}}\end{array}
+$$  
+
+where    $d=d_{1}\pi_{\star}\beta_{1}+\cdot\cdot\cdot+d_{s}\pi_{\star}\beta_{s}$  . The descendant potential    $\mathcal{F}_{\mathcal{X}}^{0}$    is a formal power X series in the variables    $U_{1},\dots,U_{s}$   and    $\tau_{a,\epsilon}$  ,   $0\leq\epsilon\leq N$  ,   $0\leq a<\infty$  . We show in  e appendix that    $\mathcal{F}_{\mathcal{X}}^{0}$    in fact depends analytically on    $\tau_{0,1},\dots,\tau_{0,s}$   in the domain  C . X Similarly, set    $t_{a}=t_{a,\alpha}\varphi_{\alpha}$  ,    $a=0,1,2,.\,.$   .  Then  
+
+$$
+\begin{array}{l}{{\displaystyle{\mathcal{F}_{Y}^{0}=\sum_{d\in\mathrm{Eff}(Y)}\sum_{n\geq0}\sum_{a_{1},\ldots,a_{n}\geq0}\langle t_{a_{1}}\psi^{a_{1}},t_{a_{2}}\psi^{a_{2}},\ldots,t_{a_{n}}\psi^{a_{n}}\rangle_{0,n,d}^{Y}\frac{Q^{d}}{n!}}}}\\ {{\displaystyle{=\sum_{d\in\mathrm{Eff}(Y)}\sum_{n\geq0}\sum_{a_{1},\ldots,a_{n}\geq0}\langle\varphi_{\epsilon_{1}}\psi^{a_{1}},\ldots,\varphi_{\epsilon_{n}}\psi^{a_{n}}\rangle_{0,n,d}^{Y}\frac{Q_{1}^{d_{1}}\cdot\cdot\cdot Q_{r}^{d_{r}}t_{a_{1},\epsilon_{1}}\cdot\cdot\cdot t_{a_{n},\epsilon_{n}}}{n!}}}}\end{array}
+$$  
+
+where    $d=d_{1}\beta_{1}+\cdot\cdot\cdot+d_{r}\beta_{r}$  . The descendant potential    $\mathcal{F}_{Y}^{0}$    is a formal power series in the variables    $Q_{1},\ldots,Q_{r}$   and    $t_{a,\epsilon}$  ,   $0\leq\epsilon\leq N$  ,   $0\leq a<\infty$  . We will show in the appendix that under convergence assumption 2.1,    $\mathcal{F}_{Y}^{0}$    in fact depends analytically on    $t_{0,1},\ldots,t_{0,r}$   and    $Q_{s+1},.\cdot\cdot,Q_{r}$   in the domain  
+
+$$
+\begin{array}{r l r}&{|t_{0,i}|<\infty}&{1\leq i\leq s}\\ &{|Q_{i}\mathrm{e}^{t_{0,i}}|<R_{i}}&{s<i\leq r.}\end{array}
+$$  
+
+This will allow us, as before, to set    $Q_{s+1}=\cdot\cdot\cdot=Q_{r}=1$  : we can write    $\mathcal{F}_{Y}^{0}$    as  
+
+$$
+\begin{array}{r l}{\displaystyle\sum_{\tiny J\subset\mathbb{N}\times\{0,1,2,\ldots,N\};\atop{\tiny J\cap\{(0,1),(0,2),\ldots,(0,r)\}=\emptyset}}\displaystyle\sum_{\tiny K\subset\{1,2,\ldots,s\}}\displaystyle\sum_{a:J\rightarrow\mathbb{N}\backslash\{0\}}g_{J,a;K,b}\Big(t_{0,1},\ldots,t_{0,r};Q_{s+1},\ldots,Q_{r}\Big)}&{}\\ {\quad\times\displaystyle\prod_{(j,e)\in J}t_{j,e}^{a(j,e)}\displaystyle\prod_{k\in K}Q_{k}^{b(k)}}&{}\end{array}
+$$  
+
+where    $g_{J,a;K,b}$   are analytic functions deﬁned in the domain (17), and making the substitution (11) yields a well-deﬁned power series  
+
+$$
+\begin{array}{r l}{\mathcal{F}_{Y}^{\oplus}=}&{\displaystyle\sum_{\tiny\begin{array}{c}{J\subset\mathbb{N}\times\{0,1,2,\ldots,N\};}\\ {J\cap\{(0,1),(0,2),\ldots,(0,r)\}=\emptyset}\end{array}}\sum_{\tiny\begin{array}{c}{K\subset\{1,2,\ldots,s\}}\\ {b:K\to\mathbb{N}\backslash\{0\}}\end{array}}\displaystyle\sum_{\tiny\begin{array}{c}{g_{J,a;K,b}\Big(t_{0,1},\ldots,t_{0,r};1,\ldots,1\Big)}\\ {k:K\to\mathbb{N}\backslash\{0\}}\end{array}}g_{J,a;K,b}\Big(t_{0,1},\ldots,t_{0,r};1,\ldots,1\Big)}\\ &{\quad\times\displaystyle\prod_{(j,e)\in J}\displaystyle t_{j,e}^{a(j,e)}\prod_{k\in K}U_{k}^{b(k)}}\end{array}
+$$  
+
+in the variables    $t_{0,0}$  ;    $t_{0,r+1},t_{0,r+2},.\cdot.\,,t_{0,N}$  ;    $t_{a,\epsilon}$  ,   $0\;\leq\;\epsilon\;\leq\;N$  ,   $1\,\leq\,a\,<\,\infty$  ; and  $U_{1},\dots,U_{s}$  , with coeﬃcients which are analytic functions of    $t_{0,1},\ldots,t_{0,r}$   deﬁned in the domain  
+
+$$
+\begin{array}{l l}{|t_{0,i}|<\infty}&{1\leq i\leq s}\\ {\big|\mathrm{e}^{t_{0,i}}\big|<R_{i}}&{s<i\leq r.}\end{array}
+$$  
+
+Thus, exactly as before, Convergence Assumption 2.1 allows us to work over the Novikov ring  $\Lambda\,=\,\Lambda_{\mathcal{X}}$   for    $\mathcal{X}$  , even when we are thinking about Gromov–Witten invariants of  Y  .  
+
+The Deﬁnition of    $\mathcal{L}_{\mathcal{X}}$   and    $\mathcal{L}_{Y}$  .  We regard the genus-zero descendant potential  $\mathcal{F}_{\mathcal{X}}^{0}$    as the germ of a function on  $\mathcal{H}_{\mathcal{X}}^{+}$    via the identiﬁcation  
+
+$$
+q_{k,\alpha}={\binom{\tau_{1,0}-1}{\tau_{k,\alpha}}}\quad(k,\alpha)=(1,0)
+$$  
+
+which we abbreviate as    $\mathbf{q}(z)=\pmb{\tau}(z)-z$  . We regard    $\mathcal{F}_{Y}^{(\ast)}$    as the germ of a function on    $\mathcal{H}_{Y}^{+}$    via the identiﬁcation  
+
+$$
+q_{k,\alpha}={\binom{t_{1,0}-1}{t_{k,\alpha}}}\quad(k,\alpha)=(1,0)
+$$  
+
+which we abbreviate as    ${\bf q}(z)\,=\,{\bf t}(z)\,-\,z$  . The identiﬁcations (20) and (21) are examples of the  dilaton shift ; this is discussed further in [11]. Let    $\mathcal{F}_{\mathcal{Z}}\,=\,\mathcal{F}_{\mathcal{X}}^{0}$    if X  $\mathcal{Z}=\mathcal{X}$   and    $\mathcal{F}_{\mathcal{Z}}=\mathcal{F}_{Y}^{(\ast)}$    if    $\mathcal{Z}=Y$  . We deﬁne    $\mathcal{L}_{\mathcal{Z}}$   by the equations  
+
+$$
+p_{k,\alpha}=\frac{\partial\mathcal{F}_{\mathcal{Z}}}{\partial q_{k,\alpha}}\qquad\qquad\qquad\qquad\qquad0\leq\alpha<\infty,
+$$  
+
+As    $\mathcal{F}_{\mathcal{Z}}$   is the germ of a function on    $\mathcal{H}_{\mathcal{Z}}^{+}$    (depending analytically on some variables Z and formally on other variables),    $\mathcal{L}_{\mathcal{Z}}$   is the germ of a Lagrangian submanifold of  $\mathcal{H}_{\mathcal{Z}}$  .  
+
+Remark 3.1.  The polarization    $\mathcal{H}_{\mathcal{Z}}=\mathcal{H}_{\mathcal{Z}}^{+}\oplus\mathcal{H}_{\mathcal{Z}}^{-}$    ⊕H   identiﬁes    $\mathcal{H}_{\mathcal{Z}}^{-}$    with the   $\Lambda$  -module  Z Z Z  $\left(\mathcal{H}_{\mathcal{Z}}^{+}\right)^{\star}:=\,\mathrm{Hom}(\mathcal{H}_{\mathcal{Z}}^{+},\Lambda)$   Λ) dual to    $\mathcal{H}_{\mathcal{Z}}^{+}$  , and hence identiﬁes    $\mathcal{H}_{\mathcal{Z}}$   with the cotangent Z Z    ⋆ Z bundle  $T^{\star}\mathcal{H}_{\mathcal{Z}}^{+}:=\mathcal{H}_{\mathcal{Z}}^{+}\oplus\left(\mathcal{H}_{\mathcal{Z}}^{+}\right)^{\star}$  . Under this identiﬁcation,    $\mathcal{L}_{\mathcal{Z}}$   becomes the graph of Z Z the diﬀerential of  F  $\mathcal{F}_{\mathcal{Z}}$  .  
+
+The Gromov–Witten invariants which participate in the deﬁnition of    $\mathcal{L}_{\mathcal{Z}}$   satisfy a large number of identities: the String Equation, the Dilaton Equation, and the Topological Recursion Relations. These identities place very strong constraints on the geometry of    $\mathcal{L}_{\mathcal{Z}}$  :  
+
+Theorem 3.2  ([15, 22, 34]) .    $\mathcal{L}_{\mathcal{Z}}$   is th germ of a Lagrangian cone with vertex at  origin such that each tangent space  T  to    $\mathcal{L}_{\mathcal{Z}}$   is tangent to the cone exactly along zT  . In other words:  
+
+(1)  if    $T$   is a tangent space to    $\mathcal{L}_{\mathcal{Z}}$   then    $z T\subset T$  ; (2)  if    $T=T_{x}\mathcal{L}_{\mathcal{Z}}$   then the germ at    $x$   of the linear subspace    $z T$   is contained in  $\mathcal{L}_{\mathcal{Z}}$  (3)    $T$   a tangent space to    $\mathcal{L}_{\mathcal{Z}}$   and    $x\in\mathcal{L}_{\mathcal{Z}}$   then    $T_{x}\mathcal{L}_{z}=T$   if and only if  $x\in z T$   .  
+
+In particular, theorem 3.2 implies that each tangent space    $T$   to    $\mathcal{L}_{\mathcal{Z}}$   is closed under multiplication by elem ts of    $\mathbb{C}[z]$   (because    $z T\subset T$  ), and that    $\mathcal{L}_{\mathcal{Z}}$   is the union, over all tangent spaces  T  to    $\mathcal{L}_{\mathcal{Z}}$  , of the inﬁnite-dimensional linear subspace- germs    $z T\cap\mathcal{L}_{\mathcal{Z}}$  . It is the germ of a ‘ruled cone’. Note that as    $\mathcal{L}_{\mathcal{Z}}$   is the germ of a submanifold of    $\mathcal{H}_{\mathcal{Z}}$  , it makes sense to analytically continue    $\mathcal{L}_{\mathcal{Z}}$  .  
+
+# 4.  The Crepant Resolution Conjecture  
+
+We are now in a position to make our conjecture.  
+
+Conjecture 4.1  (Coates–Corti–Iritani–Tseng; Ruan) .  There is a degree-preserving  $\mathbb{C}(\!(z^{-1})\!)$  -linear s plecti omorphism  $\mathbb{U}:{\mathcal{H}}_{\mathcal{X}}\,\rightarrow\,{\mathcal{H}}_{Y}$   and a cho e of analytic continuations of  L  $\mathcal{L}_{\mathcal{X}}$   and  L  ${\mathcal{L}}_{Y}$   such that  $\mathbb{U}\left(\mathcal{L}_{\mathcal{X}}\right)=\mathcal{L}_{Y}$  L  L  . Furthermore,  U  satisﬁes:  
+
+(a)    $\mathbb{U}(\mathbf{1}_{\mathcal{X}})=\mathbf{1}_{Y}+O(z^{-1});$  (b)    $\mathbb{U}\circ\left(\rho_{\scriptscriptstyle C R}^{\bigcup}\right)=\left(\pi^{\star}\rho\cup\right)\circ\mathbb{U}$    for every untwisted degree-two class    $\rho\in H^{2}(\mathcal{X};\mathbb{C})$  ; (c)  $\mathbb{U}\left(\mathcal{H}_{\mathcal{X}}^{+}\right)\oplus\mathcal{H}_{Y}^{-}=\mathcal{H}_{Y}$      ; X (d)  the matrix entries of    $\mathbb{U}$   with respect to the bases    $\{\phi_{\alpha}\}$   and    $\{\varphi_{\beta}\}$  , which  a priori  are elements of    $\Lambda(\left(z^{-1}\right))$  , in fact lie in    $\mathbb{C}(\!(z^{-1})\!)$  .  
+
+Remark 4.2.  This conjecture emerged in two diﬀerent contexts during the “New Topological Structures in Physics” program at the Mathematical Sciences Research Institute, Berkeley, in the spring of 2006. Conversations between the authors led to the idea that the relationship between the quantum cohomology of    $\mathcal{X}$   and    $Y$   should be expressed as the assertion that    $\mathbb{U}(\mathcal{L}_{\mathcal{X}})=\mathcal{L}_{Y}$   for some    $\mathbb{C}(\!(z^{-1})\!)$  )-linear symplectic isomorphism  U . At the same time, guided by mirror symmetry, Hiroshi Iritani found such a symplectic transformation in toric examples (as a part of a project [13] with Coates, Corti, and Tseng). Condition (c) here is a stronger version of the condition (c) given in [13,  § 5]. We will need this stronger version for the Cohomological Crepant Resolution Conjecture below.  
+
+Remark 4.3.  Variants of conjecture 4.1 apply to the    $G$  -equivariant quantum coho- mology of    $G$  -equivariant crepant resolutions, and to crepant resolutions of certain non-compact orbifolds ( c.f.  [7]). We leave the necessary modiﬁcations to the reader.  
+
+What Do The Conditions Mean?  Without condition (a) any non-zero scalar multiple of    $\mathbb{U}$   would  lso satisfy the conjecture, because    $\mathcal{L}_{\mathcal{X}}$   and    $\mathcal{L}_{Y}$   are germs of cones. The fact that  U  is degree-preserving forces    $\mathbb{U}(\mathbf{1}_{\mathcal{X}})=\lambda\mathbf{1}_{Y}+O(z^{-1})$   for some scalar    $\lambda$  , and so condition (a) just ﬁxes this overall scalar multiple.  
+
+Condition (b) is a compatibility of monodromy. The A-model connection — a system of diﬀerential equations associated to the small quantum cohomology of    $Y$  [16,  § 8.5] — is regular singular a he normal-crossing divisor    $Q_{1}Q_{2}\cdot\cdot\cdot Q_{r}=0$  , and the log-monodromy around  $Q_{i}=0$   = 0 is given by cup product with    $\varphi_{i}$  ; a similar statement holds for  $\mathcal{X}$  . Condition (b) asserts that  U  matches up t ese monodromies.  
+
+Condition (c) ensures that both the quantu  cohomology of  X  and the analytic continuation of the quantum cohomology of  Y  make sense near the large-radius limit point for    $\mathcal{X}$  . This is e plained in detail in Remark 6.18 below. Condition (d) says that  U  is ‘independent of Novikov variables’.  
+
+# 5.  Basic Properties of the Transformation  U  
+
+Before we explore the implications of conjecture 4.1, we list various basic proper- ties of the transformation    $\mathbb{U}$  . As we have chosen homogeneous bases for    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\mathbb{C})$  X and    $H^{\bullet}(Y;\mathbb{C})$   and as    $\mathbb{U}$   is grading-preserving, we can represent the transformation  $\mathbb{U}$   by an   $(N+1)\times(N+1)$   matrix, each entry of which is a Laurent monomial in  $z$   of ﬁxed degree. The matrix entries are independent of Novikov variables, so each entry is the product of a complex number and a ﬁxed power of    $z$  .    $\mathbb{U}$   is therefore a Laurent polynomial in    $z$  . For example, if    $\mathcal{X}=\mathbb{P}(1,1,1,3)$  ,    $Y=\mathbb{F}_{3}$  , and we choose bases as in [13], then  
+
+$$
+\mathbb{U}=\left(\begin{array}{c c c c c c}{1}&{0}&{0}&{0}&{0}&{0}\\ {0}&{1}&{0}&{0}&{0}&{0}\\ {0}&{0}&{1}&{0}&{0}&{0}\\ {0}&{0}&{0}&{0}&{-\frac{2\sqrt{3}\pi}{3\Gamma(\frac12)^{3}}z}&{\frac{2\sqrt{3}\pi}{3\Gamma(\frac22)^{3}}}\\ {-\frac{\pi^{2}}{3}z^{-2}}&{0}&{0}&{0}&{\frac{2\pi^{2}}{3\Gamma(\frac12)^{3}}}&{\frac{2\pi^{2}}{3\Gamma(\frac23)^{3}}z^{-1}}\\ {-8\zeta(3)z^{-3}}&{0}&{0}&{1}&{-\frac{2\sqrt{3}\pi^{3}}{9\Gamma(\frac12)^{3}}z^{-1}}&{\frac{2\sqrt{3}\pi^{3}}{9\Gamma(\frac23)^{3}}z^{-2}}\end{array}\right).
+$$  
+
+This illustrates the fact that even if he Gromov–Witten invaria ts of    $\mathcal{X}$   and    $Y$   are deﬁned over    $\mathbb{Q}$  , the transformation  U  may only be deﬁned over  C . Note that some of the matrix entries here are ‘highly transcendental’.  
+
+Lemma 5.1.  Suppose that    $\omega_{i}\in H_{\mathrm{CR}}^{i}(\mathcal{X};\mathbb{C})$  X . Then:  
+
+(a)    $\mathbb{U}(\omega_{2r})=z^{r}\rho_{0}\!+\!O(z^{r-1})$   some    $\rho_{0}\in H^{0}(Y;\mathbb{C})$   if  $\rho_{0}\neq0$   $r=0$  ; (b)    $\mathbb{U}(\omega_{2r+1})=z^{r}\rho_{1}+O(z^{r-1})$   for some  $\rho_{1}\,\in\,H^{1}(Y;\mathbb{C})$   ∈ , and if  $\rho_{1}\neq0$   ̸  then  = 0 . (c)    $\mathbb{U}(\omega_{2r+2})=z^{r}\rho_{2}\!+\!O(z^{r-1})$   for some    $\rho_{2}\in H^{2}(Y;\mathbb{C})$  , and if    $\rho_{2}\not\in\ker\pi_{!}$   then  = 0 .  
+
+Proof.  (a) As    $\mathbb{U}$   is grading-preserving,  $\mathbb{U}(\omega_{2r})=z^{r}\lambda\mathbf{1}_{Y}+O(z^{r-1})$   for some    $\lambda\in\mathbb{C}$  . Write    $D\,=\,\dim_{\mathbb{C}}(\mathcal{X})$   and suppose that    $\lambda\neq0$  . Then, as  X  is K¨ ahler and as the map    $\pi^{\star}:H^{\bullet}({\mathcal{X}};\mathbb{C})\to H^{\bullet}(Y;\mathbb{C})$   is injective, there exists    $\omega\in H^{2}(\mathcal{X};\mathbb{C})$   such that  $(\pi^{\star}\omega)^{D}\in H^{2D}(Y;\mathbb{C})$   is non-zero. We have  
+
+$$
+\begin{array}{r l}&{\mathbb{U}\big(\overbrace{\omega_{\mathrm{\tiny~CR}}\cup\cdots\cup_{\mathrm{\tiny~CR}}\omega}^{D}\cup_{\mathrm{\tiny~CR}}\omega_{2r}\big)=z^{r}\lambda(\pi^{\star}\omega)^{D}+O(z^{r-1})}\\ &{\quad\quad\quad\quad\quad\quad\quad\neq0,}\end{array}
+$$  
+
+and hence   $(\omega\cup_{\mathrm{CR}})^{D}\cup_{\mathrm{CR}}\omega_{2r}\neq0$  = 0. For degree reasons,    $r$   must be zero.  
+
+$\mathbb{U}$   i  $\mathbb{U}(\omega_{2r+1})\;=\;z^{r}\rho_{1}\,+\,O(z^{r-1})$   fo  $\rho_{1}~\in$   $H^{1}(Y;\mathbb{C})$  ). As  $\pi^{\star}:H^{1}(\mathcal{X};\mathbb{C})\to H^{1}(Y;\mathbb{C})$  X  → ) is an isomorphism, we have  $\rho_{1}=\pi^{\star}\theta_{1}$   for some    $\theta_{1}\in H^{1}(\mathcal{X};\mathbb{C})$  . Suppose that    $\rho_{1}\neq0$  . By Hard Lefschet  $H^{\bullet}(\mathcal{X};\mathbb{C})$   (or- dinary cohomology not Chen–Ruan cohomology), there ists  $\omega\in H^{2}(\mathcal{X};\mathbb{C})$   ∈ X ) such that    $\omega^{D-1}\theta_{1}\in H^{2D-1}(\mathcal{X};\mathbb{C})$   is non-zero. Injectivity of  π  $\pi^{\star}$  gives   $(\pi^{\star}\omega)^{D-1}\rho_{1}\neq0$  , and so  
+
+$$
+\begin{array}{r}{\mathbb{U}\big(\overbrace{\omega_{\mathrm{\tiny~CR}}\cdots\cdots_{\mathrm{\tiny~CR}}\omega}^{D-1}\cup_{\mathrm{\tiny~CR}}\omega_{\mathrm{\tiny~CR}}}\\ {\mathbb{U}\big(\overbrace{\omega_{\mathrm{\tiny~CR}}\cdots\cdots_{\mathrm{\tiny~CR}}\omega}^{D-1}\big)=z^{r}\big(\pi^{\star}\omega\big)^{D-1}\rho_{1}+O\big(z^{r-1}\big)}\\ {\neq0.\quad\quad\quad\quad}\end{array}
+$$  
+
+As before, this forces    $r=0$  .  
+
+$\mathbb{U}$   is grading-pr  $\mathbb{U}(\omega_{2r+2})\ =\ z^{r}\rho_{2}\,+\,O(z^{r-1})$     $\rho_{2}~\in$   $H^{2}(Y;\mathbb{C})$  ).  $\rho_{2}\;\notin\;\ker\pi_{!}$  ∈ . Then there exist  $\omega,\omega^{\prime}\;\in\;H^{2}(\mathcal{X};\mathbb{C})$    ∈ X ) such that  $\begin{array}{r}{\int_{\mathcal{X}}\pi_{!}\rho_{2}\cup\omega^{D-2}\cup\omega^{\prime}\neq0}\end{array}$  R  ∪  ∪  ̸ = 0; here we used the non-degeneracy of the Poincar´ X pairing and Hard Lefschetz for    $H^{\bullet}(\mathcal{X};\mathbb{C})$  . Thus  $\begin{array}{r}{\int_{Y}\rho_{2}\cup\pi^{\star}\omega^{D-2}\cup\pi^{\star}\omega^{\prime}\neq0}\end{array}$   ∪  ∪  ̸ = 0, and so  $\mathbb{U}\big(\omega_{2r+2}\big)\cup\pi^{\star}\omega^{D-2}\cup\pi^{\star}\omega^{\prime}\neq0$  . But  
+
+$$
+\mathbb{U}\big(\omega_{2r+2}\big)\cup\pi^{\star}\omega^{D-2}\cup\pi^{\star}\omega^{\prime}=\mathbb{U}\big(\overbrace{\omega\underbrace{\cup\cdots\cup}_{\mathrm{CR}}\omega\underbrace{\cup}_{\mathrm{CR}}\omega^{\prime}\underbrace{\cup}_{\mathrm{CR}}\omega_{2r+2}}^{D-2}\big)
+$$  
+
+and as this is non-zero we must, for degree reasons, have    $r=0$  .  
+
+Lemma 5.2.  Suppose that    $\mathbb{U}$   sends  $\mathcal{H}_{\mathcal{X}}^{-}$    to  $\mathcal{H}_{Y}^{-}$    , so that  
+
+$$
+\mathbb{U}=U_{0}+U_{1}z^{-1}+\cdot\cdot\cdot+U_{k}z^{-k}
+$$  
+
+for some non-negative integer    $k$   and some linear maps    $U_{i}:H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\mathbb{C})\to H^{\bullet}(Y;\mathbb{C})$  X  → . Then:  
+
+(i)    $U_{0}$   is grading-preserving; (ii)    $U_{0}$   maps    ${\bf1}_{\mathcal X}$   to    $\mathbf{1}_{\boldsymbol{y}}$  ; (iii)    $U_{0}$   maps    $\rho\in H^{2}(\mathcal{X};\mathbb{C})$   to    $\pi^{\star}\rho\in H^{2}(Y;\mathbb{C})$  ; (iv)    $U_{0}$   identiﬁes the orbifold Poincar´ e pairing on    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\mathbb{C})$  X  with the Poincar´ pairing on    $H^{\bullet}(Y;\mathbb{C})$  .  
+
+Proof.  (i)  U  is grading-preserving. (ii) conjecture 4.1(a). (iii) conjecture 4.1(b). (iv)    $\mathbb{U}$   is a symplectic isomorphism. □  
+
+# 6.  From Givental’s Cone to Quantum Cohomology  
+
+Since    $\mathcal{L}_{\mathcal{X}}$   encodes all genus-zero Gr ov–Witten invariants of    $\mathcal{X}$  , it implicitly encodes the big quan um product for  X . In the same way,    $\mathcal{L}_{Y}$   encodes the big quantum product for  Y  . In this section we describe how to determine the quantum products from    $\mathcal{L}_{\mathcal{X}}$   and    $\mathcal{L}_{Y}$  , using the geometric structure described in theorem 3.2. The big quantum products can be regarded in three diﬀerent ways:  
+
+(1) as  families of Frobenius algebras , since  
+
+$\Bigl(u\star v,w\Bigr)_{\chi}=\Bigl(u,v\star w\Bigr)_{\chi}\qquad\mathrm{and}\qquad\Bigl(u^{\prime}\star v^{\prime},w^{\prime}\Bigr)_{\chi}=\Bigl(u^{\prime},v^{\prime}\star w^{\prime}\Bigr)_{\chi}$  X X for ll    $u,v,w\in H_{\mathrm{CR}}^{\bullet}(\mathcal{X};\mathbb{C})$  X ) and    $u^{\prime},v^{\prime},w^{\prime}\in H^{\bullet}(Y;\Lambda_{\mathcal{X}})$  . (2) as  F-manifolds . An F-manifold is, roughly speaking, a Frobenius manifold without a pairing. It is a manifold equipped with a super commutative associative multiplication on the tangent sheaf and a global unit vector ﬁeld such that the multiplication  $\bigcirc$  satisﬁes  
+
+$$
+\operatorname{Lie}_{X\circ Y}(\circ)=X\circ\operatorname{Lie}_{Y}(\circ)+Y\circ\operatorname{Lie}_{X}(\circ)
+$$  
+
+for any two local vector ﬁelds    $X$   and    $Y$  . F-manifolds are studied in [23,24].  
+
+(3) as  Frobenius manifolds . A Frobenius manifold is a manifold    $M$   equipped with the structure of a unital Frobenius algebra on each tangent space  $T_{x}M$  such that the associated metric on    $^{T M}$   is ﬂat, the identity vector ﬁeld is ﬂat, and certain integrability conditions hold (these include the celebrated WDVV equations). Frobenius manifolds are studied in [17,28].  
+
+Once again, write    $\mathcal{Z}$   for either    $\mathcal{X}$   or    $Y$  . In this section, we will see how to pass from  $\mathcal{L}_{\mathcal{Z}}$   to:  
+
+(1) a family of Frobenius algebras. This family is  intrinsic  to    $\mathcal{L}_{\mathcal{Z}}$   in that it depends only on the symplectic space    $\mathcal{H}_{\mathcal{Z}}$   and on    $\mathcal{L}_{\mathcal{Z}}\;\subset\;\mathcal{H}_{\mathcal{Z}}$   sat the conclusions of theorem 3.2; it is independent of the polarization  H  $\mathcal{H}_{\mathcal{Z}}=$  Z  $\mathcal{H}_{\mathcal{Z}}^{+}\oplus\mathcal{H}_{\mathcal{Z}}^{-}$    ⊕H   used to deﬁne    $\mathcal{L}_{\mathcal{Z}}$  . Z Z (2) an F-manifold. This depends, up to isomorphism, only on    $\mathcal{H}_{\mathcal{Z}}$  ,    $\mathcal{L}_{\mathcal{Z}}$  , and a choice of point on    $\mathcal{L}_{\mathcal{Z}}$  . (3) a Frobenius manifold. This depends on    $\mathcal{H}_{\mathcal{Z}}$  ,    $\mathcal{L}_{\mathcal{Z}}$  , a point    $x$   of    $\mathcal{L}_{\mathcal{Z}}$  , and a choice of  opposite subspace    $\mathcal{H}_{\mathcal{Z}}^{\mathrm{{opp}}}\subset\mathcal{H}_{\mathcal{Z}}$  ⊂H . Choosing    $x\,\in\,\mathcal{L}_{\mathcal{Z}}$   appropriately Z Z and taking    $\mathcal{H}_{\mathcal{Z}}^{\mathrm{{opp}}}=\mathcal{H}_{\mathcal{Z}}^{-}$   H   g es the Frobenius manifold corresponding to the Z Z quantum cohomology of  Z ; we explain this in  § 6(d–e) below.  
+
+Once we understand points 1–3 here, we will see how conjecture 4.1 implies previous versions of the Crepant Resolution Conjecture. If the symplectic trans- formation    $\mathbb{U}$   maps    $\mathcal{H}_{\mathcal{X}}^{-}$    to    $\mathcal{H}_{Y}^{-}$    then we obtain from point 3 above an isomorphism X etween the Frobenius manifolds deﬁned by the quantum cohomologies of    $\mathcal{X}$   and  $Y$   . The Hard Lefschetz condition postulated by Bryan–Graber in [7] implies that  $\mathbb{U}(\mathcal{H}_{\chi}^{-})=\mathcal{H}_{Y}^{-}$    (this is theorem 5.4 in [13]), and so conjecture 4.1 implies the Bryan– X Graber version of the Crepant Resolution Conjecture. This is discussed further in    $\S9$  . In gener l    $\mathbb{U}$   will not map    $\mathcal{H}_{\mathcal{X}}^{-}$    to    $\mathcal{H}_{Y}^{-}$    — in other words, some of the ma- X trix entries of  U  will contain strictly positive powers of    $z$   — and so    $\mathbb{U}$   will  not induce an isomorphism between quantum cohomology Frobenius manifolds. From point 2 above we still obtain, however, an isomorphism of F-manifolds. If    $\mathcal{X}$   is semi-positive then more is true, and we obtain an isomorphism between the  small quantum cohomology algebras of    $\mathcal{X}$   and    $Y$   which preserves the Poincar´ e pairings. This is something very like Ruan’s original Crepant Resolution Conjecture, and we discuss it further in  § 8. Finally, without any additional assumptions on    $\mathcal{X}$   or    $Y$   (no Hard Lefschetz, no semi-positivity) we obtain from point 1 above something very like the Cohomological Crepant Resolution Conjecture; we discuss this in    $\S7$  .  
+
+The ideas presented in this section are due to Barannikov and Givental. Closely- related discussions can be found in [5,13,22].  
+
+From Givental’s Cone to a Family of Frobenius A .  Given    $\mathcal{L}_{\mathcal{Z}}\subset$   $\mathcal{H}_{\mathcal{Z}}$  H  satisfying the conclusions of theorem 3.2 and a point  x  $x\,\in\,\mathcal{L}_{\mathcal{Z}}$   ∈L , the quotient Z Z  $T_{x}/z T_{x}$  , where    $T_{x}=T_{x}\mathcal{L}_{\mathcal{Z}}$  , inherits the structure of a Frobenius algebra as follows. The Λ-bilinear form  
+
+$$
+\begin{array}{r l}{{T_{x}\otimes T_{x}\longrightarrow\Lambda}}&{{\mathrm{~}}}\\ {{v\otimes w\longmapsto\Omega(v,z^{-1}w)}}\end{array}
+$$  
+
+is symmetric and vanishes whenever    $v$   or    $w$   lies in    $z T_{x}$  , so it descends to give a symmetric bilinear form  
+
+$$
+g(v+z T_{x},w+z T_{x})=\Omega(v,z^{-1}w)
+$$  
+
+on    $T_{x}/z T_{x}$  . This form is non-degenerate as    $T_{x}$   is maximal isotropic. Choosing a ian subspace  $V$   such  ${\mathcal{H}}_{\mathcal{Z}}\,=\,T_{x}\oplus V$   — ne could, for instance, take  $V=\mathcal{H}_{\mathcal{Z}}^{-}$   H   — identiﬁes  V  with  $T_{x}^{\star}:=\mathrm{Hom}(T_{x},\Lambda)$   Λ) and  H  with the cotangent bundle Z Z  $T_{x}\oplus T_{x}^{\star}$  . As    $\mathcal{L}_{\mathcal{Z}}$    is Lagrangian, there is the germ of a function    $\phi:T_{x}\rightarrow\Lambda$   such that  $\phi(x)=0$   and that    $\mathcal{L}_{\mathcal{Z}}$   coincides, in a formal neighbourhood of    $x$  , with the graph of the diﬀerential of    $\phi$  . The third derivative    $d^{3}\phi|_{x}$   deﬁ s a cubic tensor on    $T_{x}$  ; it is easy to see that this is independent of the choice of  V  . Theorem 3.2 implies that  $\phi$   vanishes identically along th erm of    $z T_{x}\,\subset\,T_{x}$  , and as    $d^{3}\phi|_{x}(u,v,w)$   vanishes whenever one of    $u,v,w$   lies in  $z T_{x}$   we obtain a cubic tensor  c  on  $T_{x}/z T_{x}$  :  
+
+$$
+c\big(u+z T_{x},v+z T_{x},w+z T_{x}\big)=d^{3}\phi|_{x}(u,v,w).
+$$  
+
+The tensors    $c$   and    $g$   together deﬁne a super commutative product    $\star$  on    $T_{x}/z T_{x}$  , via  
+
+$$
+g\Bigl((u+z T_{x})\star(v+z T_{x}),w+z T_{x}\Bigr)=c\bigl(u+z T_{x},v+z T_{x},w+z T_{x}\bigr).
+$$  
+
+The product    $\star$  automatically has the Frobenius property with respect to    $g$  . We will see in the next section that it is associative and unital; the unit depends upon the point    $x\,\in\,\mathcal{L}_{\mathcal{Z}}$  , so even if the tangent spaces    $T_{x_{1}}\,=\,T_{x_{1}}\mathcal{L}_{\mathcal{Z}}$   and    $T_{x_{2}}\,=\,T_{x_{2}}{\mathcal{L}}_{\mathcal{Z}}$  coincide, the algebra structures on    $T_{x_{1}}/z T_{x_{1}}$   and    $T_{x_{2}}/z T_{x_{2}}$   will in general diﬀer. Thus we have obtained from  $\mathcal{L}_{\mathcal{Z}}$   a vector bundle  
+
+$$
+T\mathcal{L}_{\mathcal{Z}}/z T\mathcal{L}_{\mathcal{Z}}\rightarrow\mathcal{L}_{\mathcal{Z}}
+$$  
+
+such that the ﬁbers of this vector bundle form a family of Frobenius algebras.  
+
+Remark 6.1.  The construction here resembles the construction of the Yukawa coupling in the B-model of topological string theory associated to a Calabi–Yau 3- fold (see [16] and  e.g.  [20,  § 6]). This is not an accident. The tangent spaces    $T$   to  $\mathcal{L}_{\mathcal{Z}}$  form a  variation of semi-inﬁnite Hodge structure  in the sense of Barannikov [5], and part of the power of Barannikov’s theory is that it can describe A-model phenomena (like quantum cohomology) and B-model phenomena in the same language.  
+
+Remark 6.2.  If we take    $\mathcal{X}$   to be a manifold,    ${\mathcal{Z}}\,=\,{\mathcal{X}}$  ,    $V\,=\,\mathcal{H}_{\mathcal{X}}^{-}$    , and the point X  $x\in\mathcal{L}_{\mathcal{X}}$   to be    $J_{\mathcal{X}}(\tau,-z)$  , deﬁned in  § 6(d) below, then th unction-germ    $\phi$   described above is Givental’s  genus-zero ancestor potential  $\bar{\mathcal{F}}_{\tau}^{0}$    of  [21, 5].  
+
+6.2.  From Givental’s Cone to an   $\mathbf{F}$  - d.  Given    $\mathcal{L}_{\mathcal{Z}}\subset\mathcal{H}_{\mathcal{Z}}$   satisfying the conclusions of theorem 3.2 and a point  x  $x\,\in\,\mathcal{L}_{\mathcal{Z}}$   ∈L , we construct an F-manifold as Z follows. Let    $T_{x}\,=\,T_{x}\mathcal{L}_{\mathcal{Z}}$   and choose a Lagrangian subspace    $V\,\subset\,{\mathcal{H}}_{{\mathcal{Z}}}$   such that  ${\mathcal H}_{\mathcal Z}\,=\,T_{x}\,\oplus\,V$  . Let    $M\,=\,T_{x}\cap z V$  . Our F-manifold will be based on a formal neighbourhood of the origin in  M .  
+
+As    $\mathcal{L}_{\mathcal{Z}}$   is the graph of a germ of a map from    $T_{x}$   to    $V$  , there is a unique germ of a function    $K:M\to\mathcal{H}_{\mathcal{Z}}$   such that    $K(t)\in\mathcal{L}_{\mathcal{Z}}$   and    $K(t)=x+t+v(t)$   for some  $v(t)\,\in\,V$  . Cho  a basis    for    $M$   and denote the corresponding linear  $e_{0},\ldots,e_{N}$  co-ordinates on  M  by    $t_{a}$  ,   $0\leq a\leq N$  .  
+
+Proposition 6.3.  For    $t$   in a formal neighbourhood of the origin in    $M$  , the elements  
+
+$$
+{\frac{\partial K}{\partial t_{a}}}(t)+z T_{K(t)},~~~~~~~~~~~~~~~~~~~~a=0,1,.\,.\,.\,,N,
+$$  
+
+form a basis for    $T_{K(t)}/z T_{K(t)}$  .  
+
+Proof.  It suﬃces to prove this at    $t=0$  . But    $K(0)=x$   and, since    $T_{x}$   is tangent to  $\mathcal{L}_{\mathcal{Z}}$   at    $x$  ,  $\textstyle{\frac{\partial K}{\partial t_{a}}}(0)$  (0) has no component along    $V$   :  $\begin{array}{r}{\frac{\partial K}{\partial t_{a}}(0)=e_{a}}\end{array}$  . So we need to show that  
+
+$$
+e_{a}+z T_{x}~~~~~~~~~~~~~~~~~~~~~~~~~~~a=0,1,.\,.\,.\,,N,
+$$  
+
+form a basis for    $T_{x}/z T_{x}$  . This holds because    $\mathcal{H}_{\mathcal{Z}}=z T_{x}\oplus z V$  , and so the projection  $M=T_{x}\cap z V\rightarrow T_{x}/z T_{x}$   is an isomorphism. □  
+
+Thus for    $t$   in a formal neighbourhood    $M_{0}$   of the origin in    $M$  , the map    $D K|_{t}:$   $T_{t}M\rightarrow T_{K(t)}/z T_{K(t)}$   is an isomorphism. Pulling k the Frobenius algebra struc- ture deﬁned in the previous section via the map  DK  gives a pairing  
+
+$$
+g_{\alpha\beta}(t)=\Omega\bigg(\frac{\partial K}{\partial t_{\alpha}}(t),z^{-1}\frac{\partial K}{\partial t_{\beta}}(t)\bigg)
+$$  
+
+and a symmetric 3-tensor  
+
+$$
+c_{\alpha\beta\gamma}(t)=\Omega\bigg(\frac{\partial^{2}K}{\partial t_{\beta}\partial t_{\gamma}}(t),\frac{\partial K}{\partial t_{\alpha}}(t)\bigg)
+$$  
+
+on    $T_{t}M_{0}$  . Denote the induced product on    $T_{t}M_{0}$   by    $\circ_{t}$  :  
+
+$$
+e_{\alpha}\circ_{t}e_{\beta}={c_{\alpha\beta}}^{\gamma}(t)e_{\gamma}
+$$  
+
+where    $c_{\alpha\beta\gamma}(t)={c_{\alpha\beta}}^{\epsilon}(t)g_{\epsilon\gamma}(t)$  ).  
+
+# Proposition 6.4.  
+
+(a)    $\nabla_{u\circ_{t}v}K(t)+z T_{K(t)}=-z\nabla_{u}\nabla_{v}K(t)+z T_{K(t)}$  , where    $\begin{array}{r}{\nabla_{u}=u^{\alpha}\frac{\partial}{\partial t_{\alpha}}}\end{array}$    denotes the directional derivative along    $u=u^{\alpha}e_{\alpha}$  . (b)  The tensor    ${c_{\alpha\beta}}^{\epsilon}(t)c_{\epsilon\gamma\delta}(t)$   is symmetric in    $\alpha$  ,  $\beta,\,\gamma,\,\delta$  . (c)  The product    $\cup_{t}$   is associative.  
+
+Proof.  As    $c_{\gamma\beta\alpha}(t)={c_{\alpha\beta}}^{\epsilon}(t)g_{\gamma\epsilon}(t)$  ), we have  
+
+$$
+\Omega\bigg(\frac{\partial^{2}K}{\partial t_{\beta}\partial t_{\alpha}}(t),\frac{\partial K}{\partial t_{\gamma}}(t)\bigg)=\Omega\bigg(\frac{\partial K}{\partial t_{\gamma}}(t),z^{-1}{c_{\alpha\beta}}^{\epsilon}(t)\frac{\partial K}{\partial t_{\epsilon}}(t)\bigg).
+$$  
+
+The pairing (24) is non-degenerate, and (25) is a basis for    $T_{K(t)}/z T_{K(t)}$  , so  
+
+$$
+-\;z\frac{\partial^{2}K}{\partial t_{\alpha}\partial t_{\beta}}(t)+z T_{K(t)}={c_{\alpha\beta}}^{\epsilon}(t)\frac{\partial K}{\partial t_{\epsilon}}(t)+z T_{K(t)}.
+$$  
+
+This proves (a). Theorem 3.2 implies that if    $y(t)\in T_{K(t)}$   then  $\begin{array}{r}{z\frac{\partial y}{\partial t_{a}}(t)\in T_{K(t)}}\end{array}$   too, so diﬀerentiating (26) yields  
+
+$$
+\begin{array}{r}{z^{2}\displaystyle\frac{\partial^{3}K}{\partial t_{\alpha}\partial t_{\beta}\partial t_{\gamma}}(t)+z T_{K(t)}=-c_{\alpha\beta}^{~\epsilon}(t)z\displaystyle\frac{\partial^{2}K}{\partial t_{\epsilon}\partial t_{\gamma}}(t)+z T_{K(t)}\ }\\ {=c_{\alpha\beta}^{~\epsilon}(t)c_{\epsilon\gamma}^{~\delta}(t)\displaystyle\frac{\partial K}{\partial t_{\delta}}(t)+z T_{K(t)}.}\end{array}
+$$  
+
+Thus    ${c_{\alpha\beta}}^{\epsilon}(t){c_{\epsilon\gamma}}^{\delta}(t)$  ) is symmetric in    $\alpha$  ,    $\beta$  ,    $\gamma$  . As    $c_{\epsilon\gamma\delta}(t)$   is symmetric as well, part (b) follows. Part (c) is an immediate consequence of part (b). □  
+
+So far, we have constructed a family of super commutative associative products on the ﬁb s of    $T M_{0}$  , depending on    $\mathcal{L}_{\mathcal{Z}}\subset\mathcal{H}_{\mathcal{Z}}$  , a point    $x\in\mathcal{L}_{\mathcal{Z}}$  , and a Lagrangian subspace  V  . To prove that this makes  M 0  into an F-manifold we need to show that the algebras   $(T_{t}M_{0},\circ_{t})$   are unital and that the integrability condition (23) holds. After that we will show that, up to isomorphism, the F-manifold we have constructed is independent of the choice of Lagrangian subspace    $V$  .  
+
+Deﬁne a vector ﬁeld  $e$  on  $M_{0}$  by  
+
+$$
+\nabla_{e(t)}K(t)+z T_{K(t)}=-z^{-1}K(t)+z T_{K(t)}.
+$$  
+
+This makes sense, as    $z^{-1}K(t)\in T_{K(t)}$   by theorem 3.2.  
+
+Proposition 6.5.    $e(t)$   is the identity element in the algebra    $(T_{t}(M_{0}),\circ_{t})$  .  
+
+Proof.  Let    $v$   be any vector ﬁeld on    $M_{0}$  . Then  
+
+$$
+\begin{array}{r}{\nabla_{e(t)\circ_{t}v(t)}K(t)+z T_{K(t)}=-z\nabla_{v}(t)\nabla_{e(t)}K(t)+z T_{K(t)}}\\ {=\nabla_{v(t)}K(t)+z T_{K(t)}}\end{array}
+$$  
+
+and so    $e(t)\circ_{t}v(t)=v(t)$  .  
+
+Corollary 6.6.  The product on    $T_{x}/z T_{x}$   constructed in    $\S\O\left(a\right)$   is associative and unital.  
+
+Proof.  Set    $t=0$   in propositions   $6.4(\mathrm{c})$   and 6.5.  
+
+Proposition 6.7.  The triple    $(M_{0},\circ,e)$   is an   $F$  -manifold.  
+
+Proof.  It remains only to establish the integrability condition (23), and for this the argument of [24,  § 2] applies. The essential ingredients there are proposition 6.4(b) and that the quantity  $\begin{array}{r}{\frac{\partial}{\partial t_{\delta}}c_{\alpha\beta\gamma}(t)}\end{array}$  ) is symmetric in    $\alpha,\beta,\gamma,\delta$  : the latter assertion holds here as  $\begin{array}{r}{\frac{\partial}{\partial t_{\delta}}c_{\alpha\beta\gamma}(t)}\end{array}$  ) is the fourth derivative of a function    $\phi:M_{0}\to\Lambda$  . □  
+
+Pro n 6.8 hat    $\mathcal{L}_{\mathcal{Z}}\subset\mathcal{H}_{\mathcal{Z}}$   the conclusions of theorem 3.2, that  x  $x\in\mathcal{L}_{\mathcal{Z}}$   ∈L , that  $T_{x}=T_{x}\mathcal{L}_{\mathcal{Z}}$  L , and that  $V,V^{\prime}\subset\mathcal{H}_{\mathcal{Z}}$      ⊂H  are Lagrangian subspaces such Z Z Z at    $T_{x}\oplus V=T_{x}\oplus V^{\prime}=\mathcal{H}_{\mathcal{Z}}$  . Let    $(M_{0},\circ,e)$   and    $(M_{0}^{\prime},\circ^{\prime},e^{\prime})$   ◦  be the corresponding F-manifolds, and  
+
+$$
+K:M_{0}\rightarrow\mathcal{H}_{\mathcal{Z}},\qquad\qquad\qquad\qquad K^{\prime}:M_{0}^{\prime}\rightarrow\mathcal{H}_{\mathcal{Z}},
+$$  
+
+be the corresponding functions (constructed just above proposition 6.3). Then there is a unique map    $f:M_{0}\to M_{0}^{\prime}$    and a unique section    $w$   of    $K^{\star}T\mathcal{L}_{\mathcal{Z}}$   (  i.e.  a unique choice of    $w(t)\in T_{K(t)}\mathcal{L}_{\mathcal{Z}})$   such that  
+
+$$
+K^{\prime}(f(t))=K(t)+z w(t),\qquad\qquad\qquad\mathit{f o r a l l}~t\in M_{0}.
+$$  
+
+The map    $f$   gives an isomorphism of   $F$  -manifolds between    $(M_{0},\circ,e)$   and    $(M_{0}^{\prime},\circ^{\prime},e^{\prime})$   ◦ .  
+
+$\pi^{\prime}:{\mathcal{H}}_{Z}\,\to\,T_{x}$  de e the projection along    $V^{\prime}$  , and for    $y\,\in\,\mathcal{L}_{\mathcal{Z}}$   write  $T_{y}=T_{y}\mathcal{L}_{\mathcal{Z}}$  L . Recall that  $M_{0}$  ,  $M_{0}^{\prime}$      are formal neighbourhoods of the origins in Z  
+
+$$
+M=T_{x}\cap z V,\qquad\qquad\qquad M^{\prime}=T_{x}\cap z V^{\prime}
+$$  
+
+respectively, and that    $K(t)$  ,    $K^{\prime}(t^{\prime})$   are the unique elements of    $\mathcal{L}_{\mathcal{Z}}$   of the form  
+
+$$
+K(t)=x+t+v(t),\qquad\qquad\qquad K^{\prime}(t^{\prime})=x^{\prime}+t^{\prime}+v^{\prime}(t^{\prime}),
+$$  
+
+where    $t\in M_{0}$  ,    $v(t)\in V$  ,    $t^{\prime}\in M_{0}^{\prime}$  , and    $v^{\prime}(t^{\prime})\in V^{\prime}$  .  
+
+We begin  owing that  $t\in M_{0}$  ,    $T_{x}=\pi^{\prime}\big(z T_{K(t)}\big)\oplus M^{\prime}$  . It suﬃces to prove this at  t  = 0, and since  $K(0)=x$   w w that  $T_{x}=z T_{x}\oplus M^{\prime}$   ⊕ This follows from the fact that the projection  $M^{\prime}\rightarrow T_{x}/z T_{x}$      →  is an isomorphism ( c.f.  the proof of proposition 6.3). So    $T_{x}=\pi^{\prime}{\bigl(}z T_{K(t)}{\bigr)}\oplus M^{\prime}$  ′   for all    $t\in M_{0}$  .  
+
+There is therefore a unique element  $w(t)\in T_{K(t)}$   such that  
+
+$$
+\pi^{\prime}\big[K(t)+z w(t)\big]\in x+M^{\prime}.
+$$  
+
+Theorem 3.2 implies that  $K(t)+z w(t)\in\mathcal{L}_{\mathcal{Z}}$   ∈L , and so setting Z  
+
+$$
+f(t)=\pi^{\prime}\bigl[K(t)+z w(t)\bigr]-x
+$$  
+
+gives a map    $f:M_{0}\to M_{0}^{\prime}$    such that 0  
+
+$$
+K^{\prime}(f(t))=K(t)+z w(t).
+$$  
+
+This shows existence of a map    $f:M_{0}\to M_{0}^{\prime}$    and a section    $w$   of    $K^{\star}T\mathcal{L}_{\mathcal{Z}}$    satisfying (27); uniqueness is clear.  
+
+It remains to show that    $f$   gives an isomorphism of F-manifolds. Note ﬁrst that  $T_{K(t)}\,=\,T_{K^{\prime}(f(t))}$  : theorem 3.2 implies that    $K(t)\,\in\,z T_{K(t)}$  , so    $K^{\prime}(f(t))$   is also in  $z T_{K(t)}$  , and so    $T_{K(t)}=T_{K^{\prime}(f(t))}$   by theorem 3.2 again. Write    $T=T_{K(t)}=T_{K^{\prime}(f(t))}$  . Using proposition 6.3, we can write    $w(t)\in T$   uniquely in the form  
+
+$$
+w(t)=\nabla_{g(t)}K(t)+z h(t)
+$$  
+
+for some vector ﬁeld    $g$   on    $M_{0}$   and some element    $h(t)\in T$   . Thus for any vector ﬁeld  $v$   on    $M_{0}$  ,  
+
+(29)  
+
+$$
+\begin{array}{r l}&{\nabla_{f_{\star}v(t)}K^{\prime}(f(t))+z T=\nabla_{v(t)}\big(K(t)+z w(t)\big)+z T}\\ &{\qquad\qquad\qquad=\nabla_{v(t)}K(t)+z\nabla_{v(t)}\nabla_{g(t)}K(t)+z T}\\ &{\qquad\qquad\qquad=\nabla_{v(t)}K(t)+\nabla_{v(t)\circ_{t}g(t)}K(t)+z T.}\end{array}
+$$  
+
+As the maps    $D K|_{t}:T_{t}M_{0}\to T/z T$   and    $D K^{\prime}|_{f(t)}:T_{f(t)}M_{0}^{\prime}\rightarrow T/z T$    →  are isomor- phisms, equation (29) determines the pushforward  $f_{\star}v$  . Diﬀerentiating again, along a vector ﬁeld    $w$   on    $M_{0}$  , gives  
+
+$$
+'(f(t))+z T=z\nabla_{v(t)}\nabla_{w(t)}K(t)+z\nabla_{w(t)}\nabla_{v(t)\circ_{t}g(t)}
+$$  
+
+and hence  
+
+$$
+\nabla_{(f_{\star}v(t))\circ_{f(t)}^{\prime}(f_{\star}w(t))}K^{\prime}(f(t))+z T=\nabla_{v(t)\circ_{t}w(t)}K(t)+\nabla_{v(t)\circ_{t}w(t)\circ_{t}g(t)}K(t)+z T.
+$$  
+
+Comparing with (29), we ﬁnd  
+
+$$
+f_{\star}\Big(v(t)\circ_{t}w(t)\Big)=\Big(f_{\star}v(t)\Big)\circ_{f(t)}^{\prime}\Big(f_{\star}w(t)\Big).
+$$  
+
+The map    $f$   is certainly invertible (this follows from uniqueness) and so    $f$   gives an isomorphism of F-manifolds. □  
+
+Remark 6.9.  It was pointed out to us by Hiroshi Iritani that the arguments in this section show that the moduli space of tangent spaces to    $\mathcal{L}_{\mathcal{Z}}$   carries a canonical F-manifold structure; see [13, 2.2] for a diﬀerent point of view on this.  
+
+6.3.  From Givental’s Cone to a Froben anifold.  Conside  $\mathcal{L}_{\mathcal{Z}}\,\subset\,\mathcal{H}_{\mathcal{Z}}$  satisfying the conclusions of theorem 3.2, and  $x\in\mathcal{L}_{\mathcal{Z}}$   ∈L . As before, write  $T_{x}=T_{x}\mathcal{L}_{\mathcal{Z}}$  L . Z Z To construct a Frobenius manifold, we need to choose also an  opposite subspace  at  $x$  .  
+
+Deﬁnit Let    $x\in\mathcal{L}_{\mathcal{Z}}$  . A subspace    $\mathcal{H}^{\mathrm{opp}}\subset\mathcal{H}_{\mathcal{Z}}$   is t    $x$   or  opposite to    $T_{x}$   if  H  $\mathcal{H}^{\mathrm{opp}}$    is Lagrangian,  $T_{\boldsymbol{x}}\oplus\mathcal{H}^{\mathrm{{opp}}}=\mathcal{H}_{\mathcal{Z}}$  , and  z  $z^{-1}\mathcal{H}^{\mathrm{{opp}}}\subset\mathcal{H}^{\mathrm{{opp}}}$  H   ⊂H .  
+
+For example,    $\mathcal{H}_{\mathcal{Z}}^{-}$    is opposite at    $x$   for all    $x\in\mathcal{L}_{\mathcal{Z}}$  . Our Frobenius manifold will Z be based on a formal neighbourhood of zero in    $z\mathcal{H}^{\mathrm{opp}}/\mathcal{H}^{\mathrm{opp}}$  .  
+
+We note the following immediate consequence of oppositeness.  
+
+Lemma 6.10.  If  $\mathcal{H}^{\mathrm{opp}}$    is opposite to    $T_{x}$   then the projections  
+
+$$
+z{\mathcal{H}}^{\mathrm{opp}}\cap T_{x}
+$$  
+
+$T_{x}/z T_{x}$  
+
+are both isomorphisms.  
+
+Consider the ‘slice’  $\left(x+z\mathcal{H}^{\mathrm{opp}}\right)\cap\mathcal{L}_{z}$  H  ∩L . This is the germ (at    $x$  ) of a ﬁnite- Z dimensional submanifold of  L  $\mathcal{L}_{\mathcal{Z}}$  , and lemma 6.10 implies that the map  
+
+$$
+\begin{array}{r}{p:\left(x+z\mathcal{H}^{\mathrm{opp}}\right)\cap\mathcal{L}_{\mathcal{Z}}\longrightarrow z\mathcal{H}^{\mathrm{opp}}/\mathcal{H}^{\mathrm{opp}}}\\ {y\longmapsto y-x+\mathcal{H}^{\mathrm{opp}}}\end{array}
+$$  
+
+has bijective derivative at    $x$  . Thus there is a map from the formal neighbourhood  $N_{0}$   of zero in    $z\mathcal{H}^{\mathrm{{opp}}}/\mathcal{H}^{\mathrm{{opp}}}$  ,  
+
+$$
+J:N_{0}\longrightarrow\left(x+z\mathcal{H}^{\mathrm{opp}}\right)\cap\mathcal{L}_{\mathcal{Z}}
+$$  
+
+such that    $p\circ J=\operatorname{id}$  . If we identify    $N_{0}$   with a formal neighbourhood of the origin in    $z{\mathcal{H}}^{\mathrm{opp}}\cap T_{x}$   via the isomorphism    $\pi$   in (30), then  
+
+$$
+J(t)=x+t+h(t)
+$$  
+
+$h(t)\in\mathcal{H}^{\mathrm{opp}}$  , and so    $J$   coincides with the map    $K$   deﬁned in    $\S6(\mathrm{b)}$   by taking  $V=\mathcal{H}^{\mathrm{opp}}$  .  
+
+in    $\S6(\mathrm{b)}$  , the derivative    $D J|_{t}:T_{t}N_{0}\rightarrow T_{J(t)}/z T_{J(t)}$   is an isomorphism for all  $t\in N_{0}$   ∈ . Pick a basis    $e_{0},\ldots,e_{N}$   for  z  $z{\mathcal{H}}^{\mathrm{opp}}\cap T_{x}$  H   ∩  and denote the corresponding linear co-ordinates on    $N_{0}$  , produced using lemma 6.10, by    $t_{a}$  ,   $0\leq a\leq N$  . Pulling b the Frobenius algebra structure on    $T_{J(t)}/z T_{J(t)}$   deﬁned in  § 6(a) along the map  DJ gives a pairing  
+
+$$
+g_{\alpha\beta}(t)=\Omega\bigg(\frac{\partial J}{\partial t_{\alpha}}(t),z^{-1}\frac{\partial J}{\partial t_{\beta}}(t)\bigg)
+$$  
+
+and a symmetric 3-tensor  
+
+$$
+c_{\alpha\beta\gamma}(t)=\Omega\bigg(\frac{\partial^{2}J}{\partial t_{\beta}\partial t_{\gamma}}(t),\frac{\partial J}{\partial t_{\alpha}}(t)\bigg)
+$$  
+
+on  $T_{t}N_{0}$  . We again denote the corresponding product on    $T_{t}N_{0}$   by    $\circ_{t}$   and the identity vector ﬁeld, constructed in proposition 6.5, by    $e$  . As before the product    $\circ_{t}$   can be determined by diﬀerentiating    $J(t)$  , but this time the relationship between    $\circ_{t}$   and  $J(t)$   is more direct:  
+
+Proposition 6.11.    $\nabla_{u\circ_{t}v}J(t)=-z\nabla_{u}\nabla_{v}J(t)$  .  
+
+Proof.  Proposition 6.4(a) shows that the quantity  
+
+$$
+\nabla_{u\circ_{t}v}J(t)+z\nabla_{u}\nabla_{v}J(t)
+$$  
+
+lies in    $z T_{J(t)}$  . On the other   $J(t)\,=\,x+t+h(t)$  , where    $t\in z\mathcal{H}^{\mathrm{oppr}}\cap T_{x}$   and  $h(t)\,\in\,\mathcal H^{\mathrm{opp}}$  , so (33) lies in  z  $z\mathcal{H}^{\mathrm{{opp}}}$  H . As    $z\mathcal{H}^{\mathrm{{oppl}}}\cap z T_{J(t)}\,=\,\{0\}$   for all    $t\,\in\,N_{0}$  , the statement follows. □  
+
+Proposition 6.12.  The quadruple    $(N_{0},\circ,e,g)$   is a Frobenius manifold. In other words:  
+
+(a)  each tangent space    $(T_{t}N_{0},\circ_{t})$   is a unital super commutative Frobenius alge- bra; (b)  the metric    $g_{\alpha\beta}(t)$   is ﬂat and the co-ordinates  $t_{0},\dots,t_{N}$   are ﬂat co-ordinates; (c)  the identity vector ﬁeld    $e$   is ﬂat; (d)    $c_{\alpha\beta\gamma}(t)$   is the third derivative of some function    $\phi:N_{0}\to\Lambda$  .  
+
+Proof.  Part (a) was proved in  § 6(b). Part (d) is immediate from the construction of the tensor    $c$  . For (b) we have  
+
+$$
+\frac{\partial J}{\partial t_{\alpha}}(t)=e_{\alpha}+h_{\alpha}(t),\mathrm{~\\\\\~where~}e_{\alpha}\in z\mathcal{H}^{\mathrm{opp}}\mathrm{~and~}h_{\alpha}(t)\in\mathcal{H}^{\mathrm{opp}},
+$$  
+
+and so  
+
+$$
+g_{\alpha\beta}(t)=\Omega\Big(e_{\alpha}+h_{\alpha}(t),z^{-1}e_{\beta}+z^{-1}h_{\beta}(t)\Big).
+$$  
+
+As    $\mathcal{H}^{\mathrm{opp}}$    is Lagrangian and    $z^{-1}\mathcal{H}^{\mathrm{opp}}\subset\mathcal{H}^{\mathrm{opp}}$  ,    $g_{\alpha\beta}(t)=\Omega(e_{\alpha},e_{\beta})$   is independent of  $t$  . This shows that    $g$   is ﬂat, and that    $\{t_{a}\}$   are ﬂat co-ordinates.  
+
+For (c) we need to show that    $e(t)$   is constant in ﬂat co-ordinates. In view of (34), we need to show that    $\nabla_{e(t)}J(t)\!+\!\mathcal{H}^{\mathrm{opp}}$    is constant with respect to    $t$  . Proposition 6.11 shows that    $z\nabla_{e(t)}\nabla_{v(t)}J(t)=\nabla_{v(t)}J(t)$   for any vector ﬁeld    $v$   on    $N_{0}$  , and hence that  $\nabla_{e(t)}J(t)=z^{-1}J(t)+C$   for some    $C$   independent of    $t$  . Thus  
+
+$$
+\begin{array}{r l}&{\nabla_{e(t)}J(t)+\mathcal{H}^{\mathrm{opp}}=z^{-1}\big(x+t+h(t)\big)+C+\mathcal{H}^{\mathrm{opp}}}\\ &{\qquad\qquad\qquad\qquad=z^{-1}x+C+\mathcal{H}^{\mathrm{opp}}}\end{array}
+$$  
+
+is independent of    $t$  . This completes the proof.  
+
+6.4.  Example: the Quantum Cohomology of    $\mathcal{X}$  .  We now show that if we take    $x$   to be the point    $\mathcal{L}_{\mathcal{X}}\cap\left(-z+\mathcal{H}_{\mathcal{X}}^{-}\right)$     and set    $\mathcal{H}^{\mathrm{{oppl}}}=\mathcal{H}_{\mathcal{X}}^{-}$    , then the Frobenius X X manifold constructed in the previous section is the quantum cohomology Frobenius manifold of    $\mathcal{X}$  . Set    $\tau=\tau_{\alpha}\phi_{\alpha}$  , and consider the element    $J_{\mathcal{X}}(\tau,-z)$   of    $\mathcal{L}_{\mathcal{X}}$   such that its rojection to    $\mathcal{H}_{\mathcal{X}}^{+}$    along  $\mathcal{H}_{\mathcal{X}}^{-}$    is equal to    $-z+\tau$  . We call    $J_{\mathcal{X}}(\tau,-z)$   the    $J$  -function X X of  X . It is obtained by substituting    $\tau_{0,a}\,=\,\tau_{a}$  ,   $0\leq a\leq N$  ;    $\tau_{k,a}\,=\,0$  ,   $0\leq a\leq N$  ,  $0<k<\infty$  ; and  
+
+$$
+p_{l,b}=\left.\frac{\partial\mathcal{F}_{\mathcal{X}}^{0}}{\partial\tau_{l,b}}\right|_{\tau(z)=\tau}=\sum_{d\in\mathrm{Eff}(\mathcal{X})}\sum_{n\geq0}\left\langle\tau,\ldots,\tau,\phi_{b}\psi^{l}\right\rangle_{0,n+1,d}^{\mathcal{X}}\frac{U^{d}}{n!}
+$$  
+
+into (14), via (20). Thus  
+
+$$
+J_{\mathcal{X}}(\tau,-z)=-z+\tau+\sum_{d\in\mathrm{Eff}(\mathcal{X})}\sum_{n\geq0}\sum_{l\geq0}\left\langle\tau,\ldots,\tau,\phi_{\epsilon}\psi^{l}\right\rangle_{0,n+1,d}^{\mathcal{X}}\frac{U^{d}\phi^{\epsilon}}{n!(-z)^{l+1}};
+$$  
+
+we abbreviate this to  
+
+$$
+J_{\mathcal{X}}(\tau,-z)=-z+\tau+\sum_{d\in\mathrm{Eff}(\mathcal{X})}\sum_{n\geq0}\left\langle\tau,\ldots,\tau,\frac{\phi_{\epsilon}}{-z-\psi}\right\rangle_{0,n+1,d}^{\mathcal{X}}\frac{U^{d}\phi^{\epsilon}}{n!}.
+$$  
+
+$J_{\mathcal{X}}(\tau,-z)$   is an element of    $\mathcal{L}_{\mathcal{X}}$   — a formal power series in variables  $\tau_{0},\dots,\tau_{N}$  aking values in    $\mathcal{H}_{\mathcal{X}}$   — which depends analytically on    $\tau_{1},\dots,\tau_{s}$   in the domain  C . We can see this analyticity explicitly:  
+
+# Proposition 6.13.  
+
+$$
+\begin{array}{l}{{\displaystyle J_{\mathcal{X}}(\tau,-z)=\mathrm{e}^{-\tau_{\mathrm{two}}/z}\times}}\\ {{\displaystyle\left(-z+\tau_{\mathrm{rest}}+\sum_{d\in\mathrm{Eff}(\mathcal{X})}\sum_{n\geq0}\left\langle\tau_{\mathrm{rest}},\ldots,\tau_{\mathrm{rest}},\frac{\phi_{\epsilon}}{-z-\psi}\right\rangle_{0,n+1,d}^{\mathcal{X}}\frac{U^{d}\mathrm{e}^{d_{1}\tau_{1}}\cdot\cdot\cdot\mathrm{e}^{d_{s}\tau_{s}}\phi^{\epsilon}}{n!}\right)}}\end{array}
+$$  
+
+where    $\tau_{\mathrm{tweo}}$   and    $\tau_{\mathrm{rest}}$   are deﬁned in  (7) .  
+
+Proof.  This follows easily from the Divisor Equation, as in [14, lemma 2.5].  
+
+Our Frobenius manifold is based on a formal neighbourhood    $N_{0}(\mathcal{X})$   of the origin in    $z\mathcal{H}_{\mathcal{X}}^{-}/\mathcal{H}_{\mathcal{X}}^{-}\;\cong\;H_{\mathrm{CR}}^{\bullet}(\mathcal{X};\Lambda)$  H X Choose a point    $x\;\in\;\mathcal{L}_{\mathcal{X}}\cap\left(-z+z\mathcal{H}_{\mathcal{X}}^{-}\right)$    − H and write X X  $x=-z+\sigma+h_{-}$   − with    $\sigma\in H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\Lambda)$  X ; Λ) and    $h_{-}\in\mathcal{H}_{\chi}^{-}$    . Then the map  p  deﬁned in − X (31) satisﬁes  
+
+$$
+p\circ J_{\mathcal{X}}(\sigma+\tau,-z)=\tau,
+$$  
+
+and so the map    $J$   deﬁned in (32) is  
+
+$$
+J(\tau)=J_{\mathcal{X}}(\sigma+\tau,-z).
+$$  
+
+The basis    $\phi_{0},\ldots,\phi_{N}$   for    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\Lambda)$  X ; Λ) gives co-ordinates    $\tau_{a}$  ,   $0\leq a\leq N$  , on    $N_{0}(\mathcal{X})$  and these are ﬂat co-ordinates for the Frobenius manifold:  
+
+$$
+\begin{array}{r l r}{g_{\alpha\beta}\big(\tau\big)=\Omega\Big(\frac{\partial J_{\mathcal{X}}}{\partial\tau_{\alpha}}(\tau+\sigma,-z),z^{-1}\frac{\partial J_{\mathcal{X}}}{\partial\tau_{\beta}}(\tau+\sigma,-z)\Big)}&\\ {=\Omega\big(\phi_{\alpha}+h_{\alpha},z^{-1}\phi_{\beta}+z^{-1}h_{\beta}\big)}&{\mathrm{~where~}h_{\alpha},h_{\beta}\in\mathcal{H}_{\mathcal{X}}^{-1}}\\ &{=\big(\phi_{\alpha},\phi_{\beta}\big)_{\mathcal{X}}.}\end{array}
+$$  
+
+To calculate the structure constants of the product    $\circ_{\tau}$  , we will need  
+
+$$
+\begin{array}{r l}&{\displaystyle\frac{\partial J_{\mathcal{X}}}{\partial\tau_{\alpha}}(\sigma+\tau)=\phi_{\alpha}+h_{\alpha}}\\ &{\displaystyle\frac{\partial^{2}J_{\mathcal{X}}}{\partial\tau_{\beta}\partial\tau_{\gamma}}(\sigma+\tau)=-z^{-1}\sum_{d\in\mathrm{Eff}(\mathcal{X})}\sum_{n\geq0}\left<\phi_{\beta},\phi_{\gamma},\sigma+\tau,\ldots,\sigma+\tau,\phi_{\epsilon}\right>_{0,n+3,d}^{\mathcal{X}}\frac{U^{d}\phi^{\epsilon}}{n!}}\\ &{\displaystyle\qquad\qquad\qquad\qquad\qquad+z^{-1}h_{\beta\gamma}}\end{array}
+$$  
+
+for some    $h_{\alpha},h_{\beta\gamma}\in\mathcal{H}_{\mathcal{X}}^{-}$    ; this gives  
+
+$$
+\begin{array}{l}{\displaystyle c_{\alpha\beta\gamma}(\tau)=\Omega\bigg(\frac{\partial^{2}J_{\mathcal{X}}}{\partial\tau_{\beta}\partial\tau_{\gamma}}(\sigma+\tau),\frac{\partial J_{\mathcal{X}}}{\partial\tau_{\alpha}}(\sigma+\tau)\bigg)}\\ {\displaystyle\qquad=\sum_{d\in\mathrm{Eff}(\mathcal{X})}\sum_{n\geq0}\left\langle\phi_{\beta},\phi_{\gamma},\sigma+\tau,\ldots,\sigma+\tau,\phi_{\alpha}\right\rangle_{0,n+3,d}^{\mathcal{X}}}\\ {\displaystyle\qquad=\frac{\partial^{3}F_{\mathcal{X}}}{\partial\tau_{\alpha}\partial\tau_{\beta}\partial\tau_{\gamma}}(\sigma+\tau).}\end{array}
+$$  
+
+Thus the product    $\cup_{\tau}$  n the Frobenius manifold is a shifted version of the big quantum product for :  
+
+$$
+v\circ_{\tau}w=v\bigstar_{\sigma+\tau}w.
+$$  
+
+We have proved:  
+
+Frobeni duced  $\mathcal{L}_{\mathcal{X}}\subset\mathcal{H}_{\mathcal{X}}$   by choosing  $x=\mathcal{L}_{\mathcal{X}}\cap\left(-z+\sigma+\mathcal{H}_{\mathcal{X}}^{-}\right)$   ∩    , where  $\sigma\in H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\Lambda)$   ∈ X , and    $\mathcal{H}^{\mathrm{{oppl}}}=\mathcal{H}_{\mathcal{X}}^{-}$   H   is the Frobenius X X manifold corresponding to the quantum cohomology of  X  with the product ‘shifted’ by    $\sigma$  . It has ﬂat metric given by the orbifold Poincar´ e pairing    $(\cdot,\cdot)_{\mathcal{X}}$    roduct given by the shifted big quantum product  (35) . In particular, choosing  σ  = 0  gives the usual quantum cohomology Frobenius manifold for    $\mathcal{X}$  . □  
+
+For later use, we note a stronger version of proposition 6.3: Proposition 6.15.  For all    $\tau\in N_{0}(\mathcal{X})$  , the elements  
+
+$$
+\frac{\partial J_{\mathcal{X}}}{\partial\tau_{a}}(\tau,-z)~~~~~~~~~~~~~~~~~~~~~~~~~~~a=0,1,.~.~.~,N
+$$  
+
+form a    $\Lambda[z]$  -basis for    $T_{J_{\mathcal{X}}(\tau,-z)}$  .  
+
+Proof.  Every element of  $T_{J_{\mathcal{X}}(\tau,-z)}$   can be uniquely written in the form    $h_{+}+h_{-}$  for  $h_{+}\in\mathcal{H}_{\chi}^{+}$    ,    $h_{-}\,\in\,\mathcal{H}_{\mathcal{X}}^{-}$    . The element    $h_{+}$   is a polynomial in    $z$  . Since    $\begin{array}{r}{{\frac{\partial J_{\mathcal{X}}}{\tau_{a}}}(\tau,-z)=}\end{array}$  X X  $\phi_{a}\mathrm{~+~}h_{-}^{\prime}$  for some    $h_{-}^{\prime}\ \in\ \mathcal{H}_{\chi}^{-}$  ∈H , since    $\{\phi_{a}\}$   is a   $\Lambda$  -basis for    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\Lambda)$  X ; Λ), and since − − X  $T_{J_{\mathcal{X}}(\tau,-z)}$   is closed under multiplication by    $z$  , the result follows by induction on the degree of    $h_{+}$  . □  
+
+We will also need   know the behaviour of    $J_{\mathcal{X}}(\tau,-z)$   as    $\tau$   approaches the large radius limit point of .  
+
+Proposition 6.16.  Write    $\tau\,=\,\tau_{\mathrm{twe}}+\tau_{\mathrm{rest}}$  , as in  (7) . As    $\tau$   approaches the large radius limit point for  $\mathcal{X}$  ,  
+
+$$
+\begin{array}{r l}&{\mathrm{Re}\,\tau_{i}\rightarrow-\infty,\quad1\leq i\leq s,}\\ &{\qquad\tau_{i}\rightarrow0,\qquad i=0\ a n d\ s<i\leq N,}\end{array}
+$$  
+
+$J_{\mathcal{X}}(\tau,-z)\rightarrow-z\mathrm{e}^{-\tau_{\mathrm{twe}}/z}$    and the tangent space    $T_{J x}(\tau,-z)\to\mathrm{e}^{-\tau_{\mathrm{twe}}/z}\mathcal{H}_{x}^{+}$    .  
+
+Proof.  Look at proposition 6.13. As    $\tau$   approaches the large radius limit point, all terms in    $J_{\mathcal{X}}(\tau,-z)$   with    $d\neq0$   and all terms involving    $\tau_{\mathrm{rest}}$   vanish. Thus  
+
+$$
+J_{\mathcal{X}}(\tau,-z)\rightarrow-z\mathrm{e}^{-\tau_{\mathrm{two}}/z}\qquad\quad\mathrm{and}\qquad\quad\frac{\partial J_{\mathcal{X}}}{\partial\tau_{a}}(\tau,-z)\rightarrow\phi_{a}\mathrm{e}^{-\tau_{\mathrm{two}}/z}.
+$$  
+
+As    $T_{J_{\mathcal{X}}(\tau,-z)}$   is the   $\Lambda[z]$  -span of  $\begin{array}{r}{\left\{\frac{\partial J_{\mathcal{X}}}{\partial\tau_{a}}(\tau,-z):0\leq a\leq N\right\}}\end{array}$  , it follows that  
+
+$$
+T_{J x}(\tau,-z)\to\mathrm{e}^{-\tau_{\mathrm{twe}}/z}\mathcal{H}_{x}^{+}.
+$$  
+
+6.5.  Example: the Modiﬁed Quantum Cohomology of    $Y$  .  We now show that, as o roben d constructed from    $\mathcal{L}_{Y}\subset\mathcal{H}_{Y}$   by choosing  $x\in\mathcal{L}_{Y}\cap\big(-z+z\mathcal{H}_{Y}^{-}\big)$   ∈L  ∩   − H  and  H  $\mathcal{H}^{\mathrm{{oppl}}}=\mathcal{H}_{Y}^{-}$    is the Frobenius manifold based on the modiﬁed big quantum product  $\circledast$  for  Y  . The argument is very similar to that in the previous section, but there are some additional complications caused by our having made the substitution  
+
+$$
+Q_{i}={\binom{U_{i}\quad1\leq i\leq s}{1\qquad s<i\leq r.}}
+$$  
+
+Set    $t=t_{\alpha}\varphi_{\alpha}$   and let    $t_{\mathrm{tweo}}$   and    $t_{\mathrm{rest}}$   be as in (7). Consider the element    $J_{Y}^{(\ast)}(t,-z)$   − of    $\mathcal{L}_{Y}$   su h that its pr jection to    $\mathcal{H}_{Y}^{+}$    along    $\mathcal{H}_{Y}^{-}$    is equal to    $-z+t$  . This is the modiﬁed  J -function  of  Y  . It is obtained by setting    $t_{0,a}=t_{a}$  ,   $0\leq a\leq N$  ;    $t_{k,a}=0$  ,  $0\leq a\leq N$  ,   $0<k<\infty$  ; and  
+
+$$
+p_{l,b}=\left.\frac{\partial\mathcal{F}_{Y}^{0}}{\partial t_{l,b}}\right\vert_{\mathbf{t}(z)=t}=\sum_{d\in\mathrm{Eff}(Y)}\sum_{n\geq0}\left\langle t,.\,.\,,t,\varphi_{b}\psi^{l}\right\rangle_{0,n+1,d}^{Y}\frac{Q^{d}}{n!}
+$$  
+
+in (14), and then making the substitution (36). Before making the substitution (36) we have  
+
+$$
+-z+t+\sum_{d\in\mathrm{Eff}(Y)}\sum_{n\geq0}\left\langle t,\ldots,t,\frac{\varphi_{\epsilon}}{-z-\psi}\right\rangle_{0,n+1,d}^{Y}\frac{Q^{d}\varphi^{\epsilon}}{n!}
+$$  
+
+and using the Divisor Equation, as in proposition 6.13, we can write this as  
+
+$$
+\begin{array}{r l}&{\mathrm{e}^{-t_{\mathrm{two}}/z}\Biggl(-z+t_{\mathrm{rest}}+}\\ &{\qquad\qquad\sum_{d\in\mathrm{Eff}(Y)}\sum_{n\geq0}\left<t_{\mathrm{rest}},,\ldots,t_{\mathrm{rest}},\frac{\varphi_{\epsilon}}{-z-\psi}\right>_{0,n+1,d}^{Y}\frac{Q^{d}\mathrm{e}^{d_{1}t_{1}}\cdot\cdot\cdot\cdot\mathrm{e}^{d_{r}t_{r}}\varphi^{\epsilon}}{n!}\Biggr).}\end{array}
+$$  
+
+Thus  
+
+$$
+\begin{array}{r l}&{J_{Y}^{\oplus}(t,-z)=\mathrm{e}^{-t_{\mathrm{two}}/z}\Bigg({-z+t_{\mathrm{rest}}+}}\\ &{\qquad\sum_{d\in\mathrm{Eff}(Y)}\displaystyle\sum_{n\geq0}\left<t_{\mathrm{rest}},\ldots,t_{\mathrm{rest}},\displaystyle\frac{\varphi_{\epsilon}}{-z-\psi}\right>_{0,n+1,d}^{Y}\frac{U_{1}^{d_{1}}\cdot\cdot\cdot U_{s}^{d_{s}}\mathrm{e}^{d_{1}t_{1}}\cdot\cdot\cdot\mathrm{e}^{d_{r}t_{r}}\varphi^{\epsilon}}{n!}\Bigg)}\end{array}
+$$  
+
+where    $d=d_{1}\beta_{1}+\cdot\cdot\cdot+d_{r}\beta_{r}$  . The modiﬁed    $J$  -function    $J_{Y}^{(\ast)}(t,-z)$   − ) is an element of  $\mathcal{L}_{Y}$   which depends formally on the variables    $t_{0}$  ,    $t_{r+1},t_{r+2},.\cdot.\cdot,t_{N}$   and analytically on    $t_{1},\dots,t_{r}$   in the domain (12). It is the unique element of  $\mathcal{L}_{Y}$   of the form  
+
+$$
+-z+t+h_{-}(t)\ \ \ \ \mathrm{with}\ h_{-}(t)\in\mathcal{H}_{Y}^{-}.
+$$  
+
+The Frobenius manifold we seek is based on a formal neighbourhood    $N_{0}(Y)$   of the origin in    $z\mathcal{H}_{Y}^{-}/\mathcal{H}_{Y}^{-}\,\cong\,H^{\bullet}(Y;\Lambda)$  H   ∼  ; Λ). Choose a point    $x\,\in\,\mathcal{L}_{Y}\,\cap\,\left(-z+z\mathcal{H}_{Y}^{-}\right)$  − H and write    $x=-z+s+h_{-}^{\prime}$  with    $s\in H^{\bullet}(Y;\Lambda)$   and    $h_{-}^{\prime}\in\mathcal{H}_{Y}^{-}$  ∈H   . Then the map    $p$   deﬁned − − in (31) satisﬁes  
+
+$$
+p\circ J_{Y}^{\circledast}(s+t,-z)=t,
+$$  
+
+and so the map    $J$   deﬁned in (32) is  
+
+$$
+J(t)=J_{Y}^{(\ast)}(s+t,-z).
+$$  
+
+Now, using the co-ordinates    $t_{0},\dots,t_{N}$   given by the basis    $\varphi_{0},\ldots,\varphi_{N}$   for    $H^{\bullet}(Y;\Lambda)$  and arguing exactly as in  § 6(d), we ﬁnd that the ﬂat metric on    $N_{0}(Y)$   is given by the Poincar´ e pairing:  
+
+$$
+g_{\alpha\beta}(t)=\left(\varphi_{\alpha},\varphi_{\beta}\right)_{Y}
+$$  
+
+and that the structure constants of the product    $\cup_{\tau}$   are  
+
+$$
+c_{\alpha\beta\gamma}(t)=\frac{\partial^{3}F_{Y}^{(\ast)}}{\partial t_{\alpha}\partial t_{\beta}\partial t_{\gamma}}(s+t).
+$$  
+
+Thus the product    $\cup_{\tau}$   on the Frobe us manifold    $N_{0}(Y)$   is a shifted version of the modiﬁed big quantum product for  Y  :  
+
+$$
+v\circ_{t}w=v\underset{s+t}{\ast}w.
+$$  
+
+We have proved:  
+
+Frobenius duced  $\mathcal{L}_{Y}\subset\mathcal{H}_{Y}$   by choosing  $x=\mathcal{L}_{Y}\cap\left(-z+s+\mathcal{H}_{Y}^{-}\right)$   ∩    , for some  $s\in H^{\bullet}(Y;\Lambda)$   ∈ , and  H  $\mathcal{H}^{\mathrm{{oppl}}}=\mathcal{H}_{Y}^{-}$   H   is the Frobenius manifold corresponding to the modiﬁed quantum cohomology of  Y  with the product ‘shifted’ by    $s$  . It has ﬂat metric given by the Poincar´ e pairing    $(\cdot,\cdot)_{Y}$   and product given by  (37) . □  
+
+Remark 6.18.  We now explain why condition (c) in conjecture 4.1 ensures that there is a neighbourhood of he large-radius limit point for    $\mathcal{X}$   in which both the big quantum product    $\star$  r  X  and the analytic continuation of the modiﬁed big quantum product    $\circledast$  for  Y  are well-deﬁned. Let us write    $V_{1}\,\pitchfork V_{2}$   if and only if  $V_{1}\oplus V_{2}\,=\,{\mathcal{H}}_{\mathcal{X}}$   , so that co (c) is the asse  $\mathcal{H}_{\mathcal{X}}^{+}\,\pitchfork\,\mathbb{U}^{-1}(\mathcal{H}_{Y}^{-})$  H ). In    $\S6(\mathrm{d})$  X we saw that by choosing  x  $x\ \in\ {\mathcal{L}}_{x}$   ∈L  of the form  x  $x\;=\;-z\,+\,\sigma\,+\,h_{-}$   − , where    $\sigma~\in$  X −  $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\Lambda)$  X ; Λ) and    $h_{-}\in\mathcal{H}_{\chi}^{-}$    , and taking opposite subspace    $\mathcal{H}^{\mathrm{{oppl}}}=\mathcal{H}_{\chi}^{-}$    we obtain a X X Frobenius manifold with product a shifted version of the big quantum product for  $\mathcal{X}$  :  $v\circ_{\tau}w=v\bigstar_{\sigma+\tau}w$  . Suppose now that conjecture 4.1 holds. In proposition 6.17 we saw that by choosing    $y\,\in\,\mathcal{L}_{Y}$   of the form    $-z+s+h_{-}^{\prime}$  , where    $s\,\in\,H^{\bullet}(Y;\Lambda)$  − and    $h_{-}^{\prime}\,\in\,\mathcal{H}_{Y}^{-}$  ∈H   , and taking opposite subspace    $\mathcal{H}^{\mathrm{{oppl}}}=\mathcal{H}_{Y}^{-}$    we obtain a Frobenius − manifold with product    $v\circ_{t}w=v\mathbin{\astrosun}_{s+t}w$  . The analytic continuation of    $\mathcal{L}_{Y}$   chosen as part of conjecture 4.1 deﬁnes, via proposition 6.17, an analytic continuation of the product    $\circledast$  . (Here we analytically continue  $\circledast$    in    $s$  ; the variable    $s$   determines  $_{s+t}$   $_{s+t}$  t and is determined by the basepoint    $y=-z+s+h_{-}^{\prime}\in\mathcal{L}_{Y}$  ∈L  .) We can obtain this − analytically continued product either by choosing    $y$   in the analytic continuation of    $\mathcal{L}_{Y}$   and taking opposite subspace    $\mathcal{H}^{\mathrm{{oppl}}}=\mathcal{H}_{Y}^{-}$    or — and this is equivalent via  $y=\mathbb{U}(x)$   — by choosing    $x\in\mathcal{L}_{\mathcal{X}}$   and taking opposite subspace    $\mathcal{H}^{\mathrm{{opp}}}=\mathbb{U}^{-1}(\mathcal{H}_{Y}^{-})$  ). For this to give a Frobenius manifold, we need    $\mathbb{U}(\mathcal{H}_{Y}^{-})$  ) to be opposite to    $T_{x}=T_{x}\mathcal{L}_{x}$  ; in other words we need    $T_{x}\pitchfork\mathbb{U}^{-1}(\mathcal{H}_{Y}^{-})$  ). Let    $x=\mathcal{L}_{\mathcal{X}}\cap\left(-z+\sigma+\mathcal{H}_{\mathcal{X}}^{-}\right)$     . We know X from proposition 6.16 that as    $\sigma$   approaches the large-radius limit point for    $\mathcal{X}$  ,  $T_{\mathcal{X}}\rightarrow\mathrm{e}^{-\sigma_{\mathrm{twe}}/z}\mathcal{H}_{\mathcal{X}}^{+}$  . But  
+
+$$
+\begin{array}{r l}&{\Bigl(\mathrm{e}^{-\sigma_{\mathrm{two}}/z}\mathcal{H}_{x}^{+}\Bigr)\pitchfork\mathbb{U}^{-1}\big(\mathcal{H}_{Y}^{-}\big)\iff\mathcal{H}_{x}^{+}\pitchfork\mathrm{e}^{\sigma_{\mathrm{two}}/z}\mathbb{U}^{-1}\big(\mathcal{H}_{Y}^{-}\big)}\\ &{\iff\mathcal{H}_{x}^{+}\pitchfork\mathbb{U}^{-1}\Big(\mathrm{e}^{\pi^{\star}\sigma_{\mathrm{two}}/z}\mathcal{H}_{Y}^{-}\Big)}\\ &{\iff\mathcal{H}_{x}^{+}\pitchfork\mathbb{U}^{-1}\big(\mathcal{H}_{Y}^{-}\big),}\end{array}
+$$  
+
+and this holds by conjecture 4.1(c). Thus for    $\sigma$   in a neighbourhood of the large- radius limit point for    $\mathcal{X}$  ,    $T_{x}\pitchfork\mathbb{U}^{-1}(\mathcal{H}_{Y}^{-})$  ) and so both the Frobenius manifold deﬁned by the big quantum product for    $\mathcal{X}$   (basepoint   $\,=\,x\,\in\,{\mathcal{L}}_{\mathcal{X}}$   ,    $\mathcal{H}^{\mathrm{{oppl}}}\,=\,\mathcal{H}_{\mathcal{X}}^{-}$    ) and the X Frobenius manifold deﬁned by the analytic continuation of the modiﬁed big quan- tum product for    $Y$   (basepoint   $=x$  ,    $\mathcal{H}^{\mathrm{opp}}=\mathbb{U}^{-1}\big(\mathcal{H}_{Y}^{-}\big)$  )) are well-deﬁned.  
+
+# 7.  A Version of the Cohomological Crepant Resolution Conjecture  
+
+The Cohomological Crepant Resolution Conjecture [32] describes a relationship between the Chen–Ruan coho ology ring of    $\mathcal{X}$   and the small quantum cohomology ring of the crepant resolution  Y  . Conjecture 4.1 implies such a relationship, as we now explain. The family of Frobenius algebras constructed in    $\S6(\mathrm{a})$   depends on on the submanifold-germ    $\mathcal{L}_{\mathcal{Z}}$   and the symplectic space    $\mathcal{H}_{\mathcal{Z}}$  . The transformation  U from conjecture 4.1, which is a    $\mathbb{C}(\!(z)\!)$  )-linear symplectic isomorphism and satisﬁes  $\mathbb{U}(\mathcal{L}_{\mathcal{Z}})=\mathcal{L}_{Y}$  , therefore induces an isomorphism between the families of Frobenius algebras  
+
+$$
+T\mathcal{L}_{X}/z T\mathcal{L}_{X}\to\mathcal{L}_{X}\qquad\qquad\mathrm{~and~}\qquad\qquad T\mathcal{L}_{Y}/z T\mathcal{L}_{Y}\to\mathcal{L}_{Y}
+$$  
+
+By cho sing    $x\,\in\,\mathcal{L}_{\mathcal{X}}$   appropriately — by taking    $x\,=\,\mathcal{L}_{\mathcal{X}}\cap\left(-z+\sigma+\mathcal{H}_{\mathcal{X}}^{-}\right)$     and X letting  σ  approach th arge-radius limit point for  X  — we can obtain the Chen– Ruan cohomology of  X  as the Frobenius algebra    $T_{x}/z T_{x}$  . Let    $y\;\in\;\mathcal{L}_{Y}$   be such that    $y\,=\,\mathbb{U}(x)$  , and let    $T_{y}$   denote the tangent space    $T_{y}\mathcal{L}_{Y}$  . Then    $\mathbb{U}$   induces an isomorphism of Frobenius gebras  $T_{x}/z T_{x}\cong T_{y}/z T_{y}$  , and this expresses the Chen– Ruan cohomology ring of  in terms of the quantum cohomology of    $Y$  .  
+
+Let    $\sigma\in H^{2}(\mathcal{X};\mathbb{C})$   and let    $x=\mathcal{L}_{\mathcal{X}}\cap\left(-z+\sigma+\mathcal{H}_{\mathcal{X}}^{-}\right)$     . Then    $T_{x}/z T_{x}$   is isomorphic X  as a Frobenius algebra to the quantum cohomology of    $\mathcal{X}$  ,  $\bigl(H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\Lambda),\star\bigr)$  . As    $\sigma$  approaches the large-radius limit point for    $\mathcal{X}$  , therefore,  $T_{x}/z T_{x}$   approaches the Chen–Ruan cohomology ring  $\big(H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\Lambda),\cup\big)$   — see the discussion below equa- tion 8. Let    $y=\mathbb{U}(x)$  .  
+
+Proposition 7.1.  As    $\sigma$   approaches the large-radius limit point for  $\mathcal{X}$  
+
+$$
+y\rightarrow J_{Y}(\pi^{\star}\sigma+c,-z),
+$$  
+
+where    $\mathbb{U}({\bf1}_{\mathcal{X}})={\bf1}_{Y}-c z^{-1}+O(z^{-2})$  .  
+
+Proof.  We have    $x\,=\,J_{\mathcal{X}}(\sigma,-z)$   so, by proposition 6.16,    $x\;\to\;-z\mathrm{e}^{-\sigma/z}$    as    $\sigma$   ap- proaches the large-radius limit point for    $\mathcal{X}$  . Thus  
+
+$$
+\begin{array}{r l r l}{y\rightarrow\mathbb{U}\bigl(-z\mathrm{e}^{-\sigma/z}\bigr)}\\ {\,}&{=-z\mathrm{e}^{\pi^{\star}\sigma/z}\mathbb{U}({\bf1}_{\mathcal{X}})}&{\quad}&{\quad\mathrm{by~conjecture~4.1(b)}}\\ {\,}&{=-z+\pi^{\star}\sigma+c+h_{-}}&{\quad}&{\quad\mathrm{for~some~}h_{-}\in\mathcal{H}_{\mathcal{X}}^{-}.}\end{array}
+$$  
+
+There is a unique point on    $\mathcal{L}_{Y}$   of the form    $-z+\pi^{\star}\sigma+c+h_{-}$  ,    $h_{-}\,\in\,\mathcal{H}_{\chi}^{-}$    , a d X that is    $J_{Y}(\pi^{\star}\sigma+c,-z)$  . Thus as    $\sigma$   approaches the large-radius limit point for  X ,  $y\rightarrow J_{Y}(\pi^{\star}\sigma+c,-z)$  . □  
+
+It follows that as    $\sigma$   approaches the large-radius limit point for    $\mathcal{X}$  ,  
+
+$$
+\operatorname{Re}\sigma_{i}\rightarrow-\infty,\quad1\leq i\leq s,
+$$  
+
+the Frobenius algebra    $T_{y}/z T_{y}$   approaches the quantum cohomology algebra  
+
+$$
+\operatorname*{lim}_{\operatorname{Re}_{\sigma_{i}\to-\infty}\atop1\leq i\leq s}\Bigl(H^{\bullet}(Y;\Lambda),\underset{\pi^{\star}\sigma+c}{\ast}\Bigr).
+$$  
+
+By assumption    $\mathbb{U}$   is grading preserving and so    $c\;\in\;H^{2}(Y;\mathbb{C})$  ; let us write    $c=$   $c_{1}\varphi_{1}+\ldots+c_{r}\varphi_{r}$  . Note that there is analytic continuation hidden in (39): if  $t=t_{1}\varphi_{1}+\ldots+t_{r}\varphi_{r}\in H^{2}(Y;\mathbb{C})$   then the product    $\stackrel{(*)}{t}$    is deﬁned as a power series (13) which converges only when    $|\mathrm{e}^{t_{i}}|\,<\,R_{i}$  ,    $\ensuremath{\boldsymbol{s}}\ <\ i\ \leq\ r$  . In general    $t\,=\,\pi^{\star}\sigma\,+\,c$  will be outside this domain of convergence. But the analytic continuation of    $\mathcal{L}_{Y}$  deﬁnes, via proposition 6.17, an analytic continuation of the product    $\stackrel{(*)}{t}$    and it is this analytically-continued product which we use in (39). We compute the limit (39) as follows. From (13) we have  
+
+$$
+\varphi_{\alpha}\underset{t}{\oplus}\varphi_{\beta}=\sum_{\substack{d\in\mathrm{Diff}(Y):\atop{d=d_{1}\beta_{1}+\cdots+d_{r}\beta_{r}}}}\left\langle\varphi_{\alpha},\varphi_{\beta},\varphi^{\epsilon}\right\rangle_{0,3,d}^{Y}U_{1}^{d_{1}}\cdot\cdot\cdot U_{s}^{d_{s}}\mathrm{e}^{d_{1}t_{1}}\cdot\cdot\cdot\mathrm{e}^{d_{r}t_{r}}\varphi_{\epsilon}
+$$  
+
+whenever    $|\mathrm{e}^{t_{i}}|<R_{i}$   for    $s<i\leq r$  ; taking the limit   $\mathrm{Re}\,t_{i}\to-\infty$  ,   $1\leq i\leq s$  , gives  
+
+$$
+\varphi_{\alpha}\underset{t}{\oplus}\varphi_{\beta}\rightarrow\sum_{\substack{d\in\ker\pi_{*}:\,}}\left\langle\varphi_{\alpha},\varphi_{\beta},\varphi^{\epsilon}\right\rangle_{0,3,d}^{Y}\mathrm{e}^{d_{s+1}t_{s+1}}\cdot\cdot\cdot\mathrm{e}^{d_{r}t_{r}}\varphi_{\epsilon}.
+$$  
+
+We can obtain the algebra (39) which we seek from (40) by analytic continuation in    $t_{s+1},\ldots,t_{r}$   followed by the substitution    $t_{i}=c_{i}$  ,    $s<i\leq r$  . This proves:  
+
+Theorem 7.2.  If conjecture 4.1 holds then the Chen–Ruan product    $\bigcup_{c x}$    on    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\mathbb{C})$  X  $C R$  can be obtained from the small quantum product  (6)  for    $Y$   by analytic continuation in the quantum parameters    $Q_{s+1},.\cdot\cdot,Q_{r}$   (if necessary) followed by the substitution  
+
+$$
+Q_{i}={\binom{0}{\mathrm{e}^{c_{i}}}}\quad1\leq i\leq s
+$$  
+
+The small quantum cohomology with quantum parameters    $Q_{i}$   specialized like this is known as  quantum corrected cohomology  [32]. In Ruan’s original Cohomo- logical Crepant Resolution Conjecture, the exceptional    $Q_{i}$   were specialized to    $-1$  . Calculations by Perroni [31] and Bryan–Graber–Pandharipande [8] have shown that we must relax this, allowing the exceptional    $Q_{i}$   to be specialized to other roots of unity. Here, we allow arbitrary choice. It should be noted that the specialization  $Q_{i}=\mathrm{e}^{c_{i}}=\mathrm{e}^{\langle c,\beta_{i}\rangle}$  is independent of our choice of bases (see  § 11 for more on this).  
+
+Ruan’s original Crepant Resolution Conjecture (implicit in [32]), as modiﬁed in light of the calculations of Perroni and Bryan–Graber–Pandharipande, was that the small quantum cohomology algebra of the crepant resolution    $Y$   becomes isomorphic to the small quantum cohomology algebra of    $\mathcal{X}$   after analytic continuation in the quantum parameters    $Q_{s+1},.\cdot\cdot,Q_{r}$   followed by a change-of-variables  
+
+$$
+Q_{i}={\binom{\omega_{i}U_{i}\quad1\leq i\leq s}{\omega_{i}}}\quad\quad s<i\leq r
+$$  
+
+where the    $\omega_{i}$   are roots of unity. Conjecture 4.1 implies something very like this, at least when    $\mathcal{X}$   is semi-positive, as we now explain.  
+
+Deﬁnition.  A K¨ ahler orbifold    $\mathcal{X}$   is called  semi-positive  if and only if there does not exist    $d\in\operatorname{Eff}(\mathcal{X})$   such that  
+
+$$
+\begin{array}{r}{3-\dim_{\mathbb{C}}\mathcal{X}\leq c_{1}(T\mathcal{X})\cdot d<0.}\end{array}
+$$  
+
+All K¨ ahler orbifolds of complex dimension 3 or less are semi-positive, as are all Fano and Calabi–Yau orbifolds. Semi-positive Gorenstein orbifolds    $\mathcal{X}$   have the propert that if    $c_{1}(T\mathcal{X})\cdot d<0$   then all genus-zero Gromov—Witten invariants in degree  d vanish:  
+
+Proposition 8.1.  Suppose that    $\mathcal{X}$   is a semi-positive Gorenstein K¨ ahler orbifold and that    $\langle\delta_{1}\psi^{a_{1}},.\,.\,.\,,\delta_{n}\psi^{a_{n}}\rangle_{0,n,d}^{\mathcal{X}}\neq0$  . Then    $c_{1}(T\mathcal{X})\cdot d\geq0$  .  
+
+Proof.  Suppose not, so that    $c_{1}(T\mathcal{X})\cdot d\,<\,0$  . Without loss of generality we may assume that the marked points   $1,2,\ldots,n^{\prime}$    carry classes    $\delta_{i}$   from the twisted sectors and that the remaining marked points carry untwisted classes. Let    $\pi\,:\,\mathcal{X}_{0,n,d}\to
+
+$   $\mathcal{X}_{0,n^{\prime},d}$   be the map induced by forgetting all the untwisted marked points. Then
+
+  $\langle\delta_{1}\psi^{a_{1}},.\,.\,.\,,\delta_{n}\psi^{a_{n}}\rangle_{0,n,d}^{\mathcal{X}}$    is the degree-zero part of  
+
+$$
+\big[\mathcal{X}_{0,n^{\prime},d}\big]^{\mathrm{vir}}\cap\bigg(\prod_{k=1}^{n^{\prime}}\mathrm{ev}_{k}^{\star}\delta_{k}\bigg)\cup\pi_{\star}\bigg(\prod_{k=n^{\prime}+1}^{n}\mathrm{ev}_{k}^{\star}\delta_{k}\cup\prod_{k=1}^{n}\psi_{k}^{a_{k}}\bigg).
+$$  
+
+As    $\mathcal{X}$   is Gorenstein,  at   $\deg\delta_{k}\geq1$  ,   $1\leq k\leq n^{\prime}$  , where deg denotes the age-shifted degree on  $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\mathbb{C})$  X ). The non-vanishing   (43) therefore implies that the virtual (complex) dimension of    $\mathcal{X}_{0,n^{\prime},d}$   is at least  n ′ , and so  
+
+$$
+n^{\prime}+\dim_{\mathbb{C}}\mathcal{X}-3+c_{1}(T\mathcal{X})\cdot d\ge n^{\prime}.
+$$  
+
+It follows that  
+
+$$
+\begin{array}{r}{3-\dim_{\mathbb{C}}\mathcal{X}\leq c_{1}(T\mathcal{X})\cdot d<0,}\end{array}
+$$  
+
+which contradicts semi-positivity. The proposition is proved.  
+
+$\mathcal{X}$  
+
+  $\tau=0$  his is enius  $T_{x}/z T_{x}$   where    $x=\mathcal{L}_{\mathcal{X}}\cap\left(-z+\mathcal{H}_{\mathcal{X}}^{-}\right)$   ∩    and X X  $T_{x}=T_{x}\mathcal{L}_{\mathcal{X}}$  L  . Let  y  $y=\mathbb{U}(x)$  ) and  $T_{y}=T_{y}\mathcal{L}_{Y}$  L  . The map  U  induces an isomorphism X between the Frobenius algebras  $T_{x}/z T_{x}$   and    $T_{y}/z T_{y}$  , and this isomorphism expresses the small quantum cohomology of    $\mathcal{X}$   in terms of the qu tum cohomology of    $Y$  . To see that it  lates the small quantum cohomology of  X  to the  small  quantum cohomology of  Y  , we need to calculate    $y$  .  
+
+Proposition 8.2.  Suppose that    $\mathcal{X}$   is semi-positive and that conjecture 4.1 holds. Let    $x=\mathcal{L}_{\mathcal{X}}\cap\left(-z\!+\!\mathcal{H}_{\mathcal{X}}^{-}\right)$     , and de  $c\in H^{2}(Y;\mathbb{C})$   by  $\mathbb{U}(\mathbf{1}_{\mathcal{X}})=\mathbf{1}_{Y}-c z^{-1}\!+\!O(z^{-2})$  . X Then there is a unique element  f  $f\in H^{2}(Y;\mathbb{C})\otimes\Lambda$   ∈  ⊗ ,  
+
+$$
+f=f_{1}\varphi_{1}+\cdot\cdot\cdot+f_{r}\varphi_{r}
+$$  
+
+such that    $\mathbb{U}(x)=J_{Y}(c+f,-z)$  . Furthermore, the class    $f$   is exceptional:    $\pi_{!}f=0$  .  
+
+Proof.  Uniqueness is obvious. For existence, we need to ﬁnd    $f\,\in\,H^{2}(Y;\mathbb{C})\otimes\Lambda$  such that  
+
+$$
+\mathbb{U}(x)=-z+c+f+h_{-}
+$$  
+
+for some    $h_{-}\in\mathcal{H}_{Y}^{-}$    . We have    $x=J_{\mathcal{X}}(0,-z)$  , so  
+
+$$
+x=-z+\sum_{\stackrel{d\in\mathrm{Eff}(\mathcal{X}):}{d\neq0}}\sum_{k\geq0}(-1)^{k+1}\left<\phi^{\epsilon}\psi^{k}\right>_{0,1,d}^{\mathcal{X}}U^{d}\,\phi_{\epsilon}z^{-k-1}.
+$$  
+
+If we set   $\deg U^{d}=c_{1}(T\mathcal{X})\cdot d$  ,   $\deg z=2$  , and give the Chen–Ru n class    $\phi_{\epsilon}$   its age- shifted degree then    $x\in\mathcal{H}_{\mathcal{X}}$   is homogeneous of degree two. As  X  is semi-positive, any monomial    $U^{d}$    which occurs in (45) has non-negative degree, and so each term
+
+  $\phi_{\epsilon}z^{-k-1}$    in (45) has degree at most two. If    $\phi_{\epsilon}z^{-k-1}$    is of negative degree then
+
+  $\mathbb{U}\big(\phi_{\epsilon}z^{-k-1}\big)$     is also of negative degree and so    $\mathbb{U}{\left(\phi_{\epsilon}z^{-k-1}\right)}\in\mathcal{H}_{Y}^{-}$     . If    $\phi_{\epsilon}z^{-k-1}$   is of degree zero or one then, by parts (a) and (b) of lemma 5.1,    $\mathbb{U}\big(\phi_{\epsilon}z^{-k-1}\big)\in\mathcal{H}_{Y}^{-}$       as well. If    $\phi_{\epsilon}z^{-k-1}$    is of degree two then  
+
+$$
+\mathbb{U}\bigl(\phi_{\epsilon}z^{-k-1}\bigr)=b_{\epsilon}+h_{\epsilon}
+$$  
+
+fo xceptional class    $b_{\epsilon}\in H^{2}(Y;\mathbb{C})$   some    $h_{\epsilon}\in\mathcal{H}_{Y}^{-}$    , by lemma 5.1(c). Also, if  $\phi_{\epsilon}z^{-k-1}$    is of degree two then deg  $\deg\phi_{\epsilon}\,\geq\,4$   ≥ 4 and    $k\,=\,{\textstyle\frac{1}{2}}w_{\epsilon}\,-\,2$   − 2 where    $w_{\epsilon}=\deg\phi_{\epsilon}$  . Thus  
+
+$$
+\mathbb{U}(x)=-z+c+\sum_{\begin{array}{l}{d\in\operatorname{Eff}(\mathcal{X}):d\neq0,\ e=r+1}\\ {c_{1}(T\mathcal{X}):d=0}\end{array}}\sum_{e=r+1}^{N}(-1)^{\frac{1}{2}w_{e}+1}\left\langle\phi^{e}\psi^{\frac{1}{2}w_{e}-2}\right\rangle_{0,1,d}^{\mathcal{X}}U^{d}\,b_{e}+h_{-}
+$$  
+
+for some    $h_{-}\in\mathcal{H}_{Y}^{-}$    . Deﬁning  
+
+$$
+f=\sum_{\stackrel{d\in\mathrm{Eff}(\mathcal{X}):d\neq0,~e=r+1}{c_{1}(T\mathcal{X})\cdot d=0}}\sum_{e=r+1}^{N}(-1)^{\frac{1}{2}w_{e}+1}\left\langle\phi^{e}\psi^{\frac{1}{2}w_{e}-2}\right\rangle_{0,1,d}^{\mathcal{X}}U^{d}\,b_{e},
+$$  
+
+we are done.  
+
+We have seen that the small quantum cohomology of    $\mathcal{X}$   is isomorphic as a Frobe- nius algebra to    $T_{y}/z T_{y}$   where    $y\;=\;\mathbb{U}({\boldsymbol{x}})$  . Proposition 8.2 shows that    $T_{y}/z T_{y}$   is isomorphic as a Frobenius algebra to  
+
+$$
+\left(H^{\bullet}(Y;\Lambda),{\mathfrak{L}}_{c+f}\right).
+$$  
+
+Once again there is analytic continuation hidden here: the product    $\circledast$    is obtained  $c\!+\!f$  from the product  
+
+$$
+\varphi_{\alpha}\underset{t}{\oplus}\varphi_{\beta}=\sum_{\substack{d\in\mathrm{Diff}(Y):\atop{d=d_{1}\beta_{1}+\cdots+d_{r}\beta_{r}}}}\langle\varphi_{\alpha},\varphi_{\beta},\varphi^{\epsilon}\rangle_{0,3,d}^{Y}\,U_{1}^{d_{1}}\cdot\cdot\cdot U_{s}^{d_{s}}\mathrm{e}^{d_{1}t_{1}}\cdot\cdot\cdot\mathrm{e}^{d_{r}t_{r}}\varphi_{\epsilon},
+$$  
+
+where    $t=t_{1}\varphi_{1}+\cdot\cdot\cdot+t_{r}\varphi_{r}\in H^{2}(Y;\mathbb{C})$   and    $|\mathrm{e}^{t_{i}}|<R_{i}$   for    $s<i\leq r$  , by analytic continuation in    $t_{s+1},\ldots,t_{r}$   followed by the substitution  
+
+$$
+t_{i}=c_{i}+f_{i}\quad\quad\quad\quad\quad\quad\quad\quad\quad1\leq i\leq r
+$$  
+
+where    $f=f_{1}\varphi_{1}+\cdot\cdot\cdot+f_{r}\varphi_{r}$  . This proves:  
+
+Theorem 8.3.  Suppose that    $\mathcal{X}$   is semi-positive and that conjecture 4.1 holds. Let  $f_{1},.\,.\,.\,,\,f_{r}\in\mathbb{C}[\![U_{1},.\,.\,.\,,U_{s}]\!]$   be as in proposition 8.2 and deﬁne    $c=c_{1}\varphi_{1}+\cdot\cdot\cdot+c_{r}\varphi_{r}\in$   $H^{2}(Y;\mathbb{C})$   by  $\mathbb{U}(\mathbf{1}_{\mathcal{X}})=\mathbf{1}_{Y}-c z^{-1}+O(z^{-2})$   − . Then the Frobenius algebra given by X the small quantum cohomology of  X  is omorphic to the Frobenius algebra obtained from the small quantum cohomology of  Y  by analytic continuation in the exceptional quantum parameters    $Q_{s+1},.\cdot\cdot,Q_{r}$   (if necessary) followed by the change-of-variables  
+
+$$
+Q_{i}={\binom{\mathrm{e}^{c_{i}+f_{i}}U_{i}\quad1\le i\le s}{\mathrm{e}^{c_{i}+f_{i}}\quad\quad s<i\le r.}}
+$$  
+
+The conclusion of Theorem 8.3 is almost Ruan’s original Crepant Resolution Conjecture, except that the changes-of-variables (42) and (47) diﬀer. As    $f_{i}\,=\,0$  when    $U_{1}=.\,.\,.=U_{s}=0$  , theorem 8.3 is a ‘quantum-corrected’ version of Ruan’s original conjecture. The quantum corrections    $f_{1},\ldots,f_{r}$   often vanish — for example they vanish whenever    $\mathcal{X}$   is Fano or when    $\mathcal{X}\,=\,\lfloor\mathbb{C}^{n}/G\rfloor$  , as then the sum on the RHS of (46) is empty. But    $f_{1},\ldots,f_{r}$   do not vanish in general: they are non-zero, for instance, when    $\mathcal{X}$   is the cotangent bundle    $K_{\mathbb{P}(1,1,3)}$   [12].  
+
+# 9.  A Version of the Bryan–Graber Conjecture  
+
+Suppose now that conjecture 4.1 holds and that    $\mathbb{U}:\mathcal{H}_{\mathcal{X}}\,\rightarrow\,\mathcal{H}_{Y}$   sends    $\mathcal{H}_{\mathcal{X}}^{-}$    to X  $\mathcal{H}_{Y}^{-}$    , so that  
+
+$$
+\mathbb{U}=U_{0}+U_{1}z^{-1}+\cdot\cdot\cdot+U_{k}z^{-k}
+$$  
+
+for some non-negative integer    $k$   and some linear maps    $U_{i}:H_{\mathrm{CR}}^{\bullet}(\mathcal{X};\mathbb{C})\to H^{\bullet}(Y;\mathbb{C})$  X  → ). In this case    $\mathbb{U}$   induces an isomorphism between the Frobenius manifolds deﬁned by the quantum cohomology of    $\mathcal{X}$   and the quantum cohomology of    $Y$  , as we now explain.  
+
+Let    $x=\mathcal{L}_{\mathcal{X}}\cap\left(-z+\mathcal{H}_{\mathcal{X}}^{-}\right)$  and let    $y=\mathbb{U}(x)$  . Then  
+
+$$
+\begin{array}{r l}&{y=\mathcal{L}_{Y}\cap\mathbb{U}\bigl(-z+\mathcal{H}_{x}^{-}\bigr)}\\ &{\quad=\mathcal{L}_{Y}\cap\bigl(-z+c+\mathcal{H}_{Y}^{-}\bigr)}\end{array}
+$$  
+
+where    $\mathbb{U}({\bf1}_{\mathcal{X}})={\bf1}_{Y}-c z^{-1}+O(z^{-2})$  . Again, write    $c=c_{1}\varphi_{1}+\cdot\cdot\cdot+c_{r}\varphi_{r}$  . In view of the discussion in  $\S6$  6,  U  induces an isomorphism between the Frobenius manifold  
+
+$$
+\Big(H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\Lambda),_{\tau}^{\star}\Big)
+$$  
+
+obtained by taking basepoint    $x\,\in\,\mathcal{L}_{\mathcal{X}}$   and using opposite subspace    $\mathcal{H}_{\mathcal{X}}^{-}$    , and the X Frobenius manifold  
+
+$$
+\left(H^{\bullet}(Y;\Lambda),\underset{c+t}{\ast}\right)
+$$  
+
+obtained by taking basepoint    $y\,\in\,\mathcal{L}_{Y}$   and using opposite subspace    $\mathcal{H}_{Y}^{-}$    . The pa- rameters    $\tau\in H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\Lambda)$  X ; Λ) and    $t\in H^{\bullet}(Y;\Lambda)$   here are identiﬁed via the diagram  
+
+$$
+\begin{array}{r l r}{\mathcal{L}_{\mathcal{X}}\cap\left(-z+z\mathcal{H}_{\mathcal{X}}^{-}\right)\xrightarrow{\mathbb{U}}}&{\ }&{\mathcal{L}_{Y}\cap\left(-z+c+z\mathcal{H}_{Y}^{-}\right)}\\ {\biggmdownarrow_{\mathcal{X}(\tau,-z)}}&{\ }&{\biggmdownarrow_{p}}\\ {z\mathcal{H}_{\mathcal{X}}^{-}/\mathcal{H}_{\mathcal{X}}^{-}\xrightarrow{\bigcirc}}&{\ }&{H_{\mathrm{CR}}^{\bullet}(\mathcal{X};\Lambda)\xrightarrow{\quad}}&{H^{\bullet}(Y;\Lambda)\xrightarrow{\quad}}&{z\mathcal{H}_{Y}^{-}/\mathcal{H}_{Y}-}\end{array}
+$$  
+
+so    $t=U_{0}(\tau)$  . Comparing (13) with (9), we see that the product    $\circledast$    can be obtained  $_{c+t}$  from the big quantum product     on    $H^{\bullet}(Y;\Lambda_{Y})$   by analytic continuation in the  $\mathbf{\chi}_{t}^{\star}$  variables    $Q_{s+1},.\cdot\cdot,Q_{r}$   followed by the change-of-variables  
+
+$$
+Q_{i}={\binom{\mathrm{e}^{c_{i}}U_{i}\quad1\le i\le s}{\mathrm{e}^{c_{i}}}}\mathrm{e}^{s c_{i}}\mathrm{e}^{r\quad i\le s<i\le r.}
+$$  
+
+This proves:  
+
+Theorem 9.1.  Suppose that conjecture 4.1 holds and that    $\mathbb{U}:\mathcal{H}_{\mathcal{X}}\rightarrow\mathcal{H}_{Y}$   sends    $\mathcal{H}_{\mathcal{X}}^{-}$  X to    $\mathcal{H}_{Y}^{-}$  . Then there is a linear map    $U_{0}:H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\mathbb{C})\to H^{\bullet}(Y;\mathbb{C})$  X  →  whic identiﬁes the Frobenius manifold given by the big quantum cohomology  (3)   X  with the Frobenius manifold obtained from the big quantum cohomology  (5)  of  $Y$   by analytic continuation in the quantum parameters    $Q_{s+1},.\cdot\cdot,Q_{r}$   (if necessary) followed by the substitution  (48) . In addition, the map    $U_{0}$   preserves the gradings and Poincar´ pairings, sends    ${\bf1}_{\mathcal X}$   to    ${\bf1}_{Y}$  , and satisﬁes    $U_{0}\!\circ\!\left(\rho\!\cup_{\scriptscriptstyle C R}\right)=\left(\pi^{\star}\rho\!\cup\!\right)\circ U_{0}$      for every untwisted degree-two class    $\rho\in H^{2}(\mathcal{X};\mathbb{C})$  .  
+
+The statements about    $U_{0}$   here come from lemma 5.2. As discussed above, if conjec- 1   ture 4.1 holds a    $\mathcal{X}$   satisﬁes the Hard Lefschetz condition postulated by Bryan– Graber [7] then  U  automatically sends  $\mathcal{H}_{\mathcal{X}}^{-}$    to  $\mathcal{H}_{Y}^{-}$    .  
+
+The conclusion of Theorem 9.1 is almost the same as the Crepant Resolution Conjecture of Bryan and Graber. They ask that    $U_{0}:H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\mathbb{C})\to H^{\bullet}(Y;\mathbb{C})$  X  → ) agree with    $\pi^{\star}$  on the untwisted sector    $H^{\bullet}(\mathcal{X};\mathbb{C})\;\subset\;H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\mathbb{C})$  X ), whereas we only have that for the subalgebra of    $H^{\bullet}(\mathcal{X};\mathbb{C})$   generated by    $H^{2}(\mathcal{X};\mathbb{C})$  . Fur ermore their change-of-variables has    $Q_{i}=U_{i}$  ,   $1\leq i\leq s$  , omitting our factor of e  $\mathrm{e}^{c_{i}}$  , and for us 2 the substitution    $Q_{i}=\mathrm{e}^{c_{i}}$  ,    $s<i\leq r$  , need not involve roots of unity .  
+
+# 10.  Quantization and Higher Genus Gromov–Witten Invariants  
+
+So far we have considered genus-zero Gromov–Witten invariants of    $\mathcal{X}$   and    $Y$  . This corresponds to considering the tree-level part of the topological A-model with target space    $\mathcal{X}$   or    $Y$  . But the full partition function of the topological A-model is also of signiﬁcant interest, and this corresponds to the full descendant potential of  $\mathcal{X}$  ,  
+
+$$
+\mathcal{D}_{\mathcal{X}}=\exp\bigg(\sum_{g\geq0}\hbar^{g-1}\mathcal{F}_{\mathcal{X}}^{g}\bigg),
+$$  
+
+or, similarly, to the full descendant po ntial    ${\mathcal{D}}_{Y}$   of    $Y$  . The quantity    $\mathcal{F}_{\mathcal{X}}^{g}$    in (49) X is the genus-  $g$   descendant potential of  X : this is deﬁned in the same way as the genus-zero desc dant potential    $\mathcal{F}_{\mathcal{X}}^{0}$    but with integration over the moduli stack of X stable maps to  X  of genus    rather than genus zero. The variable    $\hbar$  is a formal  $g$  parameter. In this section we give a generalization of our conjecture which applies to Gromov–Witten invariants of all genera. Roughly speaking, we conjecture that  $\mathcal{D}_{Y}\;=\;\widehat{\mathbb{U}}(\mathcal{D}_{\mathcal{X}})$  D  ), where    $\widehat{\mathbb{U}}$   is the  quantization  of the symplectic transformation    $\mathbb{U}$  X from conjecture 4.1. This idea occurred simultaneously and independently in both mathematics and physics [1,13,33]; it is a consequence of fundamental insights due to Givental [21] and Witten [35].  
+
+Work of Givental [15,21,22] and others [18,26,27,29,34] strongly suggests that the full descendant potential    $\mathcal{D}_{\mathcal{X}}$   of    $\mathcal{X}$   should be regarded as an element of the Fock space for the geometric quantization of    $\mathcal{H}_{\mathcal{X}}$   . This point of view is escribed for manifolds in [21] and extended to orbifolds in [34]. The Fock space for  X  consists of certain formal germs of functions on    $\mathcal{H}_{\mathcal{X}}^{+}$    . We regard    $\mathcal{D}_{\mathcal{X}}$   , which depends formally X on the variables    $\tau_{a,\epsilon}$  ,   $0\leq\epsilon\leq N$  ,   $0\leq a<\infty$  (  $c.f.$  .  equation 15), as the germ of a function on    $\mathcal{H}_{\mathcal{X}}^{+}$    via the dilaton shift (20). This makes    $\mathcal{D}_{\mathcal{X}}$   into an element of the X Fock space for    $\mathcal{X}$  . In the same way, using the dilaton shift (21), we regard    ${\mathcal{D}}_{Y}$   as the germ of a function on  $\mathcal{H}_{Y}^{+}$    and hence as an element of the Fock space for  Y  .  
+
+Suppose now that conjecture 4.1 holds. As we have chosen bases for    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\mathbb{C})$  X and    $H^{\bullet}(Y;\mathbb{C})$  , we can represent the transfor ation    $\mathbb{U}:\mathcal{H}_{\mathcal{X}}\rightarrow\mathcal{H}_{Y}$   by a matrix  U with entries that are Laurent polynomials in  z . Let  $U=U_{-}U_{0}U_{+}$   be the Birkhoﬀ − factorization of this matrix, so that  
+
+$$
+\begin{array}{l}{{U_{-}=I+U_{-1}z^{-1}+\cdot\cdot\cdot+U_{-k}z^{-k},}}\\ {{U_{0}=\mathrm{constant~diagonal~matrix},}}\\ {{U_{+}=I+U_{1}z+\cdot\cdot\cdot+U_{l}z^{l},}}\end{array}
+$$  
+
+for some    $k,l>0$  . (The fact that    $U_{0}$   is a constant diagonal matrix, not a diagonal matrix of Laurent monomials in    $z$  , follows from condition (c) in conjecture 4.1.)  
+
+Remark 10.1.  The Birk ho factorization here can easily be computed using row and column operations. For example, as    $U\;=\;U_{-}U_{0}U_{+}$   we see that    $U_{+}^{-1}$  is the unique matrix of the form    $I+A_{1}z+\cdot\cdot\cdot+A_{m}z^{m}$    such that    $U U_{+}^{-1}$  contains only negative powers of    $z$  . This can be computed using column operations on    $U$  . The transformation    $A_{i}$   lowers degree by   $2i$  , as    $\mathbb{U}$   is degree-preserving, and hence    $A_{i}$   is nilpotent;    $I+A_{1}z+\cdot\cdot\cdot+A_{m}z^{m}$    is therefore invertible with polynomial inverse. This determines    $U_{+}$  . The matrices    $U_{-}$  and    $U_{0}$   can be determined similarly.  
+
+If we change our choice of bases for    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\mathbb{C})$  X ) and    $H^{\bullet}(Y;\mathbb{C})$   then the factoriza- tion  
+
+$$
+U=U_{-}U_{0}U_{+}\qquad\mathrm{because}\qquad A U B^{-1}=(A U_{-}A^{-1})(A U_{0}B^{-1})(B U_{+}B^{-1})
+$$  
+
+where    $A$   and    $B$   are appropriate change-of-basis matrices, and so the factorization deﬁnes linear symplectic isomorphisms  
+
+$$
+\begin{array}{r l r l r l r}{\mathbb{U}_{-}:\mathcal{H}_{Y}\to\mathcal{H}_{Y},}&{{}\quad}&{\mathbb{U}_{0}:\mathcal{H}_{\mathcal{X}}\to\mathcal{H}_{Y},}&{{}\quad}&{\mathbb{U}_{+}:\mathcal{H}_{\mathcal{X}}\to\mathcal{H}_{\mathcal{X}},}\end{array}
+$$  
+
+which are independent o ur choice of bases. Let us identify the Fock space for    $\mathcal{X}$  with th ock space for  Y  via the isomorphism  $\mathbb{U}_{0}:\mathcal{H}_{\mathcal{X}}\rightarrow\mathcal{H}_{Y}$  . In this way we regard  D  $\mathcal{D}_{\mathcal{X}}$   as an element of the Fock space for  Y  ; concretely, this means that we X regard    $\mathcal{D}_{\mathcal{X}}$   as a formal power series in the variables    $t_{a,\epsilon}$  ,   $0\leq\epsilon\leq N$  ,   $0\leq a<\infty$  via the identiﬁcation    $t_{a,\epsilon}\varphi_{\epsilon}=\mathbb{U}_{0}(\tau_{a,\mu}\phi_{\mu})$  . Consider now the    $\mathbb{C}(\!(z^{-1})\!)$  )-linear symplectic transformations    $\mathbb{T}_{-},\mathbb{T}_{+}:\mathcal{H}_{Y}\rightarrow\mathcal{H}_{Y}$   deﬁned by  
+
+$$
+\begin{array}{r}{\mathbb{T}_{-}=\mathbb{U}_{-},\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\mathbb{T}_{+}=\mathbb{U}_{0}\mathbb{U}_{+}\mathbb{U}_{0}^{-1}.}\end{array}
+$$  
+
+Pro itions 5.3 and 7.3 in [21] give formulas for the  quantizations    $\widehat{\mathbb{T}}_{-}$   $\widehat{\mathbb{T}}_{+}$   of  T − − and  $\mathbb{T}_{+}$  : these quantizations are endomorphisms of the Fock space for  Y  .  
+
+Conjecture 10.2.  Conjecture 4.1 holds, and in addition  
+
+$$
+\mathcal{D}_{Y}\propto\widehat{\mathbb{T}}_{-}\widehat{\mathbb{T}}_{+}(\mathcal{D}_{\mathcal{X}})
+$$  
+
+after an appropriate analytic continuation of    $\mathcal{D}_{\mathcal{X}}$   and    ${\mathcal{D}}_{Y}$  . The symbol ‘ ∝ ’ here means ‘is a scalar multiple of’.  
+
+Remark 10.3.  The scalar multiple in conjecture 10.2 is determined by the con- dition that the genus-one descendant potential of    $Y$   vanishes when all the    $t_{a,\epsilon}$   are zero. Thus conjecture 10.2 determines the higher-genus Gromov–Witten invariants of    $\mathcal{X}$   in terms of those of    $Y$  .  
+
+Remark 10.4.  In order for the analytic continuation indicated in conjecture 10.2 to make sense, we need assume some convergence of the total descendant potential  ${\mathcal{D}}_{Y}$  . For example, if we require that there are strictly positive real numbers    $R_{i}$  ,  $s<i\leq r$  , such that each    $\mathcal{F}_{Y}^{y}$    ,    $g\geq0$  , depends analytically on    $Q_{s+1},.\cdot\cdot,Q_{r}$   in the domain  
+
+$$
+|Q_{i}|<R_{i},\qquad\qquad\qquad\qquad s<i\leq r,
+$$  
+
+then (as above) the Divisor Equation implies that each    $\mathcal{F}_{Y}^{g}$    in fact depends analyt- ically on    $t_{0,1},\ldots,t_{0,r}$   and    $Q_{s+1},.\cdot\cdot,Q_{r}$   in the domain  
+
+$$
+\begin{array}{r l r}&{|t_{0,i}|<\infty}&{1\leq i\leq s}\\ &{|Q_{i}\mathrm{e}^{t_{0,i}}|<R_{i}}&{s<i\leq r.}\end{array}
+$$  
+
+This allows us to set    $Q_{s+1}\,=\,\cdot\cdot\cdot\,=\,Q_{r}\,=\,1$  , deﬁning    $\mathcal{F}_{Y}^{g,\ast}$  ,    $g\geq0$  , exactly as we deﬁned    $\mathcal{F}_{Y}^{(*)}$    above. We can then use    $\begin{array}{r}{\mathcal{D}_{Y}^{\ast}\,=\,\exp\bigg(\sum_{g\geq0}\mathcal{F}_{Y}^{g,\ast}\bigg)}\end{array}$   P  in place of    ${\mathcal{D}}_{Y}$   in conjecture 10.2. But this convergence assumption is diﬃcult to check in practice  $^{3}$  , and it would be useful to have a higher-genus analog of assumption 2.1.  
+
+Remark 10.5.  Bryan and Graber have suggested [7, remark 1.8] that when    $\mathcal{X}$  satisﬁes the Hard Lefschetz condition, the higher-genus non-descendant Gromov– Witten potentials  
+
+$$
+F_{\mathcal{X}}^{g}(\tau)=\mathcal{F}_{\mathcal{X}}^{g}|_{\tau_{0}=\tau;\tau_{1}=\tau_{2}=\cdots=0}\qquad\mathrm{~and~}\qquad F_{Y}^{g}(t)=\mathcal{F}_{Y}^{g}|_{t_{0}=t;t_{1}=t_{2}=\cdots=0}
+$$  
+
+might coincide after analytic continuation in the quantum parameters    $Q_{s+1},.\cdot\cdot,Q_{r}$  , the substitution (48), and the change-of-variables    $t=U_{0}(\tau)$   from theorem 9.1. If conjecture 10.2 and the above convergence assumption hold then this is the case. The Hard Lefschetz condition ensures that the transformation    $\mathbb{U}_{+}$   is the identity, and conjecture 10.2 then becomes  
+
+$$
+\mathcal{D}_{Y}^{\ast}\propto\widehat{\mathbb{U}}_{-}(\mathcal{D}_{\mathcal{X}}).
+$$  
+
+Applying Givental’s formul propo .3] for the operator  $\widehat{\mathbb{U}_{-}}$  shows that the − non-descendant potentials  $F_{\mathcal{X}}^{g}(\tau)$  ) and  $F_{Y}^{g,\ast}(t)$  ) are related by analytic continuation X and a change-of-variables; taking account of the substitution (36), exactly as in    $\S9$  , shows that    $F_{\mathcal{X}}^{y}$    and    $F_{Y}^{y}$    are related as claimed.  
+
+An issue of particular importance for the various Crepant Resolution Conjectures is to determine the values to which the exceptional quantum parameters    $Q_{i}$   should be specialized. These values have physical signiﬁcance and are referred in the physics literature as the    $B$  -ﬁeld . Calculating the correct value of the    $B$  -ﬁeld is a subtle problem even in physics, and although this is understood in some examples (Hilbert scheme of points, surface singularities, K3 surfaces, etc.) there is not yet a procedure to determine the value of the    $B$  -ﬁeld in general. One advantage of our approach is that it gives such a procedure: we can interpret the values of the specialization (and hence the value of the B-ﬁeld) as coming from a shift in basepoint on Givental’s cone. In this section we study this issue and relate it to the physical point of view on the B-ﬁeld. First we propose a further conjecture to constrain the choice of shift.  
+
+Conjecture 11.1.  Suppose that conjecture 4.1 holds, so that  
+
+$$
+\mathbb{U}\bigl(\mathbf{1}_{\mathcal{X}}\bigr)=\mathbf{1}_{Y}-c z^{-1}+O(z^{-2})
+$$  
+
+for some    $c\in H^{2}(Y;\mathbb{C})$  . Then in fact    $c\in H^{2}(Y;\mathbb{Q}{\sqrt{-1}})$  .  
+
+Note that this implies that the quantities   $\mathrm{e}^{c_{i}}$    occurring in theorems 7.2, 8.3, and 9.1 are roots of unity.  
+
+Now we introduce the notion of Gromov-Witten invariants twisted by a ﬂat gerbe. Twisting by a ﬂat gerbe is believed to be the correct mathematical analog of ‘turning on a    $B$  -ﬁeld’ in physics. The general construction in the orbifold case has been worked out by Pan–Ruan–Yin [30]. In the smooth case it is particularly easy. For a smooth manifold    $Y$  , giving a ﬂat gerbe on    $Y$   is equivalent to giving its holonomy , which is a cohomology class    $\theta\in H^{2}(Y,U(1))$  . Gromov-Witten invaria s twisted by this ﬂat gerbe coincide with the usual Gromov–Witten invariants of  Y  , but multiplied by a phase factor given by the holonomy:  
+
+$$
+\langle\delta_{1}\psi^{a_{1}},.\,.\,.\,,\delta_{n}\psi^{a_{n}}\rangle_{0,n,d}^{Y,\theta}=\theta(d)\,\langle\delta_{1}\psi^{a_{1}},.\,.\,.\,,\delta_{n}\psi^{a_{n}}\rangle_{0,n,d}^{Y}\,.
+$$  
+
+We will only need the case when    $Y$   is smooth, so the reader unfamiliar with  $\theta$  -twisted Gromov–Witten invariants can take (50) as the deﬁnition. It is clear that on smooth manifolds the set of all    $\theta$  -twisted Gromov-Witten invariants, for any ﬂat gerbe    $\theta$  , contains the same information as the set of ordinary Gromov-Witten invariants. The class    $c$   in conjecture 4.2 induces a ﬂat gerbe    $\theta_{c}$   through the coeﬃcient exact sequence  
+
+$$
+\begin{array}{r}{0\xrightarrow{}\sqrt{-1}\mathbb{Z}\xrightarrow{}\sqrt{-1}\mathbb{R}\xrightarrow{x\mapsto\exp(2\pi x)}U(1)\xrightarrow{}0\;.}\end{array}
+$$  
+
+hand, if    $H^{3}(Y,{\sqrt{-1}}\,\mathbb{Z})\;=\;0$   then any ﬂat gerbe    $\theta$   has a lift    $\rho_{\theta}~\in$   $H^{2}(Y;{\sqrt{-1}}\,\mathbb{R})$    √ − ).  
+
+We can deﬁne    $\theta$  -twisted versions    $F_{Y,\theta}$  ,    $F_{Y,\theta}^{(*)}$  , and    ${\mathcal{L}}_{Y,\theta}$   of    $F_{Y}$  ,    $F_{Y}^{(*)}$  , and    $\mathcal{L}_{Y}$   respec- tively, by replacing ordinary Gromov-Witten invariants with    $\theta$  -twisted Gromov- Witten invariants.  
+
+Lemma 11.2.  Suppose that    $\rho_{\theta}$   is a lifting of    $\theta$  . Then multiplication by    $e^{\rho_{\theta}/z}$    deﬁnes a symplectic transformation    $\mathcal{H}_{Y}\rightarrow\mathcal{H}_{Y}$   such that    $e^{\rho_{\theta}/z}\mathcal{L}_{Y}=\mathcal{L}_{Y,\theta}$  .  
+
+Proof.  Combine the Divisor Equation (see [15, equation 8]) with (50).  
+
+Corollary 11.3.  If conjectures 4.1 and 11.1 hold then the symplectic transforma- tion    $\mathbb{U}_{c}\,:\,\mathcal{H}_{\mathcal{X}}\,\rightarrow\,\mathcal{H}_{Y}$   deﬁned by    $\mathbb{U}_{c}\,=\,\mathrm{e}^{c/z}\mathbb{U}$   satisﬁes properties   $(a–d)$   of conjec- ture 4.1 and also:  
+
+$$
+\mathbb{U}_{c}(\mathcal{L}_{\mathcal{X}})=\mathcal{L}_{Y,\theta_{c}}\qquad\qquad\qquad\mathbb{U}_{c}(\mathbf{1}_{\mathcal{X}})=\mathbf{1}_{Y}+O(z^{-2}).
+$$  
+
+Recall from    $\S\S7–9$   that the cohomology cl s    $c\in H^{2}(Y;\mathbb{C})$   deﬁned by    $\mathbb{U}(\mathbf{1}_{\mathcal{X}})=$   ${\bf1}_{Y}-c z^{-1}+O(z^{-2})$   gives rise to the values   $\mathrm{e}^{c_{i}}$    to which the  ceptional quantum parameters are specialized: in other words  U  picks out the  B -ﬁeld. It does this because    $c$   produces the ‘shift in basepoint’  $\mathbf{\Omega}_{t}^{(\ast)}\sim\mathbf{\Omega}_{t+\epsilon}^{(\ast)}$    visible, for instance, in equation c
+
+ (39). If we repeat the analysis of    $\S\S7–9$   but using the symplect transformation
+
+  $\mathbb{U}_{c}$   rather than  U  then on the one hand we should replace each e  $\mathrm{e}^{c_{i}}$    by 1 (because
+
+  $\mathbb{U}_{c}({\mathbf{1}}_{\mathcal{X}})={\mathbf{1}}_{Y}+O(z^{-2})$   and so now there is no shift in basepoint) and on the other hand we should replace the quantum cohomology of    $Y$   by the    $\theta_{c}$  -twisted quantum cohomology (because we consider the submanifold-germ    ${\mathcal{L}}_{Y,\theta}$   not    $\mathcal{L}_{Y}$  ). In other words, our conjectures predict the emergence of a ﬂat gerbe    $\theta_{c}$  . We can use this to give a very clean version of the Cohomological Crepant Resolution Conjecture:  
+
+Conjecture  (Modiﬁed CCRC) .  There is a ﬂat gerbe    $\theta$   on    $Y$   such that the Chen– Ruan product    $\bigcup_{C R}$    on    $H_{\mathrm{{CR}}}^{\bullet}(\mathcal{X};\mathbb{C})$  X  can be obtained from the    $\theta$  -twisted small quantum product for    $Y$   by analytic continuation in the quantum parameters    $Q_{s+1},.\cdot\cdot,Q_{r}$   (if necessary) followed by the substitution  
+
+$$
+Q_{i}={\left\{\begin{array}{l l}{0}&{1\leq i\leq s}\\ {1}&{s<i\leq r.}\end{array}\right.}
+$$  
+
+Conjectures 4.1 and 11.1 together imply the Modiﬁed CCRC with    $\theta=\theta_{c}$  . We can give a similarly-improved version of Ruan’s Crepant Resolution Conjecture, which again follows from Conjectures 4.1 and 11.1:  
+
+Conj cture (Modiﬁed CRC) Suppose that    $\mathcal{X}$   is semi-positive. Then there is a ﬂat gerbe    $\theta$   $Y$  oice of elements    $f_{1},.\,.\,.\,,\,f_{r}\in\mathbb{C}[\![U_{1},.\,.\,.\,,U_{s}]\!]$  ]  such that    $f_{i}=0$  when  $U_{1}=\cdot\cdot\cdot=U_{s}=0$   · · · , such that the class  f  $f=f_{1}\varphi_{1}+\cdot\cdot\cdot+f_{r}\varphi_{r}$   · · · r  is exception and such that the Frobenius algebra given by the small qu ntum cohomology of  X is isomorphic to the Frobenius algebra obtained from the  θ -twisted small quantum cohomology of    $Y$   by analytic continuation in the exceptional quantum parameters  $Q_{s+1},.\cdot\cdot,Q_{r}$   (if necessary) followed by the change-of-variables  
+
+$$
+Q_{i}={\binom{\mathrm{e}^{f_{i}}U_{i}\quad1\le i\le s}{\mathrm{e}^{f_{i}}}}\mathrm{e}^{f_{i}}\mathrm{e}^{\phantom{1}}\quad s<i\le r.
+$$  
+
+The corrections    $f_{i}$   here and in (47) are an example of what physicists call a ‘mirror map’.  
+
+Appendix: Proofs of Analyticity Results  
+
+Lemma A.1.  The descendant potential    $\mathcal{F}_{\mathcal{X}}^{0}$  , which is a formal power series in the X variables    $U_{1},\dots,U_{s}$   and   ,    $0\leq\epsilon\leq N$  ,    $0\leq a<\infty$  , in fact depends analytically  $\tau_{a,\epsilon}$  on    $\tau_{0,1},\dots,\tau_{0,s}$   in the domain  C s .  
+
+Proof.  Set  
+
+$$
+\begin{array}{r l}&{\tau_{0,\mathrm{two}}=\tau_{0,1}\phi_{1}+\cdot\cdot\cdot+\tau_{0,s}\phi_{s},}\\ &{\big[\phi_{e_{1}}\psi^{a_{1}},\dots,\phi_{e_{k}}\psi^{a_{k}}\big]_{0,d}^{\mathcal{X}}=\displaystyle\sum_{n\geq0}\frac{1}{n!}\,\langle\phi_{e_{1}}\psi^{a_{1}},\dots,\phi_{e_{k}}\psi^{a_{k}},\tau_{0,\mathrm{two}},\dots,\tau_{0,\mathrm{two}}\rangle_{0,n+k,d}^{\mathcal{X}}\,,}\\ &{\big\langle\!\langle\phi_{e_{1}}\psi^{a_{1}},\dots,\phi_{e_{k}}\psi^{a_{k}}\rangle\!\big\rangle_{0}^{\mathcal{X}}=\displaystyle\sum_{d\in\mathrm{Eff}(\mathcal{X})}\big[\phi_{e_{1}}\psi^{a_{1}},\dots,\phi_{e_{k}}\psi^{a_{k}}\big]_{0,d}^{\mathcal{X}}\,U^{d},}\end{array}
+$$  
+
+and call the quantity  $\left[\phi_{e_{1}}\psi^{a_{1}},.\,.\,,\phi_{e_{k}}\psi^{a_{k}}\right]_{0,d}^{\mathcal{X}}$     a    $k$  -point descendant . We need to show that each    $k$  -point descendant is an entire function of   ; let us call  $\tau_{0,1},\dots,\tau_{0,s}$  this property  entireness . The Topological Recursion Relations [34,  § 2.5.5] express any    $k$  -point descendant  $\left[\phi_{e_{1}}\psi^{a_{1}},.\,.\,,\phi_{e_{k}}\psi^{a_{k}}\right]_{0,d}^{\mathcal{X}}$     with    $k\geq3$   and at least one non- zero    $a_{i}$   as a linear combination of  l -point descendants with    $l<k$  . Thus we need to establish entireness for    $k$  -point descendants with    $k=0$  ,    $k=1$  ,    $k=2$  , or    $k$   arbitrary but    $a_{1}=\cdot\cdot\cdot=a_{k}=0$  . The cases    $k\,=\,0$   and    $k$   arbitrary but    $a_{1}=\cdot\cdot\cdot=a_{k}=0$  follow from the entireness of the potential    $F_{\mathcal{X}}$   (see equation 8). The cases  k  = 1 and    $k=2$   but    $a_{2}=0$   follow from proposition 6.13. The remaining case —    $k=2$  but    $a_{1},a_{2}\neq0$   — follows from the WDVV-like identity  
+
+$$
+\left\langle\!\!\left\langle{\frac{\phi_{\alpha}}{z-\psi}},1,{\frac{\phi_{\beta}}{w-\psi}}\right\rangle\!\!\right\rangle_{0}^{x}=\left\langle\!\!\left\langle{\frac{\phi_{\alpha}}{z-\psi}},1,\phi_{\epsilon}\right\rangle\!\!\right\rangle_{0}^{x}\left\langle\!\!\left\langle\phi^{\epsilon},1,{\frac{\phi_{\beta}}{w-\psi}}\right\rangle\!\!\right\rangle_{0}^{x}
+$$  
+
+and the String Equation  
+
+$$
+\begin{array}{r l}&{\left\langle\!\!\left\langle\frac{\phi_{\alpha}}{z-\psi},1,\frac{\phi_{\beta}}{w-\psi}\right\rangle\!\!\right\rangle_{0}^{x}=\frac{1}{z w}\big(\phi_{\alpha},\phi_{\beta}\big)x+\Big(\frac{1}{z}+\frac{1}{w}\Big)\left\langle\!\!\left\langle\frac{\phi_{\alpha}}{z-\psi},\frac{\phi_{\beta}}{w-\psi}\right\rangle\!\!\right\rangle_{0}^{x},}\\ &{\left\langle\!\!\left\langle\frac{\phi_{\alpha}}{z-\psi},1,\phi_{\epsilon}\right\rangle\!\!\right\rangle_{0}^{x}=\frac{1}{z}\big(\phi_{\alpha},\phi_{\epsilon}\big)x+\frac{1}{z}\left\langle\!\!\left\langle\frac{\phi_{\alpha}}{z-\psi},\phi_{\epsilon}\right\rangle\!\!\right\rangle_{0}^{x}.}\end{array}
+$$  
+
+Thus    $\mathcal{F}_{\mathcal{X}}^{0}$    depends analytically on    $\tau_{0,1},\dots,\tau_{0,s}$   in the domain    $\mathbb{C}^{s}$  .  
+
+Lemma A.2.  Assume that convergence assumption 2.1 holds. Then the descen- dant potential    $\mathcal{F}_{Y}^{0}$    , which is   $a$   formal power series in the variables    $Q_{1},\ldots,Q_{r}$   and  $t_{a,\epsilon}$  ,    $0\,\leq\,\epsilon\,\leq\,N$  ,    $0\,\leq\,a\,<\,\infty$  , in fact depends analytically on    $t_{0,1},\ldots,t_{0,r}$   and  $Q_{s+1},.\cdot\cdot,Q_{r}$   in the domain  
+
+$$
+\begin{array}{r l r}&{|t_{0,i}|<\infty}&{1\leq i\leq s}\\ &{|Q_{i}\mathrm{e}^{t_{0,i}}|<R_{i}}&{s<i\leq r.}\end{array}
+$$  
+
+Proof.  This is very similar to the proof of the preceding lemma. As before, set  
+
+$$
+\begin{array}{l}{{t_{0,\mathrm{two}}=t_{0,1}\varphi_{1}+\cdot\cdot\cdot+t_{0,r}\varphi_{r},}}\\ {{\displaystyle\bigl[\varphi_{e_{1}}\psi^{a_{1}},\ldots,\varphi_{e_{k}}\psi^{a_{k}}\bigr]_{0,d}^{Y}=\sum_{n\geq0}\displaystyle\frac{1}{n!}\,\langle\varphi_{e_{1}}\psi^{a_{1}},\ldots,\varphi_{e_{k}}\psi^{a_{k}},t_{0,\mathrm{two}},\ldots,t_{0,\mathrm{two}}\rangle_{0,n+k,d}^{Y}\,,}}\\ {{\displaystyle\bigl\langle\varphi_{e_{1}}\psi^{a_{1}},\ldots,\varphi_{e_{k}}\psi^{a_{k}}\bigr\rangle\bigr\rangle_{0}^{Y}=\sum_{d\in\mathrm{Eff}(Y)}\bigl[\varphi_{e_{1}}\psi^{a_{1}},\ldots,\varphi_{e_{k}}\psi^{a_{k}}\bigr]_{0,d}^{Y}\,Q^{d}.}}\end{array}
+$$  
+
+We need to show that, for each choice of    $d_{1},\ldots,d_{s}\;\in\;\mathbb{Q}$   with    $d_{i}\ \geq\ 0$  , the co- eﬃcient of    $Q_{1}^{d_{1}}\cdot\cdot\cdot Q_{s}^{d_{s}}$    · in  $\smash{\big\langle\!\!\big\langle\varphi_{e_{1}}\psi^{a_{1}},\cdot\cdot\cdot,\varphi_{e_{k}}\psi^{a_{k}}\big\rangle\!\!\big\rangle_{0}^{Y}}$  
+   deﬁnes an analytic function of  $t_{0,1},\ldots,t_{0,r}$   and  $Q_{s+1},.\cdot\cdot,Q_{r}$   in the domain (53). Let us call this property  analyt- icity  of  $\left\langle\!\!\left\langle\varphi_{e_{1}}\psi^{a_{1}},\cdot\cdot\cdot,\varphi_{e_{k}}\psi^{a_{k}}\right\rangle\!\!\right\rangle_{0}^{Y}$  .  
+
+The Topological Recursion Relations [16, lemma 10.2.2] show that it suﬃces to establish analyticity of  $\left\langle\!\!\left\langle\varphi_{e_{1}}\psi^{a_{1}},.\cdot\cdot\,,\varphi_{e_{k}}\psi^{a_{k}}\right\rangle\!\!\right\rangle_{0}^{Y}$  
+    in the cases where    $k\,=\,0$  ,    $k\,=\,1$  ,  $k\,=\,2$  , or    $k$   arbitrary but  a  $a_{1}\,=\,\cdot\cdot\,=\,a_{k}\,=\,0$   · · ·  = 0. The cases    $k\,=\,0$   and    $k$   arbitrary but    $a_{1}=\cdot\cdot\cdot=a_{k}=0$   follow fr verge ssumption 2.1 (see the discussion abov ation The cases  k  = 1 and  k  = 2 with    $a_{1},a_{2}\neq0$   follow from the case  k  = 2 but  a  $a_{2}=0$   = 0, in view of identities (51), (52), and the String Equation  
+
+$$
+\left\langle\!\!\left\langle\frac{\varphi_{\alpha}}{z-\psi},1\right\rangle\!\!\right\rangle_{0}^{Y}=\frac{1}{z}\big(\varphi_{\alpha},t_{0,\mathrm{two}}\big)_{Y}+\frac{1}{z}\Big\langle\!\!\left\langle\frac{\varphi_{\alpha}}{z-\psi}\right\rangle\!\!\Big\rangle_{0}^{Y}.
+$$  
+
+It remains to establish the analyticity of  $\textstyle\big\langle\!\!\big\langle\frac{\phi_{\alpha}}{z-\psi},\phi_{\beta}\big\rangle\!\!\big\rangle_{0}^{Y}$    for all    $\alpha$   and  $\beta$  ; this holds as these quantities are solutions to a system of diﬀerential equations (the ‘quantum diﬀerential equations’ [16, proposition 10.2.1]) with coeﬃcients which are known, by convergence assumption 2.1, to be analytic functions deﬁned in the domain (53). The lemma is proved. □  
+
+# References  
+
+[1] M. Aganagic, V. Bouchard, and A. Klemm , Topological Strings and (Almost) Modular Forms. Preprint, available at  hep-th/0607100 .
+
+ [2] D. Abramovich, T. Graber, and A. Vistoli , Algebraic orbifold quantum products, in Orbifolds in mathematics and physics (Madison, WI, 2001) , pp. 1–24. Contemp. Math., 310. Amer. Math. Soc., Providence, RI, 2002.
+
+ [3] , Gromov–Witten theory of Deligne–Mumford stacks. Preprint (2006), available at arXiv:math.AG/0603151 .
+
+ [4] P. S. Aspinwall, B. R. Greene, and D. R. Morrison , Calabi-Yau moduli space, mirror manifolds and spacetime topology change in string theory,  Nuclear Phys. B , 416 (1994), 414–480.
+
+ [5] S. Barannikov , Quantum periods. I. Semi-inﬁnite variations of Hodge structures,  Internat. Math. Res. Notices  (2001), 1243–1264.
+
+ [6] A. A. Be˘ ılinson, J. Bernstein, and P. Deligne , Faisceaux pervers, in  Analysis and topology on singular spaces, I (Luminy, 1981) , pp. 5–171. Ast´ erisque, 100. Soc. Math. France, Paris, 1982.
+
+ [7] J. Bryan and T. Graber , The Crepant Resolution Conjecture. Preprint, available at arXiv:math.AG/0610129 .
+
+ [8] J. Bryan, T. Graber, and R. Pandharipande , The orbifold quantum cohomology of  $\mathbb{C}^{2}/\mathbb{Z}_{3}$  and Hurwitz–Hodge integrals. Preprint, available at  arXiv:math.AG/0510335 .
+
+ [9] W. Chen and Y. Ruan , A new cohomology theory of orbifold,  Comm. Math. Phys. , 248 (2004), 1–31.
+
+ [10] , Orbifold Gromov–Witten theory, in  Orbifolds in mathematics and physics (Madison, WI, 2001) , pp. 25–85. Contemp. Math., 310. Amer. Math. Soc., Providence, RI, 2002.
+
+ [11]  T. Coates , Givental’s Lagrangian Cone and    $S^{1}$  -Equivariant Gromov–Witten Theory. Preprint, available at  arXiv:math.AG/0607808 .
+
+ [12] , Wall-Crossings in Toric Gromov–Witten Theory II: Local Examples. Preprint, avail- able at  arXiv:0804.2592v1 .  
+
+[13]  T. Coates, A. Corti, H. Iritani, and H.-H. Tseng , Wall-Crossings in Toric Gromov–Witten Theory I: Crepant Examples. Preprint, available at  arXiv:math.AG/0611550 .
+
+ [14]  T. Coates, A. Corti, Y.-P. Lee, and H.-H. Tseng , The Quantum Orbifold Cohomology of Weighted Projective Space. Preprint, available at  arXiv:math.AG/0608481 .
+
+ [15]  T. Coates and A. Givental , Quantum Riemann-Roch, Lefschetz and Serre,  Ann. of Math. (2) , 165 (2007), 15–53.
+
+ [16]  D. A. Cox and S. Katz ,  Mirror symmetry and algebraic geometry . Mathematical Surveys and Monographs, 68. American Mathematical Society, Providence, RI, 1999.
+
+ [17]  B. Dubrovin , Geometry of 2D topological ﬁeld theories, in  Integrable systems and quantum groups (Montecatini Terme, 1993) , pp. 120–348. Lecture Notes in Math., 1620. Springer, Berlin, 1996.
+
+ [18]  C. Faber, S. Shadrin, and D. Zvonkine , Tautological relations and the r-spin Witten con- jecture. Preprint, available at  arXiv:math/0612510 .
+
+ [19]  W. Fulton and R. Pandharipande , Notes on stable maps and quantum cohomology, in Algebraic geometry—Santa Cruz 1995 , pp. 45–96. Proc. Sympos. Pure Math., 62. Amer. Math. Soc., Providence, RI, 1997.
+
+ [20]  A. B. Givental , Homological geometry. I. Projective hypersurfaces,  Selecta Math. (N.S.) , 1 (1995), 325–345.
+
+ [21] , Gromov-Witten invariants and quantization of quadratic Hamiltonians,  Mosc. Math. J. , 1 (2001), 551–568, 645.
+
+ [22] , Symplectic geometry of Frobenius structures, in  Frobenius manifolds , pp. 91–112. Aspects Math., E36. Vieweg, Wiesbaden, 2004.
+
+ [23]  C. Hertling ,  Frobenius manifolds and moduli spaces for singularities . Cambridge Tracts in Mathematics, 151. Cambridge University Press, Cambridge, 2002.
+
+ [24]  C. Hertling and Yu. Manin , Weak Frobenius manifolds,  Internat. Math. Res. Notices (1999), 277–286.
+
+ [25]  S. Keel and S. Mori , Quotients by groupoids,  Ann. of Math. (2) , 145 (1997), 193–213.
+
+ [26]  Y.-P. Lee , Invariance of tautological equations I: conjectures and applications. Preprint, available at  arXiv:math/0604318 .
+
+ [27] , Invariance of tautological equations II: Gromov–Witten theory. Preprint, available at  arXiv:math/0605708 .
+
+ [28]  Y. I. Manin ,  Frobenius manifolds, quantum cohomology, and moduli spaces . American Math- ematical Society Colloquium Publications, 47. American Mathematical Society, Providence, RI, 1999.
+
+ [29]  T. E. Milanov , Gromov–Witten Theory of    $\mathbb{C P}^{1}$    and Integrable Hierarchies. Preprint, avail- able at  arXiv:math-ph/0605001 .
+
+ [30]  J. Pan, Y. Ruan, and X. Yin , Gerbes and twisted orbifold quantum cohomology. Preprint, available at  arXiv:math.AG/0504369 .
+
+ [31]  F. Perroni , Orbifold Cohomology of ADE-singularities. Preprint, available at arXiv:math.AG/0510528 .
+
+ [32]  Y. Ruan , The cohomology ring of crepant resolutions of orbifolds, in  Gromov-Witten theory of spin curves and orbifolds , pp. 117–126. Contemp. Math., 403. Amer. Math. Soc., Providence, RI, 2006.
+
+ [33] , unpublished.
+
+ [34]  H.-H. Tseng , Orbifold Quantum Riemann–Roch, Lefschetz and Serre. Preprint, available at arXiv:math.AG/0506111 .
+
+ [35]  E. Witten , Quantum Background Independence In String Theory. Preprint, available at arXiv:hep-th/9306122 . Department of Mathematics, Imperial College London, London SW7 2AZ, United Kingdom  $E$  -mail address :  tomc@imperial.ac.uk Department of Mathematics, University of Michigan, Ann Arbor MI 48105, USA  

@@ -1,0 +1,335 @@
+# U-Pb and Hf isotopic study of detrital zircons from the Lüliang khondalite, North China Craton, and their tectonic implications 
+
+XIAOPING XIA*, MIN SUN* $\dagger$, GUOCHUN ZHAO*, FUYUAN WU $\ddagger$ \& LIEWEN XIE $\ddagger$<br>*Department of Earth Sciences, the University of Hong Kong, Pokfulam Road, Hong Kong, China<br>$\ddagger$ Institute of Geology and Geophysics, Chinese Academy of Science, Beijing 100029, China
+
+(Received 26 August 2008; accepted 13 November 2008; First published online 28 April 2009)
+
+
+#### Abstract
+
+Two types of metasedimentary rocks occur in the Trans-North China Orogen of the North China Craton. One type consists of highly metamorphosed supracrustal rocks with protoliths of mature cratonic shale, called khondalites, as found in the Lüliang Complex; rocks of the other type are also highly metamorphosed but less mature, as represented by the Wanzi supracrustal assemblage in the Fuping Complex. U-Pb isotopic data for detrital zircons from khondalites show a provenance dominated by 1.9-2.1 Ga Palaeoproterozoic rocks. These detrital zircons display a wide range of $\varepsilon_{\mathrm{Hf}}$ values from -16.0 to +9.2 and give Hf isotopic model ages mostly around 2.3 Ga . The high positive $\varepsilon_{\mathrm{Hf}}$ values approach those for the depleted mantle at 2.1 Ga , highlighting a juvenile crustal growth event in Palaeoproterozoic times. Hf isotopic data also imply that c. 2.6 Ga old crustal material was involved in the Palaeoproterozoic magmatic event. These data are similar to those for the khondalitic rocks from the interior of the Western Block of the North China Craton, suggesting a common provenance. In contrast, other metasedimentary rocks in the Trans-North China Orogen, such as the Wanzi supracrustal assemblage in the Fuping Complex, have a source region with both Palaeoproterozoic and Archaean rocks. Their detrital zircon Hf isotopic data indicate reworking of old crustal material and a lack of significant juvenile Palaeoproterozoic magmatic input. These rocks are similar to the coevally deposited meta-sedimentary rocks in the interior of the Eastern Block. We propose that the Lüliang khondalites were deposited on the eastern margin of the Western Block in a passive continental margin environment and were thrust eastward later during collision with the Eastern Block. Other metasedimentary rocks in the Trans-North China Orogen were deposited on the western margin of the Eastern Block in a continental arc environment. Our data support the eastward subduction model for the Palaeoproterozoic tectonic evolution of the North China Craton.
+
+
+Keywords: detrital zircon, U-Pb age, Hf isotope, khondalites, North China Craton.
+
+## 1. Introduction
+
+The North China Craton is the largest and oldest continental block in China, with rocks up to 3.8 Ga old (Liu et al. 1992; Song et al. 1996). This craton has traditionally been considered to have a relatively uniform Archaean to Palaeoproterozoic basement. However, recent studies have applied terrane accretion and collisional models to the craton (Li et al. 1990; Li, Hart \& Wu, 1990; Bai, 1996; Wang et al. 1996;
+
+[^0]Wu \& Zhong, 1998; Zhao et al. 1998, 1999a, 2000a, 2001a, b, 2005; Wilde, Zhao \& Sun, 2002; Kusky \& Li, 2003; Zhai \& Liu, 2003; Kusky, Li \& Santosh, 2007). A Palaeoproterozoic collisional belt, named the TransNorth China Orogen, was recognized. Along this belt, two discrete Archaean to Palaeoproterozoic continental blocks, called the Eastern and Western blocks, were amalgamated to form a coherent basement of the North China Craton at c. 1.85 Ga (Fig. 1; Zhao et al. 1998, 2000b, 2001a, 2005; Wilde et al. 1997, 1998, 2004a, b, 2005; Wilde, Zhao \& Sun, 2002; Guo \& Zhai, 2001; Guo, O’Brien \& Zhai, 2002; Guo et al. 2005; Kröner et al. 2005a, b, 2006; Faure et al. 2007; Trap et al. 2007). There is now a clear outline of the timing and tectonic processes involved in the amalgamation of the North China Craton, probably coinciding with assembly of the supercontinent Columbia (Rogers \& Santosh, 2002; Zhao et al. 2002a, 2003, 2004). However, the crustal evolution history of this craton before amalgamation remains poorly understood.
+
+Palaeoproterozoic metasedimentary rocks of different metamorphic grades, which preserve the history of the exposed continental crust at the time of their deposition, are widely distributed in the North China Craton, including the Liaohe, Laoling, Ji'an, Jingshan and Fenzishan groups in the Jiao-Liao-Ji Belt within the Eastern Block and Jining, DaqingshanWulashan, Helanshan-Qianlishan complexes within the Khondalite Belt in the Western Block (Fig. 1). In the Trans-North China Orogen, metasedimentary rocks are exposed in the Shangtaihua, Hutuo groups and the Fuping, Lüliang complexes (Fig. 1). Previous U-Pb studies on detrital zircons have shown that all these rocks within the three discrete mobile belts experienced the late Palaeoproterozoic metamorphism (Luo et al. 2004, 2008; Lu et al. 2006; Xia et al. 2006a, b, c; Wan et al. 2006a, b), but there are some important differences.
+
+Firstly, the metamorphic overgrowth zircon rims or zircons with metamorphic origin in the Khondalite Belt
+
+
+[^0]:    $\dagger$ Author for correspondence: minsun@hkucc.hku.hk
+
+
+
+
+---
+
+
+
+Figure 1. Tectonic subdivision of the North China Craton and spatial distribution of the Palaeoproterozoic supracrustal rocks (after Zhao et al. 2005). CD - Chengde; ZH - Zhahuang.
+and the Jiao-Liao-Ji Belt yield some ages at about 1.92 Ga and 1.93 Ga , respectively (Luo et al. 2004, 2008; Lu et al. 2006; Wan et al. 2006a; Santosh, Wilde $\&$ Li, 2007), while $1.88-1.82 \mathrm{Ga}$ metamorphic ages are recorded in the Trans-North China Orogen (Wan et al. 2006a, b). This suggests that the continental collision between the Western and Eastern blocks might have happened slightly later than the collision between the Yinshan and Ordos terranes along the Khondalite Belt, as well as the closure of the rift along the Jiao-Liao-Ji Belt. The second difference is the ages of rocks in their source region. Both Archaean (c. 2.5 Ga ) and Palaeoproterozoic rocks are abundant in the metasedimentary source rocks from the Jiao-LiaoJi Belt of the Eastern Block (Luo et al. 2004, 2008; Wan et al. 2006b) and the Shangtaihua, Hutuo groups and the Fuping Complex in the Trans-North China Orogen (Xia et al. 2006b; Wan et al. 2006a, b), while Palaeoproterozoic rocks dominate the source region for those metasedimentary rocks from the Khondalite Belt of the Western Block (Xia et al. 2006a, c; Wan et al. 2006b).
+
+The Lüliang Complex is located in the central segment of the Trans-North China Orogen (Fig. 1). Of particular significance is that some metasedimentary rocks in this complex are similar to those from the Khondalite Belt, not those from the Trans-North China Orogen. Therefore, the Lüliang Complex is considered to have been thrust from the west and subsequently incorporated into the Trans-North China Orogen during the collision between the Eastern and Western blocks. However, they have not been investigated, especially in terms of detrital zircon $\mathrm{U}-\mathrm{Pb}$ ages and Hf isotope compositions. In this study, we carried out an integrated study of $\mathrm{U}-\mathrm{Pb}$ and Hf isotope on the detrital zircons separated from the Lüliang khondalites to test this idea. Our results provide important constraints not only on their provenance, but also on controversial and ambiguous issues regarding the tectonic evolution of the North China Craton.
+
+## 2. Geological background
+
+The Lüliang Complex in the Trans-North China Orogen is located in an area adjacent to the eastern margin of the Western Block (Fig. 1) and mainly consists of metasedimentary rocks intruded by granitoid plutons (Geng et al. 2000; Wan et al. 2000b; Zhao et al. 2008). The metasedimentary rocks of the complex have been divided into the Jiehekou, Lüliang and Yejishan/Heichashan groups (Fig. 2; Yu, Wang $\&$ Wang, 1997; Geng et al. 2000; Wan et al. 2000b). The metasedimentary rocks from the Jiehekou Group share common lithological, mineralogical and geochemical features with those of the Khondalite Belt and are referred to as khondalites in the Chinese literature
+(Qian $\&$ Li, 1999; Li, Qian $\&$ Liu, 2000; Wan et al. 2000a, b). These rocks are composed of subequal amounts of quartz, plagioclase, K-feldspar and garnet. Biotite and sillimanite are important in most samples.
+
+
+
+
+---
+
+
+
+Figure 2. Geological map of the Lüliang Complex and sample locality (after Zhao et al. 2008). TTG - tonalitic-trondhjemiticgranodioritic.
+
+Trace minerals include zircon, apatite, iron oxides and sphene. They are characterized by large ion lithophile elements (LILE) enrichment, and lower abundances of Zr, Hf and Sr. Their rare earth element (REE) distribution has significant LREE enrichment and a negative Eu anomaly. They are mainly exposed in the northwestern part of the complex (Fig. 2) and the major rock types are amphibolite- to granulitefacies graphite-bearing pelitic gneiss/schist, quartzite, felsic paragneiss, marble, calc-silicate rock and minor amphibolite/granulite. Single khondalite layers commonly range in thickness from tens to hundreds of metres. These khondalites show multiple phases of deformation, and commonly occur as strongly foliated, transposed and folded tectonic slices in the field, as manifested by repeated lithological sequences ( Li , Qian \& Liu, 2000). Locally, a gradational sequence consisting of fine-grained paragneiss, schist and gneiss can be observed (Li, Qian \& Liu, 2000). In some locations, leucocratic bands and minor garnet-bearing granitic bodies are present in the khondalites, which were avoided in the field sampling.
+
+The Lüliang Group crops out only in the Jinzhouyu area (Fig. 2) and is made up of predominantly basalt, andesite, dacite, rhyolite, wacke, sandstone, banded iron formation and argillaceous rocks metamorphosed in greenschist facies. Coarse-grained amphibolites with preserved gabbroic texture and fine-grained metabasite derived from basalt or diabase crop out as lenses intercalated within sandstone. The metre size of the mafic blocks and their scattering in the terrigeneous rocks suggest that they might be olistoliths (Faure et al. 2007). This group is considered to have formed in a magmatic arc and/or a back-arc basin environment (Faure et al. 2007; Trap et al. 2007). Regionally, the Lüliang Group is not in direct contact with the Jiehekou Group (Fig. 2), but both groups are tectonically overlain by the Yéjishan/Heichashan Group, which occurs along a narrow, NE-SW-trending belt that extends from Dongmafang, through Yéjishan and Heichashan, to Fangshan (Fig. 2). The Yéjishan/Heichashan Group consists of sub-greenschist-facies metamorphosed conglomerates, quartz wackes, sandstones and minor limestones, lithologically and metamorphically similar to the Hutuo Group that overlies the Wutai Group in the Wutai area (Fig. 1). Widespread mafic volcanic rocks in this group were dated by the zircon $\mathrm{U}-\mathrm{Pb}$ method at $2124 \pm 38 \mathrm{Ma}$ (Geng et al. 2000).
+
+
+
+
+---
+
+A foreland basin has been proposed as the formation environment for this group (Bai, Wang \& Guo, 1992; Wu \& Zhong, 1998; Wilde et al. 2004b; Zhang et al. 2006a).
+
+## 3. Analytical procedures
+
+The samples were crushed and subsequently separated by a heavy liquid and magnetic method. Zircons were hand picked and mounted on an adhesive tape, enclosed in epoxy resin and then polished to about half their size. Cathodo-luminescence (CL) imaging of zircon grains was taken in order to observe the inner structure and choose potential target sites for $\mathrm{U}-\mathrm{Pb}$ dating and Hf analyses at the Institute of Geology and Geophysics, Chinese Academy of Sciences in Beijing, using a CAMECA SE-50 microprobe.
+
+## 3.a. U-Pb dating
+
+A VG PQ Excel ICP-MS machine equipped with a New Wave Research LUV213 laser ablation system, at the University of Hong Kong, was utilized to analyse the $\mathrm{U}-\mathrm{Pb}$ isotope compositions of zircons. The laser system delivers a beam of 213 nm UV light from a frequency-quintupled Nd:YAG laser. Analytical settings include a beam diameter of $\sim 40 \mu \mathrm{m}, 10 \mathrm{~Hz}$ repetition rate, and energy of $0.6-1.3 \mathrm{~mJ}$ per pulse. This gave a ${ }^{238} \mathrm{U}$ signal of $3 \times 10^{4}$ to $100 \times 10^{4}$ counts, depending on U contents. A typical ablation time was $30-60 \mathrm{~s}$, resulting in pits $20-40 \mu \mathrm{m}$ deep. Helium carrier gas was used to transport the ablated sample materials from the laser-ablation cell to the ICPMS torch after mixing with argon gas. No common lead correction has been made because the common lead concentration is generally below the detection limit of the ICP-MS. More detailed instrumental settings and analytical procedures have been described by Xia et al. (2004).
+
+## 3.b. Hf isotope analyses
+
+Hf isotope analyses were conducted by a Neptune multi-collector (MC) ICPMS coupled with an ArF excimer laser ablation system at the Institute of Geology and Geophysics, Chinese Academy of Sciences in Beijing. Ablated material in the laser-ablation cell was transported to the ICPMS torch by helium carrier gas. Analytical settings include a beam diameter of $\sim 63 \mu \mathrm{m}, 10 \mathrm{~Hz}$ repetition rate, and energies density of $15 \mathrm{~J} / \mathrm{cm}^{2}$, which yielded a signal intensity of $\sim 10 \mathrm{~V}$ at ${ }^{180} \mathrm{Hf}$ for the standard zircon 91500 in situ analysis. During analysis, raw count rates for ${ }^{172} \mathrm{Yb}$, ${ }^{173} \mathrm{Yb},{ }^{175} \mathrm{Lu},{ }^{176}(\mathrm{Hf}+\mathrm{Yb}+\mathrm{Lu}),{ }^{177} \mathrm{Hf},{ }^{178} \mathrm{Hf}$, ${ }^{179} \mathrm{Hf},{ }^{180} \mathrm{Hf}$ and ${ }^{182} \mathrm{~W}$ were collected. Interference of ${ }^{176} \mathrm{Lu}$ on ${ }^{176} \mathrm{Hf}$ was corrected by measuring the intensity of the interference-free ${ }^{175} \mathrm{Lu}$ isotope and using the recommended ${ }^{176} \mathrm{Lu} /{ }^{175} \mathrm{Lu}$ ratio of 0.02655 (Chu et al. 2002). The ${ }^{176} \mathrm{Yb} /{ }^{172} \mathrm{Yb}$ value of 0.5887 and mean $\beta_{\mathrm{Yb}}$ value obtained during Hf analysis on the same spot were applied for the interference correction of ${ }^{176} \mathrm{Yb}$ on ${ }^{176} \mathrm{Hf}$. The sites of spot Hf analysis are adjacent to those of $\mathrm{U}-\mathrm{Pb}$ analysis within the same cathodoluminescence domain of zircons. More detailed instrumental settings and analytical procedures have been described by Xu et al. (2004).
+
+## 4. Results
+
+## 4.a. CL images of zircons
+
+The CL images show that most detrital zircons from the Lüliang khondalites have concentric oscillatory zoning (Fig. 3b-e, h, i), indicating their igneous origin. A minor portion of zircons have discernable cores mantled by an oscillatory zoning rim (Fig. 3a, f, g, j), which are interpreted to be inherited from the source of the precursor magma.
+
+## 4.b. U-Pb and Hf isotopic results
+
+A total of 189 U-Pb and 146 Hf isotope analyses have been conducted for the three samples in this study. The analytical data are presented in Table 1 and Appendix Table A1, the latter available as supplementary material online at http://journals.cambridge.org/geo.
+
+## 4.b.1. Sample LL006
+
+This sample is a meta-quartzose sandstone, collected from 200 m west of Dongnan Village, about 40 km south of Xingxian ( $\mathrm{N} 38^{\circ} 09.033^{\prime}$; E $111^{\circ} 18.517^{\prime}$; Fig. 2). The sample consists of more than $90 \%$ quartz and minor flint and silicic lithic fragments. Most detrital zircons from the sample are euhedral or subeuhedral and have concentric oscillatory zoning (Fig. 3b, c), with $\mathrm{Th} / \mathrm{U}$ ratios ranging from 0.26 to 6.93 , typical of an igneous origin. Some zircon grains have concentric oscillatory zoned cores, which can be recognized by discordant zoning from the major parts of the zircons (Fig. 3a). Zircon U-Pb isotopic results are presented in online Appendix Table A1 at http://journals.cambridge.org/geo and in a concordia diagram (Fig. 4a). Most of the 58 analyses are discordant, with a wide range of ${ }^{207} \mathrm{~Pb}-{ }^{206} \mathrm{~Pb}$ ages between 1.9 and 2.6 Ga . Three age populations are defined at $2.0 \mathrm{Ga}, 2.2 \mathrm{Ga}$ and 2.4 Ga by concordant or nearly concordant data on the concordia diagram. A number of age peaks mainly at 1976, 2100, 2182, 2288, 2400 and 2544 Ma appear on the histogram based on ${ }^{207} \mathrm{~Pb}-{ }^{206} \mathrm{~Pb}$ age data with discordance between $-20 \%$ and $20 \%$ (Fig 4 a, inset). These zircons have $\varepsilon_{\mathrm{Hf}}$ values from -11.1 to +8.2 with a peak at +5 (Fig. 5a), suggesting that while old crust was involved in the magmatism, a juvenile source was very significant. The Hf model ages $\left(T_{\mathrm{C}}^{\mathrm{DM}}\right)$ range from 2.17 to 3.14 Ga with a dominant peak at $2.4-2.6$ Ga on the histogram (Fig. 5d).
+
+
+
+
+---
+
+
+
+Figure 3. Representative cathodoluminescence images for zircons from the khondalites in the Lüliang Complex (see text for details).
+
+## 4.b.2. Sample LL008
+
+This sample is a sillimanite-bearing biotite gneiss collected from west of Hejiawan Village, about 50 km west of Loufan ( $\mathrm{N} 38^{\circ} 09.493^{\prime} ; \mathrm{E} 111^{\circ} 16.619^{\prime}$; Fig. 2). The sample contains $25-40 \%$ plagioclase, $25-30 \%$ quartz, $15-20 \%$ biotite and 2-10 \% garnet and sillimanite. Biotite defines a marked foliation, and sillimanite generally occurs in foliation planes. Most detrital zircons from the sample are euhedral or subeuhedral and have obviously concentric oscillatory zoning (Fig. 3d, e). Their $\mathrm{Th} / \mathrm{U}$ ratios range from 0.1 to 2.1, indicating an igneous origin. Some zircon grains have distinct luminescent cores (Fig. 3f, g) with ${ }^{207} \mathrm{~Pb}-{ }^{206} \mathrm{~Pb}$ ages differing from their oscillatorily zoned mantles (LL008-46 and LL008-47, online Appendix Table A1), suggesting the core is inherited in origin.
+
+Three highly disconcordant analytical results, out of a total of 78 , for inherited cores give ${ }^{207} \mathrm{~Pb}-{ }^{206} \mathrm{~Pb}$ ages up to 3.4 Ga (Fig. 4 b ). The other 75 analyses mostly give concordant or nearly concordant ages between 2000 and 2600 Ma . The ${ }^{207} \mathrm{~Pb}-{ }^{206} \mathrm{~Pb}$ age histogram for nearly concordant data (with discordance between $-20 \%$ and $20 \%$; Fig. $4 b$, inset) has multiple age peaks from 2030 to 2300 Ma. Hf isotope analyses for these zircons yield $\varepsilon_{\mathrm{Hf}}$ values from -16.0 to +9.2 (Fig. 5b), suggesting derivation of their precursor magmas from both old crust and juvenile materials. The $T_{\mathrm{DMC}}$ model ages are quite diverse, ranging from 2.18 to 3.90 Ga and showing a bimodal distribution on the histogram, with peaks at 2.29 and 2.61 Ga (Fig. 5e).
+
+## 4.b.3. Sample LL009
+
+This sample is a metamorphosed pebble-bearing quartzose sandstone, collected from the Yangpo Reservoir in Donghui Village, about 40 km south of Xingxian ( $\mathrm{N} 38^{\circ} 10.453^{\prime} ; \mathrm{E} 111^{\circ} 12.225^{\prime}$; Fig. 2). Granular quartziferous or granitic pebbles are usually $4-10 \mathrm{~mm}$ in size, and more than $90 \%$ of the composition of this sample is quartz. Similar to those in the above two samples, zircons from this sample are mostly subhedral to euhedral, with concentric oscillatory zoning (Fig. $3 h, i$ ), and $\mathrm{Th} / \mathrm{U}$ ratios range from 0.20 to 2.49 , indicating an igneous provenance. Some zircon grains have concentric oscillatory zoned cores, which can be recognized by discordant zoning with the major parts of zircons (Fig. 3j), which are interpreted as inherited or xenocrystic cores.
+
+Forty-seven out of $54 \mathrm{U}-\mathrm{Pb}$ analyses define a good discordant line with an upper intercept age of $2066 \pm 10 \mathrm{Ma}(\mathrm{MSWD}=6.0$, Fig. $4 c$, open ellipse $)$. These zircons yield a range of ${ }^{207} \mathrm{~Pb}-{ }^{206} \mathrm{~Pb}$ ages between 1943 and 2140 Ma. The other seven analytical results (Fig. 4c, solid ellipse) show varied degrees of discordance and give ages from 2180 to 2512 Ma . On the histogram for ${ }^{207} \mathrm{~Pb}-{ }^{206} \mathrm{~Pb}$ age data with discordance between $-20 \%$ and $20 \%$, a dominating sharp peak appears at 2075 Ma (almost the same as the intercept age) (Fig. 4c, inset). The Hf-isotope analyses give $\varepsilon_{\mathrm{Hf}}$ values ranging from +0.24 to +7.69 , mostly at +5 (Fig. 5c), showing that their source was mainly juvenile. The $T_{\mathrm{DM}}^{\mathrm{C}}$ model ages range from 2.15 to 2.63 Ga with a single sharp peak at 2.31 Ga (Fig. 5f).
+
+
+
+
+---
+
+
+
+
+
+
+---
+
+
+
+
+
+
+---
+
+
+
+Figure 4. Concordia diagram of LA-ICPMS U-Pb zircon analytical results. The insets are histograms for the distribution of ${ }^{207} \mathrm{~Pb}-{ }^{206} \mathrm{~Pb}$ ages. (a) Sample LL006; (b) sample LL008; (c) sample LL009.
+
+## 5. Discussion
+
+## 5.a. Age of source rocks and crustal evolution history in the source area
+
+The detrital zircons from the Lüliang khondalites have ${ }^{207} \mathrm{~Pb}{ }^{206} \mathrm{~Pb}$ ages ranging from 1.9 Ga to 2.3 Ga , mostly at 2.0 Ga (Fig. 4), indicating that Palaeoproterozoic rocks were dominant in the source region. Minor portions of concordant or nearly concordant Archaean
+
+
+
+Figure 5. Probability plots of $\varepsilon_{\mathrm{Hf}}$ values and Hf model ages ( $T_{\mathrm{DM}}^{\mathrm{C}}$ ) for (a) sample LL006, (b) sample LL008 and (c) sample LL009. The vertical dotted line indicates CHUR composition.
+
+
+
+Figure 6. Composite plots of $\varepsilon_{\mathrm{Hf}}$ values $v .{ }^{207} \mathrm{~Pb}{ }^{206} \mathrm{~Pb}$ age for all analysed zircons in this study.
+ages are also obtained, and one highly discordant data point gives a suspicious ${ }^{207} \mathrm{~Pb}{ }^{206} \mathrm{~Pb}$ age up to 3.4 Ga . However, these ages are mainly obtained from the xenocrystic or inherited cores.
+
+The composite plot of $\varepsilon_{\mathrm{Hf}}$ values versus ${ }^{207} \mathrm{~Pb}-{ }^{206} \mathrm{~Pb}$ ages for all the analysed zircons (including detrital zircon and their inherited cores) shows that positive $\varepsilon_{\mathrm{Hf}}$ values are dominant for the detrital zircons from the Lüliang khondalites and the maximum $\varepsilon_{\mathrm{Hf}}$ values occur for some c. 2.1-2.2 Ga zircons, which plot on or near to the depleted mantle evolutionary line (Fig. 6). Thereafter, the highest $\varepsilon_{\mathrm{Hf}}$ values decrease
+
+
+
+
+---
+
+with age, corresponding to a ${ }^{176} \mathrm{Lu} /{ }^{177} \mathrm{Hf}$ ratio of 0.007 , almost equal to that of the upper continent ( 0.008 ; Taylor \& McLennan, 1985; Fig. 6). This means that a large volume of magmas from a juvenile source were incorporated into the crust during Palaeoproterozoic times at 2.1 to 2.2 Ga . About $95 \%$ of Hf isotopic data plot above the c. 2.6 Ga crust reference line (Fig. 6), suggesting that there was a 2.6 Ga pre-existing lower crust underlying their source region.
+
+## 5.b. Constraints on the sedimentary provenance of the Lüliang khondalites
+
+Due to their high mechanical and chemical resistance, accessory minerals such as zircons have been used extensively as markers of provenance in sediments and (meta-) sedimentary rocks (Bodet \& Scharer, 2000; Condie et al. 2005; Veevers et al. 2005). The early zircon U-Pb studies of sediment provenance involved conventional $\mathrm{U}-\mathrm{Pb}$ analyses of bulk zircon samples which gave only the average age of a number of grains. This restricted their application to areas where all grains were believed to have a single provenance, or to zircon populations which could be subdivided based on their morphology (e.g. Gaudette, Vitrac-Michard \& Allegre, 1981). Recent studies have adopted spot analyses on zircon to avoid mixing of different generations for a single grain, by use of sensitive high-resolution ion micro-probe (SHRIMP) or LA-ICPMS (e.g. Wan et al. 2006a, b and Xia et al. 2006a, c), thus the population assemblages of more complex sedimentary systems can be assessed. Besides $\mathrm{U}-\mathrm{Pb}$ ages, the $\mathrm{Lu}-\mathrm{Hf}$ isotope systematics of zircons provide additional insights into the geological history of their provenance, since they provide crust formation ages for the igneous source rocks. Recent studies show that combined $\mathrm{U}-\mathrm{Pb}$ ages and Hf isotopic data from detrital zircons can elucidate the source of sediments more precisely (e.g. Veevers et al. 2005).
+Detrital zircons analysed in this study for the Lüliang khondalites have ${ }^{207} \mathrm{~Pb}-{ }^{206} \mathrm{~Pb}$ ages ranging from 1.9 Ga to 2.3 Ga , mostly at 2.0 Ga . This age pattern is much different from that of the Eastern Block and the other sedimentary rocks of the Trans-North China Orogen. The Eastern Block is known to have basements ranging from the early Archaean (up to c. 3.8 Ga: Liu et al. 1992; Song et al. 1996), through middle Archaean (3.4-2.9 Ga: e.g. Jahn et al. 1987; Song et al. 1996) to late Archaean (2.9-2.5 Ga: e.g. Wu et al. 1991; Kröner et al. 1998). Late Archaean rocks are dominant in these areas (see review by Zhao et al. 2005 and references therein), but there are very few Archaean zircons in the Lüliang khondalites. Hf isotopic data also do not favour Archaean rocks as an important component in the source region. Most of the zircons from the Lüliang khondalites have Hf model ages from 2.2 to 2.6 Ga with peaks at $2.3,2.4$ and 2.6 Ga for different samples (Fig. 5d-f). This is in contrast with available Hf isotopic data for detrital zircons from other metasedimentary rocks in the Trans-North China Orogen and Eastern Block, which recorded a Hf model ages peak at 2.62.8 Ga and a minor peak at $2.8-3.0 \mathrm{Ga}$ (Xia et al. 2006b; Luo et al. 2008; see also below).
+In the Western Block, rocks from the Yinshan Terrane are also dominated by 2.5-2.6 Ga high-grade tonalitic-trondhjemitic-granodioritic (TTG) gneiss (Wang, 1993), but the age of the Ordos basement rocks remains unknown due to the coverage of Mesozoic to Cenozoic sedimentary rocks. Previous detrital zircon $\mathrm{U}-\mathrm{Pb}$ age data for the khondalitic rocks along its northern margin indicate a quite similar age pattern with that for the Lüliang khondalites (Xia et al. 2006a, c). Additionally, the Hf isotopic data show that these khondalitic rocks (both in the Khondalite Belt and in the Lüliang Complex) share a common crustal evolution history in their provenance: the crustal material was largely separated from the mantle c. 2.6 Ga ago, and significant addition of juvenile material occurred at about 2.1 Ga in their source region (data in this study and Xia et al. 2006c, 2008). In summary, our detrital zircon $\mathrm{U}-\mathrm{Pb}$ and Hf isotopic data presented in this paper may suggest that the Lüliang khondalites share a common provenance with those khondalitic rocks in the Western Block. Hence our data are consistent with previous considerations that the Lüliang khondalites were deposited on a stable continental margin of the Ordos Terrane (Condie et al. 1992; Zhao et al. 2005; Xia et al. 2006a, c) and were thrust from the west and subsequently incorporated into the Trans-North China Orogen during the collision between the Eastern and Western blocks (Zhao et al. 2008).
+
+In addition, it is worth noting that the age pattern of the Lüliang khondalites contained in the Jiehekou Group is also in strong contrast to that for the Palaeoproterozoic supracrustal rocks in the Lüliang and Yeqishan/Hechashan groups, which show two main age peaks of 2.5 and 2.1 Ga (Liu \& Zhao, 2008). This means that the Lüliang Complex cannot be a sedimentary succession and that the subdivision into 'groups' is inappropriate. These supracrustal rocks in the Lüliang Complex are different in metamorphic grade, sedimentary environment and detrital source. They were juxtaposed together by subsequent tectonic disturbance.
+
+## 5.c. U-Pb and Hf model age frameworks of the khondalites
+
+ source and its comparison with that of the Eastern Block and the Trans-North China OrogenA total of 636 detrital zircon ${ }^{207} \mathrm{~Pb}{ }^{206} \mathrm{~Pb}$ ages for the khondalites from present and previous studies (Wan et al. 2006a; Xia et al. 2006a, c) are plotted in Figure 7a. It displays a quasi-unimodal distribution with a peak at 1.9-2.0 Ga. We consider that this age pattern reflects, to some extent, a very important tectonothermal event which occurred during the period 1.9-2.0 Ga in their source region. This age pattern is in strong contrast to that of other Palaeoproterozoic
+
+
+
+
+---
+
+
+
+Figure 7. Histograms for the distribution of detrital zircon ${ }^{207} \mathrm{~Pb}$ ${ }^{206} \mathrm{~Pb}$ ages from Palaeoproterozoic meta-sedimentary rocks in (a) Western Block (data sources: Wan et al. 2006a; Xia et al. 2006a, c and this study); (b) Trans-North China Orogen (data sources: Guan et al. 2002; Zhao et al. 2002b; Wilde et al. 2004b; Wan et al. 2006a, b and Xia et al. 2006b); (c) Eastern Block of the North China Craton (data sources: Luo et al. 2004, 2008 and Wan et al. 2006a).
+metasedimentary rocks of the Trans-North China Orogen (Fig. 7b) and Eastern Block (Fig. 7c), which is characterized by two zircon age peaks at 2.1 and 2.5 Ga , corresponding to their voluminous Archaean tonalitic-trondhjemitic-granodioritic gneisses and Palaeoproterozoic granite ( $n=289$ and 530, respectively; data sources: Guan et al. 2002; Zhao et al. 2002b; Luo et al. 2004, 2008; Wilde et al. 2004b; Wan et al. 2006a, b; Xia et al. 2006b). The khondalite source region also shows a quasi-unimodal distribution in the detrital zircon Hf model ages ( $\left.{ }^{\text {TDM }}\right)$, peaking at
+
+
+
+Figure 8. Histograms for the distribution of detrital zircon Hf model ages ( ${ }^{\text {TDM }}$ ) from Palaeoproterozoic meta-sedimentary rocks in: (a) Western Block; (b) Trans-North China Orogen; (c) Eastern Block of the North China Craton. Data sources: Luo et al. (2008); Xia et al. $(2006 b, c)$ and this study.
+c. 2.3 Ga . We interpret this peak age as the mean crustal residence age of the crustal materials extracted from the depleted mantle in the khondalite source region. This is also in strong contrast with that for other rocks of the Trans-North China Orogen and the Eastern Block, that is, the former displays a unimodal distribution in detrital zircon Hf model ages ( ${ }^{\text {TDM }}$ ) with a peak at c. 2.6 Ga (Fig. 8b) and the latter shows a major peak at c. 2.6-2.8 Ga (Fig. 8c).
+
+## 5.d. Tectonic implications
+
+Recent studies have led to a general consensus that the North China Craton formed by the collision between the Eastern and Western blocks along the Trans-North
+
+
+
+
+---
+
+China Orogen. However, uncertainties remain. The first issue regards timing of the amalgamation of the two blocks, with some researchers arguing that the final collision between the Western and Eastern blocks was at c. 2.5 Ga (Wang et al. 1996; Li et al. 2000; Li \& Kusky, 2007; Zhai, Bian \& Zhao, 2000; Kusky \& Li, 2003; Polat et al. 2005, 2006), whereas others believe the collision occurred at c. 1.85 Ga (Wilde et al. 1997, 1998, 2004a, b, 2005; Wilde, Zhao \& Sun, 2002; Guo et al. 2005; Guan et al. 2002; Zhao et al. 1999a, 2000a, b, 2002b, 2005, 2008; Kröner et al. 2005a, b, 2006; Liu et al. 2006). The latter interpretation has received wide support from recently published geochronological data for metamorphic zircons from various lithologies of the Trans-North China Orogen, including high-pressure granulites and amphibolites, charnockites and reworked gneisses (Wilde et al. 1998, 2004b; Guo, Zhai \& Xu, 2001; Guo et al. 2001, 2005; Guo \& Zhai, 2001; Guan et al. 2002; Zhao et al. 2002b; Kröner et al. 2005a, b, 2006; Wan et al. 2006a, b). The Lülite) khondalites experienced medium- to highgrade metamorphism with a clockwise $P-T-t$ path (Zhao et al. 2000a), indicating their deposition before the continental collision. The Palaeoproterozoic detrital zircon ages presented in this study do not support the c. 2.5 Ga collision model, but may provide further evidence for the c. 1.85 Ga collision.
+
+The second debated issue is the direction of the subduction. Some researchers suggested a westward subduction along the east margin of the Western Block (Kusky \& Li, 2003; Polat et al. 2005, 2006; Faure et al. 2007; Trap et al. 2007), whereas other researchers proposed that the subduction was eastward along the western margin of the Eastern Block(Zhao et al. 1998, 1999b, 2000b, 2005, Kröner et al. 2005a, b, 2006; Liu et al. 2006; Zhang et al. 2007). In both models, the Trans-North China Orogen represents a late Archaean to Palaeoproterozoic magmatic arc, which is characterized by dominant Neoarchaean to Palaeoproterozoic arc-related juvenile crust with minor reworked basement rocks, fragments of ancient oceanic crust, mélanges, high-pressure granulites, retrograded eclogites, crustal-scale ductile shear zones, and linear fold belts with sheath folds (Li et al. 1990; Li, Hart \& Wu, 1990; Zhai, Guo \& Yan, 1992; Wang et al. 1996, 2003, 2004, 2007; Wu \& Zhong, 1998; Zhao, Cawood \& Lu, 1999, Zhao et al. 2000b; Guo, O’Brien \& Zhai, 2002; Zhang et al. 2006b). As mentioned above, detrital zircons from other rocks of the Trans-North China Orogen, such as those from the Wanzi supracrustal rocks of the Fuping Complex (Guan et al. 2002; Zhao et al. 2002b; Xia et al. 2006b), the Shangtaihua Group in the Taihua Complex (Wan et al. 2006a, b) and the Hutuo Group in the Wutai Complex (Wilde et al. 2004b; Zhang et al. 2006a), share common characteristics. Their $\mathrm{U}-\mathrm{Pb}$ zircon ages show bimodal distribution at 2.1 and 2.5 Ga and their zircon Hf model ages have a dominant peak at $2.6-2.8$ Ga. The coevally deposited meta-sedimentary rocks in the interior areas of the Eastern Block, such as the Liaohe Group in the Liaoning Province (Luo et al. 2004, 2008; Wan et al. 2006a) and the Jingshan and Fenzishan groups in the Shandong Province (Wan et al. 2006a), have similar $\mathrm{U}-\mathrm{Pb}$ and Hf model ages. These characters are in contrast with those for the khondalites source region. If the hypothesis that the khondalites were derived from the Ordos Terrane stands, our results preclude the possibility that the Trans-North China Orogen represents an active continental margin system on the eastern margin of the Western Block, and hence the eastward subduction model is favoured. In this model, the Lülüang khondalites were deposited on the eastern margin of the Western Block in a passive continental margin environment and were thrust eastward later during collision with the Eastern Block. Other metasedimentary rocks in the TransNorth China Orogen, such as the Wanzi Supracrustal rocks, were deposited on the western margin of the Eastern Block in a back-arc basin (Fig. 9). If the hypothesis does not stand, it requires an unknown exotic source area between the Western Block and the TransNorth China Orogen. This scenario does not support the westward subduction model either. Other evidence for the affinity of the Trans-North China Orogen to the Eastern Block includes the fact that large numbers of 2.7-2.8 Ga inherited or xenocrystic zircon ages are found in c. 2.5 Ga augen gneiss, granitic gneiss and tonalitic-trondhjemitic-granodioritic gneisses located in the Trans-North China Orogen (Guan et al. 2002; Zhao et al. 2002b). These data are similar to those from rocks in the Eastern Block, but rare in the khondalite rocks from both the Lulüang Complex and the Khondalite Belt. Nd isotope data for the c. 2.1 Ga Nanying granitic gneiss in the Trans-North China Orogen show that it represents reworked 2.7-2.8 Ga old crustal material, and also suggest that the Trans-North China Orogen has an affinity to the Eastern Block (H. Guan, unpub. Ph.D. thesis, Univ. Hong Kong, 2000; Liu et al. 2002) because Palaeoproterozoic magmatic activities in the Western Block are characterized by juvenile crustal addition. This scenario is also consistent with the geochemical characters of the khondalites and other supracrustal rocks in the TransNorth China Orogen. The former have chemical index of alteration (CIA) values comparable with that of postArchaean average Australian shale (PAAS), while the chemical index of alteration (CIA) values for the Wanzi Supracrustal rocks are not as high as shale, indicating a significant amount of immature sediments, possibly volcanic-sedimentary rocks (H. Guan, unpub. Ph.D. thesis, Univ. Hong Kong, 2000).
+
+We know that the early crust of the Earth formed by vertical melt segregation, and then lateral accretion of juvenile material along cratonic margins became more important (through accretion of fragments of ocean floor, volcanic arc sequences, and intrusion of tonalitictrondhjemitic-granodioritic-type granite, etc.). In this regard, the Palaeoproterozoic juvenile crustal growth in the khondalites source area may suggest an active continental margin along the Western Block.
+
+Email alerts
+http://journals.cambridge.org/alerts
+
+
+
+
+---
+
+
+
+Figure 9. Schematic sections showing proposed tectonic settings for the Lüliang khondalite and the Wanzi supracrustal assemblage.
+
+However, geochemical characters of the khondalites have well established its cratonic or passive margin type deposition environment (Condie et al. 1992; Li, Qian \& Liu, 2000; Wan et al. 2000a, b). Recent studies on the Central Asian Orogenic Belt (CAOB) have shown that intraplate magmatism involving plume melting, basalt underplating and differentiation or remelting of a basaltic source is an important process of continental growth even in the Phanerozoic (e.g. Jahn, Wu \& Hong, 2000). Hence we propose that the protoliths of the khondalites were generated by intraplate magmatism.
+
+## 6. Conclusions
+
+$\mathrm{U}-\mathrm{Pb}$ and Hf isotopic data for detrital zircons show that the Lüliang khondalites mainly came from a 1.9-2.1 Ga Palaeoproterozoic source area, similar to that of the khondalite rocks within the Western Block. The Hf isotope data suggest significant crustal growth in Palaeoproterozoic times and the involvement of c. 2.6 Ga lower crust in the Palaeoproterozoic magmatic activity. These and previously published data for the khondalites are in contrast with other coevally deposited and locally derived supracrustal rocks in the Trans-North China Orogen, precluding the possibility that the Trans-North China Orogen developed on the eastern margin of the Western Block. Instead, coeval detrital zircons in the Trans-North China Orogen and the Eastern Block share many common characteristics, suggesting that they came from a source area with both Palaeoproterozoic and Archaean rocks. These results demonstrate that the Trans-North China Orogen represents a continental margin developed at the western margin of the Eastern Block, thus supporting the eastward subduction model for the Palaeoproterozoic tectonic evolution of the North China Craton.
+
+Acknowledgements. This study was supported by research grants from the Chinese National 973 Program (2007CB411307), the Small Project Funding from the University of Hong Kong (200607176156), Chinese NSFC Grant (40730315), Hong Kong RGC (7048/03P, $7055 / 05 \mathrm{P}$, 7066/07P), the Germany/Hong Kong Joint Research Scheme sponsored by Hong Kong RGC and German Academic Exchange Service of Germany (G_HK030/07), and the CAS/SAFEA International Partnership Program for Creative Research Teams. Simon A. Wilde read an earlier version and provided constructive comments. We thank Yueheng Yang and Yanbing Zhang for laboratory assistance. A postgradate studentship and a post-doctoral fellowship from HKU to X. P. Xia are greatly acknowledged.
+
+## References
+
+Bai, J. 1996. Archaean - a period of the amalgamation of continental nuclei. In The Precambrian Crustal Evolution of China (eds X. Y. Ma \& J. Bai), pp. 1216. Beijing: Geological Publishing House (in Chinese).
+
+Bai, J., Wang, R. Z. \& Guo, J. J. 1992. The major geologic events of early Precambrian and their dating in Wutaishan region. Beijing: Geological Publishing House, 55 pp . (in Chinese with English abstract).
+Bodet, F. \& Scharer, U. 2000. Evolution of the SE-Asian continent from $\mathrm{U}-\mathrm{Pb}$ and Hf isotopes in single grains of zircon and baddeleyite from large rivers. Geochimica et Cosmochimica Acta 64, 2067-91.
+Chu, N. C., Taylor, R. N., Chavagnac, V., Nesbitt, R. W., Boella, R. M., Milton, J. A., German, C. R., Bayon, G. \& Burton, K. 2002. Hf isotope ratio analysis using multi-collector inductively coupled plasma mass spectrometry: an evaluation of isobaric interference corrections. Journal of Analytical Atomic Spectrometry 17, 1567-74.
+
+
+
+
+---
+
+Condie, K. C., Beyer, E., Belousova, E., Griffin, W. L. \& O'Reilly, S. Y. 2005. U-Pb isotopic ages and Hf isotopic composition of single zircons:, The search for juvenile Precambrian continental crust. Precambrian Research 139, 42-100.
+Condye, K. C., Boryta, M. D., Liu, J. Z. \& Qian, X. L. 1992. The Origin of Khondalites - Geochemical Evidence from the Archaean to Early Proterozoic Granulite Belt in the North China Craton. Precambrian Research 59, 207-23.
+FarRE, M., Trap, P., Lin, W., Monié, P. \& Bruguiér, O. 2007. The formation of the North China Craton by two Palaeoproterozoic continental collisions in LuliangHengshan-Wutaishan-Fuping massifs. Episodes 30, 112 .
+GaudetTE, H. E., Vitrac-Michard, A. \& Allegre, C. J. 1981. North American Precambrian history recorded in a single sample and high-resolution $\mathrm{U}-\mathrm{Pb}$ systematics of the Potsdam sandstone detrital zircons, New York State. Earth and Planetary Science Letters 54, 24860.
+
+GenG, Y. S., Wan, Y. S., Shen, Q. H., Li, H. M. \& Zhang, R. X. 2000. Chronological framework of the Early Precambrian important events in the Lüliang Area, Shanxi Province. Acta Geologica Sinica 74, 216-23 (in Chinese with English abstract).
+Guan, H., Sun, M., Wilde, S. A., Zhou, X. H. \& Zhai, M. G. 2002. SHRIMP U-Pb zircon geochronology of the Fuping Complex: implications for formation and assembly of the North China Craton. Precambrian Research 113, 1-18.
+Guo, J. H., O’Brien, P. J. \& Zhai, M. 2002. High-pressure granulites in the Sanggan area, North China craton: metamorphic evolution, $P-T$ paths and geotectonic significance. Journal of Metamorphic Geology 20, 74156.
+
+GuO, J. H., SUN, M., CHEN, F. K. \& ZHAi, M. G. 2005. Sm-Nd and SHRIMP U-Pb zircon geochronology of high-pressure granulites in the Sanggan area, North China Craton: timing of Palaeoproterozoic continental collision. Journal of Asian Earth Sciences 24, 62942.
+
+GuO, J. H., Wang, S. S., Sang, H. Q. \& zhAI, M. G. 2001. $\mathrm{Ar}-40-\mathrm{Ar}-39$ age spectra of garnet porphyroblast: Implications for metamorphic age of high-pressure granulite in the North China craton. Acta Petrologica Sinica 17(3), 436-42 (in Chinese with English abstract).
+Guo, J. H. \& Zhai, M. G. 2001. Sm-Nd age dating of highpressure granulites and amphibolite from Sanggan area, North China craton. Chinese Science Bulletin 46, 10610.
+
+GuO, J. H., Zhai, M. G. \& Xu, R. H. 2001. Timing of the granulite facies metamorphism in the Sanggan area, North China craton: zircon $\mathrm{U}-\mathrm{Pb}$ geochronology. Science in China Series D: Earth Science 44, 1010-18.
+Jahn, B. M., AuVRay, B., Cornichet, J., Bai, Y. D., shen, Q. H. \& Liu, D. Y. 1987. 3.5 Ga old amphibolites from eastern Hebei Province, China: field occurrence, petrography, Sm-Nd isochron age and REE geochemistry. Precambrian Research 34, 311-46.
+JAHn, B. M., Wu, F. Y. \& Hong, D. W. 2000. Important crustal growth in the Phanerozoic: isotopic evidence of granitoids from east-central Asia. Proceedings of the Indian Academy of Science (Earth and Planetary Sciences) 109, 5-20.
+Kröner, A., Cui, W. Y., Wang, C. Q. \& Nemchin, A. A. 1998. Single zircon ages from high-grade rocks of the Jianping Complex, Liaoning Province, NE China. Journal of Asian Earth Sciences 16, 519-32.
+Kröner, A., Wilde, S. A., Li, J. H. \& Wang, K. Y. 2005a. Age and evolution of a late Archaean to Palaeoproterozoic upper to lower crustal section in the Wutaishan/Hengshan/Fuping terrain of northern China. Journal of Asian Earth Sciences 24, 577-95.
+KrÖner, A., Wilde, S. A., O’Brien, P. J., Li, J. H., Passchier, C. W., Walte, N. P. \& Liu, D. Y. 2005b. Field relationships, geochemistry, zircon ages and evolution of a late Archaean to Palaeoproterozoic lower crustal section in the Hengshan Terrain of northern China. Acta Geologica Sinica (English Edition) 79, 605-32.
+KrÖNEr, A., Wilde, S. A., Zhao, G. C., O'BRIEN, P. J., Sun, M., Liu, D. Y., Wan, Y. S., Liu, S. W. \& Guo, J. H. 2006. Zircon geochronology and metamorphic evolution of mafic dykes in the Hengshan Complex of northern China: Evidence for late Palaeoproterozoic extension and subsequent high-pressure metamorphism in the North China Craton. Precambrian Research 146, 45-67.
+Kusky, T. M. \& Li, J. H. 2003. Palaeoproterozoic tectonic evolution of the North China Craton. Journal of Asian Earth Sciences 22, 383-97.
+Kusky, T., Li, J. \& Santosh, M. 2007. The Palaeoproterozoic North Hebei Orogen: North China craton's collisional suture with the Columbia supercontinent. Gondwana Research 12, 4-28.
+Li, J. H., Kröner, A., Qian, X. L. \& O’Brien, P. 2000. Tectonic evolution of an early Precambrian highpressure granulite belt in the North China craton. Acta Geologica Sinica (English Edition) 74, 246-58.
+LI, J. H. \& KusKy, T. 2007. A Late Archaean foreland fold and thrust belt in the North China Craton: Implications for early collisional tectonics. Gondwana Research 12, $47-66$.
+Li, J. H., Qian, X. L. \& Liu, S. W. 2000. Geochemistry of khondalites from the central portion of the North China Craton (NCC), implications for the continental cratonization in the NeoArchaean. Science in China Series D: Earth Science 43, 253-65.
+Li, J. H., Wang, K. Y., Wang, C. Q., Liu, X. H. \& Zhao, Z. Y. 1990. Early Proterozoic collision orogenic belt in Wutaishan area. Scientia Geologica Sinica 64, 1-11 (in Chinese with English abstract).
+Li, S. G., Hart, S. R. \& WU, T. S. 1990. Rb-Sr and Sm-Nd Isotopic Dating of an Early Precambrian Spilite-Keratophyre Sequence in the Wutaishan Area, North China - Preliminary Evidence for Nd-Isotopic Homogenization in the Mafic and Felsic Lavas during Low-Grade Metamorphism. Precambrian Research 47, 
+
+
+---
+
+monazite geochronology of the Lüliang and Wutai Complexes: constraints on the tectonothermal evolution of the Trans-North China Orogen. Precambrian Research 148, $205-25$.
+Lu, X. P., Wu, F.Y., GuO, J. H., WildE, S. A., YANG, J. H., Liu, X. M. \& Zhang, X. O. 2006. Zircon U-Pb geochronological constraints on the Palaeoproterozoic crustal evolution of the Eastern Block in the North China Craton. Precambrian Research 146, 138-64.
+Luo, Y., Sun, M., Zhao, G. C., Ayers, J. C., Li, S. Z., Xia, X. P. \& Zhang, J. 2008. A comparison of $\mathrm{U}-\mathrm{Pb}$ and Hf isotopic compositions of detrital zircons from the North and South Liaohe Group: Constraints on the evolution of the Jiao-Liao-Ji Belt, North China Craton. Precambrian Research 163, 279-306.
+Luo, Y., Sun, M., Zhao, G. C., Li, S. Z., Xu, P., Ye, K. \& Xia, X. P. 2004. LA-ICP-MS U-Pb zircon ages of the Liaohe Group in the Eastern Block of the North China Craton: constraints on the evolution of the Jiao-Liao-Ji Belt. Precambrian Research 134, 349-71.
+Polat, A., Herzberg, C., Muenker, C., Rodgers, R., Kusky, T., Li, J. H., Fryer, B. \& Delaney, J. 2006. Geochemical and petrological evidence for a suprasubduction zone origin of NeoArchaean (c. 2.5 Ga) peridotites, central orogenic belt, North China craton. Geological Society of America Bulletin 118, 77184.
+
+Polat, A., Kusky, T., Li, J. H., Fryer, B., Kerrich, R. \& Patrick, K. 2005. Geochemistry of NeoArchaean (ca. 2.55-2.50 Ga) volcanic and ophiolitic rocks in the Wutaishan greenstone belt, central orogenic belt, North China craton: Implications for geodynamic setting and continental growth. Geological Society of American Bulletin 117, 1387-99.
+Qian, X. L. \& Li, J. H. 1999. The acknowledgement of NeoArchaean unconformity event in North China Craton and its tectonic significance. Science in China Series D-Earth Science 29, 1-8 (in Chinese).
+RogERS, J. J. W. \& SANTOSH, M. 2002. Configuration of Columbia, a Mesoproterozoic supercontinent. Gondwana Research 5, 5-22.
+Santosh, M., Wilde, S. A. \& Li, J. H. 2007. Timing of Palaeoproterozoic ultrahigh-temperature metamorphism in the North China Craton: evidence from SHRIMP $\mathrm{U}-\mathrm{Pb}$ zircon geochronology. Precambrian Research 159, 178-96.
+Song, B., Nutman, A. P., Liu, D. Y. \& Wu, J. S. 1996. 3800 to 2500 Ma crustal evolution in the Anshan area of Liaoning Province, northeastern China. Precambrian Research 78, 79-94.
+Taylor, S. R. \& McLennan, S. M. 1985. The Continental crust: its composition and evolution: An examination of the geochemical record preserved in sedimentary rocks. Oxford: Blackwell Scientific Publications, 312 pp .
+Trap, P., Faure, M., Lin, W. \& Monié, P. 2007. Late Palaeoproterozoic (1900-1800 Ma) nappe stacking and polyphase deformation in the Hengshan-Wutaishan area: Implications for the understanding of the TransNorth-China Belt, North China Craton. Precambrian Research 156, 85-106.
+VeeverS, J. J., SaeEd, A., BelousoVA, E. A. \& Griffin, W. L. 2005. U-Pb ages and source composition by $\mathrm{Hf}-$ isotope and trace-element analysis of detrital zircons in Permian sandstone and modern sand from southwestern Australia and a review of the paleogeographical and denudational history of the Yilgarn Craton. Earth Science Review 68, 245-79.
+Wan, Y. S., Geng, Y. S., Liu, F. L., Shen, Q. H., Liu, D. Y. \& Song, B. 2000a. Age and composition of the khondalite series of the North China Craton and its adjacent area. Progress in Precambrian Research 23, 221-37 (in Chinese).
+Wan, Y. S., Geng, Y. S., Shen, Q. H. \& Zhang, R. X. 2000b. Khondalite series - geochronology and geochemistry of the Jiehekou Group in Lüliang area. Acta Petrologica Sinica 16, 49-58 (in Chinese).
+Wan, Y. S., Song, B., Liu, D. Y., Wilde, S. A., Wu, J. S., Shi, Y. R., Yin, X. Y. \& Zhou, H. Y. 2006a. SHRIMP $\mathrm{U}-\mathrm{Pb}$ zircon geochronology of Palaeoproterozoic metasedimentary rocks in the North China Craton: Evidence for a major Late Palaeoproterozoic tectonothermal event. Precambrian Research 149, 249-71.
+Wan, Y. S., Wilde, S. A., Liu, D. Y., Song, B., Yang, C. X. \& Yin, X. Y. 2006b. Further evidence for $\sim 1.85$ Ga metamorphism in the Central Zone of the North China Craton: SHRIMP U-Pb dating of zircon from metamorphic rocks in the Lushan area, Henan Province. Gondwana Research 9, 189-97.
+Wang, K. Y., Li, J. L., Hao, J., Li, J. H. \& Zhou, S. P. 1996. The Wutaishan orogenic belt within the Shanxi Province, northern China: A record of late Archaean collision tectonics. Precambrian Research 78, 95103.
+
+Wang, R. Z. 1993. Geochronology of the Sheeteng Group in the centre Inner Mongolia and its comparison with the Wutai Group in Shanxi Province. Shanxi Geology 8, 275-81 (in Chinese with English abstract).
+Wang, Y. J., Fan, W. M., Zhang, Y. \& Guo, F. 2003. Structural evolution and ${ }^{40} \mathrm{Ar} /{ }^{39} \mathrm{Ar}$ dating of the Zanhuang metamorphic domain in the North China Craton: constraints on Palaeoproterozoic tectonothermal overprinting. Precambrian Research 122, 159-82.
+Wang, Y. J., Fan, W. M., Zhang, Y. H., Guo, F., Zhang, H. \& Peng, P. 2004. Geochemical Ar-40/Ar39 geochronological and $\mathrm{Sr}-\mathrm{Nd}$ isotopic constraints on the origin of Palaeoproterozoic mafic dikes from the southern Taihang Mountains and implications for the ca. 1800 Ma event of the North China Craton. Precambrian Research 135, 55-77.
+Wang, Y. J., Zhao, G. C., Fan, W. M., Peng, T. P., Sun, L. H. \& Xia, X. P. 2007. LA-ICP-MS U-Pb zircon geochronology and geochemistry of Palaeoproterozoic mafic dikes from western Shandong Province: Implications for backarc basin magmatism in the Eastern North China Craton. Precambrian Research 154, 107-24.
+WildE,
+
+
+---
+
+WILDE, S. A., CAWOOD, P. A., WANG, K. Y. \& NEMCHIN, A. 2005. Granitoid evolution in the late Archaean Wutai Complex, North China Craton. Journal of Asian Earth Sciences 24, 597-613.
+WILDE, S. A., ZHAO, G. C. \& SUN, M. 2002. Development of the North China Craton during the late Archaean and its final amalgamation at 1.8 Ga ; some speculations on its position within a global Palaeoproterozoic Supercontinent. Gondwana Research 5, 85-94.
+WILDE, S. A., ZHAO, G. C., WANG, K. Y. \& SUN, M. 2004b. First SHRIMP zircon $\mathrm{U}-\mathrm{Pb}$ ages for the Hutuo Group in Wutaishan: further evidence for amalgamation of North China Craton. Chinese Science Bulletin 49, 83-90.
+WU, C. H. \& ZHONG, C. T. 1998. The Paleoprotozoic SW-NE collision model for the central North China Craton. Progress in Precambrian Research 21, 28-50 (in Chinese).
+WU, J. S., GENG, Y. S., SHEN, Q. H., LIU, D. Y., LI, Z. L. \& ZHAO, D. M. 1991. The early Precambrian significant geological events in the North China Craton. Beijing: Geological Publishing House, pp. 1-115 (in Chinese with English abstract).
+XIA, X. P., SUN, M., ZHAO, G. C., LI, H. M. \& ZHOU, M. F. 2004. Spot zircon $\mathrm{U}-\mathrm{Pb}$ isotope analysis by ICPMS coupled with a frequency quintupled ( 213 nm ) Nd-YAG laser system. Geochemical Journal 38, 191200.
+
+XIA, X. P., SUN, M., ZHAO, G. C. \& LUO, Y. 2006a. LA-ICP-MS U-Pb geochronology of detrital zircons from the Jining Complex, North China Craton and its tectonic significance. Precambrian Research 144, 199212.
+
+XIA, X. P., SUN, M., ZHAO, G. C., WU, F. Y., XU, P., ZHANG, J., HE, Y. H. \& ZHANG, J. H. 2006b. U-Pb and Hf isotope study of detrital zircons from the Wanzi Supercrustals: constraints on the tectonic setting and evolution of the Fuping Complex, Trans-North China Orogen. Acta Geologica Sinica 80, 844-63.
+XIA, X. P., SUN, M., ZHAO, G. C., WU, F. Y., XU, P., ZHANG, J. H. \& LUO, Y. 2006c. $\mathrm{U}-\mathrm{Pb}$ and Hf isotopic study of detrital zircons from the Wulashan khondalites: Constraints on the evolution of the Ordos Terrane, Western Block of the North China Craton. Earth and Planetary Science Letters 241, 581-93.
+XIA, X. P., SUN, M., ZHAO, G. C., WU, F. Y., XU, P., ZHANG, J. \& HE, Y. H. 2008. Palaeoproterozoic crustal growth in the Western Block of the North China Craton: evidence from detrital zircon Hf and whole rock Sr Nd isotopic compositions of the khondalites from the Jining Complex. American Journal of Science 308, 30427.
+
+Xu, P., wu, F. Y., xIE, L. W. \& Yang, Y. H. 2004. Hf isotopic compositions of the standard zircons for $\mathrm{U}-\mathrm{Pb}$ dating. Chinese Science Bulletin 49, 1642-8 (in Chinese).
+YU, J. H., WANG, D. Z. \& WANG, X. Y. 1997. Ages of the Lüliang Group and its main metamorphism in the Lüliang Mountains, Shanxi: evidence from singlegrain zircon U-Pb ages. Geology Review 43, 403-8 (in Chinese).
+ZHAI, M. G., BIAN, A. G. \& ZHAO, T. P. 2000. The amalgamation of the supercontinent of North China Craton at the end of Neo-Archaean and its breakup during late Palaeoproterozoic and Mesoproterozoic. Science in China Series D 43, 219-32.
+ZHAIP, M. G., GUO, J. H. \& YAN, Y. H. 1992. Discovery and preliminary study of the Archaean high-pressure granulites in North China. Science in China Series D: Earth Science 12, $1325-30$.
+ZHAI, M. G. \& LIU, W. J. 2003. Palaeoproterozoic tectonic history of the North China craton: a review. Precambrian Research 122, 183-99.
+Zhang, J., ZHAO, G. C., Li, S. Z., SUN, M., LIU, S. W., WILDE, S. A., KrÖNER, A. \& YIN, C. Q. 2007. Deformation history of the Hengshan Complex: implications for the tectonic evolution of the Trans-North China Orogen. Journal of Structure Geology 29, 933-49.
+ZHANG, J., ZHAO, G. C., SUN, M., LIU, S. W., XIA, X. P. \& HE, Y. H. 2006a. $\mathrm{U}-\mathrm{Pb}$ Zircon dating of the granitic conglomerates of the Hutuo Group: affinities to the Wutai granitoids and significance to the tectonic evolution of the Trans-North China Orogen. Acta Geologica Sinica (English edition) 80, 886-98.
+ZHANG, J., ZHAO, G. C., SUN, M., WILDE, S. A., LI, S. Z. \& LIU, S. W. 2006b. High-pressure mafic granulites in the Trans-North China Orogen: Tectonic significance and age. Gondwana Research 9, 349-62.
+ZHAO, G. C., CAWOOD, P. \& LU, L. Z. 1999. Petrology and $\mathrm{P}-\mathrm{T}$ history of the Wutai amphibolites: implications for tectonic evolution of the Wutai Complex, China. Precambrian Research 93, 181-99.
+ZHAO, G. C., CAWOOD, P. A., WILDE, S. A. \& LU, L. Z. 2001a. High-pressure granulites (retrograded eclogites) from the Hengshan Complex, North China Craton: Petrology and tectonic implications. Journal of Petrology 42, $1141-70$.
+ZHAO, G. C., CAWOOD, P. A., WILDE, S. A. \& Sun, M. 2000a. Metamorphism of basement rocks in the Central Zone of the North China Craton: implications for Palaeoproterozoic tectonic evolution. Precambrian Research 103, 55-88.
+ZHAO, G. C., CAWOOD, P. A., WILDE, S. A. \& SUN, M. 2002a. Review of global $2.1-1.8 \mathrm{Ga}$ orogens: implications for a pre-Rodinia supercontinent. Earth-Science Review 59, $125-62$.
+ZHAO, G. C., SUN, M., WILDE, S. A. \& LI, S. Z. 2005. Late Archaean to Palaeoproterozoic evolution of the North China Craton: key issues revisited. Precambrian Research 136, 177-202.
+ZHA
+
+
+---
+
+Craton: lithological, geochemical, structural and $\mathrm{P}-\mathrm{T}$ path constraints and tectonic evolution. Precambrian Research 107, 45-73.
+ZHAO, G. C., WILDE, S. A., CAWOOD, P. A. \& SUN, M. 2002b. SHRIMP U-Pb zircon ages of the Fuping Complex: Implications for late Archaean to Palaeoproterozoic accretion and assembly of the North China Craton. American Journal of Science 302, 191226.
+
+ZHAO, G. C., WILDE, S. A., SUN, M., LI, S. Z., LI, X. P. \& ZHANG, J. 2008. SHRIMP U-Pb zircon ages of granitoid rocks in the Lüliang Complex: Implications for the accretion and evolution of the Trans-North China Orogen. Precambrian Research 160, 213-26.
+
+
+
+
+---
+

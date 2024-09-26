@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" data-lt-installed="true"><head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    const text ="\\title{\n"+
+"Finance \\& Insurance\n"+
+"}\n"+
+"Over the past six months, \\(96 \\%\\) of finance and insurance companies provided or financed training programs for their employees. Over that six-month period, they provided an average of 25 hours of training per employee.\n"+
+"\\begin{tabular}{|l|c|c|}\n"+
+"\\hline \\multicolumn{1}{|c|}{ Company Size } & \\# of Companies & Percent \\\\\n"+
+"\\hline \\(5-10\\) FTE & 4 & \\(15 \\%\\) \\\\\n"+
+"\\hline \\(11-25\\) FTE & 7 & \\(27 \\%\\) \\\\\n"+
+"\\hline \\(26-50\\) FTE & 5 & \\(19 \\%\\) \\\\\n"+
+"\\hline \\(51-100\\) FTE & 3 & \\(12 \\%\\) \\\\\n"+
+"\\hline \\(101-250\\) FTE & 4 & \\(15 \\%\\) \\\\\n"+
+"\\hline \\(251-500\\) FTE & 0 & \\(0 \\%\\) \\\\\n"+
+"\\hline More than 500 FTE & 0 & \\(0 \\%\\) \\\\\n"+
+"\\hline No Response & 3 & \\(12 \\%\\) \\\\\n"+
+"\\hline Total & 26 & \\(100 \\%\\) \\\\\n"+
+"\\hline\n"+
+"\\end{tabular}\n"+
+"\\begin{tabular}{|l|c|c|c|}\n"+
+"\\hline & Yes, Provided & Not Provided & Needed \\\\\n"+
+"\\hline General Skills & & & \\\\\n"+
+"\\hline Basic Reading, Writing, \\& Arithmetic & \\(0 \\%\\) & \\(100 \\%\\) & \\(4 \\%\\) \\\\\n"+
+"\\hline Orientation Training & 81 & 19 & 0 \\\\\n"+
+"\\hline English as a Second Language & 0 & 100 & 8 \\\\\n"+
+"\\hline Occupational Safety Training & 8 & 92 & 4 \\\\\n"+
+"\\hline Employee Health and Wellness & & & \\\\\n"+
+"\\hline Stress Management & \\(23 \\%\\) & \\(69 \\%\\) & \\(19 \\%\\) \\\\\n"+
+"\\hline Substance Abuse Services & 15 & 85 & 4 \\\\\n"+
+"\\hline Awareness Training & & & \\\\\n"+
+"\\hline Affirmative Action & \\(23 \\%\\) & \\(77 \\%\\) & \\(12 \\%\\) \\\\\n"+
+"\\hline Workplace Diversity & 23 & 77 & 23 \\\\\n"+
+"\\hline Sexual Harassment & 35 & 65 & 15 \\\\\n"+
+"\\hline Disability Management & 15 & 85 & 8 \\\\\n"+
+"\\hline Employee Development/Quality Training & & & \\\\\n"+
+"\\hline Communication Skills & \\(50 \\%\\) & \\(50 \\%\\) & \\(19 \\%\\) \\\\\n"+
+"\\hline Conflict Resolution Training & 23 & 73 & 23 \\\\\n"+
+"\\hline Time Management Skills & 35 & 65 & 31 \\\\\n"+
+"\\hline Leadership Skills & 42 & 54 & 35 \\\\\n"+
+"\\hline Team Work/Team Management & 58 & 42 & 31 \\\\\n"+
+"\\hline World Class Lean & 85 & 15 & 15 \\\\\n"+
+"\\hline ISO/Quality Training & 8 & 85 & 4 \\\\\n"+
+"\\hline Personal Empowerment & 23 & 73 & 31 \\\\\n"+
+"\\hline Job/Career Development & 46 & 50 & 15 \\\\\n"+
+"\\hline Job Skills Training & & & \\\\\n"+
+"\\hline Job Specific Skills Training & \\(89 \\%\\) & \\(12 \\%\\) & \\(0 \\%\\) \\\\\n"+
+"\\hline Management Training & 50 & 50 & 23 \\\\\n"+
+"\\hline Computer Training & 89 & 12 & 4 \\\\\n"+
+"\\hline Clerical \\& Administrative Support Skills & 58 & 42 & 12 \\\\\n"+
+"\\hline Sales Training & 62 & 39 & 15 \\\\\n"+
+"\\hline Customer Service Training & 65 & 35 & 23 \\\\\n"+
+"\\hline\n"+
+"\\end{tabular}\n" 
+  </script>
+  <style>
+    #content {
+      max-width: 800px;
+      margin: auto;
+    }
+  </style>
+  <script>
+    let script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathpix-markdown-it@1.3.6/es5/bundle.js";
+    document.head.append(script);
+
+    script.onload = function() {
+      const isLoaded = window.loadMathJax();
+      if (isLoaded) {
+        console.log('Styles loaded!')
+      }
+
+      const el = window.document.getElementById('content-text');
+      if (el) {
+        const options = {
+          htmlTags: true
+        };
+        const html = window.render(text, options);
+        el.outerHTML = html;
+      }
+    };
+  </script>
+</head>
+<body>
+  <div id="content"><div id="content-text"></div></div>
+</body>
+</html>

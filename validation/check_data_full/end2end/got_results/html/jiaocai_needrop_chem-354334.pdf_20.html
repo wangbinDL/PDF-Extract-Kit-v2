@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-lt-installed="true"><head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    const text ="We will explore a more detailed analysis of these orbital interactions in the next chapter. For now, we can summarize the most common outcomes in the table below. We should note that there is one important cycloaddition, the [2+2] thermal reaction of ketenes that does not conform to this generalized analysis.\n"+
+"Generalized Statement of Woodward-Hoffmann Rules for Cycloadditions\n"+
+"\\begin{tabular}{|l|l|l|}\n"+
+"\\hline Number of Electrons & Thermal & Photchemical \\\\\n"+
+"\\hline \\(4 \\mathrm{n}+2\\) & Allowed & Forbidden \\\\\n"+
+"\\hline \\(4 \\mathrm{n}\\) & Forbidden & Allowed \\\\\n"+
+"\\hline\n"+
+"\\end{tabular}\n"+
+"\\section*{Electrocyclic Reactions}\n"+
+"Electrocyclic reactions are intramolecular reactions that are ring closing (form a sigma bond) or ring opening (break a sigma bond). The key sigma bond, either formed or broken, must be at the terminus of a pi system so that either the product or reactant must be a fully conjugated diene, triene, etc. These reactions are often reversible and are classified by the number of pi electrons involved. Thus, \\(4 \\mathrm{pi}\\) reactions involve the forming/breaking of 4 membered rings, \\(6 \\mathrm{pi}\\) reactions involve the forming/breaking of 6 membered rings, and so on. The \\(4 \\mathrm{pi}\\) and \\(6 \\mathrm{pi}\\) variants are by far the most common and are illustrated below with the key sigma bond highlighted in magenta.\n"+
+"\n"+
+"Electrocyclic reactions happen from the HOMO of the molecule and differ in their outcomes based on orbital rotation for the forming/breaking sigma bond. If the orbitals involved rotate in the same direction (both counterclockwise or both clockwise), the process is called conrotatory. If the orbitals involved rotate in opposite directions (one clockwise and one counterclockwise), the process is called disrotatory. These differences in rotation are critically important when stereocenters are formed or broken.\n"+
+"As illustrated below, treatment of the subsstituted hexatriene shown yields the cis product when heated but the trans product when treated with light. This can be explained by looking at the pi HOMO for each case. For the thermal reaction, the HOMO is psi 3 which rotates in a disrotatory fashion to yield the cis product while the trans product is formed under irradiation due to the conrotatory motion of the HOMO psi 4.\n"+
+"\n"+
+"We will delve deeper into this analysis in a subsequent chapter. In general, electrocyclic reactions behave according the generalized rules outlined below.\n"+
+"\\section*{Generalized Statement of Woodward-Hoffmann Rules for Electrocyclic Reactions}\n"+
+"\\begin{tabular}{|l|l|l|}\n"+
+"\\hline Number of Electros & Thermal & Photocchemical \\\\\n"+
+"\\hline \\(4 \\mathrm{n}+2\\) & Disrotatory & Conrotatory \\\\\n"+
+"\\hline \\(4 \\mathrm{n}\\) & Conrotatory & Disrotatory \\\\\n"+
+"\\hline\n"+
+"\\end{tabular}\n" 
+  </script>
+  <style>
+    #content {
+      max-width: 800px;
+      margin: auto;
+    }
+  </style>
+  <script>
+    let script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathpix-markdown-it@1.3.6/es5/bundle.js";
+    document.head.append(script);
+
+    script.onload = function() {
+      const isLoaded = window.loadMathJax();
+      if (isLoaded) {
+        console.log('Styles loaded!')
+      }
+
+      const el = window.document.getElementById('content-text');
+      if (el) {
+        const options = {
+          htmlTags: true
+        };
+        const html = window.render(text, options);
+        el.outerHTML = html;
+      }
+    };
+  </script>
+</head>
+<body>
+  <div id="content"><div id="content-text"></div></div>
+</body>
+</html>

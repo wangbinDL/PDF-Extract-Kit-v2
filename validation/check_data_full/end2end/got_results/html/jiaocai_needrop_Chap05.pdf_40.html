@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-lt-installed="true"><head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    const text ="\\title{\n"+
+"CLICK HERE\n"+
+"}\n"+
+"\\section*{CLICK HERE}\n"+
+"\\section*{CHAPTER \\(5 \\star\\) ASSESSMENT}\n"+
+"\\section*{HISTORY}\n"+
+"Self-Check Quiz\n"+
+"Visit the American History: The Modern Era\n"+
+"Since 1865 Web site at me.glencee.com and click on Chapter 5-Self-Check Quizzes to prepare for the chapter test.\n"+
+"\\section*{Using Vocabulary}\n"+
+"Photography was first used extensively to record history during the American Civil War. Regard each of the terms below as captions for a pictorial history of the Civil War era. After each term, describe a photograph that would explain the concept or identify the term.\n"+
+"\\section*{Reviewing the Facts}\n"+
+"1. Specify both agrarian and commercial reasons that promoted Manifest Destiny.\n"+
+"2. Name two important events in the Texas independence movement.\n"+
+"3. Explain the reasons for the war between the United States and Mexico.\n"+
+"4. Classify the provisions of the Compromise of 1850 into those that appealed to Southern states and those that appealed to Northern states.\n"+
+"5. Explain why the Kansas-Nebraska Act resulted in renewed fighting between slavery and antislavery forces.\n"+
+"6. State three reasons why large numbers of immigrants came to the United States between 1830 and 1860.\n"+
+"7. Summarize the Dred Scott decision.\n"+
+"8. Relate the issue of popular sovereignty to the Lincoln-Douglas debates.\n"+
+"9. List two Southern military advantages and two Northern military advantages at the beginning of the Civil War.\n"+
+"10. Summarize the effects the Emancipation Proclamation had on the war.\n"+
+"\\section*{Understanding Concepts}\n"+
+"\\section*{Geography and Environment}\n"+
+"1. Explain the role of geography in supporting the belief that it was ``natural`` for the United States to expand to the Pacific Ocean.\n"+
+"\\section*{Conflict}\n"+
+"2. Re-create a chart such as the one shown here, and explain the conflict regarding each scenario as well as the compromise that was reached.\n"+
+"\\begin{tabular}{|l|l|l|}\n"+
+"\\hline Scenario & Conflict & Compromise \\\\\n"+
+"\\hline \\begin{tabular}{l} \n"+
+"California applies \\\\\n"+
+"for statehood\n"+
+"\\end{tabular} & & \\\\\n"+
+"\\hline \\begin{tabular}{l} \n"+
+"Settlement of trans- \\\\\n"+
+"Missouri region\n"+
+"\\end{tabular} & & \\\\\n"+
+"\\hline\n"+
+"\\end{tabular}\n"+
+"\\section*{Critical Thinking}\n"+
+"1. Linking Past and Present What are some issues today that divide Americans? What distinguishes a divisive issue from one that can be solved through compromise?\n"+
+"2. Analyzing Fine Art Study the painting on this page entitled October, 1867 by John Whetton Ehninger and answer the questions that follow.\n"+
+"a. What does the painting tell you about these individuals and the period in which they lived?\n"+
+"b. What is your emotional reaction to the painting?\n"+
+"\\section*{OCTOBER, 1867 BY JOHN WHETTON EHNINGER}\n" 
+  </script>
+  <style>
+    #content {
+      max-width: 800px;
+      margin: auto;
+    }
+  </style>
+  <script>
+    let script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathpix-markdown-it@1.3.6/es5/bundle.js";
+    document.head.append(script);
+
+    script.onload = function() {
+      const isLoaded = window.loadMathJax();
+      if (isLoaded) {
+        console.log('Styles loaded!')
+      }
+
+      const el = window.document.getElementById('content-text');
+      if (el) {
+        const options = {
+          htmlTags: true
+        };
+        const html = window.render(text, options);
+        el.outerHTML = html;
+      }
+    };
+  </script>
+</head>
+<body>
+  <div id="content"><div id="content-text"></div></div>
+</body>
+</html>

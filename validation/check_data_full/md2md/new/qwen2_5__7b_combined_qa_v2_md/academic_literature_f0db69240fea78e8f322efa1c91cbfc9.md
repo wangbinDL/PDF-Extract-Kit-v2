@@ -1,0 +1,106 @@
+Badyaev AV, Young RL, Hill GE, Duckworth RA (2008) Evolution of sex-biased maternal effects in birds. IV. Intra-ovarian growth dynamics can link sex-determination and sex-specific acquisition of resources. Journal of Evolutionary Biology, 21, 449-460.
+Brush AH, Power DM (1976) House finch pigmentation: carotenoid metabolism and the effect of diet. Auk, 93, 725-739.
+Dhondt AA, Badyaev AV, Dobson AP et al. (2006) Mycoplasmal conjunctivitis spreads more slowly in native than in introduced range of the host. Ecohealth, 3, 95-102.
+Duckworth RA, Badyaev AV, Farmer KL, Hill GE, Roberts SC (2003a) First case of Mycoplasma gallisepticum infection in the western range of the House Finch (Carpodacus mexicanus). Auk, 120, 528 - 530 .
+Duckworth RA, Badyaev AV, Parlow AF (2003b) Elaborately ornamented males avoid costly parental care in the house finch (Carpodacus mexicanus): a proximate perspective. Behavioral Ecology and Sociobiology, 55, 176-183.
+Gautschi B, Tenzer I, Müller JP, Schmid B (2000a) Isolation and characterization of microsatellite loci in the bearded vulture (Gypaetus barbatus) and cross-amplification in three Old World vulture species. Molecular Ecology, 9, 2193-2195.
+Gautschi B, Widmer A, Koella J (2000b) Isolation and characterization of microsatellite loci in the dice snake (Natrix tessellata). Molecular Ecology, 9, 2191-2193.
+Hawley DM, Hanley D, Dhondt AA, Lovette IJ (2006) Molecular evidence for a founder effect in invasive house finch (Carpodacus mexicanus) populations experiencing an emergent disease epidemic. Molecular Ecology, 15, 263-275.
+Hill GE (2002) A Red Bird in a Brown Bag: The Function and Evolution of Colorful Plumage in the House Finch. Oxford University Press, Oxford, UK.
+Jamieson A, Taylor SCS (1997) Comparisons of three probability formulae for parentage exclusion. Animal Genetics, 28, 397-400.
+Lindstedt E, Oh KP, Badyaev AV (2006) Ecological, social, and genetic contingency of extrapair behavior in a socially monogamous bird. Journal of Avian Biology, 38, 214-238.
+Oh KP, Badyaev AV (2006) Adaptive genetic complementarity in mate choice coexists with preference for elaborate sexual traits. Proceedings of the Royal Society B: Biological Sciences, 273, 1913-1919.
+Oh KP, Badyaev AV (2008) Evolution of adaptation and mate choice: parental relatedness affects expression of phenotypic variance in a natural population. Evolutionary Biology, 35, 111-124.
+Pritchard JK, Stephens M, Donnelly P (2000) Inference of population structure using multilocus genotype data. Genetics, 155, 945-959.
+Queller DC, Strassmann JE, Hughes CR (1993) Microsatellites and kinship. Trends in Ecology \& Evolution, 8, 285-288.
+Raymond M, Rousset F (1995) GenePop (version 1.2): population genetics software for exact tests and ecumenicism. Journal of Heredity, 86, 248-249.
+Tenzer I, degli Ivanissevich S, Morgante M, Gessler C (1999) Identification of microsatellite markers and their application to population genetics of Venturia inaequalis. Phytopathology, 89, $748-753$.
+Veit RR, Lewis MA (1996) Dispersal, population growth, and the Allee effect: dynamics of the house finch invasion of eastern North America. American Naturalist, 148, 255-274.
+Wang Z, Baker AJ, Hill GE, Edwards SV (2003) Reconciling actual and inferred population histories in the house finch (Carpodacus mexicanus) by AFLP analysis. Evolution, 57, 2852-2864.
+Wootton JT (1987) Interspecific competition between introduced house finch populations and two associated passerine species. Oecologia, 71, 325-331.
+doi: $10.1111 / \mathrm{j} .1755-0998.2009 .02555 . \mathrm{x}$
+(c) 2009 Blackwell Publishing Ltd
+
+# Isolation and characterization of new microsatellite markers for rose bitterlings, Rhodeus ocellatus 
+
+Y. SHIRAI,* S. IKEDA† and S. TAJIMA $\ddagger$<br>*Kagawa Prefectural Research Institute for Environmental Sciences and Public Health, 5-3-105 Asahimachi, Takamatsu, 760-0065,<br>T Japan, †Gene Research Center, Kagawa University, 2393, Ikenobe, Miki-cho, Kita-gun, Kagawa 761-0795, Japan, ‡Department of Life<br>Sciences, Kagawa University, 2393, Ikenobe, Miki-cho, Kita-gun, Kagawa 761-0795, Japan
+
+
+#### Abstract
+
+The Japanese rose bitterling (Rhodeus ocellatus kurumeus) is facing imminent extinction because of hybridization and competition from an invasive alien subspecies (Rhodeus ocellatus ocellatus). Eleven new microsatellite markers for the two subspecies were developed using dinucleotide repeat specific polymerase chain reaction. The number of alleles per locus and the heterozygosity in R. o. kurumeus were lower than those in R. o. ocellatus. Most of these microsatellite markers were successfully cross-amplified in three Acheilognathinae species.
+
+
+Keywords: Acheilognathinae, cross-species amplification, microsatellite markers, Rhodeus ocellatus, rose bitterling
+
+Received 24 April 2008; revision accepted 10 December 2008
+Correspondence: Y. Shirai, Fax: +81-87-825-0408; E-mail: vg7552@pref.kagawa.lg.jp
+
+
+
+Table 1 Characteristics of 11 microsatellite markers for Rhodeus ocellatus
+
+| Locus | Accession <br> no. | 5'-anchored <br> primer* | Primer sequence ( $5^{\prime} \rightarrow 3^{\prime}$ ) | Repeat <br> motif $\dagger$ | R. o. kurumeus |  |  |  |  | R. o. ocellatus |  |  |  |  |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+|  |  |  |  |  | $\boldsymbol{n}_{\boldsymbol{i}} / \boldsymbol{n}_{\boldsymbol{f}}$ | $K$ | Range <br> (bp) | $\mathrm{H}_{\mathrm{E}}$ | $\mathrm{H}_{\mathrm{O}}$ | $\boldsymbol{P}$ <br> $\boldsymbol{v}$ a lue | $\boldsymbol{n}_{\boldsymbol{i}} / \boldsymbol{n}_{\boldsymbol{f}}$ | $K$ | Range <br> (bp) | $\mathrm{H}_{\mathrm{E}}$ | $\mathrm{H}_{\mathrm{O}}$ |
+| RC236 | AB469659 | PCT6 | F: ACTGGTCTCTCGCTCCCTCT <br> (CT) 14 |  | 10/10 | 2 | 105-111 | 0.44 | 0.60 | 0.481 | 20/20 | 8 | 138-168 | 0.82 | 0.85 |
+|  |  |  |  |  | 10/10 | 2 | 105-111 | 0.39 | 0.50 | 1.000 |  |  |  |  |  |
+| RC292 | AB469660 | PCT6 | F：CAGGCGTGTGATCTTAGCAA <br> $(\mathrm{TG})_{14}$ |  | 10/10 | 2 | 300-304 | 0.34 | 0.40 | 1.000 | 20/20 | 7 | 286-314 | 0.59 | 0.60 |
+|  |  |  |  |  | 10/10 | 2 | 300-304 | 0.51 | 0.40 | 0.577 |  |  |  |  |  |
+| RC296 | AB469661 | PCT6 | F：GGCACAAATCTGCAATTCAA <br> $(\mathrm{CA})_{10} \mathrm{CT}$ <br> $(\mathrm{CA})_{4}$ |  | 10/10 | 1 | 217 | 0.00 | 0.00 | - | 20/20 | 7 | 199-223 | 0.80 | 0.75 |
+|  |  |  |  |  | 10/10 | 1 | 217 | 0.00 | 0.00 | — |  |  |  |  |  |
+| RC306 | AB469662 | PCA6 | F: TGCGATGATAAAAGCGTCTG <br> $(\mathrm{TG})_{3} \mathrm{TA}$ <br> $\left(\mathrm{TG}_{2}\right.$ <br> $\mathrm{TA}(\mathrm{TG})_{8}$ |  | 10/10 | 1 | 156 | 0.00 | 0.00 | — | 20/20 | 8 | 140-158 | 0.83 | 0.55 |
+|  |  |  |  |  | $9 / 9$ | 1 | 156 | 0.00 | 0.00 | - |  |  |  |  |  |
+| RC363 | AB469663 | PCT6 | F: ATCCCTCCATCCCCAGTAAC <br> $(\mathrm{TG})_{15}$ |  | 10/10 | 2 | 220-226 | 0.19 | 0.20 | 1.000 | 20/20 | 8 | 208-238 | 0.79 | 0.70 |
+|  |  |  |  |  | 10/10 | 2 | 220-226 | 0.39 | 0.30 | 0.478 |  |  |  |  |  |
+| RC364 | AB469664 | PCT6 | F: CCACAGCACAAGATCACCAG <br> $(\mathrm{TG})_{11}$ |  | $19 / 20$ | 2 | 265-270 | 0.44 | 0.60 | 0.479 | 19/20 | 6 | 244-288 | 0.68 | 0.11 |
+|  |  |  |  |  | $10 / 10$ | 2 | 265-270 | 0.48 | 0.50 | 1.000 |  |  |  |  |  |
+| RC600 | AB469665 | PCT6 | F: TGAAATGTCTCTGCCGCTTTA <br> $(\mathrm{CA})_{11}$ |  | 10/10 | 1 | 181 | 0.00 | 0.00 | - | 20/20 | 12 | 170-206 | 0.89 | 0.90 |
+|  |  |  |  |  | 10/10 | 1 | 181 | 0.00 | 0.00 | - |  |  |  |  |  |
+| RC625 | AB469666 | PCT6 | F: TITATTCCCTGAGTATACGCCTGT <br> $\left(\mathrm{TG}_{4}^{5} \mathrm{TA}\right.$ <br> $\mathrm{TG})_{4}$ |  | $19 / 20$ | 1 | 200 | 0.27 | 0.10 | 0.161 | 19/20 | 8 | 196-220 | 0.83 | 0.95 |
+|  |  |  |  |  | 10/10 | 1 | 200 | 0.00 | 0.00 | — |  |  |  |  |  |
+| RC688 | AB469667 | PCT6 | F: GACATCTTCTTTATGTGCCCTTC <br> $(\mathrm{CA})_{11}$ |  | $20 / 20$ | 1 | 170 | 0.00 | 0.00 | — | 20/20 | 7 | 148-170 | 0.85 | 0.60 |
+|  |  |  |  |  | 10/10 | 1 | 170 | 0.00 | 0.00 | - |  |  |  |  |  |
+| RC741 | AB469668 | 0 CT6 | F: TGTCGTTCCCTCAAAAATCC <br> $(\mathrm{CA})_{5} \mathrm{CT}$ <br> $(\mathrm{CA})_{4}$ |  | 10/10 | 1 | 236 | 0.00 | 0.00 | 一 | 18/20 | 7 | 222-236 | 0.71 | 0.89 |
+|  |  |  |  |  | 10/10 | 1 | 236 | 0.00 | 0.00 | - |  |  |  |  |
+
+of $15 \mathrm{~s}$ at $94{ }^{\circ} \mathrm{C}, 30 \mathrm{~s}$ at $56^{\circ} \mathrm{C}$, and 20 s at $72^{\circ} \mathrm{C}$; and final extension for 7 min at $72{ }^{\circ} \mathrm{C}$. The amplified microsatellite markers were mixed with three volumes of formamide dye solution ( $95 \%$ formamide, $10 \mathrm{~mm} \mathrm{EDTA}_{\mathrm{Na} 2}, 10 \mathrm{mg} / \mathrm{mL}$ bluessฎran), heat denatured at $94{ }^{\circ} \mathrm{C}$ for 3 min and run with MapMarker (BioVenture) on a 5\% PAGE-PLUS (Amresco) - 8 M urea denaturing gel using a DSQ-1000 Slab Gel DNA Sequencer (Shimadzu Biotech).
+The characteristics of newly developed microsatellite markers are shown in Table 1. Estimations of the expected and observed heterozygosities and the assessment of HardyWeinberg equilibrium and linkage disequilibria were carried out using GenePop version 3.4 (Raymond \& Rousset 1995).
+
+In R. o. kurumeus, five and six out of 11 microsatellite markers were monomorphic and polymorphic, respectively. Exact tests of deviation from Hardy-Weinberg equilibrium and estimates of linkage disequilibrium in the case of polymorphic markers were not significant after sequential Bonferroni correction (Rice 1989). Conversely, in R. o. ocellatus, all the microsatellite markers were multi-allelic. The heterozygossities of all markers except RC364 were high, with numbers of alleles ranging from six to 12. Exact tests of deviation from Hardy-Weinberg equilibrium were significant in RC306, RC364 and RC688 after sequential Bonferroni correction. The deviation may result from the small sample size or the presence of null alleles. The contribution of the latter was analysed with Micro-Checker (van Oosterhout et al. 2004). The estimated frequencies of null alleles at RC306, RC364 and RC688 were $0.16,0.38$ and 0.14 , respectively, indicating that the deviation is likely to be caused by null alleles. The linkage disequilibria in R. o. ocellatus were not significant in all locus pairs after sequential Bonferroni correction.
+Twenty individuals of R. o. kurumeus were classified into 18 genotypes using a combination of six markers (RC236, 292, 363, 364, 625 and 772). In addition, all the microsatellite markers except RC236 were cross-amplified successfully in three other Acheilognathinae species (Table 2). Therefore, these microsatellite markers are not only useful for research of the genetic structure of R. o. ocellatus and the conservation of $R$. o. kurumeus, but are also possibly applicable to other related endangered Acheilognathinae species such as Tanakia tanago.
+
+## Acknowledgements
+
+We would like to thank Y. Kanoh for the R. o. kurumeus sample and H. Kubota for the R. o. ocellatus, T. lanceolata, A. melanogaste and $A$. tabira samples.
+
+# References 
+
+Fisher PJ, Gardner RC, Richardson TE (1996) Single locus microsatellites isolated using $5^{\prime}$ anchored PCR. Nucleic Acids Research, 24, $4369-4371$.
+van Oosterhout C, Hutchinson WF, Wills DPM, Shipley P (2004) Micro-Checker: software for identifying and correcting genotyping errors in microsatellite data. Molecular Ecology Notes, 4, $535-538$.
+Raymond M, Rousset F (1995) GenePop (version 1.2): a population genetics software for exact test and ecumenicism. Journal of Heredity, 86, 248-249.
+Rice WR (1989) Analyzing tables of statistical tests. Evolution, 43, 223-225.
+Rozen S, Skaletsky H (2000) Primer 3 on the WWW for general users and biologist programmers. In: Bioinformatics Methods and Protocols: Methods in Molecular Biology (eds Krawetz S, Misener S), pp. 365-386. Humana Press, Totowa, New Jersey.
+doi: 10.1111/j.1755-0998.2009.02566.x
+(c) 2009 Blackwell Publishing Ltd
+
+Table 2 Cross-species amplification in Acheilognathinae species: allele size range (bp), eight individuals each from the three species were used. PCR conditions were the same as for Rhodeus ocellatus
+
+| Locus | Tanakia <br> lanceolata | Acheilognathus <br> melanogaster | Acheilognathus <br> tabira |
+| :--- | :---: | :---: | :---: |
+| RC236 | - | 一 | — |
+| RC292 | $300-304$ | $304-312$ | $302-314$ |
+| RC296 | 208-226 | 208-302 | 240-242 |
+| RC306 | 258 | $117-119$ | 224 |
+| RC363 | 238-250 | $224-256$ | 228-232 |
+| RC364 | 202 | — | 202 |
+| RC600 | 192 | 204 | 202 |
+| RC625 | 182 | $176-196$ | 186 |
+| RC688 | 188,232 | 192,236 | 152 |
+| RC741 | 238 | 234 | 230-240 |
+| RC772 | $172-208$ | - | 138 |
+
+- no amplification.
+
+
+

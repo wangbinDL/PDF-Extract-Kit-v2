@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-lt-installed="true"><head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    const text ="- 本周美联储多位官员发表讲话，关于抗通胀工作的表述暗示继续加息，且有部分官员认为需要加息 50 个基点。市场继续 修正美联储货币政策转向的节奏预期。从美元指数、美债、黄金市场表现看，已基本回吐今年以来的涨（跌）幅\n"+
+"本周美联储多位官员发表鹰派讲话\n"+
+"\\begin{tabular}{|c|c|}\n"+
+"\\hline 美联储官员 & 具体表态内容 \\\\\n"+
+"\\hline \\begin{tabular}{c} \n"+
+"威廉姆斯 \\\\\n"+
+"(纽约联储主席)\n"+
+"\\end{tabular} & \\begin{tabular}{c} \n"+
+"美国通货膨胀率 “仍然太高”，美联储将 \\\\\n"+
+"坚持加息，直到央行实现其 \\(2 \\%\\) 的通胀目 \\\\\n"+
+"标\n"+
+"\\end{tabular} \\\\\n"+
+"\\hline \\begin{tabular}{c} \n"+
+"哈克 \\\\\n"+
+"(费城联储主席)\n"+
+"\\end{tabular} & \\begin{tabular}{c}  \n"+
+"需要维持25个基点的利率路径，美联储还 \\\\\n"+
+"没有结束加息周期，但可能正在接近\n"+
+"\\end{tabular} \\\\\n"+
+"\\hline \\begin{tabular}{c}  \n"+
+"洛根 \\\\\n"+
+"(达拉斯联储主 \\\\\n"+
+"席)\n"+
+"\\end{tabular} & \\begin{tabular}{c} \n"+
+"美联储的加息周期可能会更长，预计将在 \\\\\n"+
+"“相当长一段时间” 继续缩表\n"+
+"\\end{tabular} \\\\\n"+
+"\\hline \\begin{tabular}{c}   \n"+
+"巴尔金 \\\\\n"+
+"(里士满联储主 \\\\\n"+
+"席)\n"+
+"\\end{tabular} & \\begin{tabular}{l} \n"+
+"CPI报告大致符合预期，但通胀的惯性和 \\\\\n"+
+"持续性远超预期，其将注重加息的滞后性\n"+
+"\\end{tabular} \\\\\n"+
+"\\hline \\begin{tabular}{c}{} \\\\\n"+
+"\\(\\quad\\)\\begin{tabular}{c} \n"+
+"梅斯特 \\\\\n"+
+"(克利夫兰联储 \\\\\n"+
+"总裁)\n"+
+"\\end{tabular}\n"+
+"\\end{tabular} & \\begin{tabular}{c} \n"+
+"在2月初的议息会议上，她就有充足 的理 \\\\\n"+
+"由认为需要加息 50 个基点，新发布的数据 \\\\\n"+
+"并没有改变她的观点\n"+
+"\\end{tabular} \\\\\n"+
+"\\hline \\begin{tabular}{c}� \\\\\n"+
+"(圣路易斯联储 \\\\\n"+
+"总裁)\n"+
+"\\end{tabular} & \\begin{tabular}{c} \n"+
+"不排除支持3月份加息50个基点的可能性， \\\\\n"+
+"倾向于美联储可以尽快达到5.375\\%的政 \\\\\n"+
+"策利率峰值\n"+
+"\\end{tabular} \\\\\n"+
+"\\hline\n"+
+"\\end{tabular}\n"+
+"\\section*{美债、汇、贵金已基本回吐今年以来对货币政策转向预期的行情}\n"+
+"\n"+
+"数据来源：Wind、广州期货研究中心\n" 
+  </script>
+  <style>
+    #content {
+      max-width: 800px;
+      margin: auto;
+    }
+  </style>
+  <script>
+    let script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathpix-markdown-it@1.3.6/es5/bundle.js";
+    document.head.append(script);
+
+    script.onload = function() {
+      const isLoaded = window.loadMathJax();
+      if (isLoaded) {
+        console.log('Styles loaded!')
+      }
+
+      const el = window.document.getElementById('content-text');
+      if (el) {
+        const options = {
+          htmlTags: true
+        };
+        const html = window.render(text, options);
+        el.outerHTML = html;
+      }
+    };
+  </script>
+</head>
+<body>
+  <div id="content"><div id="content-text"></div></div>
+</body>
+</html>
