@@ -21,8 +21,10 @@ class call_TEDS():
             score = teds.evaluate(sample['pred'], sample['gt'])
             # print('TEDS score:', score)
             teds_socres.append(score)
-        
-        return {'teds': sum(teds_socres) / len(teds_socres)}
+        if len(teds_socres):
+            return {'teds': sum(teds_socres) / len(teds_socres)}
+        else:
+            return {'teds': 'NaN'}
 
 
 @METRIC_REGISTRY.register("BLEU")

@@ -1,5 +1,4 @@
 # from modules.cal_matrix import cal_text_matrix, cal_table_teds
-import json
 from registry.registry import EVAL_TASK_REGISTRY
 from tabulate import tabulate
 from registry.registry import METRIC_REGISTRY   

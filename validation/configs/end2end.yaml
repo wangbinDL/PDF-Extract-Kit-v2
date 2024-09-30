@@ -21,4 +21,4 @@ end2end_eval:
     ground_truth:
       data_path: ./check_data/end2end/gt/demo_val_dataset.json
     prediction:
-      data_path: /mnt/petrelfs/ouyanglinke/PDF-Extract-Kit-v2/validation/test_data/end2end/mineru
+      data_path: ./check_data_full/end2end/mineru

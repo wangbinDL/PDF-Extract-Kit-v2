@@ -16,9 +16,8 @@ class End2EndDataset():
             gt_samples = json.load(f)
 
         self.samples = self.get_matched_elements(gt_samples, pred_folder)
-        # self.samples_dict = {}
-        # for item in self.samples:
-        #     self.samples_dict[os.path.basename(item["page_info"]["image_path"])] = item
+        
+
 
     def __getitem__(self, cat_name, idx):
         return self.samples[cat_name][idx]
@@ -31,8 +30,15 @@ class End2EndDataset():
         for item in selected_annos['layout_dets']:
             saved_element_dict[item["category_type"]].append(item)
         return saved_element_dict
+    
+    def get_page_elements_list(self, gt_page_elements, category_list):
+        element_list = []
+        for category_type in category_list:
+            if gt_page_elements.get(category_type):
+                element_list.extend(gt_page_elements[category_type])
+        return element_list
 
-    def get_sorted_text_list(self, selected_annos, txt_type):
+    def get_sorted_text_list(self, selected_annos):
         # txt_type: text, latex, html
         text_list = []
         for item in selected_annos:
@@ -40,15 +46,22 @@ class End2EndDataset():
                 order = item['order']
             else:
                 order = 0
-            if item.get(txt_type):
-                txt = item[txt_type]
-            else:
-                txt = ""
-                print(f'Cannot find GT text for {item}')
-            text_list.append((order, txt))
+            # if item.get(txt_type):
+            #     txt = item[txt_type]
+            # else:
+            #     txt = ""
+                # print(f'Cannot find GT text for {item}')
+            text_list.append((order, item))
         sorted_text_list = sorted(text_list, key=lambda x: x[0])
         return [_[1] for _ in sorted_text_list]
     
+    def filtered_out_ignore(self, items, ignore_category_list):
+        filted_items = []
+        for item in items:
+            if item['category_type'] not in ignore_category_list:
+                filted_items.append(item)
+        return filted_items
+
     def get_order_paired(self, order_match_s, img_name):
         matched = [(item['gt_idx'], item['pred_idx']) for item in order_match_s]
         read_order_gt = [i[0] for i in sorted(matched, key=lambda x: x[0])]   # 以GT的idx来sort，获取GT排序的GT_idx
@@ -60,14 +73,15 @@ class End2EndDataset():
         }
 
     def formula_format(self, formula_matches, img_name):
-        formated_list = []
+        # formated_list = []
         for i, item in enumerate(formula_matches):
-            formated_list.append({
-                "gt": item["gt"],
-                "pred": item["pred"],
-                "img_id": img_name + '_' + str(i)
-            })
-        return formated_list
+            item["img_id"] = img_name + '_' + str(i)
+            # formated_list.append({
+            #     "gt": item["gt"],
+            #     "pred": item["pred"],
+            #     "img_id": img_name + '_' + str(i)
+            # })
+        return formula_matches
 
     def get_matched_elements(self, gt_samples, pred_folder):
         plain_text_match = []
@@ -98,17 +112,26 @@ class End2EndDataset():
             # print('pred_title_list: ', pred_title_list)
 
             gt_page_elements = self.get_page_elements(sample)
-            # print('gt_page_elements: ', gt_page_elements.keys())
-
-            if gt_page_elements.get('text_block'):
-                gt_text_list = self.get_sorted_text_list(gt_page_elements['text_block'], 'text')
+            # print('gt_page_elements: ', gt_page_elements)
+            
+            # 文本相关的所有element，不涉及的类别有figure, table, table_mask, equation_isolated, equation_caption, equation_ignore, equation_inline, footnote_mark, page_number, abandon, list, text_mask, need_mask
+            text_all = self.get_page_elements_list(gt_page_elements, ['text_block', 'title', 'code_txt', 'code_txt_caption', 'list_merge', 'reference',
+                                                    'figure_caption', 'figure_footnote', 'table_caption', 'table_footnote', 'code_algorithm', 'code_algorithm_caption'
+                                                    'header', 'footer', 'page_footnote'])           
+            formated_display_formula = []
+            plain_text_match_clean = []
+            if text_all:
+                gt_text_list = self.get_sorted_text_list(text_all)
                 # print('gt_text_list: ', gt_text_list)
                 plain_text_match_s, inline_formula_match_s = match_gt2pred_textblock(gt_text_list, pred_text_list, img_name)
                 # print('plain_text_match_s: ', plain_text_match_s)
                 # print('-'*10)
                 # print('inline_formula_match_s', inline_formula_match_s)
                 # print('-'*10)
-                plain_text_match.extend(plain_text_match_s)
+                # 文本类需要ignore的类别
+                plain_text_match_clean = self.filtered_out_ignore(plain_text_match_s, ['figure_caption', 'figure_footnote', 'table_caption', 'table_footnote', 'code_algorithm', 'code_algorithm_caption', 'header', 'footer', 'page_footnote'])
+                
+                plain_text_match.extend(plain_text_match_clean)
 
                 formated_inline_formula = self.formula_format(inline_formula_match_s, img_name)
                 inline_formula_match.extend(formated_inline_formula)
@@ -116,14 +139,14 @@ class End2EndDataset():
                 # print('-'*10)
                 
             if gt_page_elements.get('title'):
-                gt_title_list = self.get_sorted_text_list(gt_page_elements['title'], 'text')
+                gt_title_list = self.get_sorted_text_list(gt_page_elements['title'])
                 # print('gt_title_list: ', gt_title_list)
                 title_match_s = match_gt2pred(gt_title_list, pred_title_list, 'text', img_name)
                 title_match.extend(title_match_s)
                 # print('title_match_s: ', title_match_s)
                 # print('-'*10)
             if gt_page_elements.get('isolate_formula'):
-                gt_display_list = self.get_sorted_text_list(gt_page_elements['isolate_formula'], 'latex')
+                gt_display_list = self.get_sorted_text_list(gt_page_elements['isolate_formula'])
                 # print('gt_display_list: ', gt_display_list)
                 display_formula_match_s = match_gt2pred(gt_display_list, pred_display_list, 'formula', img_name)
                 formated_display_formula = self.formula_format(display_formula_match_s, img_name)
@@ -131,17 +154,20 @@ class End2EndDataset():
                 # print('-'*10)
                 display_formula_match.extend(formated_display_formula)
             if gt_page_elements.get('table'):
-                gt_table_list = self.get_sorted_text_list(gt_page_elements['table'], 'html')
+                gt_table_list = self.get_sorted_text_list(gt_page_elements['table'])
                 # print('gt_table_list', gt_table_list)
                 table_match_s = match_gt2pred(gt_table_list, pred_table_list, 'table', img_name)
                 # print('table_match_s: ', table_match_s)
                 # print('-'*10)
                 table_match.extend(table_match_s)
 
+            # 阅读顺序的处理
             order_match_s = []
-            order_match_s.extend(plain_text_match_s)
-            order_match_s.extend(title_match_s) #TODO: List, code, figure
-            order_match.append(self.get_order_paired(order_match_s, img_name))
+            for mateches in [plain_text_match_clean, formated_display_formula]:
+                if mateches:
+                    order_match_s.extend(mateches)
+            if order_match_s:
+                order_match.append(self.get_order_paired(order_match_s, img_name))
 
         ## 提取匹配数据检查
         # with open('/mnt/petrelfs/ouyanglinke/PDF-Extract-Kit-v2/validation/result/plain_text_match.json', 'w', encoding='utf-8') as f:

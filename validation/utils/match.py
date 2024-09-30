@@ -55,12 +55,24 @@ def normalized_formula(text):
     return text
 
 
-def match_gt2pred(gt_lines, pred_lines, line_type, img_name):
+def match_gt2pred(gt_items, pred_lines, line_type, img_name):
+    norm_gt_lines = []
+    gt_cat_list = []
+    for item in gt_items:
+        gt_cat_list.append(item['category_type'])
+        if item.get('text'):
+            norm_gt_lines.append(str(item['text']))
+        elif item.get('html'):
+            norm_gt_lines.append(str(item['html']))
+        elif item.get('latex'):
+            if 'formula' in item['category_type']:
+                norm_gt_lines.append(normalized_formula(str(item['latex'])))
+    
     if line_type == 'formula':
-        norm_gt_lines = [normalized_formula(str(line)) for line in gt_lines]
+        # norm_gt_lines = [normalized_formula(str(line)) for line in gt_lines]
         norm_pred_lines = [normalized_formula(str(line)) for line in pred_lines]
     else:
-        norm_gt_lines = [str(line) for line in gt_lines]
+        # norm_gt_lines = [str(line) for line in gt_lines]
         norm_pred_lines = [str(line) for line in pred_lines]
     
     cost_matrix = compute_edit_distance_matrix_new(norm_gt_lines, norm_pred_lines)
@@ -92,6 +104,7 @@ def match_gt2pred(gt_lines, pred_lines, line_type, img_name):
         match_list.append({
             'gt_idx': gt_idx,
             'gt': gt_line,
+            'category_type': gt_cat_list[gt_idx],
             'pred_idx': pred_idx,
             'pred': pred_line,
             'edit': edit,
@@ -102,12 +115,12 @@ def match_gt2pred(gt_lines, pred_lines, line_type, img_name):
     return match_list
 
 
-def match_gt2pred_textblock(gt_lines, pred_lines, img_name):
-    text_inline_match_s = match_gt2pred(gt_lines, pred_lines, 'text', img_name)
+def match_gt2pred_textblock(gt_items, pred_lines, img_name):
+    text_inline_match_s = match_gt2pred(gt_items, pred_lines, 'text', img_name)
     plain_text_match = []
     inline_formula_match = []
     for item in text_inline_match_s:
-        plaintext_gt, inline_gt_list = inline_filter(item['gt'])  # 这个后续最好是直接从span里提取出来
+        plaintext_gt, inline_gt_list = inline_filter(item['gt'])  # TODO:这个后续最好是直接从span里提取出来
         plaintext_pred, inline_pred_list = inline_filter(item['pred'])
         # print('inline_pred_list', inline_pred_list)
         # print('plaintext_pred: ', plaintext_pred)
@@ -118,6 +131,7 @@ def match_gt2pred_textblock(gt_lines, pred_lines, img_name):
             plain_text_match.append({
                 'gt_idx': item['gt_idx'],
                 'gt': plaintext_gt,
+                'category_type': item['category_type'],
                 'pred_idx': item['pred_idx'],
                 'pred': plaintext_pred,
                 'edit': edit,
@@ -125,7 +139,8 @@ def match_gt2pred_textblock(gt_lines, pred_lines, img_name):
             })
 
         if inline_gt_list:
-            inline_formula_match_s = match_gt2pred(inline_gt_list, inline_pred_list, 'formula', img_name)
+            inline_gt_items = [{'category_type': 'equation_inline', 'latex': line} for line in inline_gt_list]
+            inline_formula_match_s = match_gt2pred(inline_gt_items, inline_pred_list, 'formula', img_name)
             inline_formula_match.extend(inline_formula_match_s)
 
     
