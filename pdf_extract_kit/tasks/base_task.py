@@ -29,6 +29,13 @@ class BaseTask:
                         images.append(image_path)
                 images = sorted(images)
                 break  # Only process the top-level directory
+        elif os.path.isfile(input_data) and input_data.endswith(".txt"):
+            # support .txt file list as input
+            try:
+                input_file = list(open(input_data).readlines())
+            except BaseException:
+                raise ValueError("Invalid or corrupted input file: {}".format(input_data))
+            images = [f.strip() for f in input_file]
         else:
             # Determine the type of input data and process accordingly
             if input_data.lower().endswith(('.png', '.jpg', '.jpeg')):

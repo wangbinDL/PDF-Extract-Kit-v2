@@ -26,7 +26,7 @@ from .layoutlmft.models.layoutlmv3 import LayoutLMv3Model
 from transformers import AutoConfig
 
 __all__ = [
-    "build_vit_fpn_backbone",
+    "layoutlmv3_build_vit_fpn_backbone",
 ]
 
 
@@ -155,7 +155,7 @@ def build_VIT_backbone(cfg):
 
 
 @BACKBONE_REGISTRY.register()
-def build_vit_fpn_backbone(cfg, input_shape: ShapeSpec):
+def layoutlmv3_build_vit_fpn_backbone(cfg, input_shape: ShapeSpec):
     """
     Create a VIT w/ FPN backbone.
 

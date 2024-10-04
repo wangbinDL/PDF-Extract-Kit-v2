@@ -7,6 +7,8 @@ tasks:
       img_size: 1280
       conf_thres: 0.25
       iou_thres: 0.45
-      batch_size: 1
-      model_path: models/MFD/yolov8/weights.pt
+      batch_size: 2
+      model_path: /mnt/petrelfs/zhaozhiyuan/layout/PDF-Extract-Kit-v2/weights.pt
       visualize: True
+      rect: True
+      device: "0"

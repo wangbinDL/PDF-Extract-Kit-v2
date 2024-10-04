@@ -4,11 +4,12 @@ tasks:
   layout_detection:
     model: layout_detection_yolo
     model_config:
-      img_size: 1280
-      conf_thres: 0.25
+      img_size: 1024
+      conf_thres: 0.15
       iou_thres: 0.45
-      batch_size: 2
-      model_path: /mnt/hwfile/opendatalab/zhaozhiyuan/PDF-Extract-Kit-v2-models/yolov10m_0830_mixed_epoch500_imgsz1280_bs64_pretrain_None/weights/best.pt
+      batch_size: 64
+      model_path: /mnt/hwfile/opendatalab/zhaozhiyuan/PDF-Extract-Kit-v2-models/yolo_model/yolov10l_1024.pt
       visualize: True
       rect: True
+      nms: True
       device: "0"

@@ -2,10 +2,10 @@ inputs: assets/demo/layout_detection
 outputs: outputs/layout_detection
 tasks:
   layout_detection:
-    model: layout_detection_layoutlmv3
+    model: layout_detection_dit
     model_config:
-      model_path: /mnt/hwfile/opendatalab/zhaozhiyuan/PDF-Extract-Kit-v2-models/layoutlmv3_model/model_final.pth
-      batch_size: 2
+      model_path: /mnt/hwfile/opendatalab/zhaozhiyuan/PDF-Extract-Kit-v2-models/dit_model/model_final.pth
+      batch_size: 4
       score_thr: 0.25
       workers: 4
       visualize: True
