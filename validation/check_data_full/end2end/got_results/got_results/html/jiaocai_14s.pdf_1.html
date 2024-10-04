@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" data-lt-installed="true"><head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    const text ="conflict serializable schedules. The general form of view serializability is very expensive to test, and only a very restricted form of it is used for concurrency control.\n"+
+"14.6 Answer: There is a serializable schedule corresponding to the precedence graph below, since the graph is acyclic. A possible schedule is obtained by doing a topological sort, that is, \\(T_{1}, T_{2}, T_{3}, T_{4}, T_{5}\\).\n"+
+"14.7 Answer: A cascadeless schedule is one where, for each pair of transactions \\(T_{i}\\) and \\(T_{j}\\) such that \\(T_{j}\\) reads data items previously written by \\(T_{i}\\), the commit operation of \\(T_{i}\\) appears before the read operation of \\(T_{j}\\). Cascadesless schedules are desirable because the failure of a transaction does not lead to the aborting of any other transaction. Of course this comes at the cost of less concurrency. If failures occur rarely, so that we can pay the price of cascading aborts for the increased concurrency, noncascadeless schedules might be desirable.\n"+
+"14.8 Answer:\n"+
+"a. A schedule showing the Lost Update Anomaly:\n"+
+"\\begin{tabular}{c|c}\n"+
+"\\(T_{1}\\) & \\(T_{2}\\) \\\\\n"+
+"\\hline \\begin{tabular}{c} \n"+
+"read \\((A)\\) \\\\\n"+
+"write \\((A)\\)\n"+
+"\\end{tabular} & \\begin{tabular}{c} \n"+
+"read \\((A)\\) \\\\\n"+
+"write \\((\\mathrm{A})\\)\n"+
+"\\end{tabular} \\\\\n"+
+"\\hline\n"+
+"\\end{tabular}\n"+
+"In the above schedule, the value written by the transaction \\(T_{2}\\) is lost because of the write of the transaction \\(T_{1}\\).\n"+
+"b. Lost Update Anomaly in Read Committed Isolation Level\n"+
+"\\begin{tabular}{c|c}\n"+
+"\\(T_{1}\\) & \\(T\\)\n"+
+"\\end{tabular}\n"+
+"\\begin{tabular}{c|c}\n"+
+"\\hline \\begin{tabular}{c} \n"+
+"lock-S \\((A)\\) \\\\\n"+
+"read \\((A)\\) \\\\\n"+
+"unlock \\((A)\\)\n"+
+"\\end{tabular} & \\begin{tabular}{c}\n"+
+"\\(\\operatorname{lock}-\\mathrm{X}(A)\\) \\\\\n"+
+"read \\((A)\\) \\\\\n"+
+"write \\((A)\\) \\\\\n"+
+"unlock \\((A)\\) \\\\\n"+
+"commit\n"+
+"\\end{tabular}\n"+
+"\\end{tabular}\n"+
+"The locking in the above schedule ensures the Read Committed isolation level. The value written by transaction \\(T_{2}\\) is lost due to \\(T_{1}\\) 's write.\n"+
+"c. Lost Update Anomaly is not possible in Repeatable Read isolation level. In repeatable read isolation level, a transaction \\(T_{1}\\) reading a\n" 
+  </script>
+  <style>
+    #content {
+      max-width: 800px;
+      margin: auto;
+    }
+  </style>
+  <script>
+    let script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathpix-markdown-it@1.3.6/es5/bundle.js";
+    document.head.append(script);
+
+    script.onload = function() {
+      const isLoaded = window.loadMathJax();
+      if (isLoaded) {
+        console.log('Styles loaded!')
+      }
+
+      const el = window.document.getElementById('content-text');
+      if (el) {
+        const options = {
+          htmlTags: true
+        };
+        const html = window.render(text, options);
+        el.outerHTML = html;
+      }
+    };
+  </script>
+</head>
+<body>
+  <div id="content"><div id="content-text"></div></div>
+</body>
+</html>

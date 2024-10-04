@@ -1,0 +1,1 @@
+Over the past six months,   $96\%$   of finance and insurance companies provided or  financed training programs for their employees.  Over that six-month period, they  provided an average of 25 hours of training per employee.  

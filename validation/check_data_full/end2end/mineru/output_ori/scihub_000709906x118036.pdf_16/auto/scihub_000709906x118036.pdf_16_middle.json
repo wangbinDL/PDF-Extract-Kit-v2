@@ -1,0 +1,1346 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "type": "text",
+                    "bbox": [
+                        304,
+                        184,
+                        451,
+                        194
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                306.03314208984375,
+                                185.55906677246094,
+                                450.726806640625,
+                                194.52536010742188
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        306.03314208984375,
+                                        185.55906677246094,
+                                        428.28326416015625,
+                                        194.52536010742188
+                                    ],
+                                    "content": "Student motivation and engagement",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        437.27734375,
+                                        185.55906677246094,
+                                        450.726806640625,
+                                        194.52536010742188
+                                    ],
+                                    "content": "429",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        79,
+                        206,
+                        453,
+                        498
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                79,
+                                231,
+                                453,
+                                498
+                            ],
+                            "type": "table_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        79,
+                                        231,
+                                        453,
+                                        498
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                79,
+                                                231,
+                                                453,
+                                                498
+                                            ],
+                                            "score": 0.9999868869781494,
+                                            "type": "table",
+                                            "image_path": "1b799f1322b718441df952afee44f2dda76435fafec958d8bec74ef325d5c2d2.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                79,
+                                206,
+                                453,
+                                229
+                            ],
+                            "type": "table_caption",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        207.7297821044922,
+                                        450.65789794921875,
+                                        216.69607543945312
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82.20469665527344,
+                                                207.7297821044922,
+                                                115.76646423339844,
+                                                216.69607543945312
+                                            ],
+                                            "content": "Table 4.",
+                                            "type": "text",
+                                            "score": 1.0
+                                        },
+                                        {
+                                            "bbox": [
+                                                115.76646423339844,
+                                                207.7297821044922,
+                                                450.65789794921875,
+                                                216.69607543945312
+                                            ],
+                                            "content": " First- and higher-order factor correlations with between-network educational constructs",
+                                            "type": "text",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        218,
+                                        168.92855834960938,
+                                        228.60153198242188
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82.20469665527344,
+                                                219.63523864746094,
+                                                122.4275131225586,
+                                                228.60153198242188
+                                            ],
+                                            "content": "(subsample",
+                                            "type": "text",
+                                            "score": 1.0
+                                        },
+                                        {
+                                            "bbox": [
+                                                123,
+                                                218,
+                                                167,
+                                                228
+                                            ],
+                                            "score": 0.83,
+                                            "content": "N=2{,}857)",
+                                            "type": "inline_equation"
+                                        },
+                                        {
+                                            "bbox": [
+                                                166.04141235351562,
+                                                219.63523864746094,
+                                                168.92855834960938,
+                                                228.60153198242188
+                                            ],
+                                            "content": ")",
+                                            "type": "text",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        82,
+                        529,
+                        451,
+                        551
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                82.20469665527344,
+                                530.6079711914062,
+                                450.6583557128906,
+                                540.570556640625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        530.6079711914062,
+                                        450.6583557128906,
+                                        540.570556640625
+                                    ],
+                                    "content": "the number of outcome variables (11) to yield a revised signiﬁcance criterion level of",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82.20469665527344,
+                                542.5132446289062,
+                                149.20916748046875,
+                                552.475830078125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        542.5132446289062,
+                                        149.20916748046875,
+                                        552.475830078125
+                                    ],
+                                    "content": ".005 (rounded).",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        81,
+                        552,
+                        451,
+                        708
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                96.37748718261719,
+                                554.4754028320312,
+                                450.6534118652344,
+                                564.43798828125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        96.37748718261719,
+                                        554.4754028320312,
+                                        450.6534118652344,
+                                        564.43798828125
+                                    ],
+                                    "content": "These results show that there are gender differences on a number of facets of",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82.20469665527344,
+                                566.4374389648438,
+                                450.6075439453125,
+                                576.4000244140625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        566.4374389648438,
+                                        450.6075439453125,
+                                        576.4000244140625
+                                    ],
+                                    "content": "motivation. Generally, these ﬁndings are consistent with the hypothesis that girls reﬂect",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82.20469665527344,
+                                578.3995971679688,
+                                450.6484375,
+                                588.3621826171875
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        578.3995971679688,
+                                        450.6484375,
+                                        588.3621826171875
+                                    ],
+                                    "content": "a more adaptive pattern of motivation and engagement. In terms of adaptive dimensions,",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82.20469665527344,
+                                590.3616333007812,
+                                450.6602783203125,
+                                600.32421875
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        590.3616333007812,
+                                        450.6602783203125,
+                                        600.32421875
+                                    ],
+                                    "content": "girls are signiﬁcantly higher than boys in their valuing of school, mastery orientation,",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82.20469665527344,
+                                602.3237915039062,
+                                450.7152099609375,
+                                612.286376953125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        602.3237915039062,
+                                        450.7152099609375,
+                                        612.286376953125
+                                    ],
+                                    "content": "planning, study management and persistence. In terms of impeding and maladaptive",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82.20469665527344,
+                                614.2858276367188,
+                                450.67327880859375,
+                                624.2484130859375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        614.2858276367188,
+                                        450.67327880859375,
+                                        624.2484130859375
+                                    ],
+                                    "content": "dimensions, girls are signiﬁcantly higher than boys in anxiety while boys are",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82.20469665527344,
+                                626.2479858398438,
+                                450.7330627441406,
+                                636.2105712890625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        626.2479858398438,
+                                        450.7330627441406,
+                                        636.2105712890625
+                                    ],
+                                    "content": "signiﬁcantly higher in self-handicapping and disengagement. Year level ﬁndings broadly",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82.20469665527344,
+                                638.1532592773438,
+                                450.7919616699219,
+                                648.1158447265625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        638.1532592773438,
+                                        450.7919616699219,
+                                        648.1158447265625
+                                    ],
+                                    "content": "conﬁrm hypotheses that middle high school students seem to reﬂect a less adaptive",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82.20469665527344,
+                                650.1153564453125,
+                                450.6722412109375,
+                                660.0779418945312
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        650.1153564453125,
+                                        450.6722412109375,
+                                        660.0779418945312
+                                    ],
+                                    "content": "pattern of motivation and engagement. Findings in relation to failure avoidance are",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82.20469665527344,
+                                662.0774536132812,
+                                450.6614074707031,
+                                672.0400390625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        662.0774536132812,
+                                        450.6614074707031,
+                                        672.0400390625
+                                    ],
+                                    "content": "qualiﬁed by an interaction effect. That is, gender differences on these dimensions",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82.20469665527344,
+                                674.03955078125,
+                                450.6734924316406,
+                                684.0021362304688
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        674.03955078125,
+                                        450.6734924316406,
+                                        684.0021362304688
+                                    ],
+                                    "content": "change as a function of year grouping. Follow-up simple effects tests show that boys are",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82.20469665527344,
+                                686.0016479492188,
+                                450.686279296875,
+                                695.9642333984375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        686.0016479492188,
+                                        450.686279296875,
+                                        695.9642333984375
+                                    ],
+                                    "content": "signiﬁcantly higher than girls on failure avoidance in junior high school, but in middle",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82.20469665527344,
+                                697.9637451171875,
+                                450.65924072265625,
+                                707.9263305664062
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        697.9637451171875,
+                                        450.65924072265625,
+                                        707.9263305664062
+                                    ],
+                                    "content": "and senior high school there are no signiﬁcant gender differences on failure avoidance.",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "title",
+                    "bbox": [
+                        82,
+                        738,
+                        136,
+                        750
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                82.20469665527344,
+                                740.0389404296875,
+                                135.70652770996094,
+                                750.9979248046875
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        740.0389404296875,
+                                        135.70652770996094,
+                                        750.9979248046875
+                                    ],
+                                    "content": "Discussion",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        82,
+                        754,
+                        451,
+                        789
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                82.20469665527344,
+                                755.5653686523438,
+                                450.6324768066406,
+                                765.5279541015625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        755.5653686523438,
+                                        450.6324768066406,
+                                        765.5279541015625
+                                    ],
+                                    "content": "The present study adopted a construct validation approach to examining multi-",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82.20469665527344,
+                                767.5274658203125,
+                                450.72113037109375,
+                                777.4900512695312
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        767.5274658203125,
+                                        450.72113037109375,
+                                        777.4900512695312
+                                    ],
+                                    "content": "dimensional motivation and engagement through an assessment of within- and between-",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82.20469665527344,
+                                779.4895629882812,
+                                450.6593933105469,
+                                789.4521484375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        779.4895629882812,
+                                        450.6593933105469,
+                                        789.4521484375
+                                    ],
+                                    "content": "network validity. In terms of within-network validity, (1) the data conﬁrm the good ﬁt of",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "layout_bboxes": [
+                {
+                    "layout_bbox": [
+                        0,
+                        184,
+                        612.0,
+                        789
+                    ],
+                    "layout_label": "H",
+                    "sub_layout": []
+                }
+            ],
+            "page_idx": 0,
+            "page_size": [
+                612.0,
+                850.0
+            ],
+            "_layout_tree": [
+                {
+                    "layout_bbox": [
+                        0,
+                        184,
+                        612.0,
+                        789
+                    ],
+                    "layout_label": "H",
+                    "sub_layout": []
+                }
+            ],
+            "images": [],
+            "tables": [
+                {
+                    "type": "table",
+                    "bbox": [
+                        79,
+                        206,
+                        453,
+                        498
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                79,
+                                231,
+                                453,
+                                498
+                            ],
+                            "type": "table_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        79,
+                                        231,
+                                        453,
+                                        498
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                79,
+                                                231,
+                                                453,
+                                                498
+                                            ],
+                                            "score": 0.9999868869781494,
+                                            "type": "table",
+                                            "image_path": "1b799f1322b718441df952afee44f2dda76435fafec958d8bec74ef325d5c2d2.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                79,
+                                206,
+                                453,
+                                229
+                            ],
+                            "type": "table_caption",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        207.7297821044922,
+                                        450.65789794921875,
+                                        216.69607543945312
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82.20469665527344,
+                                                207.7297821044922,
+                                                115.76646423339844,
+                                                216.69607543945312
+                                            ],
+                                            "content": "Table 4.",
+                                            "type": "text",
+                                            "score": 1.0
+                                        },
+                                        {
+                                            "bbox": [
+                                                115.76646423339844,
+                                                207.7297821044922,
+                                                450.65789794921875,
+                                                216.69607543945312
+                                            ],
+                                            "content": " First- and higher-order factor correlations with between-network educational constructs",
+                                            "type": "text",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                },
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        218,
+                                        168.92855834960938,
+                                        228.60153198242188
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                82.20469665527344,
+                                                219.63523864746094,
+                                                122.4275131225586,
+                                                228.60153198242188
+                                            ],
+                                            "content": "(subsample",
+                                            "type": "text",
+                                            "score": 1.0
+                                        },
+                                        {
+                                            "bbox": [
+                                                123,
+                                                218,
+                                                167,
+                                                228
+                                            ],
+                                            "score": 0.83,
+                                            "content": "N=2{,}857)",
+                                            "type": "inline_equation"
+                                        },
+                                        {
+                                            "bbox": [
+                                                166.04141235351562,
+                                                219.63523864746094,
+                                                168.92855834960938,
+                                                228.60153198242188
+                                            ],
+                                            "content": ")",
+                                            "type": "text",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "interline_equations": [],
+            "discarded_blocks": [
+                {
+                    "type": "discarded",
+                    "bbox": [
+                        39,
+                        117,
+                        453,
+                        150
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                100.0,
+                                116.96600341796875,
+                                384.18597412109375,
+                                133.14999389648438
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        100.0,
+                                        116.96600341796875,
+                                        159.906005859375,
+                                        133.14999389648438
+                                    ],
+                                    "content": "Copyright",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        161,
+                                        117,
+                                        176,
+                                        132
+                                    ],
+                                    "score": 0.74,
+                                    "content": "\\copyright",
+                                    "type": "inline_equation"
+                                },
+                                {
+                                    "bbox": [
+                                        174.11599731445312,
+                                        116.96600341796875,
+                                        384.18597412109375,
+                                        133.14999389648438
+                                    ],
+                                    "content": " The British Psychological Society",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                42.0,
+                                136.62100219726562,
+                                450.1499938964844,
+                                147.02499389648438
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        42.0,
+                                        136.62100219726562,
+                                        450.1499938964844,
+                                        147.02499389648438
+                                    ],
+                                    "content": "Reproduction in any form (including the internet) is prohibited without prior permission from the Society",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "need_drop": false,
+            "drop_reason": [],
+            "para_blocks": [
+                {
+                    "type": "text",
+                    "bbox": [
+                        304,
+                        184,
+                        451,
+                        194
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                306.03314208984375,
+                                185.55906677246094,
+                                450,
+                                194.52536010742188
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        306.03314208984375,
+                                        185.55906677246094,
+                                        428.28326416015625,
+                                        194.52536010742188
+                                    ],
+                                    "content": "Student motivation and engagement",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        437.27734375,
+                                        185.55906677246094,
+                                        450.726806640625,
+                                        194.52536010742188
+                                    ],
+                                    "content": "429",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        306.03314208984375,
+                        185.55906677246094,
+                        450,
+                        194.52536010742188
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        82,
+                        529,
+                        451,
+                        551
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                82,
+                                530.6079711914062,
+                                450,
+                                540.570556640625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        530.6079711914062,
+                                        450.6583557128906,
+                                        540.570556640625
+                                    ],
+                                    "content": "the number of outcome variables (11) to yield a revised signiﬁcance criterion level of",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82,
+                                542.5132446289062,
+                                149.20916748046875,
+                                552.475830078125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        542.5132446289062,
+                                        149.20916748046875,
+                                        552.475830078125
+                                    ],
+                                    "content": ".005 (rounded).",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        82,
+                        530.6079711914062,
+                        450,
+                        552.475830078125
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        81,
+                        552,
+                        451,
+                        708
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                96.37748718261719,
+                                554.4754028320312,
+                                450,
+                                564.43798828125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        96.37748718261719,
+                                        554.4754028320312,
+                                        450.6534118652344,
+                                        564.43798828125
+                                    ],
+                                    "content": "These results show that there are gender differences on a number of facets of",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82,
+                                566.4374389648438,
+                                450,
+                                576.4000244140625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        566.4374389648438,
+                                        450.6075439453125,
+                                        576.4000244140625
+                                    ],
+                                    "content": "motivation. Generally, these ﬁndings are consistent with the hypothesis that girls reﬂect",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82,
+                                578.3995971679688,
+                                450,
+                                588.3621826171875
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        578.3995971679688,
+                                        450.6484375,
+                                        588.3621826171875
+                                    ],
+                                    "content": "a more adaptive pattern of motivation and engagement. In terms of adaptive dimensions,",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82,
+                                590.3616333007812,
+                                450,
+                                600.32421875
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        590.3616333007812,
+                                        450.6602783203125,
+                                        600.32421875
+                                    ],
+                                    "content": "girls are signiﬁcantly higher than boys in their valuing of school, mastery orientation,",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82,
+                                602.3237915039062,
+                                450,
+                                612.286376953125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        602.3237915039062,
+                                        450.7152099609375,
+                                        612.286376953125
+                                    ],
+                                    "content": "planning, study management and persistence. In terms of impeding and maladaptive",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82,
+                                614.2858276367188,
+                                450,
+                                624.2484130859375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        614.2858276367188,
+                                        450.67327880859375,
+                                        624.2484130859375
+                                    ],
+                                    "content": "dimensions, girls are signiﬁcantly higher than boys in anxiety while boys are",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82,
+                                626.2479858398438,
+                                450,
+                                636.2105712890625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        626.2479858398438,
+                                        450.7330627441406,
+                                        636.2105712890625
+                                    ],
+                                    "content": "signiﬁcantly higher in self-handicapping and disengagement. Year level ﬁndings broadly",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82,
+                                638.1532592773438,
+                                450,
+                                648.1158447265625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        638.1532592773438,
+                                        450.7919616699219,
+                                        648.1158447265625
+                                    ],
+                                    "content": "conﬁrm hypotheses that middle high school students seem to reﬂect a less adaptive",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82,
+                                650.1153564453125,
+                                450,
+                                660.0779418945312
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        650.1153564453125,
+                                        450.6722412109375,
+                                        660.0779418945312
+                                    ],
+                                    "content": "pattern of motivation and engagement. Findings in relation to failure avoidance are",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82,
+                                662.0774536132812,
+                                450,
+                                672.0400390625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        662.0774536132812,
+                                        450.6614074707031,
+                                        672.0400390625
+                                    ],
+                                    "content": "qualiﬁed by an interaction effect. That is, gender differences on these dimensions",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82,
+                                674.03955078125,
+                                450,
+                                684.0021362304688
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        674.03955078125,
+                                        450.6734924316406,
+                                        684.0021362304688
+                                    ],
+                                    "content": "change as a function of year grouping. Follow-up simple effects tests show that boys are",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82,
+                                686.0016479492188,
+                                450,
+                                695.9642333984375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        686.0016479492188,
+                                        450.686279296875,
+                                        695.9642333984375
+                                    ],
+                                    "content": "signiﬁcantly higher than girls on failure avoidance in junior high school, but in middle",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82,
+                                697.9637451171875,
+                                450,
+                                707.9263305664062
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        697.9637451171875,
+                                        450.65924072265625,
+                                        707.9263305664062
+                                    ],
+                                    "content": "and senior high school there are no signiﬁcant gender differences on failure avoidance.",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        82,
+                        554.4754028320312,
+                        450,
+                        707.9263305664062
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        82,
+                        754,
+                        451,
+                        789
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                82,
+                                755.5653686523438,
+                                450,
+                                765.5279541015625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        755.5653686523438,
+                                        450.6324768066406,
+                                        765.5279541015625
+                                    ],
+                                    "content": "The present study adopted a construct validation approach to examining multi-",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82,
+                                767.5274658203125,
+                                450,
+                                777.4900512695312
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        767.5274658203125,
+                                        450.72113037109375,
+                                        777.4900512695312
+                                    ],
+                                    "content": "dimensional motivation and engagement through an assessment of within- and between-",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                82,
+                                779.4895629882812,
+                                450,
+                                789.4521484375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        82.20469665527344,
+                                        779.4895629882812,
+                                        450.6593933105469,
+                                        789.4521484375
+                                    ],
+                                    "content": "network validity. In terms of within-network validity, (1) the data conﬁrm the good ﬁt of",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        82,
+                        755.5653686523438,
+                        450,
+                        789.4521484375
+                    ]
+                }
+            ]
+        }
+    ],
+    "_parse_type": "txt",
+    "_version_name": "0.7.1"
+}

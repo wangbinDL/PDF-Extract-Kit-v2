@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-lt-installed="true"><head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    const text ="1.3 // Assume \\(\\mathrm{n}\\) holds the length of arr\n"+
+"2 double fast_product(double \\(* \\operatorname{arr}\\), int \\(\\mathrm{n}\\) ) \\{\n"+
+"3 double product \\(=1\\);\n"+
+"4 \\#pragma omp parallel for\n"+
+"5 for (int \\(i=0 ; i<n ; i++)\\{\\)\n"+
+"6 product \\(*=\\operatorname{arr}[i]\\);\n"+
+"7 \\}\n"+
+"8 return product;\n"+
+"\\(9 \\}\\)\n"+
+"(a) What is wrong with this code?\n"+
+"The code has the shared variable product.\n"+
+"(b) Fix the code using \\#pragma omp critical\n"+
+"1 double fast_product(double \\(* \\operatorname{arr}\\), int \\(\\mathrm{n}\\}\\{\\)\n"+
+"2 double product \\(=1\\);\n"+
+"3 \\#pragma omp parallel for\n"+
+"4 for (int \\(i=0\\); \\(i<n\\); i++) \\{\n"+
+"5 \\#pragma omp critical\n"+
+"6 product \\(*=\\operatorname{arr}[i]\\);\n"+
+"7 \\}\n"+
+"8 return product\n"+
+"\\(9 \\}\\)\n"+
+"(c) Fix the code using \\#pragma omp reduction(operation: var).\n"+
+"1 double fast_product(double \\(* \\operatorname{arr}\\), int \\(\\mathrm{n})\\{\\)\n"+
+"2 double product \\(=1\\);\n"+
+"3 \\#pragma omp parallel for reduction(*: product)\n"+
+"4 for (int \\(i=0\\); \\(i<n\\); i++) \\{\n"+
+"6 \\}\n"+
+"7 return product;\n"+
+"8 \\}\n"+
+"2 Logic Gates\n"+
+"2.1 Label the following logic gates:\n"+
+"\n"+
+"NOT, AND, OR, XOR, NAND, NOR, XNOR\n"+
+"2.2 Convert the following to boolean expressions:\n"+
+"(a) NAND\n" 
+  </script>
+  <style>
+    #content {
+      max-width: 800px;
+      margin: auto;
+    }
+  </style>
+  <script>
+    let script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathpix-markdown-it@1.3.6/es5/bundle.js";
+    document.head.append(script);
+
+    script.onload = function() {
+      const isLoaded = window.loadMathJax();
+      if (isLoaded) {
+        console.log('Styles loaded!')
+      }
+
+      const el = window.document.getElementById('content-text');
+      if (el) {
+        const options = {
+          htmlTags: true
+        };
+        const html = window.render(text, options);
+        el.outerHTML = html;
+      }
+    };
+  </script>
+</head>
+<body>
+  <div id="content"><div id="content-text"></div></div>
+</body>
+</html>

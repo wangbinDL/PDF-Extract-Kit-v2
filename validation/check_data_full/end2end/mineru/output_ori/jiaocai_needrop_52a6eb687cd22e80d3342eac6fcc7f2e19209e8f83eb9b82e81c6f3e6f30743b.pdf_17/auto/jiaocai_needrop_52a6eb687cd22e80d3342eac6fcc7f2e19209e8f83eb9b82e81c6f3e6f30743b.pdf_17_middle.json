@@ -1,0 +1,483 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "type": "text",
+                    "bbox": [
+                        71,
+                        90,
+                        501,
+                        130
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                72.0,
+                                89,
+                                497.65716552734375,
+                                102.4429931640625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        72.0,
+                                        89.0367431640625,
+                                        211.41514587402344,
+                                        102.4429931640625
+                                    ],
+                                    "content": "Over the past six months, ",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        210,
+                                        89,
+                                        235,
+                                        102
+                                    ],
+                                    "score": 0.85,
+                                    "content": "96\\%",
+                                    "type": "inline_equation"
+                                },
+                                {
+                                    "bbox": [
+                                        235.44354248046875,
+                                        89.0367431640625,
+                                        497.65716552734375,
+                                        102.4429931640625
+                                    ],
+                                    "content": " of finance and insurance companies provided or ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                72.0,
+                                102.83660888671875,
+                                503.6449279785156,
+                                116.24285888671875
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        72.0,
+                                        102.83660888671875,
+                                        503.6449279785156,
+                                        116.24285888671875
+                                    ],
+                                    "content": "financed training programs for their employees.  Over that six-month period, they ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                72.0,
+                                116.63653564453125,
+                                383.4962463378906,
+                                130.04278564453125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        72.0,
+                                        116.63653564453125,
+                                        383.4962463378906,
+                                        130.04278564453125
+                                    ],
+                                    "content": "provided an average of 25 hours of training per employee. ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        174,
+                        143,
+                        437,
+                        278
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                174,
+                                143,
+                                437,
+                                278
+                            ],
+                            "type": "table_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        174,
+                                        143,
+                                        437,
+                                        278
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                174,
+                                                143,
+                                                437,
+                                                278
+                                            ],
+                                            "score": 0.9999544024467468,
+                                            "type": "table",
+                                            "image_path": "b21582425bdeb0a342dd30b4caba990edfc5448683cd80132ff072d22ad53ae3.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        77,
+                        303,
+                        534,
+                        715
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                77,
+                                303,
+                                534,
+                                715
+                            ],
+                            "type": "table_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        303,
+                                        534,
+                                        715
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                77,
+                                                303,
+                                                534,
+                                                715
+                                            ],
+                                            "score": 0.9999126195907593,
+                                            "type": "table",
+                                            "image_path": "be80c80fd5681653abb3b22a0170ecf8d8fd3db45baa840c3e88eb141cc76188.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "layout_bboxes": [
+                {
+                    "layout_bbox": [
+                        0,
+                        90,
+                        612.0,
+                        715
+                    ],
+                    "layout_label": "H",
+                    "sub_layout": []
+                }
+            ],
+            "page_idx": 0,
+            "page_size": [
+                612.0,
+                792.0
+            ],
+            "_layout_tree": [
+                {
+                    "layout_bbox": [
+                        0,
+                        90,
+                        612.0,
+                        715
+                    ],
+                    "layout_label": "H",
+                    "sub_layout": []
+                }
+            ],
+            "images": [],
+            "tables": [
+                {
+                    "type": "table",
+                    "bbox": [
+                        174,
+                        143,
+                        437,
+                        278
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                174,
+                                143,
+                                437,
+                                278
+                            ],
+                            "type": "table_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        174,
+                                        143,
+                                        437,
+                                        278
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                174,
+                                                143,
+                                                437,
+                                                278
+                                            ],
+                                            "score": 0.9999544024467468,
+                                            "type": "table",
+                                            "image_path": "b21582425bdeb0a342dd30b4caba990edfc5448683cd80132ff072d22ad53ae3.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        77,
+                        303,
+                        534,
+                        715
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                77,
+                                303,
+                                534,
+                                715
+                            ],
+                            "type": "table_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        77,
+                                        303,
+                                        534,
+                                        715
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                77,
+                                                303,
+                                                534,
+                                                715
+                                            ],
+                                            "score": 0.9999126195907593,
+                                            "type": "table",
+                                            "image_path": "be80c80fd5681653abb3b22a0170ecf8d8fd3db45baa840c3e88eb141cc76188.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "interline_equations": [],
+            "discarded_blocks": [
+                {
+                    "type": "discarded",
+                    "bbox": [
+                        528,
+                        744,
+                        539,
+                        754
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                528.0,
+                                742.6067504882812,
+                                540.0,
+                                755.8958129882812
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        528.0,
+                                        742.6067504882812,
+                                        540.0,
+                                        755.8958129882812
+                                    ],
+                                    "content": "17",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "discarded",
+                    "bbox": [
+                        68,
+                        71,
+                        548,
+                        89
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                247.32000732421875,
+                                73.8568115234375,
+                                368.0378112792969,
+                                87.2630615234375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        247.32000732421875,
+                                        73.8568115234375,
+                                        368.0378112792969,
+                                        87.2630615234375
+                                    ],
+                                    "content": "Finance & Insurance ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "need_drop": false,
+            "drop_reason": [],
+            "para_blocks": [
+                {
+                    "type": "text",
+                    "bbox": [
+                        71,
+                        90,
+                        501,
+                        130
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                72,
+                                89,
+                                497.65716552734375,
+                                102.4429931640625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        72.0,
+                                        89.0367431640625,
+                                        211.41514587402344,
+                                        102.4429931640625
+                                    ],
+                                    "content": "Over the past six months, ",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        210,
+                                        89,
+                                        235,
+                                        102
+                                    ],
+                                    "score": 0.85,
+                                    "content": "96\\%",
+                                    "type": "inline_equation"
+                                },
+                                {
+                                    "bbox": [
+                                        235.44354248046875,
+                                        89.0367431640625,
+                                        497.65716552734375,
+                                        102.4429931640625
+                                    ],
+                                    "content": " of finance and insurance companies provided or ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                72,
+                                102.83660888671875,
+                                503.6449279785156,
+                                116.24285888671875
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        72.0,
+                                        102.83660888671875,
+                                        503.6449279785156,
+                                        116.24285888671875
+                                    ],
+                                    "content": "financed training programs for their employees.  Over that six-month period, they ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                72,
+                                116.63653564453125,
+                                383.4962463378906,
+                                130.04278564453125
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        72.0,
+                                        116.63653564453125,
+                                        383.4962463378906,
+                                        130.04278564453125
+                                    ],
+                                    "content": "provided an average of 25 hours of training per employee. ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        72,
+                        89,
+                        503.6449279785156,
+                        130.04278564453125
+                    ]
+                }
+            ]
+        }
+    ],
+    "_parse_type": "txt",
+    "_version_name": "0.7.1"
+}

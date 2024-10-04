@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-lt-installed="true"><head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    const text ="Table 2. Baseline clinical ratings and biochemical variables (mean \\(\\pm \\mathrm{SD}\\) )\n"+
+"\\begin{tabular}{lcccc}\n"+
+"\\hline & \\begin{tabular}{c} \n"+
+"Hamilton \\\\\n"+
+"Depression \\\\\n"+
+"Scale\n"+
+"\\end{tabular} & \\begin{tabular}{c} \n"+
+"Hamilton \\\\\n"+
+"Anxiety \\\\\n"+
+"Scale\n"+
+"\\end{tabular} & \\begin{tabular}{c} \n"+
+"Spielberger \\\\\n"+
+"Trait\n"+
+"\\end{tabular} & \\begin{tabular}{c} \n"+
+"Plasma \\\\\n"+
+"noradrenaline \\\\\n"+
+"\\((\\mathrm{pg} / \\mathrm{ml})\\)\n"+
+"\\end{tabular} \\\\\n"+
+"\\hline Melancholic/psychotic & & & & \\\\\n"+
+"depression \\((n=13)\\) & \\(25 \\cdot 5 \\pm 6 \\cdot 3\\) & \\(20 \\cdot 8 \\pm 7 \\cdot 1\\) & \\(48 \\cdot 2 \\pm 12 \\cdot 5\\) & \\(302 \\cdot 0 \\pm 307 \\cdot 4\\) \\\\\n"+
+"Non-melancholic & & & & \\\\\n"+
+"Depression \\((n=14)\\) & \\(23 \\cdot 5 \\pm 5 \\cdot 0\\) & \\(21 \\cdot 3 \\pm 5 \\cdot 6\\) & \\(55 \\cdot 4 \\pm 7 \\cdot 2\\) & \\(323 \\pm 327 \\cdot 3\\) \\\\\n"+
+"Generalised anxiety & & & & \\\\\n"+
+"disorder \\((n=16)\\) & \\(16 \\cdot 4 \\pm 5 \\cdot 7\\) & \\(22 \\cdot 5 \\pm 8 \\cdot 8\\) & \\(56 \\cdot 4 \\pm 10 \\cdot 2\\) & \\(300 \\cdot 9 \\pm 261 \\cdot 4\\) \\\\\n"+
+"Controls \\((n=20)\\) & - & - & \\(33 \\cdot 3 \\pm 5 \\cdot 2\\) & \\(221 \\cdot 3 \\pm 182 \\cdot 3\\) \\\\\n"+
+"\\hline\n"+
+"\\end{tabular}\n"+
+"Table 2. There were no statistically significant differences between groups.\n"+
+"Biochemical, haemodynamic and subjective responses to the Stroop test\n"+
+"The data are reported as the maximum value obtained (peak) and the peak-baseline (P-B) for each group in Table 3. Although samples were taken to assess plasma NA on four occasions after the Stroop test, the peak response was usually at 3 min post test.\n"+
+"The P-B response was much reduced in the melancholic/psychotic group compared to the others. However, the Kruskal-Wallis test did not demonstrate any statistically significant difference between the four groups with respect to peak NA \\((H=0 \\cdot 3, d f=3, p=0 \\cdot 96)\\) or \\(\\mathrm{P}-\\mathrm{B}(H=3 \\cdot 46\\), \\(d f=3, p=0 \\cdot 32)\\).\n"+
+"For all subjects, plasma NA values were summed after the stress testing \\((+3,+10,+20,+30\\) min), to give an indicator of sustained plasma NA values after the Stroop. There was no statistically significant difference between the four groups for the summated plasma NA value \\((H=0 \\cdot 25, d f=3\\), \\(p=0 \\cdot 97)\\). There was no statistically significant difference in peak NA and P-B response between males and females, for the total group or depressed patients.\n"+
+"The maximum values for pulse and blood pressure are given in Table 4 by group. Because of technical problems not all patients had automated haemodynamic measurements. There was no statistically significant difference in pulse between the four groups. There was a strong trend for a significant difference with respect to maximum systolic blood pressure \\((H=7 \\cdot 1, d f=3, p=0 \\cdot 07)\\) and maximum diastolic blood pressure \\((H=7 \\cdot 4\\),\n"+
+"Table 3. Maximum and peak-baseline plasma noradrenaline (pg/ml) after Stroop test (mean \\(\\pm \\mathrm{SD})\\)\n"+
+"\\begin{tabular}{lcc}\n"+
+"\\hline & \\begin{tabular}{c} \n"+
+"Maximum plasma \\\\\n"+
+"noradrenaline\n"+
+"\\end{tabular} & \\begin{tabular}{c} \n"+
+"Peak-baseline plasma \\\\\n"+
+"noradrenaline\n"+
+"\\end{tabular} \\\\\n"+
+"\\hline Melancholic/psychotic depression & \\(366 \\cdot 1 \\pm 300 \\cdot 2\\) & \\(30 \\cdot 6 \\pm 99 \\cdot 9\\) \\\\\n"+
+"\\((n=13)\\) & \\(417 \\cdot 0 \\pm 444 \\cdot 5\\) & \\(125 \\cdot 1 \\pm 271 \\cdot 3\\) \\\\\n"+
+"Non-melancholic depression & & \\\\\n"+
+"\\((n=14)\\) & \\(427 \\cdot 3 \\pm 375 \\cdot 2\\) & \\(126 \\cdot 3 \\pm 248 \\cdot 0\\) \\\\\n"+
+"Generalised anxiety disorder & & \\\\\n"+
+"\\((n=16)\\) & \\(431 \\cdot 2 \\pm 547 \\cdot 5\\) & \\(209 \\cdot 9 \\pm 580 \\cdot 0\\) \\\\\n"+
+"Controls & & \\\\\n"+
+"\\((n=20)\\) & & \\\\\n"+
+"\\hline\n"+
+"\\end{tabular}\n" 
+  </script>
+  <style>
+    #content {
+      max-width: 800px;
+      margin: auto;
+    }
+  </style>
+  <script>
+    let script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathpix-markdown-it@1.3.6/es5/bundle.js";
+    document.head.append(script);
+
+    script.onload = function() {
+      const isLoaded = window.loadMathJax();
+      if (isLoaded) {
+        console.log('Styles loaded!')
+      }
+
+      const el = window.document.getElementById('content-text');
+      if (el) {
+        const options = {
+          htmlTags: true
+        };
+        const html = window.render(text, options);
+        el.outerHTML = html;
+      }
+    };
+  </script>
+</head>
+<body>
+  <div id="content"><div id="content-text"></div></div>
+</body>
+</html>

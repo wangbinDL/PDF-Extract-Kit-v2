@@ -1,0 +1,24 @@
+regressions , and (c) R to perform Random Forest analyses . Data are reported as mean \pm SD. All tests were two-tailed testing the null hypothesis of no statistical difference between compared groups. We considered differences between groups to be statistically significant if \(\mathrm{P} \leq 0.05\). Except were otherwise indicated, the term "digit ratios" refer to the 2D:4D and 2D:5D on both hands.
+\section*{Results}
+We measured the hands of 258 women (77 non-athletes, 103 varsity athletes, 78 club athletes; Table 1). First and second measurements of all digits were highly correlated (all \(r>0.970\), all \(\mathrm{P}<0.001\) ) and right- and left-hand digit lengths and ratios were significantly correlated (all \(\mathrm{P}<0.05\) ). All intra-class correlation coefficients were greater than 0.970 (all \(\mathrm{P}<0.001\) ) for digit lengths indicating that our measurements were reliable and measurement errors did not obscure differences in digit ratios between groups . We did not detect significant differences between the digit ratios of women of European ( \(\mathrm{n}=246\) ) or non-European descent \((\mathrm{n}=12)\) (all \(\mathrm{P} \geq 0.08)\) and the effect sizes in these comparisons were moderate (all \(\mathrm{d}=0.39-\) 0.54 ) so we pooled all subjects together for subsequent analyses. Moreover, including or excluding women of non-European ancestry in our analyses would not have had an important effect on our overall results because \(7 / 12(58 \%)\) participated in college sports (basketball \((\mathrm{n}=2)\), cheerleading \((\mathrm{n}=1)\), soccer \((\mathrm{n}=1)\), track and field/cross country \((\mathrm{n}=3)\) ), the remainder did not. Moreover, subjects of non-European ancestry made up only 7/181 (4\%) of college athletes and 5/77(6\%) of non-athletes.
+There were no statistically significant differences between non-athletes, varsity athletes, and club athletes in digit ratios on each hand (all \(\mathrm{P} \geq 0.22\), Table 1). The effect sizes for all of these comparisons were negligible (all effect sizes, \(\mathrm{f} \leq 0.04\) ). Moreover, there were no statistically significant differences between non-athletes and college athletes (i.e., varsity and club athletes combined) in their digit ratios on each hand (all \(P \geq 0.12\) ) or between varsity athletes and all other students combined (all \(\mathrm{P} \geq 0.15\) ). Each effect size was small (all \(\mathrm{d} \leq 0.19\) ) and each IZSB factor supported the null hypothesis of no difference between groups. Accordingly, all subjects were pooled together for subsequent analyses. Women college athletes, varsity and club combined, participated in the following sports; basketball \((\mathrm{n}=14)\), cheerleading \((\mathrm{n}=11)\), dance team \((\mathrm{n}=8)\), golf \((\mathrm{n}=5)\), ice hockey \((\mathrm{n}=12)\), lacrosse \((\mathrm{n}=15)\), rowing \((\mathrm{n}=11)\), rugby
+Table 1. Digit ratios of female non-athletes, varsity athletes, and club athletes at Grand Valley State University.
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline & & & & & & \begin{tabular}{l}
+\(\mathrm{H}_{0}\) Non-athletes \(=\) varsity \\
+athletes \(=\) club athletes
+\end{tabular} & \\
+\hline Digit Ratio & Non-athletes & Varsity athletes & Club athletes & \(\mathrm{F}\) & df & \(\mathbf{P}\) & \\
+\hline Right hand & & & & & & & \\
+\hline \multirow[t]{2}{*}{ 2D:4D } & \(0.976 \pm 0.041\) & \(0.973 \pm 0.035\) & \(0.980 \pm 0.029\) & 0.82 & 2,255 & 0.44 & \\
+\hline & \((77)\) & \((103)\) & \((78)\) & & & & \\
+\hline \multirow[t]{2}{*}{ 2E:5D } & \(1.201 \pm 0.068\) & \(1.205 \pm 0.061\) & \(1.215 \pm 0.045\) & 1.41 & 2,253 & 0.25 & \\
+\hline & \((76)\) & \((102)\) & \((78)\) & & & & \\
+\hline \multidiv{2E:4D } & \(0.974 \pm 0.037\) & \(0.970 \pm 0.032\) & \(0.978 \pm 0.030\) & 1.35 & 2,255 & 0.26 & \\
+\hline & \((77)\) & \((103)\ & \((78)\) & & & & \\
+\hline \multirow[t{2}{*}{ 2D:5D } & \(1.187 \pm 0.058\) & \(1.120 \pm 0.057\) & \(1.203 \pm 0.054\) & 1.52 & 2,254 & 0.22 & \\
+\hline & \((77)\) & \((103)\)& \((77)\) & & & & \\
+\hline
+\end{tabular}
+Digit ratios are reported as mean \(\pm \mathrm{SD}\) (n).
+https://doi.org/10.1371/journal.pone.0203685.t001

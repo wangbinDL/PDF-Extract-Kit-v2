@@ -1,0 +1,1589 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "type": "text",
+                    "bbox": [
+                        51,
+                        106,
+                        560,
+                        144
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                52.79296875,
+                                106.9453125,
+                                558.4801025390625,
+                                117.5765609741211
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        106.9453125,
+                                        558.4801025390625,
+                                        117.5765609741211
+                                    ],
+                                    "content": "We will explore a more detailed analysis of these orbital interactions in the next chapter. For now, we can summarize the most",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52.79296875,
+                                119,
+                                559.1279296875,
+                                130.32656860351562
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        119.6953125,
+                                        456.9436950683594,
+                                        130.32656860351562
+                                    ],
+                                    "content": "common outcomes in the table below. We should note that there is one important cycloaddition, the ",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        457,
+                                        119,
+                                        480,
+                                        130
+                                    ],
+                                    "score": 0.84,
+                                    "content": "[2\\small{+}2]",
+                                    "type": "inline_equation"
+                                },
+                                {
+                                    "bbox": [
+                                        479.6878662109375,
+                                        119.6953125,
+                                        559.1279296875,
+                                        130.32656860351562
+                                    ],
+                                    "content": " thermal reaction of",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52.79296875,
+                                132.4453125,
+                                278.8072814941406,
+                                143.07656860351562
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        132.4453125,
+                                        278.8072814941406,
+                                        143.07656860351562
+                                    ],
+                                    "content": "ketenes that does not conform to this generalized analysis. ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        51,
+                        151,
+                        550,
+                        219
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                59,
+                                166,
+                                550,
+                                219
+                            ],
+                            "type": "table_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        59,
+                                        166,
+                                        550,
+                                        219
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                59,
+                                                166,
+                                                550,
+                                                219
+                                            ],
+                                            "score": 0.9997315406799316,
+                                            "type": "table",
+                                            "image_path": "28090a1aa0f84ba5c97f5fa438464c990138fe0d3efd9fa8b43c4343dac022bc.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                51,
+                                151,
+                                319,
+                                162
+                            ],
+                            "type": "table_caption",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        152.281494140625,
+                                        319.8233642578125,
+                                        161.498291015625
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                52.79296875,
+                                                152.281494140625,
+                                                319.8233642578125,
+                                                161.498291015625
+                                            ],
+                                            "content": "Generalized Statement of Woodward-Hoffmann Rules for Cycloadditions ",
+                                            "type": "text",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "title",
+                    "bbox": [
+                        52,
+                        246,
+                        139,
+                        257
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                52.79296875,
+                                247.531494140625,
+                                139.9053955078125,
+                                256.748291015625
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        247.531494140625,
+                                        139.9053955078125,
+                                        256.748291015625
+                                    ],
+                                    "content": "Electrocyclic Reactions ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        52,
+                        262,
+                        560,
+                        338
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                52.79296875,
+                                262.9453125,
+                                559.04736328125,
+                                273.5765686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        262.9453125,
+                                        559.04736328125,
+                                        273.5765686035156
+                                    ],
+                                    "content": "Electrocyclic reactions are intramolecular reactions that are ring closing (form a sigma bond) or ring opening (break a sigma bond).",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52.79296875,
+                                275.6953125,
+                                559.094482421875,
+                                286.3265686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        275.6953125,
+                                        559.094482421875,
+                                        286.3265686035156
+                                    ],
+                                    "content": "The key sigma bond, either formed or broken, must be at the terminus of a pi system so that either the product or reactant must be a",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52.79296875,
+                                288.4453125,
+                                558.51123046875,
+                                299.0765686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        288.4453125,
+                                        558.51123046875,
+                                        299.0765686035156
+                                    ],
+                                    "content": "fully conjugated diene, triene, etc. These reactions are often reversible and are classified by the number of pi electrons involved.",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52.79296875,
+                                301.1953125,
+                                558.8369750976562,
+                                311.8265686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        301.1953125,
+                                        558.8369750976562,
+                                        311.8265686035156
+                                    ],
+                                    "content": "Thus, 4 pi reactions involve the forming/breaking of 4 membered rings, 6 pi reactions involve the forming/breaking of 6 membered",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52.79296875,
+                                313.9453125,
+                                558.8223266601562,
+                                324.5765686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        313.9453125,
+                                        558.8223266601562,
+                                        324.5765686035156
+                                    ],
+                                    "content": "rings, and so on. The 4 pi and 6 pi variants are by far the most common and are illustrated below with the key sigma bond",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52.79296875,
+                                326.6953125,
+                                143.68548583984375,
+                                337.3265686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        326.6953125,
+                                        143.68548583984375,
+                                        337.3265686035156
+                                    ],
+                                    "content": "highlighted in magenta.",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        215,
+                        343,
+                        394,
+                        393
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                215,
+                                343,
+                                394,
+                                393
+                            ],
+                            "type": "image_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        215,
+                                        343,
+                                        394,
+                                        393
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                215,
+                                                343,
+                                                394,
+                                                393
+                                            ],
+                                            "score": 0.9995383620262146,
+                                            "type": "image",
+                                            "image_path": "675e325189fc622dce934f7cef3f38ac65c84393f106f49b5105b4992a9c2f19.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        51,
+                        401,
+                        561,
+                        451
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                52.79296875,
+                                401.6953125,
+                                559.072509765625,
+                                412.3265686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        401.6953125,
+                                        559.072509765625,
+                                        412.3265686035156
+                                    ],
+                                    "content": "Electrocyclic reactions happen from the HOMO of the molecule and differ in their outcomes based on orbital rotation for the",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52.79296875,
+                                414.4453125,
+                                558.5530395507812,
+                                425.0765686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        414.4453125,
+                                        558.5530395507812,
+                                        425.0765686035156
+                                    ],
+                                    "content": "forming/breaking sigma bond. If the orbitals involved rotate in the same direction (both counterclockwise or both clockwise), the",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52.79296875,
+                                427.1953125,
+                                558.994384765625,
+                                437.8265686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        427.1953125,
+                                        558.994384765625,
+                                        437.8265686035156
+                                    ],
+                                    "content": "process is called conrotatory. If the orbitals involved rotate in opposite directions (one clockwise and one counterclockwise), the",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52.79296875,
+                                439.9453125,
+                                525.8251953125,
+                                450.5765686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        439.9453125,
+                                        525.8251953125,
+                                        450.5765686035156
+                                    ],
+                                    "content": "process is called disrotatory. These differences in rotation are critically important when stereocenters are formed or broken.",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        51,
+                        456,
+                        561,
+                        507
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                52.79296875,
+                                457.1953125,
+                                558.9412841796875,
+                                467.8265686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        457.1953125,
+                                        558.9412841796875,
+                                        467.8265686035156
+                                    ],
+                                    "content": "As illustrated below, treatment of the susbstituted hexatriene shown yields the cis product when heated but the trans product when",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52.79296875,
+                                469.9453125,
+                                558.4793701171875,
+                                480.5765686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        469.9453125,
+                                        558.4793701171875,
+                                        480.5765686035156
+                                    ],
+                                    "content": "treated with light. This can be explained by looking at the pi HOMO for each case. For the thermal reaction, the HOMO is psi 3",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52.79296875,
+                                482.6953125,
+                                558.9061889648438,
+                                493.3265686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        482.6953125,
+                                        558.9061889648438,
+                                        493.3265686035156
+                                    ],
+                                    "content": "which rotates in a disrotatory fashion to yield the cis product while the trans product is formed under irradiation due to the",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52.79296875,
+                                495.4453125,
+                                208.4696807861328,
+                                506.0765686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        495.4453125,
+                                        208.4696807861328,
+                                        506.0765686035156
+                                    ],
+                                    "content": "conrotatory motion of the HOMO psi 4. ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        217,
+                        510,
+                        392,
+                        594
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                217,
+                                510,
+                                392,
+                                594
+                            ],
+                            "type": "image_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        217,
+                                        510,
+                                        392,
+                                        594
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                217,
+                                                510,
+                                                392,
+                                                594
+                                            ],
+                                            "score": 0.9999949932098389,
+                                            "type": "image",
+                                            "image_path": "8e4a84a4cf6b6195e4552b0441e1ee3543005aee68c559b84c8668523d22e672.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        51,
+                        600,
+                        561,
+                        624
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                52.79296875,
+                                600.4453125,
+                                558.7850952148438,
+                                611.0765380859375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        600.4453125,
+                                        558.7850952148438,
+                                        611.0765380859375
+                                    ],
+                                    "content": "We will delve deeper into this analysis in a subsequent chapter. In general, electrocyclic reactions behave according the generalized",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52.79296875,
+                                613.1953125,
+                                132.934814453125,
+                                623.8265380859375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        613.1953125,
+                                        132.934814453125,
+                                        623.8265380859375
+                                    ],
+                                    "content": "rules outlined below.",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        51,
+                        632,
+                        550,
+                        700
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                59,
+                                645,
+                                550,
+                                700
+                            ],
+                            "type": "table_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        59,
+                                        645,
+                                        550,
+                                        700
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                59,
+                                                645,
+                                                550,
+                                                700
+                                            ],
+                                            "score": 0.999992311000824,
+                                            "type": "table",
+                                            "image_path": "819a605b69e17fd60abb1a659b6e6de8126ff95391a1f89100520ae8a4215a36.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                51,
+                                632,
+                                351,
+                                642
+                            ],
+                            "type": "table_caption",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        632.281494140625,
+                                        350.9952392578125,
+                                        641.498291015625
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                52.79296875,
+                                                632.281494140625,
+                                                350.9952392578125,
+                                                641.498291015625
+                                            ],
+                                            "content": "Generalized Statement of Woodward-Hoffmann Rules for Electrocyclic Reactions ",
+                                            "type": "text",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "layout_bboxes": [
+                {
+                    "layout_bbox": [
+                        0,
+                        106,
+                        612.0,
+                        770
+                    ],
+                    "layout_label": "H",
+                    "sub_layout": []
+                }
+            ],
+            "page_idx": 0,
+            "page_size": [
+                612.0,
+                792.0
+            ],
+            "_layout_tree": [
+                {
+                    "layout_bbox": [
+                        0,
+                        106,
+                        612.0,
+                        770
+                    ],
+                    "layout_label": "H",
+                    "sub_layout": []
+                }
+            ],
+            "images": [
+                {
+                    "type": "image",
+                    "bbox": [
+                        215,
+                        343,
+                        394,
+                        393
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                215,
+                                343,
+                                394,
+                                393
+                            ],
+                            "type": "image_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        215,
+                                        343,
+                                        394,
+                                        393
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                215,
+                                                343,
+                                                394,
+                                                393
+                                            ],
+                                            "score": 0.9995383620262146,
+                                            "type": "image",
+                                            "image_path": "675e325189fc622dce934f7cef3f38ac65c84393f106f49b5105b4992a9c2f19.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "bbox": [
+                        217,
+                        510,
+                        392,
+                        594
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                217,
+                                510,
+                                392,
+                                594
+                            ],
+                            "type": "image_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        217,
+                                        510,
+                                        392,
+                                        594
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                217,
+                                                510,
+                                                392,
+                                                594
+                                            ],
+                                            "score": 0.9999949932098389,
+                                            "type": "image",
+                                            "image_path": "8e4a84a4cf6b6195e4552b0441e1ee3543005aee68c559b84c8668523d22e672.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "tables": [
+                {
+                    "type": "table",
+                    "bbox": [
+                        51,
+                        151,
+                        550,
+                        219
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                59,
+                                166,
+                                550,
+                                219
+                            ],
+                            "type": "table_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        59,
+                                        166,
+                                        550,
+                                        219
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                59,
+                                                166,
+                                                550,
+                                                219
+                                            ],
+                                            "score": 0.9997315406799316,
+                                            "type": "table",
+                                            "image_path": "28090a1aa0f84ba5c97f5fa438464c990138fe0d3efd9fa8b43c4343dac022bc.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                51,
+                                151,
+                                319,
+                                162
+                            ],
+                            "type": "table_caption",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        152.281494140625,
+                                        319.8233642578125,
+                                        161.498291015625
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                52.79296875,
+                                                152.281494140625,
+                                                319.8233642578125,
+                                                161.498291015625
+                                            ],
+                                            "content": "Generalized Statement of Woodward-Hoffmann Rules for Cycloadditions ",
+                                            "type": "text",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "table",
+                    "bbox": [
+                        51,
+                        632,
+                        550,
+                        700
+                    ],
+                    "blocks": [
+                        {
+                            "bbox": [
+                                59,
+                                645,
+                                550,
+                                700
+                            ],
+                            "type": "table_body",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        59,
+                                        645,
+                                        550,
+                                        700
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                59,
+                                                645,
+                                                550,
+                                                700
+                                            ],
+                                            "score": 0.999992311000824,
+                                            "type": "table",
+                                            "image_path": "819a605b69e17fd60abb1a659b6e6de8126ff95391a1f89100520ae8a4215a36.jpg"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                51,
+                                632,
+                                351,
+                                642
+                            ],
+                            "type": "table_caption",
+                            "lines": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        632.281494140625,
+                                        350.9952392578125,
+                                        641.498291015625
+                                    ],
+                                    "spans": [
+                                        {
+                                            "bbox": [
+                                                52.79296875,
+                                                632.281494140625,
+                                                350.9952392578125,
+                                                641.498291015625
+                                            ],
+                                            "content": "Generalized Statement of Woodward-Hoffmann Rules for Electrocyclic Reactions ",
+                                            "type": "text",
+                                            "score": 1.0
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "interline_equations": [],
+            "discarded_blocks": [
+                {
+                    "type": "discarded",
+                    "bbox": [
+                        35,
+                        20,
+                        126,
+                        46
+                    ],
+                    "lines": []
+                },
+                {
+                    "type": "discarded",
+                    "bbox": [
+                        23,
+                        748,
+                        589,
+                        770
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                277.9999694824219,
+                                755.5023803710938,
+                                582.3598022460938,
+                                764.8866577148438
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        277.9999694824219,
+                                        755.5741577148438,
+                                        334.0898132324219,
+                                        764.8866577148438
+                                    ],
+                                    "content": "Chapter 1.1.2",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        429.9062194824219,
+                                        755.5023803710938,
+                                        582.3598022460938,
+                                        763.6508178710938
+                                    ],
+                                    "content": "https://chem.libretexts.org/@go/page/355137",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "need_drop": false,
+            "drop_reason": [],
+            "para_blocks": [
+                {
+                    "type": "text",
+                    "bbox": [
+                        51,
+                        106,
+                        560,
+                        144
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                52,
+                                106.9453125,
+                                559,
+                                117.5765609741211
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        106.9453125,
+                                        558.4801025390625,
+                                        117.5765609741211
+                                    ],
+                                    "content": "We will explore a more detailed analysis of these orbital interactions in the next chapter. For now, we can summarize the most",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52,
+                                119,
+                                559,
+                                130.32656860351562
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        119.6953125,
+                                        456.9436950683594,
+                                        130.32656860351562
+                                    ],
+                                    "content": "common outcomes in the table below. We should note that there is one important cycloaddition, the ",
+                                    "type": "text",
+                                    "score": 1.0
+                                },
+                                {
+                                    "bbox": [
+                                        457,
+                                        119,
+                                        480,
+                                        130
+                                    ],
+                                    "score": 0.84,
+                                    "content": "[2\\small{+}2]",
+                                    "type": "inline_equation"
+                                },
+                                {
+                                    "bbox": [
+                                        479.6878662109375,
+                                        119.6953125,
+                                        559.1279296875,
+                                        130.32656860351562
+                                    ],
+                                    "content": " thermal reaction of",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52,
+                                132.4453125,
+                                278.8072814941406,
+                                143.07656860351562
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        132.4453125,
+                                        278.8072814941406,
+                                        143.07656860351562
+                                    ],
+                                    "content": "ketenes that does not conform to this generalized analysis. ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        52,
+                        106.9453125,
+                        559,
+                        143.07656860351562
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        52,
+                        262,
+                        560,
+                        338
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                52,
+                                262.9453125,
+                                559,
+                                273.5765686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        262.9453125,
+                                        559.04736328125,
+                                        273.5765686035156
+                                    ],
+                                    "content": "Electrocyclic reactions are intramolecular reactions that are ring closing (form a sigma bond) or ring opening (break a sigma bond).",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52,
+                                275.6953125,
+                                559,
+                                286.3265686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        275.6953125,
+                                        559.094482421875,
+                                        286.3265686035156
+                                    ],
+                                    "content": "The key sigma bond, either formed or broken, must be at the terminus of a pi system so that either the product or reactant must be a",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52,
+                                288.4453125,
+                                559,
+                                299.0765686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        288.4453125,
+                                        558.51123046875,
+                                        299.0765686035156
+                                    ],
+                                    "content": "fully conjugated diene, triene, etc. These reactions are often reversible and are classified by the number of pi electrons involved.",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52,
+                                301.1953125,
+                                559,
+                                311.8265686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        301.1953125,
+                                        558.8369750976562,
+                                        311.8265686035156
+                                    ],
+                                    "content": "Thus, 4 pi reactions involve the forming/breaking of 4 membered rings, 6 pi reactions involve the forming/breaking of 6 membered",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52,
+                                313.9453125,
+                                559,
+                                324.5765686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        313.9453125,
+                                        558.8223266601562,
+                                        324.5765686035156
+                                    ],
+                                    "content": "rings, and so on. The 4 pi and 6 pi variants are by far the most common and are illustrated below with the key sigma bond",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52,
+                                326.6953125,
+                                143.68548583984375,
+                                337.3265686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        326.6953125,
+                                        143.68548583984375,
+                                        337.3265686035156
+                                    ],
+                                    "content": "highlighted in magenta.",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        52,
+                        262.9453125,
+                        559,
+                        337.3265686035156
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        51,
+                        401,
+                        561,
+                        451
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                52,
+                                401.6953125,
+                                559,
+                                412.3265686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        401.6953125,
+                                        559.072509765625,
+                                        412.3265686035156
+                                    ],
+                                    "content": "Electrocyclic reactions happen from the HOMO of the molecule and differ in their outcomes based on orbital rotation for the",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52,
+                                414.4453125,
+                                559,
+                                425.0765686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        414.4453125,
+                                        558.5530395507812,
+                                        425.0765686035156
+                                    ],
+                                    "content": "forming/breaking sigma bond. If the orbitals involved rotate in the same direction (both counterclockwise or both clockwise), the",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52,
+                                427.1953125,
+                                559,
+                                437.8265686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        427.1953125,
+                                        558.994384765625,
+                                        437.8265686035156
+                                    ],
+                                    "content": "process is called conrotatory. If the orbitals involved rotate in opposite directions (one clockwise and one counterclockwise), the",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52,
+                                439.9453125,
+                                525.8251953125,
+                                450.5765686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        439.9453125,
+                                        525.8251953125,
+                                        450.5765686035156
+                                    ],
+                                    "content": "process is called disrotatory. These differences in rotation are critically important when stereocenters are formed or broken.",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        52,
+                        401.6953125,
+                        559,
+                        450.5765686035156
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        51,
+                        456,
+                        561,
+                        507
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                52,
+                                457.1953125,
+                                559,
+                                467.8265686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        457.1953125,
+                                        558.9412841796875,
+                                        467.8265686035156
+                                    ],
+                                    "content": "As illustrated below, treatment of the susbstituted hexatriene shown yields the cis product when heated but the trans product when",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52,
+                                469.9453125,
+                                559,
+                                480.5765686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        469.9453125,
+                                        558.4793701171875,
+                                        480.5765686035156
+                                    ],
+                                    "content": "treated with light. This can be explained by looking at the pi HOMO for each case. For the thermal reaction, the HOMO is psi 3",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52,
+                                482.6953125,
+                                559,
+                                493.3265686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        482.6953125,
+                                        558.9061889648438,
+                                        493.3265686035156
+                                    ],
+                                    "content": "which rotates in a disrotatory fashion to yield the cis product while the trans product is formed under irradiation due to the",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52,
+                                495.4453125,
+                                208.4696807861328,
+                                506.0765686035156
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        495.4453125,
+                                        208.4696807861328,
+                                        506.0765686035156
+                                    ],
+                                    "content": "conrotatory motion of the HOMO psi 4. ",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        52,
+                        457.1953125,
+                        559,
+                        506.0765686035156
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        51,
+                        600,
+                        561,
+                        624
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                52,
+                                600.4453125,
+                                559,
+                                611.0765380859375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        600.4453125,
+                                        558.7850952148438,
+                                        611.0765380859375
+                                    ],
+                                    "content": "We will delve deeper into this analysis in a subsequent chapter. In general, electrocyclic reactions behave according the generalized",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        },
+                        {
+                            "bbox": [
+                                52,
+                                613.1953125,
+                                132.934814453125,
+                                623.8265380859375
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        52.79296875,
+                                        613.1953125,
+                                        132.934814453125,
+                                        623.8265380859375
+                                    ],
+                                    "content": "rules outlined below.",
+                                    "type": "text",
+                                    "score": 1.0
+                                }
+                            ]
+                        }
+                    ],
+                    "bbox_fs": [
+                        52,
+                        600.4453125,
+                        559,
+                        623.8265380859375
+                    ]
+                }
+            ]
+        }
+    ],
+    "_parse_type": "txt",
+    "_version_name": "0.7.1"
+}

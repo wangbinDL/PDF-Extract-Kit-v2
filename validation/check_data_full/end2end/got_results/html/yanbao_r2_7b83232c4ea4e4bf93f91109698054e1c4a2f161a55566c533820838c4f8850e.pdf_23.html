@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" data-lt-installed="true"><head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    const text ="由于社会经济波动和防疫管控, 近三年香港入境游客数量骤减, 但本土消费挽回了部分零售额\n"+
+"\n"+
+"各品类零售销售额 [百万港币]\n"+
+"\n"+
+"资料来源: 香港旅游发展局, 香港特别行政区政府统计处, 公开资料\n"+
+"\\section*{2022年, 香港不再占据 “租金最昂贵的商业街道” 榜首位置}\n"+
+"\n"+
+"2020-2022年, 美国和中国内地已经超越香港成为瑞士钟表 最大的出口市场\n"+
+"瑞士钟表前 3 大出口市场\n"+
+"\\begin{tabular}{|c|c|c|c|c|c|c|}\n"+
+"\\hline 全球排名 & 2022 & 2021 & 2020 & 2019 & 2018 \\\\\n"+
+"\\hline 1 & 美国 & 美国 & 中国内地 & 香港 & 香港 \\\\\n"+
+"\\hline 2 & 中国内地 & 中国内地 & 美国 & 美国 & 美国 \\\\\n"+
+"\\hline 3 & 香港 & 香港 & 香港 & 中国内地 & 中国内地 \\\\\n"+
+"\\hline\n"+
+"\\end{tabular}\n" 
+  </script>
+  <style>
+    #content {
+      max-width: 800px;
+      margin: auto;
+    }
+  </style>
+  <script>
+    let script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathpix-markdown-it@1.3.6/es5/bundle.js";
+    document.head.append(script);
+
+    script.onload = function() {
+      const isLoaded = window.loadMathJax();
+      if (isLoaded) {
+        console.log('Styles loaded!')
+      }
+
+      const el = window.document.getElementById('content-text');
+      if (el) {
+        const options = {
+          htmlTags: true
+        };
+        const html = window.render(text, options);
+        el.outerHTML = html;
+      }
+    };
+  </script>
+</head>
+<body>
+  <div id="content"><div id="content-text"></div></div>
+</body>
+</html>

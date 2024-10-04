@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" data-lt-installed="true"><head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    const text ="Problem 24\n"+
+"Three distinct segments are chosen at random among the segments whose end-points are the vertices of a regular 12-gon. What is the probability that the lengths of these three segments are the three side lengths of a triangle with positive area?\n"+
+"一个正十二边形的顶点两两相连所形成的所有线段中, 任意选择 3 根不同的线段（这 3 条线段中可能存在等长的线段）, 问这三根线段能够组成一个面积为正的三角形的概率是多少?\n"+
+"(A) \\(\\frac{553}{715} \\quad\\) (B) \\(\\frac{443}{572} \\quad\\) (C) \\(\\frac{111}{143} \\quad\\) (D) \\(\\frac{81}{104} \\quad\\) (E) \\(\\frac{223}{286}\\)\n"+
+"Problem 25\n"+
+"Let \\(f: \\mathbb{C} \\rightarrow \\mathbb{C}\\) be defined by \\(f(z)=z^{2}+i z+1\\). How many complex numbers \\(z\\) are there such that \\(\\operatorname{Im}(z)>0\\) and both the real and the imaginary parts of \\(f(z)\\) are integers with absolute value at most 10 ?\n"+
+"\\(f\\) 是定义在复数域上的一个函数, \\(f: \\mathbb{C} \\rightarrow \\mathbb{C}\\), 且 \\(f(z)=z^{2}+i z+1\\), 有多少个这样的复数 \\(z\\) 存在, 满足 \\(\\operatorname{Im}(z)>0\\) ( \\(z\\) 的虚部大于 0 ), 且 \\(f(z)\\) 的实部和虚部都是绝对值至多为 10 的整数?\n"+
+"(A) 399\n"+
+"(B) 401\n"+
+"(C) 413\n"+
+"(D) 431\n"+
+"(E) 441\n" 
+  </script>
+  <style>
+    #content {
+      max-width: 800px;
+      margin: auto;
+    }
+  </style>
+  <script>
+    let script = document.createElement('script');
+    script.src = "https://cdn.jsdelivr.net/npm/mathpix-markdown-it@1.3.6/es5/bundle.js";
+    document.head.append(script);
+
+    script.onload = function() {
+      const isLoaded = window.loadMathJax();
+      if (isLoaded) {
+        console.log('Styles loaded!')
+      }
+
+      const el = window.document.getElementById('content-text');
+      if (el) {
+        const options = {
+          htmlTags: true
+        };
+        const html = window.render(text, options);
+        el.outerHTML = html;
+      }
+    };
+  </script>
+</head>
+<body>
+  <div id="content"><div id="content-text"></div></div>
+</body>
+</html>
