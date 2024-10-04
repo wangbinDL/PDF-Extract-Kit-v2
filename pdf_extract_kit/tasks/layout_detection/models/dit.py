@@ -9,12 +9,12 @@ from pdf_extract_kit.utils.visualization import visualize_bbox
 
 from ultralytics.utils import TQDM
 
-from .unilm_util.layoutlmv3.model_init import Layoutlmv3_Predictor
+from .unilm_util.dit.model_init import DiTPredictor
 from pdf_extract_kit.dataset.detection.layoutlmv3_dataset import Layoutlmv3Dataset
 from pdf_extract_kit.dataset.detection.base_detection_dataloader import build_dataloader
 
-@MODEL_REGISTRY.register("layout_detection_layoutlmv3")
-class LayoutDetectionLayoutlmv3:
+@MODEL_REGISTRY.register("layout_detection_dit")
+class LayoutDetectionDiT:
     def __init__(self, config):
         """
         Initialize the LayoutDetectionYOLO class.
@@ -39,8 +39,8 @@ class LayoutDetectionLayoutlmv3:
         self.score_thr = config.get('score_thr', 0.25)
         self.workers = config.get('workers', 4)
         self.visualize = config.get('visualize', False)
-        self.model = Layoutlmv3_Predictor(
-            weights = config.get('model_path', None),
+        self.model = DiTPredictor(
+            weights = config.get('model_path', None), 
             score_thr = self.score_thr,
         )
 
